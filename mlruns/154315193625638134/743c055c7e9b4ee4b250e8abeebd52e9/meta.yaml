@@ -1,0 +1,15 @@
+artifact_uri: file:///home/dhruv/Projects/VidSitu/mlruns/154315193625638134/743c055c7e9b4ee4b250e8abeebd52e9/artifacts
+end_time: 1706441646696
+entry_point_name: ''
+experiment_id: '154315193625638134'
+lifecycle_stage: active
+run_id: 743c055c7e9b4ee4b250e8abeebd52e9
+run_name: mlp
+run_uuid: 743c055c7e9b4ee4b250e8abeebd52e9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1706441590189
+status: 3
+tags: []
+user_id: dhruv
