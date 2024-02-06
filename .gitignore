@@ -1,1 +1,3 @@
 /vidsitu_data
+/mlruns/*
+/tmp/*

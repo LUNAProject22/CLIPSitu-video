@@ -90,6 +90,42 @@ class MLPForVerb(nn.Module):
         verb_loss = verb_criterion(verb_pred, gt_verbs.squeeze())
         return verb_loss
 
+class TFForVerb(nn.Module):
+    def __init__(self, cfg):
+        super(TFForVerb, self).__init__()
+        self.fc1 = torch.nn.Linear(cfg.mlp_inp_dim, cfg.mlp_hid_dim)
+        # self.do1 = nn.Dropout(0.2)  # 20% Probability
+        # self.relu = torch.nn.ReLU()
+        # self.fc2 = torch.nn.Linear(cfg.mlp_hid_dim, cfg.mlp_hid_dim)
+        # self.relu = torch.nn.ReLU()
+        # self.do2 = nn.Dropout(0.2)
+        # self.layernorm = nn.LayerNorm(cfg.mlp_hid_dim)
+        # self.fc3 = torch.nn.Linear(cfg.mlp_hid_dim, cfg.mlp_hid_dim)
+        
+        transformer_encoder_layer = nn.TransformerEncoderLayer(d_model=cfg.mlp_hid_dim, nhead=4, dim_feedforward=2048, dropout=0.1, activation='relu')
+        self.transformer = nn.TransformerEncoder(
+            transformer_encoder_layer,
+            num_layers=3
+        )
+        #self.classifier = nn.Linear(d_model=cfg.mlp_hid_dim, num_classes)
+
+    def forward(self,x):
+        # x = self.relu(self.fc1(x))
+        # x = self.do1(x)
+        # x = self.relu(self.fc2(x))
+        # x = self.layernorm(x)
+        # x = self.do2(x)
+        # x = self.relu(self.fc3(x))
+        x = self.fc1(x)
+        x = self.transformer(x)
+        return x
+
+    def calculate_verb_loss(self, verb_pred, gt_verbs):
+
+        verb_criterion = nn.CrossEntropyLoss()
+        verb_loss = verb_criterion(verb_pred, gt_verbs.squeeze())
+        return verb_loss
+
 
 class ResNetBasicHead_Trimmed(nn.Module):
     """
@@ -259,7 +295,11 @@ class VerbModel(nn.Module):
         self.build_projection_head(self.sf_cfg)
 
     def build_verb_model(self, cfg):
-        mdl = MLPForVerb(cfg)
+        if self.cfg.mdl_name == "vb_tf":
+            mdl = TFForVerb(cfg)
+   #     elif cfg.mdl.mdl_name == "vb_mlp":
+        else:
+            mdl = MLPForVerb(cfg)
         self.sf_mdl = mdl
         return
 
@@ -438,6 +478,22 @@ class TxEncoderOld(TransformerEncoder):
             src_tokens=None,
             src_lengths=None,
         )
+def get_head_dim(full_cfg) -> int:
+    # if "i3d" in full_cfg.ds.vsitu.vsit_frm_feats_dir:
+    #     head_dim = 2048
+    # elif ("slow_fast" in full_cfg.ds.vsitu.vsit_frm_feats_dir) or (
+    #     "sfast" in full_cfg.ds.vsitu.vsit_frm_feats_dir
+    # ):
+    #     head_dim = 2304
+    
+    # else:
+    #     raise NotImplementedError
+    # head_dim = 1024 # for combined clip img and verb features in grounded mode
+    if full_cfg.ds.vsitu.vsit_clip_frm_feats_dir == './vidsitu_data/clip-vit-large-patch14-336':
+        head_dim = 768
+    else:
+        head_dim = 512 # for clip img features in prediction mode
+    return head_dim
 
 
 class TxEncoderNew(TxCodeEnc):
@@ -785,10 +841,12 @@ class Simple_GPT2_New(Simple_GPT2):
 
 class MLP_Simple_GPT2_New(Simple_GPT2):
     def build_model(self):
-        self.fc1 = torch.nn.Linear(self.cfg.vb_arg_mlp_inp_dim, self.cfg.vb_arg_mlp_hid_dim)
-        self.relu = torch.nn.ReLU()
-        self.fc2 = torch.nn.Linear(self.cfg.vb_arg_mlp_hid_dim, self.cfg.vb_arg_mlp_hid_dim)
-        
+        # self.fc1 = torch.nn.Linear(self.cfg.vb_arg_mlp_inp_dim, self.cfg.vb_arg_mlp_hid_dim)
+        # self.relu = torch.nn.ReLU()
+        # self.fc2 = torch.nn.Linear(self.cfg.vb_arg_mlp_hid_dim, self.cfg.vb_arg_mlp_hid_dim)
+        head_dim = get_head_dim(self.full_cfg)
+        self.vid_feat_encoder = ArgMLP(input_dim=head_dim, hidden_dim=self.full_cfg.mdl.arg_mlp_hid_dim)
+
         self.gpt2_mdl = GPT2_New.from_pretrained(self.cfg.gpt2_mdl_name)
         self.voc_size = len(self.comm.gpt2_hf_tok)
         self.gpt2_mdl.resize_token_embeddings(self.voc_size)
@@ -978,19 +1036,6 @@ class Reorderer:
         )
 
 
-def get_head_dim(full_cfg) -> int:
-    # if "i3d" in full_cfg.ds.vsitu.vsit_frm_feats_dir:
-    #     head_dim = 2048
-    # elif ("slow_fast" in full_cfg.ds.vsitu.vsit_frm_feats_dir) or (
-    #     "sfast" in full_cfg.ds.vsitu.vsit_frm_feats_dir
-    # ):
-    #     head_dim = 2304
-    
-    # else:
-    #     raise NotImplementedError
-    # head_dim = 1024 # for combined clip img and verb features in grounded mode
-    head_dim = 512 # for clip img features in prediction mode
-    return head_dim
 
 
 class ArgMLP(nn.Module):
