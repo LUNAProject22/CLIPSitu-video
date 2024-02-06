@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "env": {"CUDA_VISIBLE_DEVICES":"1"},
-            "args": ["mlp", "--task_type", "vb"]// ,"--mdl.mdl_name","mlp_txed_vbarg"],
+            //"args": ["vb_tf", "--task_type", "vb","--mdl.mdl_name","vb_tf"]// ,"--mdl.mdl_name","mlp_txed_vbarg"],
             //"justMyCode": true
         }
     ]

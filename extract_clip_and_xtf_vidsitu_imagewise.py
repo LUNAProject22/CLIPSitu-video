@@ -19,11 +19,12 @@ torch.manual_seed(42)
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 from transformers import CLIPModel, CLIPTokenizer, AutoProcessor, CLIPTextModel
+clip_model_version = 'clip-vit-large-patch14-336' #'clip-vit-base-patch32' # clip-vit-base-patch32
 
-clip_tokenizer = CLIPTokenizer.from_pretrained("openai/clip-vit-base-patch32")
-image_processor = AutoProcessor.from_pretrained("openai/clip-vit-base-patch32")
-clip_model = CLIPModel.from_pretrained("openai/clip-vit-base-patch32")
-clip_text_model = CLIPTextModel.from_pretrained("openai/clip-vit-base-patch32")
+clip_tokenizer = CLIPTokenizer.from_pretrained("openai/"+clip_model_version)
+image_processor = AutoProcessor.from_pretrained("openai/"+clip_model_version)
+clip_model = CLIPModel.from_pretrained("openai/"+clip_model_version)
+clip_text_model = CLIPTextModel.from_pretrained("openai/"+clip_model_version)
 clip_model.to(device)
 
 noun2id = pickle.load(open('noun2id.pkl','rb'))
@@ -77,8 +78,8 @@ def get_label_ids(role_dict):
 
 class VidSituDataset(object):
     def __init__(self): # split is train or valid
-        root_dir = "/data/dataset/VidSitu/data/"
-        
+        #root_dir = "/data/dataset/VidSitu/data/"
+        root_dir = "/home/dhruv/Projects/VidSitu/vidsitu_data/"
         split_dir = os.path.join(root_dir, "vidsitu_annotations/split_files")
         split = 'train'
         split_name = os.path.join(split_dir, 'vseg_split_' + split + '_lb.json')
@@ -96,7 +97,7 @@ class VidSituDataset(object):
         annos.extend(json.load(open(anno_name,'r')))
         
 
-        self.vid_trimmed_dir = os.path.join(root_dir, "vsitu_video_frames_dir", "vsitu_11_frames_per_vid")
+        self.vid_trimmed_dir = os.path.join(root_dir, "vsitu_11_frames_per_vid")
         
         
         self.annotations = []
@@ -146,7 +147,10 @@ class VidSituDataset(object):
         return anno
 
 dataset = VidSituDataset()
-pkl_dir = '/data/dataset/VidSitu/data/clip_feat_vit-b32_11f'
+#pkl_dir = '/data/dataset/VidSitu/data/clip_feat_vit-b32_11f'
+pkl_dir = './vidsitu_data/' + clip_model_version + '_11f'
+if not os.path.exists(pkl_dir):
+    os.mkdir(pkl_dir)
 annos = []
 for annotation in tqdm(dataset.annotations):
     pkl_name = os.path.join(pkl_dir, annotation['vid_seg_id'])

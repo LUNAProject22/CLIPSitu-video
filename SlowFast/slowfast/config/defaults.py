@@ -547,7 +547,7 @@ _C.TENSORBOARD.ENABLE = False
 _C.TENSORBOARD.LOG_DIR = ""
 
 # Verb MLP parameters
-_C.mlp_inp_dim = 768
+_C.mlp_inp_dim = 512
 _C.mlp_hid_dim = 1024
 
 # Add custom config with default values.

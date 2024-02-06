@@ -573,6 +573,7 @@ class VsituDS(Dataset):
         #     verb_feats = all_feats['verb_feat'].float().squeeze()
 
         # assert vid_feats.size(0) == 11
+        # sample [0,2,4,6,8] or [1,3,5,7,9]
         # return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats}
         
         # for event-based features

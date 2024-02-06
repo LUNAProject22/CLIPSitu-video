@@ -20533,3 +20533,3629 @@ val_dl_name: valid
 2024-01-30 04:55:48,777 utils.trn_utils INFO: Loaded model from tmp/models/mlp.pth Correctly
 2024-01-30 04:57:01,427 utils.trn_utils DEBUG: {'loss': tensor(0., device='cuda:0')}
 2024-01-30 04:57:01,428 utils.trn_utils DEBUG: {'Per_Ev_Top_1': tensor(0.4320, device='cuda:0'), 'Per_Ev_Top_5': tensor(0.7790, device='cuda:0'), 'recall_macro_1_th_9': tensor(0.1737, device='cuda:0')}
+2024-01-30 18:56:21,870 utils.trn_utils INFO: DIST_BACKEND: nccl
+SHARD_ID: 0
+cmd: ['/home/dhruv/Projects/VidSitu/main_dist.py', 'mlp', '--task_type', 'vb']
+cmd_str: /home/dhruv/Projects/VidSitu/main_dist.py mlp --task_type vb
+debug_mode: False
+do_dist: False
+do_dp: False
+ds:
+  trn_shuffle: True
+  val_set_type: lb
+  vsitu:
+    arg_names:
+      adir: ADir
+      ag0: Arg0
+      ag1: Arg1
+      ag2: Arg2
+      ag3: Arg3
+      ag4: Arg4
+      agol: AGol
+      aloc: ALoc
+      amnr: AMnr
+      aprp: APrp
+      ascn: AScn
+      vb: Vb
+    evrel_trimmed: True
+    name: vid_situ
+    num_ev: 5
+    split_files_dir: ./vidsitu_data/vidsitu_annotations/split_files
+    split_files_lb:
+      test_evrel: ./vidsitu_data/vidsitu_annotations/split_files/vseg_split_testevrel_lb.json
+      test_srl: ./vidsitu_data/vidsitu_annotations/split_files/vseg_split_testsrl_lb.json
+      test_verb: ./vidsitu_data/vidsitu_annotations/split_files/vseg_split_testvb_lb.json
+      train: ./vidsitu_data/vidsitu_annotations/split_files/vseg_split_train_lb.json
+      valid: ./vidsitu_data/vidsitu_annotations/split_files/vseg_split_valid_lb.json
+    video_frms_tdir: ./vidsitu_data/vsitu_frames/
+    video_trimmed_dir: ./vidsitu_data/vsitu_video_trimmed_dir
+    vinfo_files_lb:
+      test_evrel: ./vidsitu_data/vidsitu_annotations/vinfo_files/vinfo_testevrel_lb.json
+      test_srl: ./vidsitu_data/vidsitu_annotations/vinfo_files/vinfo_testsrl_lb.json
+      test_verb: ./vidsitu_data/vidsitu_annotations/vinfo_files/vinfo_testvb_lb.json
+      train: ./vidsitu_data/vidsitu_annotations/vinfo_files/vinfo_train_lb.json
+      valid: ./vidsitu_data/vidsitu_annotations/vinfo_files/vinfo_valid_lb.json
+    vocab_files:
+      new_gpt2_vb_arg_vocab: ./vidsitu_data/vsitu_vocab/bpe_with_seps_vb_arg_vocab.pkl
+      vb_arg_vocab: ./vidsitu_data/vsitu_meta/vsitu_vocab/vb_arg_vocab.pkl
+      verb_id_vocab: ./vidsitu_data/vsitu_vocab/verb_id_vocab.pkl
+    vsit_clip_frm_feats_dir: ./vidsitu_data/clip-vit-large-patch14-336
+    vsit_frm_feats_dir: ./vidsitu_data/vsitu_vid_feats/i3d_nln_kpret_ep10_best_recall
+    vsitu_ann_files_lb:
+      test_evrel: ./vidsitu_data/vidsitu_annotations/vseg_ann_files/vsann_testevrel_lb.json
+      test_srl: ./vidsitu_data/vidsitu_annotations/vseg_ann_files/vsann_testsrl_lb.json
+      test_verb: ./vidsitu_data/vidsitu_annotations/vseg_ann_files/vsann_testvb_lb.json
+      train: ./vidsitu_data/vidsitu_annotations/vseg_ann_files/vsann_train_lb.json
+      valid: ./vidsitu_data/vidsitu_annotations/vseg_ann_files/vsann_valid_lb.json
+    vsitu_frm_feats: ./vidsitu_data/vsitu_vid_feats/
+expm:
+  exp_name: vsitu_fin
+  run_id: 8061800c175c41d6bbf3cfbf46df49a1
+  st_time: 2024-01-30 18:56:21
+gen:
+  beam_size: 1
+  len_penalty: 1
+  max_len_a: 0
+  max_len_b: 200
+  min_len: 0
+  no_repeat_ngram_size: 0
+  normalize_scores: True
+  temperature: 1.0
+  unk_penalty: 0
+local_rank: 0
+log:
+  deb_it: 2
+mdl:
+  arg_mlp_hid_dim: 1024
+  gpt2_mdl_name: gpt2-medium
+  load_sf_pretrained: False
+  mdl_name: mlp_sfpret_txed_vbarg
+  rob_mdl_name: roberta-base
+  sf_mdl_cfg_file: ./configs/vsitu_mdl_cfgs/Kinetics_c2_SLOWFAST_8x8_R50.yaml
+  sf_mdl_name: slow_fast_nl_r50_8x8
+  tx_dec_cfg_file: ./configs/vsitu_tx_cfgs/transformer.yaml
+  tx_dec_mdl_name: transformer
+  tx_dec_type: txdec
+  tx_enc_type: old
+  use_old_tok: False
+mdl_data_names:
+  eval_name: EvalB
+  loss_name: LossB
+  mdl_name: VerbModel
+  opt_name: Adam
+  trn_collator: BatchCollator
+  trn_data: VsituDS
+  val_collator: BatchCollator
+  val_data: VsituDS
+misc:
+  tmp_path: ./tmp
+num_gpus: 1
+only_test: False
+only_val: False
+overfit_batch: False
+run_final_val: True
+sf_mdl:
+  AVA:
+    ANNOTATION_DIR: /mnt/vol/gfsai-flash3-east/ai-group/users/haoqifan/ava/frame_list/
+    BGR: False
+    DETECTION_SCORE_THRESH: 0.9
+    EXCLUSION_FILE: ava_val_excluded_timestamps_v2.2.csv
+    FRAME_DIR: /mnt/fair-flash3-east/ava_trainval_frames.img/
+    FRAME_LIST_DIR: /mnt/vol/gfsai-flash3-east/ai-group/users/haoqifan/ava/frame_list/
+    FULL_TEST_ON_VAL: False
+    GROUNDTRUTH_FILE: ava_val_v2.2.csv
+    IMG_PROC_BACKEND: cv2
+    LABEL_MAP_FILE: ava_action_list_v2.2_for_activitynet_2019.pbtxt
+    TEST_FORCE_FLIP: False
+    TEST_LISTS: ['val.csv']
+    TEST_PREDICT_BOX_LISTS: ['ava_val_predicted_boxes.csv']
+    TRAIN_GT_BOX_LISTS: ['ava_train_v2.2.csv']
+    TRAIN_LISTS: ['train.csv']
+    TRAIN_PCA_EIGVAL: [0.225, 0.224, 0.229]
+    TRAIN_PCA_EIGVEC: [[-0.5675, 0.7192, 0.4009], [-0.5808, -0.0045, -0.814], [-0.5836, -0.6948, 0.4203]]
+    TRAIN_PCA_JITTER_ONLY: True
+    TRAIN_PREDICT_BOX_LISTS: []
+    TRAIN_USE_COLOR_AUGMENTATION: False
+  BENCHMARK:
+    LOG_PERIOD: 100
+    NUM_EPOCHS: 5
+    SHUFFLE: True
+  BN:
+    EPSILON: 1e-05
+    MOMENTUM: 0.1
+    NORM_TYPE: batchnorm
+    NUM_BATCHES_PRECISE: 200
+    NUM_SPLITS: 1
+    NUM_SYNC_DEVICES: 1
+    USE_PRECISE_STATS: True
+    WEIGHT_DECAY: 0.0
+  DATA:
+    CROP_SIZE: 224
+    DECODING_BACKEND: pyav
+    ENSEMBLE_METHOD: sum
+    INPUT_CHANNEL_NUM: [3, 3]
+    INV_UNIFORM_SAMPLE: False
+    MEAN: [0.45, 0.45, 0.45]
+    MULTI_LABEL: False
+    NUM_FRAMES: 32
+    PATH_PREFIX: 
+    PATH_TO_DATA_DIR: 
+    RANDOM_FLIP: True
+    REVERSE_INPUT_CHANNEL: False
+    SAMPLING_RATE: 2
+    STD: [0.225, 0.225, 0.225]
+    TARGET_FPS: 30
+    TEST_CROP_SIZE: 256
+    TRAIN_CROP_SIZE: 224
+    TRAIN_JITTER_SCALES: [256, 320]
+  DATA_LOADER:
+    ENABLE_MULTI_THREAD_DECODE: False
+    NUM_WORKERS: 8
+    PIN_MEMORY: True
+  DETECTION:
+    ALIGNED: True
+    ENABLE: False
+    ROI_XFORM_RESOLUTION: 7
+    SPATIAL_SCALE_FACTOR: 16
+  DIST_BACKEND: nccl
+  LOG_MODEL_INFO: True
+  LOG_PERIOD: 10
+  MODEL:
+    ARCH: mlp
+    DROPOUT_RATE: 0.5
+    FC_INIT_STD: 0.01
+    HEAD_ACT: softmax
+    LOSS_FUNC: cross_entropy
+    MODEL_NAME: SlowFast
+    MULTI_PATHWAY_ARCH: ['slowfast']
+    NUM_CLASSES: 400
+    SINGLE_PATHWAY_ARCH: ['c2d', 'i3d', 'slow']
+  MULTIGRID:
+    BN_BASE_SIZE: 8
+    DEFAULT_B: 0
+    DEFAULT_S: 0
+    DEFAULT_T: 0
+    EPOCH_FACTOR: 1.5
+    EVAL_FREQ: 3
+    LONG_CYCLE: False
+    LONG_CYCLE_FACTORS: [[0.25, 0.7071067811865476], [0.5, 0.7071067811865476], [0.5, 1], [1, 1]]
+    LONG_CYCLE_SAMPLING_RATE: 0
+    SHORT_CYCLE: False
+    SHORT_CYCLE_FACTORS: [0.5, 0.7071067811865476]
+  NONLOCAL:
+    GROUP: [[1, 1], [1, 1], [1, 1], [1, 1]]
+    INSTANTIATION: dot_product
+    LOCATION: [[[], []], [[], []], [[], []], [[], []]]
+    POOL: [[[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]], [[1, 2, 2], [1, 2, 2]]]
+  NUM_GPUS: 8
+  NUM_SHARDS: 1
+  OUTPUT_DIR: .
+  RESNET:
+    DEPTH: 50
+    INPLACE_RELU: True
+    NUM_BLOCK_TEMP_KERNEL: [[3, 3], [4, 4], [6, 6], [3, 3]]
+    NUM_GROUPS: 1
+    SPATIAL_DILATIONS: [[1, 1], [1, 1], [1, 1], [1, 1]]
+    SPATIAL_STRIDES: [[1, 1], [2, 2], [2, 2], [2, 2]]
+    STRIDE_1X1: False
+    TRANS_FUNC: bottleneck_transform
+    WIDTH_PER_GROUP: 64
+    ZERO_INIT_FINAL_BN: True
+  RNG_SEED: 0
+  SHARD_ID: 0
+  SLOWFAST:
+    ALPHA: 4
+    BETA_INV: 8
+    FUSION_CONV_CHANNEL_RATIO: 2
+    FUSION_KERNEL_SZ: 7
+  SOLVER:
+    BASE_LR: 0.1
+    DAMPENING: 0.0
+    GAMMA: 0.1
+    LRS: []
+    LR_POLICY: cosine
+    MAX_EPOCH: 196
+    MOMENTUM: 0.9
+    NESTEROV: True
+    OPTIMIZING_METHOD: sgd
+    STEPS: []
+    STEP_SIZE: 1
+    WARMUP_EPOCHS: 34.0
+    WARMUP_FACTOR: 0.1
+    WARMUP_START_LR: 0.01
+    WEIGHT_DECAY: 0.0001
+  TENSORBOARD:
+    ENABLE: False
+    LOG_DIR: 
+  TEST:
+    BATCH_SIZE: 64
+    CHECKPOINT_FILE_PATH: 
+    CHECKPOINT_TYPE: pytorch
+    DATASET: kinetics
+    ENABLE: True
+    NUM_ENSEMBLE_VIEWS: 10
+    NUM_SPATIAL_CROPS: 3
+  TRAIN:
+    AUTO_RESUME: True
+    BATCH_SIZE: 64
+    CHECKPOINT_FILE_PATH: ./weights/SLOWFAST_CU_8x8_R50.pkl
+    CHECKPOINT_INFLATE: False
+    CHECKPOINT_PERIOD: 1
+    CHECKPOINT_TYPE: caffe2
+    DATASET: kinetics
+    ENABLE: False
+    EVAL_PERIOD: 10
+  mlp_hid_dim: 1024
+  mlp_inp_dim: 768
+task_type: vb
+test_dl_name: test
+train:
+  bs: 32
+  bsv: 16
+  epochs: 10
+  freeze_sfbase: False
+  load_normally: True
+  load_opt: True
+  lr: 0.0001
+  ns: 4
+  nw: 4
+  nwv: 4
+  resume: False
+  resume_path: 
+  save_mdl_epochs: False
+  sfbase_pret_path: 
+  strict_load: True
+  use_reduce_lr_plateau: False
+  verbose: False
+tx_dec:
+  activation_dropout: 0.0
+  activation_fn: relu
+  adaptive_input: False
+  adaptive_softmax_cutoff: None
+  adaptive_softmax_dropout: 0
+  attention_dropout: 0.0
+  checkpoint_activations: False
+  cross_self_attention: False
+  decoder_attention_heads: 8
+  decoder_embed_dim: 1024
+  decoder_embed_path: None
+  decoder_ffn_embed_dim: 2048
+  decoder_input_dim: 512
+  decoder_layerdrop: 0
+  decoder_layers: 3
+  decoder_layers_to_keep: None
+  decoder_learned_pos: False
+  decoder_normalize_before: False
+  decoder_output_dim: 512
+  dropout: 0.1
+  encoder_attention_heads: 8
+  encoder_embed_dim: 1024
+  encoder_embed_path: None
+  encoder_ffn_embed_dim: 2048
+  encoder_layerdrop: 0
+  encoder_layers: 3
+  encoder_layers_to_keep: None
+  encoder_learned_pos: False
+  encoder_normalize_before: False
+  layernorm_embedding: False
+  max_source_positions: 1024
+  max_target_positions: 1024
+  merge_src_tgt_embed: False
+  no_cross_attention: False
+  no_scale_embedding: False
+  no_token_positional_embeddings: False
+  offload_activations: False
+  quant_noise_pq: 0
+  quant_noise_pq_block_size: 8
+  quant_noise_scalar: 0
+  share_all_embeddings: False
+  share_decoder_input_output_embed: False
+  tie_adaptive_weights: False
+uid: mlp
+val_dl_name: valid
+2024-01-30 18:57:26,995 utils.trn_utils DEBUG: Num_it 2 loss: 7.3445 
+
+2024-01-30 18:57:27,195 utils.trn_utils DEBUG: Num_it 4 loss: 7.3120 
+
+2024-01-30 18:57:39,150 utils.trn_utils DEBUG: Num_it 6 loss: 7.2830 
+
+2024-01-30 18:57:39,342 utils.trn_utils DEBUG: Num_it 8 loss: 7.2410 
+
+2024-01-30 18:57:54,336 utils.trn_utils DEBUG: Num_it 10 loss: 7.1855 
+
+2024-01-30 18:57:54,529 utils.trn_utils DEBUG: Num_it 12 loss: 7.1276 
+
+2024-01-30 18:58:08,235 utils.trn_utils DEBUG: Num_it 14 loss: 7.0745 
+
+2024-01-30 18:58:08,457 utils.trn_utils DEBUG: Num_it 16 loss: 6.9874 
+
+2024-01-30 18:58:17,724 utils.trn_utils DEBUG: Num_it 18 loss: 6.9082 
+
+2024-01-30 18:58:17,918 utils.trn_utils DEBUG: Num_it 20 loss: 6.8101 
+
+2024-01-30 18:58:28,732 utils.trn_utils DEBUG: Num_it 22 loss: 6.6903 
+
+2024-01-30 18:58:28,911 utils.trn_utils DEBUG: Num_it 24 loss: 6.6275 
+
+2024-01-30 18:58:40,329 utils.trn_utils DEBUG: Num_it 26 loss: 6.5346 
+
+2024-01-30 18:58:40,511 utils.trn_utils DEBUG: Num_it 28 loss: 6.4752 
+
+2024-01-30 18:58:50,913 utils.trn_utils DEBUG: Num_it 30 loss: 6.4197 
+
+2024-01-30 18:58:51,107 utils.trn_utils DEBUG: Num_it 32 loss: 6.3509 
+
+2024-01-30 18:59:03,027 utils.trn_utils DEBUG: Num_it 34 loss: 6.2696 
+
+2024-01-30 18:59:03,226 utils.trn_utils DEBUG: Num_it 36 loss: 6.2254 
+
+2024-01-30 18:59:22,328 utils.trn_utils DEBUG: Num_it 38 loss: 6.1508 
+
+2024-01-30 18:59:22,537 utils.trn_utils DEBUG: Num_it 40 loss: 6.0952 
+
+2024-01-30 18:59:34,285 utils.trn_utils DEBUG: Num_it 42 loss: 6.0431 
+
+2024-01-30 18:59:34,490 utils.trn_utils DEBUG: Num_it 44 loss: 5.9544 
+
+2024-01-30 18:59:46,978 utils.trn_utils DEBUG: Num_it 46 loss: 5.9388 
+
+2024-01-30 18:59:47,163 utils.trn_utils DEBUG: Num_it 48 loss: 5.8485 
+
+2024-01-30 18:59:57,875 utils.trn_utils DEBUG: Num_it 50 loss: 5.8306 
+
+2024-01-30 18:59:58,058 utils.trn_utils DEBUG: Num_it 52 loss: 5.7829 
+
+2024-01-30 19:00:11,941 utils.trn_utils DEBUG: Num_it 54 loss: 5.7706 
+
+2024-01-30 19:00:12,131 utils.trn_utils DEBUG: Num_it 56 loss: 5.7627 
+
+2024-01-30 19:00:27,173 utils.trn_utils DEBUG: Num_it 58 loss: 5.7704 
+
+2024-01-30 19:00:27,354 utils.trn_utils DEBUG: Num_it 60 loss: 5.7588 
+
+2024-01-30 19:00:38,648 utils.trn_utils DEBUG: Num_it 62 loss: 5.7067 
+
+2024-01-30 19:00:38,850 utils.trn_utils DEBUG: Num_it 64 loss: 5.6618 
+
+2024-01-30 19:00:49,294 utils.trn_utils DEBUG: Num_it 66 loss: 5.6586 
+
+2024-01-30 19:00:49,470 utils.trn_utils DEBUG: Num_it 68 loss: 5.6785 
+
+2024-01-30 19:01:07,674 utils.trn_utils DEBUG: Num_it 70 loss: 5.6843 
+
+2024-01-30 19:01:07,861 utils.trn_utils DEBUG: Num_it 72 loss: 5.6495 
+
+2024-01-30 19:01:19,046 utils.trn_utils DEBUG: Num_it 74 loss: 5.7076 
+
+2024-01-30 19:01:19,232 utils.trn_utils DEBUG: Num_it 76 loss: 5.7232 
+
+2024-01-30 19:01:33,105 utils.trn_utils DEBUG: Num_it 78 loss: 5.7116 
+
+2024-01-30 19:01:33,291 utils.trn_utils DEBUG: Num_it 80 loss: 5.6775 
+
+2024-01-30 19:01:51,625 utils.trn_utils DEBUG: Num_it 82 loss: 5.6587 
+
+2024-01-30 19:01:51,813 utils.trn_utils DEBUG: Num_it 84 loss: 5.6397 
+
+2024-01-30 19:02:03,568 utils.trn_utils DEBUG: Num_it 86 loss: 5.6059 
+
+2024-01-30 19:02:03,758 utils.trn_utils DEBUG: Num_it 88 loss: 5.5974 
+
+2024-01-30 19:02:15,110 utils.trn_utils DEBUG: Num_it 90 loss: 5.6130 
+
+2024-01-30 19:02:15,291 utils.trn_utils DEBUG: Num_it 92 loss: 5.6218 
+
+2024-01-30 19:02:27,206 utils.trn_utils DEBUG: Num_it 94 loss: 5.6118 
+
+2024-01-30 19:02:27,397 utils.trn_utils DEBUG: Num_it 96 loss: 5.6190 
+
+2024-01-30 19:02:43,265 utils.trn_utils DEBUG: Num_it 98 loss: 5.5617 
+
+2024-01-30 19:02:43,457 utils.trn_utils DEBUG: Num_it 100 loss: 5.6002 
+
+2024-01-30 19:02:55,849 utils.trn_utils DEBUG: Num_it 102 loss: 5.5455 
+
+2024-01-30 19:02:56,040 utils.trn_utils DEBUG: Num_it 104 loss: 5.5442 
+
+2024-01-30 19:03:06,884 utils.trn_utils DEBUG: Num_it 106 loss: 5.5562 
+
+2024-01-30 19:03:08,510 utils.trn_utils DEBUG: Num_it 108 loss: 5.5643 
+
+2024-01-30 19:03:22,810 utils.trn_utils DEBUG: Num_it 110 loss: 5.5451 
+
+2024-01-30 19:03:22,995 utils.trn_utils DEBUG: Num_it 112 loss: 5.4667 
+
+2024-01-30 19:03:34,628 utils.trn_utils DEBUG: Num_it 114 loss: 5.4288 
+
+2024-01-30 19:03:36,700 utils.trn_utils DEBUG: Num_it 116 loss: 5.4714 
+
+2024-01-30 19:03:46,408 utils.trn_utils DEBUG: Num_it 118 loss: 5.4901 
+
+2024-01-30 19:03:51,965 utils.trn_utils DEBUG: Num_it 120 loss: 5.5469 
+
+2024-01-30 19:03:57,041 utils.trn_utils DEBUG: Num_it 122 loss: 5.5112 
+
+2024-01-30 19:04:04,037 utils.trn_utils DEBUG: Num_it 124 loss: 5.4841 
+
+2024-01-30 19:04:15,048 utils.trn_utils DEBUG: Num_it 126 loss: 5.4834 
+
+2024-01-30 19:04:20,077 utils.trn_utils DEBUG: Num_it 128 loss: 5.4381 
+
+2024-01-30 19:04:28,242 utils.trn_utils DEBUG: Num_it 130 loss: 5.4976 
+
+2024-01-30 19:04:31,532 utils.trn_utils DEBUG: Num_it 132 loss: 5.5519 
+
+2024-01-30 19:04:44,874 utils.trn_utils DEBUG: Num_it 134 loss: 5.5841 
+
+2024-01-30 19:04:51,151 utils.trn_utils DEBUG: Num_it 136 loss: 5.5922 
+
+2024-01-30 19:04:57,419 utils.trn_utils DEBUG: Num_it 138 loss: 5.5484 
+
+2024-01-30 19:05:04,972 utils.trn_utils DEBUG: Num_it 140 loss: 5.5511 
+
+2024-01-30 19:05:11,339 utils.trn_utils DEBUG: Num_it 142 loss: 5.5185 
+
+2024-01-30 19:05:18,857 utils.trn_utils DEBUG: Num_it 144 loss: 5.4812 
+
+2024-01-30 19:05:24,459 utils.trn_utils DEBUG: Num_it 146 loss: 5.4586 
+
+2024-01-30 19:05:32,226 utils.trn_utils DEBUG: Num_it 148 loss: 5.4741 
+
+2024-01-30 19:05:45,718 utils.trn_utils DEBUG: Num_it 150 loss: 5.4634 
+
+2024-01-30 19:05:46,811 utils.trn_utils DEBUG: Num_it 152 loss: 5.4401 
+
+2024-01-30 19:06:00,948 utils.trn_utils DEBUG: Num_it 154 loss: 5.4651 
+
+2024-01-30 19:06:01,133 utils.trn_utils DEBUG: Num_it 156 loss: 5.4800 
+
+2024-01-30 19:06:12,708 utils.trn_utils DEBUG: Num_it 158 loss: 5.4832 
+
+2024-01-30 19:06:21,880 utils.trn_utils DEBUG: Num_it 160 loss: 5.4837 
+
+2024-01-30 19:06:23,609 utils.trn_utils DEBUG: Num_it 162 loss: 5.4955 
+
+2024-01-30 19:06:38,023 utils.trn_utils DEBUG: Num_it 164 loss: 5.5517 
+
+2024-01-30 19:06:40,071 utils.trn_utils DEBUG: Num_it 166 loss: 5.4724 
+
+2024-01-30 19:06:50,047 utils.trn_utils DEBUG: Num_it 168 loss: 5.4849 
+
+2024-01-30 19:06:52,954 utils.trn_utils DEBUG: Num_it 170 loss: 5.5060 
+
+2024-01-30 19:07:01,661 utils.trn_utils DEBUG: Num_it 172 loss: 5.5002 
+
+2024-01-30 19:07:05,368 utils.trn_utils DEBUG: Num_it 174 loss: 5.5014 
+
+2024-01-30 19:07:16,225 utils.trn_utils DEBUG: Num_it 176 loss: 5.5492 
+
+2024-01-30 19:07:20,504 utils.trn_utils DEBUG: Num_it 178 loss: 5.5476 
+
+2024-01-30 19:07:28,496 utils.trn_utils DEBUG: Num_it 180 loss: 5.5175 
+
+2024-01-30 19:07:32,193 utils.trn_utils DEBUG: Num_it 182 loss: 5.5242 
+
+2024-01-30 19:07:41,010 utils.trn_utils DEBUG: Num_it 184 loss: 5.5241 
+
+2024-01-30 19:07:53,099 utils.trn_utils DEBUG: Num_it 186 loss: 5.4847 
+
+2024-01-30 19:07:53,336 utils.trn_utils DEBUG: Num_it 188 loss: 5.4830 
+
+2024-01-30 19:08:07,569 utils.trn_utils DEBUG: Num_it 190 loss: 5.4894 
+
+2024-01-30 19:08:07,767 utils.trn_utils DEBUG: Num_it 192 loss: 5.4781 
+
+2024-01-30 19:08:24,585 utils.trn_utils DEBUG: Num_it 194 loss: 5.4678 
+
+2024-01-30 19:08:24,770 utils.trn_utils DEBUG: Num_it 196 loss: 5.4641 
+
+2024-01-30 19:08:37,072 utils.trn_utils DEBUG: Num_it 198 loss: 5.4391 
+
+2024-01-30 19:08:37,258 utils.trn_utils DEBUG: Num_it 200 loss: 5.3974 
+
+2024-01-30 19:08:50,197 utils.trn_utils DEBUG: Num_it 202 loss: 5.3660 
+
+2024-01-30 19:08:50,384 utils.trn_utils DEBUG: Num_it 204 loss: 5.3887 
+
+2024-01-30 19:09:04,233 utils.trn_utils DEBUG: Num_it 206 loss: 5.3940 
+
+2024-01-30 19:09:04,419 utils.trn_utils DEBUG: Num_it 208 loss: 5.4061 
+
+2024-01-30 19:09:22,784 utils.trn_utils DEBUG: Num_it 210 loss: 5.3641 
+
+2024-01-30 19:09:22,969 utils.trn_utils DEBUG: Num_it 212 loss: 5.3771 
+
+2024-01-30 19:09:35,258 utils.trn_utils DEBUG: Num_it 214 loss: 5.4192 
+
+2024-01-30 19:09:35,444 utils.trn_utils DEBUG: Num_it 216 loss: 5.4201 
+
+2024-01-30 19:09:54,711 utils.trn_utils DEBUG: Num_it 218 loss: 5.4076 
+
+2024-01-30 19:09:54,908 utils.trn_utils DEBUG: Num_it 220 loss: 5.3728 
+
+2024-01-30 19:10:06,198 utils.trn_utils DEBUG: Num_it 222 loss: 5.3869 
+
+2024-01-30 19:10:06,425 utils.trn_utils DEBUG: Num_it 224 loss: 5.4012 
+
+2024-01-30 19:10:20,707 utils.trn_utils DEBUG: Num_it 226 loss: 5.3976 
+
+2024-01-30 19:10:20,911 utils.trn_utils DEBUG: Num_it 228 loss: 5.4092 
+
+2024-01-30 19:10:34,392 utils.trn_utils DEBUG: Num_it 230 loss: 5.3609 
+
+2024-01-30 19:10:34,593 utils.trn_utils DEBUG: Num_it 232 loss: 5.3538 
+
+2024-01-30 19:10:46,909 utils.trn_utils DEBUG: Num_it 234 loss: 5.3509 
+
+2024-01-30 19:10:47,092 utils.trn_utils DEBUG: Num_it 236 loss: 5.3573 
+
+2024-01-30 19:11:05,643 utils.trn_utils DEBUG: Num_it 238 loss: 5.3536 
+
+2024-01-30 19:11:05,828 utils.trn_utils DEBUG: Num_it 240 loss: 5.3080 
+
+2024-01-30 19:11:16,562 utils.trn_utils DEBUG: Num_it 242 loss: 5.3148 
+
+2024-01-30 19:11:16,746 utils.trn_utils DEBUG: Num_it 244 loss: 5.3315 
+
+2024-01-30 19:11:29,212 utils.trn_utils DEBUG: Num_it 246 loss: 5.3030 
+
+2024-01-30 19:11:29,393 utils.trn_utils DEBUG: Num_it 248 loss: 5.3022 
+
+2024-01-30 19:11:45,029 utils.trn_utils DEBUG: Num_it 250 loss: 5.3066 
+
+2024-01-30 19:11:45,223 utils.trn_utils DEBUG: Num_it 252 loss: 5.2981 
+
+2024-01-30 19:12:01,255 utils.trn_utils DEBUG: Num_it 254 loss: 5.2788 
+
+2024-01-30 19:12:01,435 utils.trn_utils DEBUG: Num_it 256 loss: 5.2633 
+
+2024-01-30 19:12:17,812 utils.trn_utils DEBUG: Num_it 258 loss: 5.2459 
+
+2024-01-30 19:12:18,000 utils.trn_utils DEBUG: Num_it 260 loss: 5.2905 
+
+2024-01-30 19:12:33,979 utils.trn_utils DEBUG: Num_it 262 loss: 5.2704 
+
+2024-01-30 19:12:34,158 utils.trn_utils DEBUG: Num_it 264 loss: 5.2902 
+
+2024-01-30 19:12:43,349 utils.trn_utils DEBUG: Num_it 266 loss: 5.2866 
+
+2024-01-30 19:12:43,540 utils.trn_utils DEBUG: Num_it 268 loss: 5.3137 
+
+2024-01-30 19:12:56,090 utils.trn_utils DEBUG: Num_it 270 loss: 5.3209 
+
+2024-01-30 19:12:56,262 utils.trn_utils DEBUG: Num_it 272 loss: 5.3166 
+
+2024-01-30 19:13:08,801 utils.trn_utils DEBUG: Num_it 274 loss: 5.3065 
+
+2024-01-30 19:13:08,986 utils.trn_utils DEBUG: Num_it 276 loss: 5.2996 
+
+2024-01-30 19:13:28,225 utils.trn_utils DEBUG: Num_it 278 loss: 5.3255 
+
+2024-01-30 19:13:28,414 utils.trn_utils DEBUG: Num_it 280 loss: 5.3710 
+
+2024-01-30 19:13:42,498 utils.trn_utils DEBUG: Num_it 282 loss: 5.3555 
+
+2024-01-30 19:13:42,726 utils.trn_utils DEBUG: Num_it 284 loss: 5.3907 
+
+2024-01-30 19:13:59,156 utils.trn_utils DEBUG: Num_it 286 loss: 5.3619 
+
+2024-01-30 19:13:59,350 utils.trn_utils DEBUG: Num_it 288 loss: 5.3811 
+
+2024-01-30 19:14:14,291 utils.trn_utils DEBUG: Num_it 290 loss: 5.3487 
+
+2024-01-30 19:14:14,507 utils.trn_utils DEBUG: Num_it 292 loss: 5.3632 
+
+2024-01-30 19:14:28,183 utils.trn_utils DEBUG: Num_it 294 loss: 5.3899 
+
+2024-01-30 19:14:28,384 utils.trn_utils DEBUG: Num_it 296 loss: 5.4211 
+
+2024-01-30 19:14:44,428 utils.trn_utils DEBUG: Num_it 298 loss: 5.3938 
+
+2024-01-30 19:14:44,656 utils.trn_utils DEBUG: Num_it 300 loss: 5.3998 
+
+2024-01-30 19:14:57,945 utils.trn_utils DEBUG: Num_it 302 loss: 5.3970 
+
+2024-01-30 19:14:58,155 utils.trn_utils DEBUG: Num_it 304 loss: 5.4168 
+
+2024-01-30 19:15:10,328 utils.trn_utils DEBUG: Num_it 306 loss: 5.3878 
+
+2024-01-30 19:15:10,515 utils.trn_utils DEBUG: Num_it 308 loss: 5.3678 
+
+2024-01-30 19:15:22,739 utils.trn_utils DEBUG: Num_it 310 loss: 5.3599 
+
+2024-01-30 19:15:22,917 utils.trn_utils DEBUG: Num_it 312 loss: 5.3086 
+
+2024-01-30 19:15:35,134 utils.trn_utils DEBUG: Num_it 314 loss: 5.3330 
+
+2024-01-30 19:15:35,326 utils.trn_utils DEBUG: Num_it 316 loss: 5.3370 
+
+2024-01-30 19:15:51,877 utils.trn_utils DEBUG: Num_it 318 loss: 5.3604 
+
+2024-01-30 19:15:52,069 utils.trn_utils DEBUG: Num_it 320 loss: 5.3495 
+
+2024-01-30 19:16:07,330 utils.trn_utils DEBUG: Num_it 322 loss: 5.3593 
+
+2024-01-30 19:16:07,509 utils.trn_utils DEBUG: Num_it 324 loss: 5.3643 
+
+2024-01-30 19:16:25,368 utils.trn_utils DEBUG: Num_it 326 loss: 5.3542 
+
+2024-01-30 19:16:25,566 utils.trn_utils DEBUG: Num_it 328 loss: 5.3312 
+
+2024-01-30 19:16:36,344 utils.trn_utils DEBUG: Num_it 330 loss: 5.3660 
+
+2024-01-30 19:16:36,535 utils.trn_utils DEBUG: Num_it 332 loss: 5.3586 
+
+2024-01-30 19:16:53,394 utils.trn_utils DEBUG: Num_it 334 loss: 5.3399 
+
+2024-01-30 19:16:53,596 utils.trn_utils DEBUG: Num_it 336 loss: 5.3056 
+
+2024-01-30 19:17:08,152 utils.trn_utils DEBUG: Num_it 338 loss: 5.2944 
+
+2024-01-30 19:17:08,376 utils.trn_utils DEBUG: Num_it 340 loss: 5.2667 
+
+2024-01-30 19:17:23,127 utils.trn_utils DEBUG: Num_it 342 loss: 5.3163 
+
+2024-01-30 19:17:23,323 utils.trn_utils DEBUG: Num_it 344 loss: 5.3207 
+
+2024-01-30 19:17:35,562 utils.trn_utils DEBUG: Num_it 346 loss: 5.3578 
+
+2024-01-30 19:17:35,782 utils.trn_utils DEBUG: Num_it 348 loss: 5.3459 
+
+2024-01-30 19:17:50,553 utils.trn_utils DEBUG: Num_it 350 loss: 5.3910 
+
+2024-01-30 19:17:50,741 utils.trn_utils DEBUG: Num_it 352 loss: 5.3938 
+
+2024-01-30 19:18:05,872 utils.trn_utils DEBUG: Num_it 354 loss: 5.3959 
+
+2024-01-30 19:18:06,056 utils.trn_utils DEBUG: Num_it 356 loss: 5.3545 
+
+2024-01-30 19:18:22,281 utils.trn_utils DEBUG: Num_it 358 loss: 5.3035 
+
+2024-01-30 19:18:22,468 utils.trn_utils DEBUG: Num_it 360 loss: 5.2631 
+
+2024-01-30 19:18:34,684 utils.trn_utils DEBUG: Num_it 362 loss: 5.2930 
+
+2024-01-30 19:18:34,896 utils.trn_utils DEBUG: Num_it 364 loss: 5.2623 
+
+2024-01-30 19:18:50,165 utils.trn_utils DEBUG: Num_it 366 loss: 5.2670 
+
+2024-01-30 19:18:50,381 utils.trn_utils DEBUG: Num_it 368 loss: 5.2096 
+
+2024-01-30 19:19:03,431 utils.trn_utils DEBUG: Num_it 370 loss: 5.2352 
+
+2024-01-30 19:19:03,616 utils.trn_utils DEBUG: Num_it 372 loss: 5.2651 
+
+2024-01-30 19:19:16,635 utils.trn_utils DEBUG: Num_it 374 loss: 5.3110 
+
+2024-01-30 19:19:16,813 utils.trn_utils DEBUG: Num_it 376 loss: 5.3303 
+
+2024-01-30 19:19:32,492 utils.trn_utils DEBUG: Num_it 378 loss: 5.2906 
+
+2024-01-30 19:19:32,667 utils.trn_utils DEBUG: Num_it 380 loss: 5.3045 
+
+2024-01-30 19:19:49,495 utils.trn_utils DEBUG: Num_it 382 loss: 5.2796 
+
+2024-01-30 19:19:49,674 utils.trn_utils DEBUG: Num_it 384 loss: 5.2688 
+
+2024-01-30 19:20:04,193 utils.trn_utils DEBUG: Num_it 386 loss: 5.2633 
+
+2024-01-30 19:20:04,389 utils.trn_utils DEBUG: Num_it 388 loss: 5.2653 
+
+2024-01-30 19:20:17,901 utils.trn_utils DEBUG: Num_it 390 loss: 5.2769 
+
+2024-01-30 19:20:18,093 utils.trn_utils DEBUG: Num_it 392 loss: 5.2976 
+
+2024-01-30 19:20:30,870 utils.trn_utils DEBUG: Num_it 394 loss: 5.3158 
+
+2024-01-30 19:20:31,052 utils.trn_utils DEBUG: Num_it 396 loss: 5.3048 
+
+2024-01-30 19:20:45,760 utils.trn_utils DEBUG: Num_it 398 loss: 5.2817 
+
+2024-01-30 19:20:45,923 utils.trn_utils DEBUG: Num_it 400 loss: 5.3097 
+
+2024-01-30 19:20:57,102 utils.trn_utils DEBUG: Num_it 402 loss: 5.3062 
+
+2024-01-30 19:20:57,282 utils.trn_utils DEBUG: Num_it 404 loss: 5.2226 
+
+2024-01-30 19:21:13,280 utils.trn_utils DEBUG: Num_it 406 loss: 5.2425 
+
+2024-01-30 19:21:13,470 utils.trn_utils DEBUG: Num_it 408 loss: 5.2714 
+
+2024-01-30 19:21:29,149 utils.trn_utils DEBUG: Num_it 410 loss: 5.2472 
+
+2024-01-30 19:21:29,351 utils.trn_utils DEBUG: Num_it 412 loss: 5.2778 
+
+2024-01-30 19:21:41,221 utils.trn_utils DEBUG: Num_it 414 loss: 5.2967 
+
+2024-01-30 19:21:42,202 utils.trn_utils DEBUG: Num_it 416 loss: 5.2924 
+
+2024-01-30 19:21:57,901 utils.trn_utils DEBUG: Num_it 418 loss: 5.2311 
+
+2024-01-30 19:21:58,095 utils.trn_utils DEBUG: Num_it 420 loss: 5.2284 
+
+2024-01-30 19:22:15,030 utils.trn_utils DEBUG: Num_it 422 loss: 5.2264 
+
+2024-01-30 19:22:15,206 utils.trn_utils DEBUG: Num_it 424 loss: 5.2032 
+
+2024-01-30 19:22:30,621 utils.trn_utils DEBUG: Num_it 426 loss: 5.2262 
+
+2024-01-30 19:22:30,801 utils.trn_utils DEBUG: Num_it 428 loss: 5.2166 
+
+2024-01-30 19:22:44,210 utils.trn_utils DEBUG: Num_it 430 loss: 5.2115 
+
+2024-01-30 19:22:44,401 utils.trn_utils DEBUG: Num_it 432 loss: 5.1434 
+
+2024-01-30 19:22:56,618 utils.trn_utils DEBUG: Num_it 434 loss: 5.1443 
+
+2024-01-30 19:22:56,811 utils.trn_utils DEBUG: Num_it 436 loss: 5.1827 
+
+2024-01-30 19:23:11,885 utils.trn_utils DEBUG: Num_it 438 loss: 5.1482 
+
+2024-01-30 19:23:12,063 utils.trn_utils DEBUG: Num_it 440 loss: 5.1411 
+
+2024-01-30 19:23:29,262 utils.trn_utils DEBUG: Num_it 442 loss: 5.1513 
+
+2024-01-30 19:23:29,488 utils.trn_utils DEBUG: Num_it 444 loss: 5.1638 
+
+2024-01-30 19:23:44,126 utils.trn_utils DEBUG: Num_it 446 loss: 5.1953 
+
+2024-01-30 19:23:44,306 utils.trn_utils DEBUG: Num_it 448 loss: 5.2496 
+
+2024-01-30 19:23:57,129 utils.trn_utils DEBUG: Num_it 450 loss: 5.2429 
+
+2024-01-30 19:23:57,320 utils.trn_utils DEBUG: Num_it 452 loss: 5.2358 
+
+2024-01-30 19:24:08,729 utils.trn_utils DEBUG: Num_it 454 loss: 5.2626 
+
+2024-01-30 19:24:08,923 utils.trn_utils DEBUG: Num_it 456 loss: 5.2473 
+
+2024-01-30 19:24:28,899 utils.trn_utils DEBUG: Num_it 458 loss: 5.2566 
+
+2024-01-30 19:24:29,089 utils.trn_utils DEBUG: Num_it 460 loss: 5.2786 
+
+2024-01-30 19:24:39,863 utils.trn_utils DEBUG: Num_it 462 loss: 5.2751 
+
+2024-01-30 19:24:40,055 utils.trn_utils DEBUG: Num_it 464 loss: 5.2670 
+
+2024-01-30 19:24:55,789 utils.trn_utils DEBUG: Num_it 466 loss: 5.2426 
+
+2024-01-30 19:24:55,968 utils.trn_utils DEBUG: Num_it 468 loss: 5.2345 
+
+2024-01-30 19:25:09,048 utils.trn_utils DEBUG: Num_it 470 loss: 5.2506 
+
+2024-01-30 19:25:09,231 utils.trn_utils DEBUG: Num_it 472 loss: 5.2786 
+
+2024-01-30 19:25:23,037 utils.trn_utils DEBUG: Num_it 474 loss: 5.2033 
+
+2024-01-30 19:25:23,218 utils.trn_utils DEBUG: Num_it 476 loss: 5.1908 
+
+2024-01-30 19:25:40,162 utils.trn_utils DEBUG: Num_it 478 loss: 5.2005 
+
+2024-01-30 19:25:40,345 utils.trn_utils DEBUG: Num_it 480 loss: 5.2102 
+
+2024-01-30 19:25:53,635 utils.trn_utils DEBUG: Num_it 482 loss: 5.2133 
+
+2024-01-30 19:25:53,829 utils.trn_utils DEBUG: Num_it 484 loss: 5.1702 
+
+2024-01-30 19:26:03,758 utils.trn_utils DEBUG: Num_it 486 loss: 5.2480 
+
+2024-01-30 19:26:03,945 utils.trn_utils DEBUG: Num_it 488 loss: 5.2597 
+
+2024-01-30 19:26:20,711 utils.trn_utils DEBUG: Num_it 490 loss: 5.2225 
+
+2024-01-30 19:26:20,905 utils.trn_utils DEBUG: Num_it 492 loss: 5.2182 
+
+2024-01-30 19:26:34,099 utils.trn_utils DEBUG: Num_it 494 loss: 5.1868 
+
+2024-01-30 19:26:34,280 utils.trn_utils DEBUG: Num_it 496 loss: 5.1726 
+
+2024-01-30 19:26:47,244 utils.trn_utils DEBUG: Num_it 498 loss: 5.1735 
+
+2024-01-30 19:26:47,429 utils.trn_utils DEBUG: Num_it 500 loss: 5.2153 
+
+2024-01-30 19:27:01,470 utils.trn_utils DEBUG: Num_it 502 loss: 5.2476 
+
+2024-01-30 19:27:01,646 utils.trn_utils DEBUG: Num_it 504 loss: 5.1922 
+
+2024-01-30 19:27:13,108 utils.trn_utils DEBUG: Num_it 506 loss: 5.2139 
+
+2024-01-30 19:27:16,369 utils.trn_utils DEBUG: Num_it 508 loss: 5.2397 
+
+2024-01-30 19:27:28,573 utils.trn_utils DEBUG: Num_it 510 loss: 5.2093 
+
+2024-01-30 19:27:28,751 utils.trn_utils DEBUG: Num_it 512 loss: 5.2300 
+
+2024-01-30 19:27:43,704 utils.trn_utils DEBUG: Num_it 514 loss: 5.2658 
+
+2024-01-30 19:27:43,893 utils.trn_utils DEBUG: Num_it 516 loss: 5.2469 
+
+2024-01-30 19:28:01,472 utils.trn_utils DEBUG: Num_it 518 loss: 5.1940 
+
+2024-01-30 19:28:01,645 utils.trn_utils DEBUG: Num_it 520 loss: 5.1667 
+
+2024-01-30 19:28:12,492 utils.trn_utils DEBUG: Num_it 522 loss: 5.1715 
+
+2024-01-30 19:28:12,680 utils.trn_utils DEBUG: Num_it 524 loss: 5.1530 
+
+2024-01-30 19:28:27,847 utils.trn_utils DEBUG: Num_it 526 loss: 5.1387 
+
+2024-01-30 19:28:28,039 utils.trn_utils DEBUG: Num_it 528 loss: 5.1298 
+
+2024-01-30 19:28:39,325 utils.trn_utils DEBUG: Num_it 530 loss: 5.1790 
+
+2024-01-30 19:28:43,147 utils.trn_utils DEBUG: Num_it 532 loss: 5.1901 
+
+2024-01-30 19:28:50,054 utils.trn_utils DEBUG: Num_it 534 loss: 5.1185 
+
+2024-01-30 19:28:57,320 utils.trn_utils DEBUG: Num_it 536 loss: 5.1305 
+
+2024-01-30 19:29:10,268 utils.trn_utils DEBUG: Num_it 538 loss: 5.1962 
+
+2024-01-30 19:29:10,457 utils.trn_utils DEBUG: Num_it 540 loss: 5.1461 
+
+2024-01-30 19:29:21,916 utils.trn_utils DEBUG: Num_it 542 loss: 5.1304 
+
+2024-01-30 19:29:23,123 utils.trn_utils DEBUG: Num_it 544 loss: 5.1236 
+
+2024-01-30 19:29:38,338 utils.trn_utils DEBUG: Num_it 546 loss: 5.1379 
+
+2024-01-30 19:29:38,531 utils.trn_utils DEBUG: Num_it 548 loss: 5.1717 
+
+2024-01-30 19:29:53,380 utils.trn_utils DEBUG: Num_it 550 loss: 5.2169 
+
+2024-01-30 19:29:53,572 utils.trn_utils DEBUG: Num_it 552 loss: 5.2606 
+
+2024-01-30 19:30:10,407 utils.trn_utils DEBUG: Num_it 554 loss: 5.2648 
+
+2024-01-30 19:30:10,594 utils.trn_utils DEBUG: Num_it 556 loss: 5.2435 
+
+2024-01-30 19:30:22,459 utils.trn_utils DEBUG: Num_it 558 loss: 5.1854 
+
+2024-01-30 19:30:22,639 utils.trn_utils DEBUG: Num_it 560 loss: 5.2110 
+
+2024-01-30 19:30:38,358 utils.trn_utils DEBUG: Num_it 562 loss: 5.2148 
+
+2024-01-30 19:30:38,545 utils.trn_utils DEBUG: Num_it 564 loss: 5.1707 
+
+2024-01-30 19:30:53,249 utils.trn_utils DEBUG: Num_it 566 loss: 5.1579 
+
+2024-01-30 19:30:53,444 utils.trn_utils DEBUG: Num_it 568 loss: 5.1754 
+
+2024-01-30 19:31:08,412 utils.trn_utils DEBUG: Num_it 570 loss: 5.2457 
+
+2024-01-30 19:31:08,591 utils.trn_utils DEBUG: Num_it 572 loss: 5.1735 
+
+2024-01-30 19:31:21,542 utils.trn_utils DEBUG: Num_it 574 loss: 5.1875 
+
+2024-01-30 19:31:21,734 utils.trn_utils DEBUG: Num_it 576 loss: 5.1770 
+
+2024-01-30 19:31:34,313 utils.trn_utils DEBUG: Num_it 578 loss: 5.1029 
+
+2024-01-30 19:31:34,492 utils.trn_utils DEBUG: Num_it 580 loss: 5.0796 
+
+2024-01-30 19:31:49,437 utils.trn_utils DEBUG: Num_it 582 loss: 5.0681 
+
+2024-01-30 19:31:49,624 utils.trn_utils DEBUG: Num_it 584 loss: 5.0636 
+
+2024-01-30 19:32:08,440 utils.trn_utils DEBUG: Num_it 586 loss: 5.0962 
+
+2024-01-30 19:32:08,621 utils.trn_utils DEBUG: Num_it 588 loss: 5.1040 
+
+2024-01-30 19:32:20,918 utils.trn_utils DEBUG: Num_it 590 loss: 5.1256 
+
+2024-01-30 19:32:21,091 utils.trn_utils DEBUG: Num_it 592 loss: 5.0797 
+
+2024-01-30 19:32:39,020 utils.trn_utils DEBUG: Num_it 594 loss: 5.0685 
+
+2024-01-30 19:32:39,208 utils.trn_utils DEBUG: Num_it 596 loss: 5.1058 
+
+2024-01-30 19:32:53,134 utils.trn_utils DEBUG: Num_it 598 loss: 5.1578 
+
+2024-01-30 19:32:53,313 utils.trn_utils DEBUG: Num_it 600 loss: 5.1835 
+
+2024-01-30 19:33:05,820 utils.trn_utils DEBUG: Num_it 602 loss: 5.1892 
+
+2024-01-30 19:33:06,005 utils.trn_utils DEBUG: Num_it 604 loss: 5.2165 
+
+2024-01-30 19:33:19,695 utils.trn_utils DEBUG: Num_it 606 loss: 5.2020 
+
+2024-01-30 19:33:19,874 utils.trn_utils DEBUG: Num_it 608 loss: 5.2248 
+
+2024-01-30 19:33:33,099 utils.trn_utils DEBUG: Num_it 610 loss: 5.2077 
+
+2024-01-30 19:33:33,275 utils.trn_utils DEBUG: Num_it 612 loss: 5.1825 
+
+2024-01-30 19:33:48,934 utils.trn_utils DEBUG: Num_it 614 loss: 5.1403 
+
+2024-01-30 19:33:49,108 utils.trn_utils DEBUG: Num_it 616 loss: 5.1666 
+
+2024-01-30 19:34:01,934 utils.trn_utils DEBUG: Num_it 618 loss: 5.1978 
+
+2024-01-30 19:34:02,122 utils.trn_utils DEBUG: Num_it 620 loss: 5.2136 
+
+2024-01-30 19:34:17,743 utils.trn_utils DEBUG: Num_it 622 loss: 5.2178 
+
+2024-01-30 19:34:17,922 utils.trn_utils DEBUG: Num_it 624 loss: 5.2592 
+
+2024-01-30 19:34:33,071 utils.trn_utils DEBUG: Num_it 626 loss: 5.1820 
+
+2024-01-30 19:34:33,257 utils.trn_utils DEBUG: Num_it 628 loss: 5.1516 
+
+2024-01-30 19:34:47,690 utils.trn_utils DEBUG: Num_it 630 loss: 5.1222 
+
+2024-01-30 19:34:47,880 utils.trn_utils DEBUG: Num_it 632 loss: 5.1827 
+
+2024-01-30 19:35:02,193 utils.trn_utils DEBUG: Num_it 634 loss: 5.1872 
+
+2024-01-30 19:35:02,382 utils.trn_utils DEBUG: Num_it 636 loss: 5.1892 
+
+2024-01-30 19:35:16,184 utils.trn_utils DEBUG: Num_it 638 loss: 5.1500 
+
+2024-01-30 19:35:16,385 utils.trn_utils DEBUG: Num_it 640 loss: 5.1120 
+
+2024-01-30 19:35:28,504 utils.trn_utils DEBUG: Num_it 642 loss: 5.1213 
+
+2024-01-30 19:35:28,696 utils.trn_utils DEBUG: Num_it 644 loss: 5.1105 
+
+2024-01-30 19:35:43,479 utils.trn_utils DEBUG: Num_it 646 loss: 5.1035 
+
+2024-01-30 19:35:43,678 utils.trn_utils DEBUG: Num_it 648 loss: 5.1254 
+
+2024-01-30 19:35:56,327 utils.trn_utils DEBUG: Num_it 650 loss: 5.1001 
+
+2024-01-30 19:35:56,552 utils.trn_utils DEBUG: Num_it 652 loss: 5.1348 
+
+2024-01-30 19:36:07,889 utils.trn_utils DEBUG: Num_it 654 loss: 5.0786 
+
+2024-01-30 19:36:08,070 utils.trn_utils DEBUG: Num_it 656 loss: 5.0920 
+
+2024-01-30 19:36:20,340 utils.trn_utils DEBUG: Num_it 658 loss: 5.0727 
+
+2024-01-30 19:36:22,057 utils.trn_utils DEBUG: Num_it 660 loss: 5.1250 
+
+2024-01-30 19:36:31,963 utils.trn_utils DEBUG: Num_it 662 loss: 5.1014 
+
+2024-01-30 19:36:33,035 utils.trn_utils DEBUG: Num_it 664 loss: 5.1227 
+
+2024-01-30 19:36:44,164 utils.trn_utils DEBUG: Num_it 666 loss: 5.1565 
+
+2024-01-30 19:36:49,544 utils.trn_utils DEBUG: Num_it 668 loss: 5.1060 
+
+2024-01-30 19:36:56,892 utils.trn_utils DEBUG: Num_it 670 loss: 5.0701 
+
+2024-01-30 19:37:01,349 utils.trn_utils DEBUG: Num_it 672 loss: 5.1274 
+
+2024-01-30 19:37:18,797 utils.trn_utils DEBUG: Num_it 674 loss: 5.1346 
+
+2024-01-30 19:37:18,983 utils.trn_utils DEBUG: Num_it 676 loss: 5.0790 
+
+2024-01-30 19:37:34,539 utils.trn_utils DEBUG: Num_it 678 loss: 5.0753 
+
+2024-01-30 19:37:34,737 utils.trn_utils DEBUG: Num_it 680 loss: 5.1598 
+
+2024-01-30 19:37:46,602 utils.trn_utils DEBUG: Num_it 682 loss: 5.1390 
+
+2024-01-30 19:37:46,783 utils.trn_utils DEBUG: Num_it 684 loss: 5.1131 
+
+2024-01-30 19:37:57,452 utils.trn_utils DEBUG: Num_it 686 loss: 5.0945 
+
+2024-01-30 19:37:57,623 utils.trn_utils DEBUG: Num_it 688 loss: 5.0977 
+
+2024-01-30 19:38:10,468 utils.trn_utils DEBUG: Num_it 690 loss: 5.0868 
+
+2024-01-30 19:38:10,641 utils.trn_utils DEBUG: Num_it 692 loss: 5.0995 
+
+2024-01-30 19:38:16,096 utils.trn_utils DEBUG: Num_it 694 loss: 5.1463 
+
+2024-01-30 19:43:14,099 utils.trn_utils DEBUG: Num_it 696 loss: 4.9686 
+
+2024-01-30 19:43:14,298 utils.trn_utils DEBUG: Num_it 698 loss: 5.0183 
+
+2024-01-30 19:43:27,691 utils.trn_utils DEBUG: Num_it 700 loss: 4.9979 
+
+2024-01-30 19:43:27,878 utils.trn_utils DEBUG: Num_it 702 loss: 5.0287 
+
+2024-01-30 19:43:39,318 utils.trn_utils DEBUG: Num_it 704 loss: 4.9903 
+
+2024-01-30 19:43:39,491 utils.trn_utils DEBUG: Num_it 706 loss: 4.9833 
+
+2024-01-30 19:43:51,316 utils.trn_utils DEBUG: Num_it 708 loss: 5.0127 
+
+2024-01-30 19:43:51,491 utils.trn_utils DEBUG: Num_it 710 loss: 5.1065 
+
+2024-01-30 19:44:02,621 utils.trn_utils DEBUG: Num_it 712 loss: 5.1030 
+
+2024-01-30 19:44:02,802 utils.trn_utils DEBUG: Num_it 714 loss: 5.0586 
+
+2024-01-30 19:44:13,729 utils.trn_utils DEBUG: Num_it 716 loss: 4.9897 
+
+2024-01-30 19:44:13,913 utils.trn_utils DEBUG: Num_it 718 loss: 5.0315 
+
+2024-01-30 19:44:28,729 utils.trn_utils DEBUG: Num_it 720 loss: 5.0278 
+
+2024-01-30 19:44:28,911 utils.trn_utils DEBUG: Num_it 722 loss: 5.0497 
+
+2024-01-30 19:44:40,275 utils.trn_utils DEBUG: Num_it 724 loss: 5.0366 
+
+2024-01-30 19:44:40,455 utils.trn_utils DEBUG: Num_it 726 loss: 5.0648 
+
+2024-01-30 19:44:57,425 utils.trn_utils DEBUG: Num_it 728 loss: 5.0319 
+
+2024-01-30 19:44:57,614 utils.trn_utils DEBUG: Num_it 730 loss: 5.0391 
+
+2024-01-30 19:45:14,354 utils.trn_utils DEBUG: Num_it 732 loss: 5.0467 
+
+2024-01-30 19:45:14,523 utils.trn_utils DEBUG: Num_it 734 loss: 5.0778 
+
+2024-01-30 19:45:27,410 utils.trn_utils DEBUG: Num_it 736 loss: 5.0046 
+
+2024-01-30 19:45:27,598 utils.trn_utils DEBUG: Num_it 738 loss: 5.0033 
+
+2024-01-30 19:45:38,949 utils.trn_utils DEBUG: Num_it 740 loss: 5.0255 
+
+2024-01-30 19:45:39,130 utils.trn_utils DEBUG: Num_it 742 loss: 5.0201 
+
+2024-01-30 19:45:50,951 utils.trn_utils DEBUG: Num_it 744 loss: 4.9999 
+
+2024-01-30 19:45:51,135 utils.trn_utils DEBUG: Num_it 746 loss: 4.9961 
+
+2024-01-30 19:46:02,525 utils.trn_utils DEBUG: Num_it 748 loss: 4.9906 
+
+2024-01-30 19:46:02,709 utils.trn_utils DEBUG: Num_it 750 loss: 4.9923 
+
+2024-01-30 19:46:14,186 utils.trn_utils DEBUG: Num_it 752 loss: 5.0147 
+
+2024-01-30 19:46:16,185 utils.trn_utils DEBUG: Num_it 754 loss: 5.0397 
+
+2024-01-30 19:46:31,137 utils.trn_utils DEBUG: Num_it 756 loss: 5.0007 
+
+2024-01-30 19:46:33,453 utils.trn_utils DEBUG: Num_it 758 loss: 4.9637 
+
+2024-01-30 19:46:42,923 utils.trn_utils DEBUG: Num_it 760 loss: 5.0423 
+
+2024-01-30 19:46:45,202 utils.trn_utils DEBUG: Num_it 762 loss: 5.0587 
+
+2024-01-30 19:46:57,206 utils.trn_utils DEBUG: Num_it 764 loss: 5.0664 
+
+2024-01-30 19:46:57,887 utils.trn_utils DEBUG: Num_it 766 loss: 5.0640 
+
+2024-01-30 19:47:09,134 utils.trn_utils DEBUG: Num_it 768 loss: 5.0559 
+
+2024-01-30 19:47:11,095 utils.trn_utils DEBUG: Num_it 770 loss: 5.0599 
+
+2024-01-30 19:47:21,442 utils.trn_utils DEBUG: Num_it 772 loss: 5.0296 
+
+2024-01-30 19:47:28,694 utils.trn_utils DEBUG: Num_it 774 loss: 4.9978 
+
+2024-01-30 19:47:33,707 utils.trn_utils DEBUG: Num_it 776 loss: 5.0245 
+
+2024-01-30 19:47:39,659 utils.trn_utils DEBUG: Num_it 778 loss: 4.9233 
+
+2024-01-30 19:47:51,272 utils.trn_utils DEBUG: Num_it 780 loss: 4.8844 
+
+2024-01-30 19:47:58,402 utils.trn_utils DEBUG: Num_it 782 loss: 4.9582 
+
+2024-01-30 19:48:03,458 utils.trn_utils DEBUG: Num_it 784 loss: 5.0020 
+
+2024-01-30 19:48:11,125 utils.trn_utils DEBUG: Num_it 786 loss: 5.0028 
+
+2024-01-30 19:48:18,575 utils.trn_utils DEBUG: Num_it 788 loss: 5.0177 
+
+2024-01-30 19:48:24,679 utils.trn_utils DEBUG: Num_it 790 loss: 4.9732 
+
+2024-01-30 19:48:34,383 utils.trn_utils DEBUG: Num_it 792 loss: 4.9718 
+
+2024-01-30 19:48:36,258 utils.trn_utils DEBUG: Num_it 794 loss: 5.0082 
+
+2024-01-30 19:48:47,545 utils.trn_utils DEBUG: Num_it 796 loss: 5.0050 
+
+2024-01-30 19:48:56,587 utils.trn_utils DEBUG: Num_it 798 loss: 5.0147 
+
+2024-01-30 19:49:03,266 utils.trn_utils DEBUG: Num_it 800 loss: 4.9904 
+
+2024-01-30 19:49:18,564 utils.trn_utils DEBUG: Num_it 802 loss: 4.9921 
+
+2024-01-30 19:49:18,744 utils.trn_utils DEBUG: Num_it 804 loss: 4.9827 
+
+2024-01-30 19:49:33,680 utils.trn_utils DEBUG: Num_it 806 loss: 5.0108 
+
+2024-01-30 19:49:33,873 utils.trn_utils DEBUG: Num_it 808 loss: 5.0076 
+
+2024-01-30 19:49:45,352 utils.trn_utils DEBUG: Num_it 810 loss: 5.0554 
+
+2024-01-30 19:49:45,539 utils.trn_utils DEBUG: Num_it 812 loss: 5.1014 
+
+2024-01-30 19:50:02,090 utils.trn_utils DEBUG: Num_it 814 loss: 5.1374 
+
+2024-01-30 19:50:02,271 utils.trn_utils DEBUG: Num_it 816 loss: 5.1319 
+
+2024-01-30 19:50:16,077 utils.trn_utils DEBUG: Num_it 818 loss: 5.1454 
+
+2024-01-30 19:50:16,263 utils.trn_utils DEBUG: Num_it 820 loss: 5.1369 
+
+2024-01-30 19:50:31,744 utils.trn_utils DEBUG: Num_it 822 loss: 5.1474 
+
+2024-01-30 19:50:31,929 utils.trn_utils DEBUG: Num_it 824 loss: 5.1589 
+
+2024-01-30 19:50:43,801 utils.trn_utils DEBUG: Num_it 826 loss: 5.1574 
+
+2024-01-30 19:50:43,984 utils.trn_utils DEBUG: Num_it 828 loss: 5.1815 
+
+2024-01-30 19:50:55,001 utils.trn_utils DEBUG: Num_it 830 loss: 5.1732 
+
+2024-01-30 19:51:01,001 utils.trn_utils DEBUG: Num_it 832 loss: 5.1665 
+
+2024-01-30 19:51:09,874 utils.trn_utils DEBUG: Num_it 834 loss: 5.1614 
+
+2024-01-30 19:51:18,536 utils.trn_utils DEBUG: Num_it 836 loss: 5.1752 
+
+2024-01-30 19:51:22,946 utils.trn_utils DEBUG: Num_it 838 loss: 5.1702 
+
+2024-01-30 19:51:30,585 utils.trn_utils DEBUG: Num_it 840 loss: 5.1336 
+
+2024-01-30 19:51:37,867 utils.trn_utils DEBUG: Num_it 842 loss: 5.0669 
+
+2024-01-30 19:51:44,611 utils.trn_utils DEBUG: Num_it 844 loss: 5.1022 
+
+2024-01-30 19:51:49,551 utils.trn_utils DEBUG: Num_it 846 loss: 5.1272 
+
+2024-01-30 19:52:01,375 utils.trn_utils DEBUG: Num_it 848 loss: 5.1305 
+
+2024-01-30 19:52:05,911 utils.trn_utils DEBUG: Num_it 850 loss: 5.1281 
+
+2024-01-30 19:52:14,310 utils.trn_utils DEBUG: Num_it 852 loss: 5.0905 
+
+2024-01-30 19:52:18,637 utils.trn_utils DEBUG: Num_it 854 loss: 5.0556 
+
+2024-01-30 19:52:30,056 utils.trn_utils DEBUG: Num_it 856 loss: 5.0569 
+
+2024-01-30 19:52:30,805 utils.trn_utils DEBUG: Num_it 858 loss: 5.0788 
+
+2024-01-30 19:52:50,491 utils.trn_utils DEBUG: Num_it 860 loss: 5.0196 
+
+2024-01-30 19:52:50,675 utils.trn_utils DEBUG: Num_it 862 loss: 5.0198 
+
+2024-01-30 19:53:05,516 utils.trn_utils DEBUG: Num_it 864 loss: 5.0152 
+
+2024-01-30 19:53:05,697 utils.trn_utils DEBUG: Num_it 866 loss: 5.0215 
+
+2024-01-30 19:53:22,720 utils.trn_utils DEBUG: Num_it 868 loss: 5.0511 
+
+2024-01-30 19:53:22,885 utils.trn_utils DEBUG: Num_it 870 loss: 5.0093 
+
+2024-01-30 19:53:36,568 utils.trn_utils DEBUG: Num_it 872 loss: 4.9730 
+
+2024-01-30 19:53:36,753 utils.trn_utils DEBUG: Num_it 874 loss: 4.9453 
+
+2024-01-30 19:53:48,102 utils.trn_utils DEBUG: Num_it 876 loss: 4.9846 
+
+2024-01-30 19:53:48,283 utils.trn_utils DEBUG: Num_it 878 loss: 5.0092 
+
+2024-01-30 19:53:59,457 utils.trn_utils DEBUG: Num_it 880 loss: 5.0236 
+
+2024-01-30 19:54:10,854 utils.trn_utils DEBUG: Num_it 882 loss: 5.0306 
+
+2024-01-30 19:54:12,203 utils.trn_utils DEBUG: Num_it 884 loss: 5.0567 
+
+2024-01-30 19:54:25,495 utils.trn_utils DEBUG: Num_it 886 loss: 5.0598 
+
+2024-01-30 19:54:25,677 utils.trn_utils DEBUG: Num_it 888 loss: 5.0259 
+
+2024-01-30 19:54:45,264 utils.trn_utils DEBUG: Num_it 890 loss: 5.0325 
+
+2024-01-30 19:54:45,454 utils.trn_utils DEBUG: Num_it 892 loss: 5.0402 
+
+2024-01-30 19:55:01,164 utils.trn_utils DEBUG: Num_it 894 loss: 5.0219 
+
+2024-01-30 19:55:01,347 utils.trn_utils DEBUG: Num_it 896 loss: 4.9807 
+
+2024-01-30 19:55:14,124 utils.trn_utils DEBUG: Num_it 898 loss: 4.9324 
+
+2024-01-30 19:55:14,319 utils.trn_utils DEBUG: Num_it 900 loss: 4.9388 
+
+2024-01-30 19:55:25,932 utils.trn_utils DEBUG: Num_it 902 loss: 4.9440 
+
+2024-01-30 19:55:26,113 utils.trn_utils DEBUG: Num_it 904 loss: 4.9975 
+
+2024-01-30 19:55:42,549 utils.trn_utils DEBUG: Num_it 906 loss: 5.0009 
+
+2024-01-30 19:55:42,717 utils.trn_utils DEBUG: Num_it 908 loss: 4.9696 
+
+2024-01-30 19:55:53,950 utils.trn_utils DEBUG: Num_it 910 loss: 4.9666 
+
+2024-01-30 19:55:54,141 utils.trn_utils DEBUG: Num_it 912 loss: 4.9265 
+
+2024-01-30 19:56:06,464 utils.trn_utils DEBUG: Num_it 914 loss: 4.9605 
+
+2024-01-30 19:56:06,662 utils.trn_utils DEBUG: Num_it 916 loss: 5.0118 
+
+2024-01-30 19:56:18,767 utils.trn_utils DEBUG: Num_it 918 loss: 5.0483 
+
+2024-01-30 19:56:18,956 utils.trn_utils DEBUG: Num_it 920 loss: 5.0408 
+
+2024-01-30 19:56:37,398 utils.trn_utils DEBUG: Num_it 922 loss: 5.0190 
+
+2024-01-30 19:56:37,599 utils.trn_utils DEBUG: Num_it 924 loss: 5.0237 
+
+2024-01-30 19:56:49,976 utils.trn_utils DEBUG: Num_it 926 loss: 5.0278 
+
+2024-01-30 19:56:50,165 utils.trn_utils DEBUG: Num_it 928 loss: 5.0140 
+
+2024-01-30 19:57:01,545 utils.trn_utils DEBUG: Num_it 930 loss: 5.0010 
+
+2024-01-30 19:57:01,729 utils.trn_utils DEBUG: Num_it 932 loss: 4.9825 
+
+2024-01-30 19:57:17,628 utils.trn_utils DEBUG: Num_it 934 loss: 4.9967 
+
+2024-01-30 19:57:17,808 utils.trn_utils DEBUG: Num_it 936 loss: 5.0340 
+
+2024-01-30 19:57:32,001 utils.trn_utils DEBUG: Num_it 938 loss: 5.0345 
+
+2024-01-30 19:57:32,187 utils.trn_utils DEBUG: Num_it 940 loss: 4.9998 
+
+2024-01-30 19:57:43,810 utils.trn_utils DEBUG: Num_it 942 loss: 4.9369 
+
+2024-01-30 19:57:48,262 utils.trn_utils DEBUG: Num_it 944 loss: 4.9786 
+
+2024-01-30 19:57:57,649 utils.trn_utils DEBUG: Num_it 946 loss: 4.9979 
+
+2024-01-30 19:58:01,057 utils.trn_utils DEBUG: Num_it 948 loss: 5.0210 
+
+2024-01-30 19:58:08,911 utils.trn_utils DEBUG: Num_it 950 loss: 5.0362 
+
+2024-01-30 19:58:15,238 utils.trn_utils DEBUG: Num_it 952 loss: 5.0315 
+
+2024-01-30 19:58:20,735 utils.trn_utils DEBUG: Num_it 954 loss: 5.0257 
+
+2024-01-30 19:58:32,592 utils.trn_utils DEBUG: Num_it 956 loss: 4.9910 
+
+2024-01-30 19:58:33,729 utils.trn_utils DEBUG: Num_it 958 loss: 5.0055 
+
+2024-01-30 19:58:47,946 utils.trn_utils DEBUG: Num_it 960 loss: 5.0701 
+
+2024-01-30 19:58:48,179 utils.trn_utils DEBUG: Num_it 962 loss: 5.0505 
+
+2024-01-30 19:59:07,344 utils.trn_utils DEBUG: Num_it 964 loss: 5.0531 
+
+2024-01-30 19:59:07,528 utils.trn_utils DEBUG: Num_it 966 loss: 5.0573 
+
+2024-01-30 19:59:20,802 utils.trn_utils DEBUG: Num_it 968 loss: 5.0623 
+
+2024-01-30 19:59:20,980 utils.trn_utils DEBUG: Num_it 970 loss: 5.0629 
+
+2024-01-30 19:59:33,156 utils.trn_utils DEBUG: Num_it 972 loss: 5.0474 
+
+2024-01-30 19:59:33,335 utils.trn_utils DEBUG: Num_it 974 loss: 5.0144 
+
+2024-01-30 19:59:49,988 utils.trn_utils DEBUG: Num_it 976 loss: 5.0207 
+
+2024-01-30 19:59:50,160 utils.trn_utils DEBUG: Num_it 978 loss: 5.0487 
+
+2024-01-30 20:00:08,327 utils.trn_utils DEBUG: Num_it 980 loss: 5.0438 
+
+2024-01-30 20:00:08,515 utils.trn_utils DEBUG: Num_it 982 loss: 5.0301 
+
+2024-01-30 20:00:22,333 utils.trn_utils DEBUG: Num_it 984 loss: 5.0237 
+
+2024-01-30 20:00:22,528 utils.trn_utils DEBUG: Num_it 986 loss: 5.0205 
+
+2024-01-30 20:00:32,833 utils.trn_utils DEBUG: Num_it 988 loss: 4.9602 
+
+2024-01-30 20:00:33,029 utils.trn_utils DEBUG: Num_it 990 loss: 4.9481 
+
+2024-01-30 20:00:44,069 utils.trn_utils DEBUG: Num_it 992 loss: 4.9201 
+
+2024-01-30 20:00:44,239 utils.trn_utils DEBUG: Num_it 994 loss: 4.8908 
+
+2024-01-30 20:01:07,080 utils.trn_utils DEBUG: Num_it 996 loss: 4.9256 
+
+2024-01-30 20:01:07,261 utils.trn_utils DEBUG: Num_it 998 loss: 4.9770 
+
+2024-01-30 20:01:21,929 utils.trn_utils DEBUG: Num_it 1000 loss: 4.9519 
+
+2024-01-30 20:01:22,119 utils.trn_utils DEBUG: Num_it 1002 loss: 4.9598 
+
+2024-01-30 20:01:32,612 utils.trn_utils DEBUG: Num_it 1004 loss: 4.9755 
+
+2024-01-30 20:01:32,807 utils.trn_utils DEBUG: Num_it 1006 loss: 4.9751 
+
+2024-01-30 20:01:46,750 utils.trn_utils DEBUG: Num_it 1008 loss: 4.9906 
+
+2024-01-30 20:01:46,929 utils.trn_utils DEBUG: Num_it 1010 loss: 5.0473 
+
+2024-01-30 20:01:59,938 utils.trn_utils DEBUG: Num_it 1012 loss: 4.9890 
+
+2024-01-30 20:02:00,133 utils.trn_utils DEBUG: Num_it 1014 loss: 5.0049 
+
+2024-01-30 20:02:12,203 utils.trn_utils DEBUG: Num_it 1016 loss: 4.9864 
+
+2024-01-30 20:02:13,063 utils.trn_utils DEBUG: Num_it 1018 loss: 4.9268 
+
+2024-01-30 20:02:30,024 utils.trn_utils DEBUG: Num_it 1020 loss: 4.9788 
+
+2024-01-30 20:02:30,215 utils.trn_utils DEBUG: Num_it 1022 loss: 5.0116 
+
+2024-01-30 20:02:41,922 utils.trn_utils DEBUG: Num_it 1024 loss: 5.0518 
+
+2024-01-30 20:02:42,099 utils.trn_utils DEBUG: Num_it 1026 loss: 5.0857 
+
+2024-01-30 20:02:54,234 utils.trn_utils DEBUG: Num_it 1028 loss: 5.0705 
+
+2024-01-30 20:02:54,399 utils.trn_utils DEBUG: Num_it 1030 loss: 5.0469 
+
+2024-01-30 20:03:15,880 utils.trn_utils DEBUG: Num_it 1032 loss: 5.0630 
+
+2024-01-30 20:03:16,046 utils.trn_utils DEBUG: Num_it 1034 loss: 5.0471 
+
+2024-01-30 20:03:32,035 utils.trn_utils DEBUG: Num_it 1036 loss: 5.0128 
+
+2024-01-30 20:03:32,220 utils.trn_utils DEBUG: Num_it 1038 loss: 4.9910 
+
+2024-01-30 20:03:44,258 utils.trn_utils DEBUG: Num_it 1040 loss: 5.0449 
+
+2024-01-30 20:03:44,441 utils.trn_utils DEBUG: Num_it 1042 loss: 5.0675 
+
+2024-01-30 20:03:57,579 utils.trn_utils DEBUG: Num_it 1044 loss: 4.9897 
+
+2024-01-30 20:03:57,768 utils.trn_utils DEBUG: Num_it 1046 loss: 4.9683 
+
+2024-01-30 20:04:14,225 utils.trn_utils DEBUG: Num_it 1048 loss: 4.9566 
+
+2024-01-30 20:04:14,410 utils.trn_utils DEBUG: Num_it 1050 loss: 4.9142 
+
+2024-01-30 20:04:28,281 utils.trn_utils DEBUG: Num_it 1052 loss: 4.9054 
+
+2024-01-30 20:04:28,469 utils.trn_utils DEBUG: Num_it 1054 loss: 4.9556 
+
+2024-01-30 20:04:45,380 utils.trn_utils DEBUG: Num_it 1056 loss: 4.9804 
+
+2024-01-30 20:04:45,571 utils.trn_utils DEBUG: Num_it 1058 loss: 4.9386 
+
+2024-01-30 20:04:56,733 utils.trn_utils DEBUG: Num_it 1060 loss: 4.9358 
+
+2024-01-30 20:04:56,913 utils.trn_utils DEBUG: Num_it 1062 loss: 4.9403 
+
+2024-01-30 20:05:08,446 utils.trn_utils DEBUG: Num_it 1064 loss: 4.9438 
+
+2024-01-30 20:05:08,626 utils.trn_utils DEBUG: Num_it 1066 loss: 4.9097 
+
+2024-01-30 20:05:25,866 utils.trn_utils DEBUG: Num_it 1068 loss: 4.9001 
+
+2024-01-30 20:05:26,049 utils.trn_utils DEBUG: Num_it 1070 loss: 4.9224 
+
+2024-01-30 20:05:37,290 utils.trn_utils DEBUG: Num_it 1072 loss: 4.8833 
+
+2024-01-30 20:05:37,469 utils.trn_utils DEBUG: Num_it 1074 loss: 4.9480 
+
+2024-01-30 20:05:51,918 utils.trn_utils DEBUG: Num_it 1076 loss: 4.9115 
+
+2024-01-30 20:05:52,103 utils.trn_utils DEBUG: Num_it 1078 loss: 4.9176 
+
+2024-01-30 20:06:07,819 utils.trn_utils DEBUG: Num_it 1080 loss: 4.9334 
+
+2024-01-30 20:06:07,988 utils.trn_utils DEBUG: Num_it 1082 loss: 4.9560 
+
+2024-01-30 20:06:23,837 utils.trn_utils DEBUG: Num_it 1084 loss: 4.9572 
+
+2024-01-30 20:06:24,021 utils.trn_utils DEBUG: Num_it 1086 loss: 4.9639 
+
+2024-01-30 20:06:40,517 utils.trn_utils DEBUG: Num_it 1088 loss: 5.0073 
+
+2024-01-30 20:06:40,695 utils.trn_utils DEBUG: Num_it 1090 loss: 5.0185 
+
+2024-01-30 20:06:53,676 utils.trn_utils DEBUG: Num_it 1092 loss: 5.0364 
+
+2024-01-30 20:06:53,858 utils.trn_utils DEBUG: Num_it 1094 loss: 5.0293 
+
+2024-01-30 20:07:08,051 utils.trn_utils DEBUG: Num_it 1096 loss: 5.0411 
+
+2024-01-30 20:07:08,266 utils.trn_utils DEBUG: Num_it 1098 loss: 5.0292 
+
+2024-01-30 20:07:20,768 utils.trn_utils DEBUG: Num_it 1100 loss: 4.9905 
+
+2024-01-30 20:07:20,946 utils.trn_utils DEBUG: Num_it 1102 loss: 4.9932 
+
+2024-01-30 20:07:40,704 utils.trn_utils DEBUG: Num_it 1104 loss: 4.9971 
+
+2024-01-30 20:07:40,885 utils.trn_utils DEBUG: Num_it 1106 loss: 4.9961 
+
+2024-01-30 20:07:54,080 utils.trn_utils DEBUG: Num_it 1108 loss: 5.0470 
+
+2024-01-30 20:07:54,276 utils.trn_utils DEBUG: Num_it 1110 loss: 5.0594 
+
+2024-01-30 20:08:09,566 utils.trn_utils DEBUG: Num_it 1112 loss: 5.0563 
+
+2024-01-30 20:08:09,748 utils.trn_utils DEBUG: Num_it 1114 loss: 4.9987 
+
+2024-01-30 20:08:23,194 utils.trn_utils DEBUG: Num_it 1116 loss: 4.9289 
+
+2024-01-30 20:08:23,390 utils.trn_utils DEBUG: Num_it 1118 loss: 4.9421 
+
+2024-01-30 20:08:39,425 utils.trn_utils DEBUG: Num_it 1120 loss: 4.9535 
+
+2024-01-30 20:08:39,607 utils.trn_utils DEBUG: Num_it 1122 loss: 4.9553 
+
+2024-01-30 20:08:53,751 utils.trn_utils DEBUG: Num_it 1124 loss: 4.9496 
+
+2024-01-30 20:08:53,939 utils.trn_utils DEBUG: Num_it 1126 loss: 5.0074 
+
+2024-01-30 20:09:03,835 utils.trn_utils DEBUG: Num_it 1128 loss: 4.9957 
+
+2024-01-30 20:09:04,020 utils.trn_utils DEBUG: Num_it 1130 loss: 4.9900 
+
+2024-01-30 20:09:14,978 utils.trn_utils DEBUG: Num_it 1132 loss: 4.9725 
+
+2024-01-30 20:09:15,165 utils.trn_utils DEBUG: Num_it 1134 loss: 5.0052 
+
+2024-01-30 20:09:34,306 utils.trn_utils DEBUG: Num_it 1136 loss: 4.9659 
+
+2024-01-30 20:09:34,479 utils.trn_utils DEBUG: Num_it 1138 loss: 4.9950 
+
+2024-01-30 20:09:50,591 utils.trn_utils DEBUG: Num_it 1140 loss: 5.0425 
+
+2024-01-30 20:09:50,768 utils.trn_utils DEBUG: Num_it 1142 loss: 5.0434 
+
+2024-01-30 20:10:04,815 utils.trn_utils DEBUG: Num_it 1144 loss: 5.0072 
+
+2024-01-30 20:10:05,025 utils.trn_utils DEBUG: Num_it 1146 loss: 4.9924 
+
+2024-01-30 20:10:17,707 utils.trn_utils DEBUG: Num_it 1148 loss: 4.9361 
+
+2024-01-30 20:10:17,889 utils.trn_utils DEBUG: Num_it 1150 loss: 4.9382 
+
+2024-01-30 20:10:33,242 utils.trn_utils DEBUG: Num_it 1152 loss: 4.9549 
+
+2024-01-30 20:10:33,432 utils.trn_utils DEBUG: Num_it 1154 loss: 4.9681 
+
+2024-01-30 20:10:52,479 utils.trn_utils DEBUG: Num_it 1156 loss: 4.9351 
+
+2024-01-30 20:10:52,660 utils.trn_utils DEBUG: Num_it 1158 loss: 4.9246 
+
+2024-01-30 20:11:05,341 utils.trn_utils DEBUG: Num_it 1160 loss: 4.9539 
+
+2024-01-30 20:11:05,529 utils.trn_utils DEBUG: Num_it 1162 loss: 4.9729 
+
+2024-01-30 20:11:17,864 utils.trn_utils DEBUG: Num_it 1164 loss: 4.9647 
+
+2024-01-30 20:11:18,054 utils.trn_utils DEBUG: Num_it 1166 loss: 4.9673 
+
+2024-01-30 20:11:29,365 utils.trn_utils DEBUG: Num_it 1168 loss: 4.9575 
+
+2024-01-30 20:11:32,000 utils.trn_utils DEBUG: Num_it 1170 loss: 4.9327 
+
+2024-01-30 20:11:45,274 utils.trn_utils DEBUG: Num_it 1172 loss: 4.9372 
+
+2024-01-30 20:11:45,461 utils.trn_utils DEBUG: Num_it 1174 loss: 5.0003 
+
+2024-01-30 20:11:56,807 utils.trn_utils DEBUG: Num_it 1176 loss: 5.0537 
+
+2024-01-30 20:11:58,396 utils.trn_utils DEBUG: Num_it 1178 loss: 5.0073 
+
+2024-01-30 20:12:12,553 utils.trn_utils DEBUG: Num_it 1180 loss: 5.0439 
+
+2024-01-30 20:12:12,729 utils.trn_utils DEBUG: Num_it 1182 loss: 4.9982 
+
+2024-01-30 20:12:27,203 utils.trn_utils DEBUG: Num_it 1184 loss: 4.9577 
+
+2024-01-30 20:12:27,388 utils.trn_utils DEBUG: Num_it 1186 loss: 5.0014 
+
+2024-01-30 20:12:39,393 utils.trn_utils DEBUG: Num_it 1188 loss: 4.9726 
+
+2024-01-30 20:12:41,727 utils.trn_utils DEBUG: Num_it 1190 loss: 4.9291 
+
+2024-01-30 20:12:54,771 utils.trn_utils DEBUG: Num_it 1192 loss: 4.8934 
+
+2024-01-30 20:13:00,787 utils.trn_utils DEBUG: Num_it 1194 loss: 4.8702 
+
+2024-01-30 20:13:07,402 utils.trn_utils DEBUG: Num_it 1196 loss: 4.8840 
+
+2024-01-30 20:13:13,538 utils.trn_utils DEBUG: Num_it 1198 loss: 4.8607 
+
+2024-01-30 20:13:26,556 utils.trn_utils DEBUG: Num_it 1200 loss: 4.8592 
+
+2024-01-30 20:13:29,039 utils.trn_utils DEBUG: Num_it 1202 loss: 4.9762 
+
+2024-01-30 20:13:40,347 utils.trn_utils DEBUG: Num_it 1204 loss: 4.9891 
+
+2024-01-30 20:13:47,313 utils.trn_utils DEBUG: Num_it 1206 loss: 4.9710 
+
+2024-01-30 20:13:52,060 utils.trn_utils DEBUG: Num_it 1208 loss: 4.9464 
+
+2024-01-30 20:13:59,058 utils.trn_utils DEBUG: Num_it 1210 loss: 4.8930 
+
+2024-01-30 20:14:15,831 utils.trn_utils DEBUG: Num_it 1212 loss: 4.9483 
+
+2024-01-30 20:14:16,011 utils.trn_utils DEBUG: Num_it 1214 loss: 4.9005 
+
+2024-01-30 20:14:32,475 utils.trn_utils DEBUG: Num_it 1216 loss: 4.8966 
+
+2024-01-30 20:14:32,681 utils.trn_utils DEBUG: Num_it 1218 loss: 4.9027 
+
+2024-01-30 20:14:45,082 utils.trn_utils DEBUG: Num_it 1220 loss: 4.9379 
+
+2024-01-30 20:14:45,262 utils.trn_utils DEBUG: Num_it 1222 loss: 4.9234 
+
+2024-01-30 20:14:56,703 utils.trn_utils DEBUG: Num_it 1224 loss: 4.9388 
+
+2024-01-30 20:14:57,742 utils.trn_utils DEBUG: Num_it 1226 loss: 4.9616 
+
+2024-01-30 20:15:08,779 utils.trn_utils DEBUG: Num_it 1228 loss: 4.9798 
+
+2024-01-30 20:15:18,891 utils.trn_utils DEBUG: Num_it 1230 loss: 4.9790 
+
+2024-01-30 20:15:19,073 utils.trn_utils DEBUG: Num_it 1232 loss: 4.9545 
+
+2024-01-30 20:15:31,652 utils.trn_utils DEBUG: Num_it 1234 loss: 4.9748 
+
+2024-01-30 20:15:36,410 utils.trn_utils DEBUG: Num_it 1236 loss: 4.9886 
+
+2024-01-30 20:15:43,979 utils.trn_utils DEBUG: Num_it 1238 loss: 5.0131 
+
+2024-01-30 20:15:48,624 utils.trn_utils DEBUG: Num_it 1240 loss: 4.9950 
+
+2024-01-30 20:16:04,230 utils.trn_utils DEBUG: Num_it 1242 loss: 5.0178 
+
+2024-01-30 20:16:04,406 utils.trn_utils DEBUG: Num_it 1244 loss: 5.0171 
+
+2024-01-30 20:16:15,286 utils.trn_utils DEBUG: Num_it 1246 loss: 4.9448 
+
+2024-01-30 20:16:15,473 utils.trn_utils DEBUG: Num_it 1248 loss: 4.9913 
+
+2024-01-30 20:16:33,001 utils.trn_utils DEBUG: Num_it 1250 loss: 5.0255 
+
+2024-01-30 20:16:33,185 utils.trn_utils DEBUG: Num_it 1252 loss: 5.0146 
+
+2024-01-30 20:16:47,972 utils.trn_utils DEBUG: Num_it 1254 loss: 4.9583 
+
+2024-01-30 20:16:48,148 utils.trn_utils DEBUG: Num_it 1256 loss: 5.0256 
+
+2024-01-30 20:17:04,478 utils.trn_utils DEBUG: Num_it 1258 loss: 5.0285 
+
+2024-01-30 20:17:04,667 utils.trn_utils DEBUG: Num_it 1260 loss: 4.9964 
+
+2024-01-30 20:17:20,074 utils.trn_utils DEBUG: Num_it 1262 loss: 5.0135 
+
+2024-01-30 20:17:20,245 utils.trn_utils DEBUG: Num_it 1264 loss: 4.9991 
+
+2024-01-30 20:17:34,958 utils.trn_utils DEBUG: Num_it 1266 loss: 5.0005 
+
+2024-01-30 20:17:35,150 utils.trn_utils DEBUG: Num_it 1268 loss: 4.9244 
+
+2024-01-30 20:17:51,126 utils.trn_utils DEBUG: Num_it 1270 loss: 4.9504 
+
+2024-01-30 20:17:51,313 utils.trn_utils DEBUG: Num_it 1272 loss: 4.9721 
+
+2024-01-30 20:18:01,464 utils.trn_utils DEBUG: Num_it 1274 loss: 4.9815 
+
+2024-01-30 20:18:01,661 utils.trn_utils DEBUG: Num_it 1276 loss: 5.0099 
+
+2024-01-30 20:18:18,273 utils.trn_utils DEBUG: Num_it 1278 loss: 5.0597 
+
+2024-01-30 20:18:18,452 utils.trn_utils DEBUG: Num_it 1280 loss: 5.0311 
+
+2024-01-30 20:18:30,132 utils.trn_utils DEBUG: Num_it 1282 loss: 5.0460 
+
+2024-01-30 20:18:30,320 utils.trn_utils DEBUG: Num_it 1284 loss: 5.0197 
+
+2024-01-30 20:18:41,490 utils.trn_utils DEBUG: Num_it 1286 loss: 5.0214 
+
+2024-01-30 20:18:44,965 utils.trn_utils DEBUG: Num_it 1288 loss: 5.0260 
+
+2024-01-30 20:18:53,398 utils.trn_utils DEBUG: Num_it 1290 loss: 5.0140 
+
+2024-01-30 20:19:00,026 utils.trn_utils DEBUG: Num_it 1292 loss: 5.0174 
+
+2024-01-30 20:19:06,041 utils.trn_utils DEBUG: Num_it 1294 loss: 4.9798 
+
+2024-01-30 20:19:14,754 utils.trn_utils DEBUG: Num_it 1296 loss: 4.9620 
+
+2024-01-30 20:19:24,106 utils.trn_utils DEBUG: Num_it 1298 loss: 5.0330 
+
+2024-01-30 20:19:39,511 utils.trn_utils DEBUG: Num_it 1300 loss: 5.0247 
+
+2024-01-30 20:19:39,692 utils.trn_utils DEBUG: Num_it 1302 loss: 5.0229 
+
+2024-01-30 20:19:58,153 utils.trn_utils DEBUG: Num_it 1304 loss: 4.9874 
+
+2024-01-30 20:19:58,328 utils.trn_utils DEBUG: Num_it 1306 loss: 4.9595 
+
+2024-01-30 20:20:10,373 utils.trn_utils DEBUG: Num_it 1308 loss: 4.9433 
+
+2024-01-30 20:20:10,558 utils.trn_utils DEBUG: Num_it 1310 loss: 4.9547 
+
+2024-01-30 20:20:23,683 utils.trn_utils DEBUG: Num_it 1312 loss: 4.9655 
+
+2024-01-30 20:20:23,871 utils.trn_utils DEBUG: Num_it 1314 loss: 4.9422 
+
+2024-01-30 20:20:35,434 utils.trn_utils DEBUG: Num_it 1316 loss: 4.9536 
+
+2024-01-30 20:20:35,616 utils.trn_utils DEBUG: Num_it 1318 loss: 4.9932 
+
+2024-01-30 20:20:46,582 utils.trn_utils DEBUG: Num_it 1320 loss: 4.9903 
+
+2024-01-30 20:20:46,768 utils.trn_utils DEBUG: Num_it 1322 loss: 4.9724 
+
+2024-01-30 20:20:58,762 utils.trn_utils DEBUG: Num_it 1324 loss: 4.9478 
+
+2024-01-30 20:20:59,775 utils.trn_utils DEBUG: Num_it 1326 loss: 4.8831 
+
+2024-01-30 20:21:12,552 utils.trn_utils DEBUG: Num_it 1328 loss: 4.8940 
+
+2024-01-30 20:21:15,728 utils.trn_utils DEBUG: Num_it 1330 loss: 4.8955 
+
+2024-01-30 20:21:30,460 utils.trn_utils DEBUG: Num_it 1332 loss: 4.8958 
+
+2024-01-30 20:21:30,649 utils.trn_utils DEBUG: Num_it 1334 loss: 4.9155 
+
+2024-01-30 20:21:43,023 utils.trn_utils DEBUG: Num_it 1336 loss: 4.9410 
+
+2024-01-30 20:21:43,205 utils.trn_utils DEBUG: Num_it 1338 loss: 4.9748 
+
+2024-01-30 20:21:56,301 utils.trn_utils DEBUG: Num_it 1340 loss: 4.9828 
+
+2024-01-30 20:21:56,489 utils.trn_utils DEBUG: Num_it 1342 loss: 4.9894 
+
+2024-01-30 20:22:18,197 utils.trn_utils DEBUG: Num_it 1344 loss: 4.9774 
+
+2024-01-30 20:22:18,385 utils.trn_utils DEBUG: Num_it 1346 loss: 4.9570 
+
+2024-01-30 20:22:29,435 utils.trn_utils DEBUG: Num_it 1348 loss: 5.0042 
+
+2024-01-30 20:22:29,638 utils.trn_utils DEBUG: Num_it 1350 loss: 4.9937 
+
+2024-01-30 20:22:42,728 utils.trn_utils DEBUG: Num_it 1352 loss: 4.9512 
+
+2024-01-30 20:22:42,909 utils.trn_utils DEBUG: Num_it 1354 loss: 4.9613 
+
+2024-01-30 20:23:02,542 utils.trn_utils DEBUG: Num_it 1356 loss: 4.9790 
+
+2024-01-30 20:23:02,724 utils.trn_utils DEBUG: Num_it 1358 loss: 4.9974 
+
+2024-01-30 20:23:14,666 utils.trn_utils DEBUG: Num_it 1360 loss: 5.0800 
+
+2024-01-30 20:23:14,854 utils.trn_utils DEBUG: Num_it 1362 loss: 5.0742 
+
+2024-01-30 20:23:26,935 utils.trn_utils DEBUG: Num_it 1364 loss: 5.0612 
+
+2024-01-30 20:23:27,120 utils.trn_utils DEBUG: Num_it 1366 loss: 5.0556 
+
+2024-01-30 20:23:38,741 utils.trn_utils DEBUG: Num_it 1368 loss: 5.0485 
+
+2024-01-30 20:23:38,914 utils.trn_utils DEBUG: Num_it 1370 loss: 5.0158 
+
+2024-01-30 20:23:55,114 utils.trn_utils DEBUG: Num_it 1372 loss: 5.0619 
+
+2024-01-30 20:23:55,293 utils.trn_utils DEBUG: Num_it 1374 loss: 5.0170 
+
+2024-01-30 20:24:07,104 utils.trn_utils DEBUG: Num_it 1376 loss: 5.0156 
+
+2024-01-30 20:24:07,291 utils.trn_utils DEBUG: Num_it 1378 loss: 4.9764 
+
+2024-01-30 20:24:29,343 utils.trn_utils DEBUG: Num_it 1380 loss: 4.9904 
+
+2024-01-30 20:24:29,521 utils.trn_utils DEBUG: Num_it 1382 loss: 4.9823 
+
+2024-01-30 20:24:36,618 utils.trn_utils DEBUG: Num_it 1384 loss: 4.9604 
+
+2024-01-30 20:24:36,841 utils.trn_utils DEBUG: Num_it 1386 loss: 4.9704 
+
+2024-01-30 20:24:38,605 utils.trn_utils DEBUG: Num_it 1388 loss: 4.9551 
+
+2024-01-30 20:29:27,871 utils.trn_utils DEBUG: Num_it 1390 loss: 4.8838 
+
+2024-01-30 20:29:37,403 utils.trn_utils DEBUG: Num_it 1392 loss: 5.0280 
+
+2024-01-30 20:29:41,803 utils.trn_utils DEBUG: Num_it 1394 loss: 4.9639 
+
+2024-01-30 20:29:51,535 utils.trn_utils DEBUG: Num_it 1396 loss: 4.9190 
+
+2024-01-30 20:29:53,714 utils.trn_utils DEBUG: Num_it 1398 loss: 4.8937 
+
+2024-01-30 20:30:02,632 utils.trn_utils DEBUG: Num_it 1400 loss: 4.8738 
+
+2024-01-30 20:30:07,646 utils.trn_utils DEBUG: Num_it 1402 loss: 4.8149 
+
+2024-01-30 20:30:13,648 utils.trn_utils DEBUG: Num_it 1404 loss: 4.7975 
+
+2024-01-30 20:30:19,496 utils.trn_utils DEBUG: Num_it 1406 loss: 4.7874 
+
+2024-01-30 20:30:24,815 utils.trn_utils DEBUG: Num_it 1408 loss: 4.7944 
+
+2024-01-30 20:30:29,826 utils.trn_utils DEBUG: Num_it 1410 loss: 4.7668 
+
+2024-01-30 20:30:43,023 utils.trn_utils DEBUG: Num_it 1412 loss: 4.7530 
+
+2024-01-30 20:30:43,246 utils.trn_utils DEBUG: Num_it 1414 loss: 4.7156 
+
+2024-01-30 20:30:56,656 utils.trn_utils DEBUG: Num_it 1416 loss: 4.7165 
+
+2024-01-30 20:30:56,840 utils.trn_utils DEBUG: Num_it 1418 loss: 4.7692 
+
+2024-01-30 20:31:12,566 utils.trn_utils DEBUG: Num_it 1420 loss: 4.7703 
+
+2024-01-30 20:31:12,743 utils.trn_utils DEBUG: Num_it 1422 loss: 4.8083 
+
+2024-01-30 20:31:24,704 utils.trn_utils DEBUG: Num_it 1424 loss: 4.8222 
+
+2024-01-30 20:31:26,146 utils.trn_utils DEBUG: Num_it 1426 loss: 4.8513 
+
+2024-01-30 20:31:35,373 utils.trn_utils DEBUG: Num_it 1428 loss: 4.8836 
+
+2024-01-30 20:31:38,191 utils.trn_utils DEBUG: Num_it 1430 loss: 4.9326 
+
+2024-01-30 20:31:55,021 utils.trn_utils DEBUG: Num_it 1432 loss: 4.9222 
+
+2024-01-30 20:31:55,215 utils.trn_utils DEBUG: Num_it 1434 loss: 4.9529 
+
+2024-01-30 20:32:09,497 utils.trn_utils DEBUG: Num_it 1436 loss: 4.9236 
+
+2024-01-30 20:32:09,666 utils.trn_utils DEBUG: Num_it 1438 loss: 4.8792 
+
+2024-01-30 20:32:23,920 utils.trn_utils DEBUG: Num_it 1440 loss: 4.8446 
+
+2024-01-30 20:32:24,094 utils.trn_utils DEBUG: Num_it 1442 loss: 4.8889 
+
+2024-01-30 20:32:36,979 utils.trn_utils DEBUG: Num_it 1444 loss: 4.8649 
+
+2024-01-30 20:32:37,166 utils.trn_utils DEBUG: Num_it 1446 loss: 4.8759 
+
+2024-01-30 20:32:51,926 utils.trn_utils DEBUG: Num_it 1448 loss: 4.9052 
+
+2024-01-30 20:32:52,114 utils.trn_utils DEBUG: Num_it 1450 loss: 4.8602 
+
+2024-01-30 20:33:04,337 utils.trn_utils DEBUG: Num_it 1452 loss: 4.8145 
+
+2024-01-30 20:33:04,522 utils.trn_utils DEBUG: Num_it 1454 loss: 4.8265 
+
+2024-01-30 20:33:14,623 utils.trn_utils DEBUG: Num_it 1456 loss: 4.8334 
+
+2024-01-30 20:33:14,808 utils.trn_utils DEBUG: Num_it 1458 loss: 4.7860 
+
+2024-01-30 20:33:28,364 utils.trn_utils DEBUG: Num_it 1460 loss: 4.7596 
+
+2024-01-30 20:33:28,559 utils.trn_utils DEBUG: Num_it 1462 loss: 4.7573 
+
+2024-01-30 20:33:41,178 utils.trn_utils DEBUG: Num_it 1464 loss: 4.8114 
+
+2024-01-30 20:33:41,356 utils.trn_utils DEBUG: Num_it 1466 loss: 4.7948 
+
+2024-01-30 20:33:56,695 utils.trn_utils DEBUG: Num_it 1468 loss: 4.7988 
+
+2024-01-30 20:33:56,870 utils.trn_utils DEBUG: Num_it 1470 loss: 4.7810 
+
+2024-01-30 20:34:07,736 utils.trn_utils DEBUG: Num_it 1472 loss: 4.8213 
+
+2024-01-30 20:34:07,929 utils.trn_utils DEBUG: Num_it 1474 loss: 4.8199 
+
+2024-01-30 20:34:20,402 utils.trn_utils DEBUG: Num_it 1476 loss: 4.8746 
+
+2024-01-30 20:34:20,576 utils.trn_utils DEBUG: Num_it 1478 loss: 4.8785 
+
+2024-01-30 20:34:32,405 utils.trn_utils DEBUG: Num_it 1480 loss: 4.9067 
+
+2024-01-30 20:34:32,588 utils.trn_utils DEBUG: Num_it 1482 loss: 4.9101 
+
+2024-01-30 20:34:44,830 utils.trn_utils DEBUG: Num_it 1484 loss: 4.9108 
+
+2024-01-30 20:34:46,421 utils.trn_utils DEBUG: Num_it 1486 loss: 4.9214 
+
+2024-01-30 20:35:00,044 utils.trn_utils DEBUG: Num_it 1488 loss: 4.9230 
+
+2024-01-30 20:35:00,234 utils.trn_utils DEBUG: Num_it 1490 loss: 4.9074 
+
+2024-01-30 20:35:12,573 utils.trn_utils DEBUG: Num_it 1492 loss: 4.8839 
+
+2024-01-30 20:35:16,142 utils.trn_utils DEBUG: Num_it 1494 loss: 4.8795 
+
+2024-01-30 20:35:26,872 utils.trn_utils DEBUG: Num_it 1496 loss: 4.8296 
+
+2024-01-30 20:35:30,375 utils.trn_utils DEBUG: Num_it 1498 loss: 4.8762 
+
+2024-01-30 20:35:40,118 utils.trn_utils DEBUG: Num_it 1500 loss: 4.8732 
+
+2024-01-30 20:35:43,836 utils.trn_utils DEBUG: Num_it 1502 loss: 4.9024 
+
+2024-01-30 20:35:57,832 utils.trn_utils DEBUG: Num_it 1504 loss: 4.9163 
+
+2024-01-30 20:35:58,036 utils.trn_utils DEBUG: Num_it 1506 loss: 4.9064 
+
+2024-01-30 20:36:11,720 utils.trn_utils DEBUG: Num_it 1508 loss: 4.8671 
+
+2024-01-30 20:36:13,122 utils.trn_utils DEBUG: Num_it 1510 loss: 4.8993 
+
+2024-01-30 20:36:35,578 utils.trn_utils DEBUG: Num_it 1512 loss: 4.8511 
+
+2024-01-30 20:36:35,766 utils.trn_utils DEBUG: Num_it 1514 loss: 4.7851 
+
+2024-01-30 20:36:48,322 utils.trn_utils DEBUG: Num_it 1516 loss: 4.7982 
+
+2024-01-30 20:36:48,506 utils.trn_utils DEBUG: Num_it 1518 loss: 4.8262 
+
+2024-01-30 20:37:03,899 utils.trn_utils DEBUG: Num_it 1520 loss: 4.8352 
+
+2024-01-30 20:37:04,107 utils.trn_utils DEBUG: Num_it 1522 loss: 4.8643 
+
+2024-01-30 20:37:16,686 utils.trn_utils DEBUG: Num_it 1524 loss: 4.8028 
+
+2024-01-30 20:37:16,887 utils.trn_utils DEBUG: Num_it 1526 loss: 4.8214 
+
+2024-01-30 20:37:28,925 utils.trn_utils DEBUG: Num_it 1528 loss: 4.8800 
+
+2024-01-30 20:37:29,121 utils.trn_utils DEBUG: Num_it 1530 loss: 4.8819 
+
+2024-01-30 20:37:40,716 utils.trn_utils DEBUG: Num_it 1532 loss: 4.9096 
+
+2024-01-30 20:37:42,377 utils.trn_utils DEBUG: Num_it 1534 loss: 4.9503 
+
+2024-01-30 20:37:56,169 utils.trn_utils DEBUG: Num_it 1536 loss: 4.9345 
+
+2024-01-30 20:37:56,358 utils.trn_utils DEBUG: Num_it 1538 loss: 5.0037 
+
+2024-01-30 20:38:14,271 utils.trn_utils DEBUG: Num_it 1540 loss: 5.0456 
+
+2024-01-30 20:38:14,452 utils.trn_utils DEBUG: Num_it 1542 loss: 5.0532 
+
+2024-01-30 20:38:33,907 utils.trn_utils DEBUG: Num_it 1544 loss: 5.0019 
+
+2024-01-30 20:38:34,097 utils.trn_utils DEBUG: Num_it 1546 loss: 4.9760 
+
+2024-01-30 20:38:46,332 utils.trn_utils DEBUG: Num_it 1548 loss: 4.9129 
+
+2024-01-30 20:38:46,514 utils.trn_utils DEBUG: Num_it 1550 loss: 4.8733 
+
+2024-01-30 20:39:01,205 utils.trn_utils DEBUG: Num_it 1552 loss: 4.8888 
+
+2024-01-30 20:39:01,384 utils.trn_utils DEBUG: Num_it 1554 loss: 4.8753 
+
+2024-01-30 20:39:12,500 utils.trn_utils DEBUG: Num_it 1556 loss: 4.8771 
+
+2024-01-30 20:39:12,672 utils.trn_utils DEBUG: Num_it 1558 loss: 4.8118 
+
+2024-01-30 20:39:25,445 utils.trn_utils DEBUG: Num_it 1560 loss: 4.8288 
+
+2024-01-30 20:39:25,636 utils.trn_utils DEBUG: Num_it 1562 loss: 4.8194 
+
+2024-01-30 20:39:45,242 utils.trn_utils DEBUG: Num_it 1564 loss: 4.8122 
+
+2024-01-30 20:39:45,419 utils.trn_utils DEBUG: Num_it 1566 loss: 4.8060 
+
+2024-01-30 20:39:59,993 utils.trn_utils DEBUG: Num_it 1568 loss: 4.7924 
+
+2024-01-30 20:40:00,176 utils.trn_utils DEBUG: Num_it 1570 loss: 4.8355 
+
+2024-01-30 20:40:11,451 utils.trn_utils DEBUG: Num_it 1572 loss: 4.8228 
+
+2024-01-30 20:40:11,648 utils.trn_utils DEBUG: Num_it 1574 loss: 4.8338 
+
+2024-01-30 20:40:31,126 utils.trn_utils DEBUG: Num_it 1576 loss: 4.8084 
+
+2024-01-30 20:40:31,320 utils.trn_utils DEBUG: Num_it 1578 loss: 4.7925 
+
+2024-01-30 20:40:42,503 utils.trn_utils DEBUG: Num_it 1580 loss: 4.8325 
+
+2024-01-30 20:40:42,690 utils.trn_utils DEBUG: Num_it 1582 loss: 4.8234 
+
+2024-01-30 20:40:57,948 utils.trn_utils DEBUG: Num_it 1584 loss: 4.8856 
+
+2024-01-30 20:40:58,134 utils.trn_utils DEBUG: Num_it 1586 loss: 4.8610 
+
+2024-01-30 20:41:11,612 utils.trn_utils DEBUG: Num_it 1588 loss: 4.8683 
+
+2024-01-30 20:41:11,797 utils.trn_utils DEBUG: Num_it 1590 loss: 4.8616 
+
+2024-01-30 20:41:27,645 utils.trn_utils DEBUG: Num_it 1592 loss: 4.9153 
+
+2024-01-30 20:41:27,837 utils.trn_utils DEBUG: Num_it 1594 loss: 4.8911 
+
+2024-01-30 20:41:43,426 utils.trn_utils DEBUG: Num_it 1596 loss: 4.9378 
+
+2024-01-30 20:41:43,621 utils.trn_utils DEBUG: Num_it 1598 loss: 4.9066 
+
+2024-01-30 20:41:57,365 utils.trn_utils DEBUG: Num_it 1600 loss: 4.9220 
+
+2024-01-30 20:41:57,544 utils.trn_utils DEBUG: Num_it 1602 loss: 4.8920 
+
+2024-01-30 20:42:09,185 utils.trn_utils DEBUG: Num_it 1604 loss: 4.8694 
+
+2024-01-30 20:42:09,379 utils.trn_utils DEBUG: Num_it 1606 loss: 4.8829 
+
+2024-01-30 20:42:24,841 utils.trn_utils DEBUG: Num_it 1608 loss: 4.8156 
+
+2024-01-30 20:42:25,028 utils.trn_utils DEBUG: Num_it 1610 loss: 4.8926 
+
+2024-01-30 20:42:37,329 utils.trn_utils DEBUG: Num_it 1612 loss: 4.8905 
+
+2024-01-30 20:42:37,515 utils.trn_utils DEBUG: Num_it 1614 loss: 4.8911 
+
+2024-01-30 20:42:50,582 utils.trn_utils DEBUG: Num_it 1616 loss: 4.9341 
+
+2024-01-30 20:42:50,778 utils.trn_utils DEBUG: Num_it 1618 loss: 5.0083 
+
+2024-01-30 20:43:02,869 utils.trn_utils DEBUG: Num_it 1620 loss: 4.9467 
+
+2024-01-30 20:43:05,560 utils.trn_utils DEBUG: Num_it 1622 loss: 4.9301 
+
+2024-01-30 20:43:15,672 utils.trn_utils DEBUG: Num_it 1624 loss: 4.8812 
+
+2024-01-30 20:43:21,460 utils.trn_utils DEBUG: Num_it 1626 loss: 4.8670 
+
+2024-01-30 20:43:32,341 utils.trn_utils DEBUG: Num_it 1628 loss: 4.8898 
+
+2024-01-30 20:43:35,870 utils.trn_utils DEBUG: Num_it 1630 loss: 4.8437 
+
+2024-01-30 20:43:45,035 utils.trn_utils DEBUG: Num_it 1632 loss: 4.8981 
+
+2024-01-30 20:43:48,611 utils.trn_utils DEBUG: Num_it 1634 loss: 4.9293 
+
+2024-01-30 20:43:57,123 utils.trn_utils DEBUG: Num_it 1636 loss: 4.9300 
+
+2024-01-30 20:44:03,009 utils.trn_utils DEBUG: Num_it 1638 loss: 4.8923 
+
+2024-01-30 20:44:11,854 utils.trn_utils DEBUG: Num_it 1640 loss: 4.8731 
+
+2024-01-30 20:44:16,206 utils.trn_utils DEBUG: Num_it 1642 loss: 4.8652 
+
+2024-01-30 20:44:25,097 utils.trn_utils DEBUG: Num_it 1644 loss: 4.8666 
+
+2024-01-30 20:44:31,256 utils.trn_utils DEBUG: Num_it 1646 loss: 4.8488 
+
+2024-01-30 20:44:36,797 utils.trn_utils DEBUG: Num_it 1648 loss: 4.8572 
+
+2024-01-30 20:44:51,338 utils.trn_utils DEBUG: Num_it 1650 loss: 4.8391 
+
+2024-01-30 20:44:51,528 utils.trn_utils DEBUG: Num_it 1652 loss: 4.7945 
+
+2024-01-30 20:45:06,528 utils.trn_utils DEBUG: Num_it 1654 loss: 4.7578 
+
+2024-01-30 20:45:06,706 utils.trn_utils DEBUG: Num_it 1656 loss: 4.7665 
+
+2024-01-30 20:45:18,625 utils.trn_utils DEBUG: Num_it 1658 loss: 4.7457 
+
+2024-01-30 20:45:18,809 utils.trn_utils DEBUG: Num_it 1660 loss: 4.7574 
+
+2024-01-30 20:45:31,954 utils.trn_utils DEBUG: Num_it 1662 loss: 4.8430 
+
+2024-01-30 20:45:32,305 utils.trn_utils DEBUG: Num_it 1664 loss: 4.8495 
+
+2024-01-30 20:45:52,334 utils.trn_utils DEBUG: Num_it 1666 loss: 4.8835 
+
+2024-01-30 20:45:52,526 utils.trn_utils DEBUG: Num_it 1668 loss: 4.9101 
+
+2024-01-30 20:46:08,222 utils.trn_utils DEBUG: Num_it 1670 loss: 4.8204 
+
+2024-01-30 20:46:08,414 utils.trn_utils DEBUG: Num_it 1672 loss: 4.7967 
+
+2024-01-30 20:46:26,718 utils.trn_utils DEBUG: Num_it 1674 loss: 4.8291 
+
+2024-01-30 20:46:26,927 utils.trn_utils DEBUG: Num_it 1676 loss: 4.8717 
+
+2024-01-30 20:46:40,638 utils.trn_utils DEBUG: Num_it 1678 loss: 4.8702 
+
+2024-01-30 20:46:40,832 utils.trn_utils DEBUG: Num_it 1680 loss: 4.8430 
+
+2024-01-30 20:46:52,998 utils.trn_utils DEBUG: Num_it 1682 loss: 4.8084 
+
+2024-01-30 20:46:53,175 utils.trn_utils DEBUG: Num_it 1684 loss: 4.8093 
+
+2024-01-30 20:47:06,043 utils.trn_utils DEBUG: Num_it 1686 loss: 4.8447 
+
+2024-01-30 20:47:06,239 utils.trn_utils DEBUG: Num_it 1688 loss: 4.8147 
+
+2024-01-30 20:47:18,207 utils.trn_utils DEBUG: Num_it 1690 loss: 4.7921 
+
+2024-01-30 20:47:21,138 utils.trn_utils DEBUG: Num_it 1692 loss: 4.8076 
+
+2024-01-30 20:47:30,108 utils.trn_utils DEBUG: Num_it 1694 loss: 4.7839 
+
+2024-01-30 20:47:33,084 utils.trn_utils DEBUG: Num_it 1696 loss: 4.7723 
+
+2024-01-30 20:47:47,535 utils.trn_utils DEBUG: Num_it 1698 loss: 4.7715 
+
+2024-01-30 20:47:50,548 utils.trn_utils DEBUG: Num_it 1700 loss: 4.8505 
+
+2024-01-30 20:48:00,689 utils.trn_utils DEBUG: Num_it 1702 loss: 4.8527 
+
+2024-01-30 20:48:01,870 utils.trn_utils DEBUG: Num_it 1704 loss: 4.9096 
+
+2024-01-30 20:48:15,085 utils.trn_utils DEBUG: Num_it 1706 loss: 4.9035 
+
+2024-01-30 20:48:15,467 utils.trn_utils DEBUG: Num_it 1708 loss: 4.9038 
+
+2024-01-30 20:48:33,198 utils.trn_utils DEBUG: Num_it 1710 loss: 4.8817 
+
+2024-01-30 20:48:33,391 utils.trn_utils DEBUG: Num_it 1712 loss: 4.8722 
+
+2024-01-30 20:48:48,287 utils.trn_utils DEBUG: Num_it 1714 loss: 4.9388 
+
+2024-01-30 20:48:48,468 utils.trn_utils DEBUG: Num_it 1716 loss: 4.9391 
+
+2024-01-30 20:49:07,603 utils.trn_utils DEBUG: Num_it 1718 loss: 4.9405 
+
+2024-01-30 20:49:07,784 utils.trn_utils DEBUG: Num_it 1720 loss: 4.8991 
+
+2024-01-30 20:49:19,342 utils.trn_utils DEBUG: Num_it 1722 loss: 4.9151 
+
+2024-01-30 20:49:19,558 utils.trn_utils DEBUG: Num_it 1724 loss: 4.8773 
+
+2024-01-30 20:49:32,370 utils.trn_utils DEBUG: Num_it 1726 loss: 4.9007 
+
+2024-01-30 20:49:34,127 utils.trn_utils DEBUG: Num_it 1728 loss: 4.9243 
+
+2024-01-30 20:49:50,261 utils.trn_utils DEBUG: Num_it 1730 loss: 4.8836 
+
+2024-01-30 20:49:50,457 utils.trn_utils DEBUG: Num_it 1732 loss: 4.9006 
+
+2024-01-30 20:50:02,560 utils.trn_utils DEBUG: Num_it 1734 loss: 4.8653 
+
+2024-01-30 20:50:02,759 utils.trn_utils DEBUG: Num_it 1736 loss: 4.8398 
+
+2024-01-30 20:50:15,493 utils.trn_utils DEBUG: Num_it 1738 loss: 4.8864 
+
+2024-01-30 20:50:15,678 utils.trn_utils DEBUG: Num_it 1740 loss: 4.8922 
+
+2024-01-30 20:50:32,773 utils.trn_utils DEBUG: Num_it 1742 loss: 4.8757 
+
+2024-01-30 20:50:32,951 utils.trn_utils DEBUG: Num_it 1744 loss: 4.8383 
+
+2024-01-30 20:50:45,739 utils.trn_utils DEBUG: Num_it 1746 loss: 4.7985 
+
+2024-01-30 20:50:45,936 utils.trn_utils DEBUG: Num_it 1748 loss: 4.7996 
+
+2024-01-30 20:50:58,006 utils.trn_utils DEBUG: Num_it 1750 loss: 4.7611 
+
+2024-01-30 20:50:58,183 utils.trn_utils DEBUG: Num_it 1752 loss: 4.8209 
+
+2024-01-30 20:51:17,754 utils.trn_utils DEBUG: Num_it 1754 loss: 4.8338 
+
+2024-01-30 20:51:17,945 utils.trn_utils DEBUG: Num_it 1756 loss: 4.8730 
+
+2024-01-30 20:51:33,381 utils.trn_utils DEBUG: Num_it 1758 loss: 4.8125 
+
+2024-01-30 20:51:33,576 utils.trn_utils DEBUG: Num_it 1760 loss: 4.8488 
+
+2024-01-30 20:51:43,690 utils.trn_utils DEBUG: Num_it 1762 loss: 4.8743 
+
+2024-01-30 20:51:43,875 utils.trn_utils DEBUG: Num_it 1764 loss: 4.8457 
+
+2024-01-30 20:52:02,327 utils.trn_utils DEBUG: Num_it 1766 loss: 4.9150 
+
+2024-01-30 20:52:02,508 utils.trn_utils DEBUG: Num_it 1768 loss: 4.9301 
+
+2024-01-30 20:52:16,165 utils.trn_utils DEBUG: Num_it 1770 loss: 4.9063 
+
+2024-01-30 20:52:16,355 utils.trn_utils DEBUG: Num_it 1772 loss: 4.9081 
+
+2024-01-30 20:52:28,513 utils.trn_utils DEBUG: Num_it 1774 loss: 4.8346 
+
+2024-01-30 20:52:28,723 utils.trn_utils DEBUG: Num_it 1776 loss: 4.8414 
+
+2024-01-30 20:52:40,781 utils.trn_utils DEBUG: Num_it 1778 loss: 4.8055 
+
+2024-01-30 20:52:40,965 utils.trn_utils DEBUG: Num_it 1780 loss: 4.7929 
+
+2024-01-30 20:52:52,904 utils.trn_utils DEBUG: Num_it 1782 loss: 4.7721 
+
+2024-01-30 20:52:53,088 utils.trn_utils DEBUG: Num_it 1784 loss: 4.7648 
+
+2024-01-30 20:53:07,098 utils.trn_utils DEBUG: Num_it 1786 loss: 4.7563 
+
+2024-01-30 20:53:07,282 utils.trn_utils DEBUG: Num_it 1788 loss: 4.8031 
+
+2024-01-30 20:53:20,809 utils.trn_utils DEBUG: Num_it 1790 loss: 4.7430 
+
+2024-01-30 20:53:20,984 utils.trn_utils DEBUG: Num_it 1792 loss: 4.7789 
+
+2024-01-30 20:53:33,687 utils.trn_utils DEBUG: Num_it 1794 loss: 4.7933 
+
+2024-01-30 20:53:33,868 utils.trn_utils DEBUG: Num_it 1796 loss: 4.7988 
+
+2024-01-30 20:53:47,930 utils.trn_utils DEBUG: Num_it 1798 loss: 4.8282 
+
+2024-01-30 20:53:48,118 utils.trn_utils DEBUG: Num_it 1800 loss: 4.8521 
+
+2024-01-30 20:54:00,305 utils.trn_utils DEBUG: Num_it 1802 loss: 4.8393 
+
+2024-01-30 20:54:03,180 utils.trn_utils DEBUG: Num_it 1804 loss: 4.8789 
+
+2024-01-30 20:54:16,312 utils.trn_utils DEBUG: Num_it 1806 loss: 4.8714 
+
+2024-01-30 20:54:16,506 utils.trn_utils DEBUG: Num_it 1808 loss: 4.8200 
+
+2024-01-30 20:54:38,230 utils.trn_utils DEBUG: Num_it 1810 loss: 4.8486 
+
+2024-01-30 20:54:38,445 utils.trn_utils DEBUG: Num_it 1812 loss: 4.7939 
+
+2024-01-30 20:54:50,574 utils.trn_utils DEBUG: Num_it 1814 loss: 4.8461 
+
+2024-01-30 20:54:50,781 utils.trn_utils DEBUG: Num_it 1816 loss: 4.8197 
+
+2024-01-30 20:55:02,655 utils.trn_utils DEBUG: Num_it 1818 loss: 4.8018 
+
+2024-01-30 20:55:02,829 utils.trn_utils DEBUG: Num_it 1820 loss: 4.8396 
+
+2024-01-30 20:55:13,598 utils.trn_utils DEBUG: Num_it 1822 loss: 4.8269 
+
+2024-01-30 20:55:16,808 utils.trn_utils DEBUG: Num_it 1824 loss: 4.8710 
+
+2024-01-30 20:55:27,735 utils.trn_utils DEBUG: Num_it 1826 loss: 4.8539 
+
+2024-01-30 20:55:33,166 utils.trn_utils DEBUG: Num_it 1828 loss: 4.8446 
+
+2024-01-30 20:55:42,343 utils.trn_utils DEBUG: Num_it 1830 loss: 4.8820 
+
+2024-01-30 20:55:47,810 utils.trn_utils DEBUG: Num_it 1832 loss: 4.8544 
+
+2024-01-30 20:55:54,930 utils.trn_utils DEBUG: Num_it 1834 loss: 4.8396 
+
+2024-01-30 20:56:02,580 utils.trn_utils DEBUG: Num_it 1836 loss: 4.8270 
+
+2024-01-30 20:56:08,995 utils.trn_utils DEBUG: Num_it 1838 loss: 4.8269 
+
+2024-01-30 20:56:24,163 utils.trn_utils DEBUG: Num_it 1840 loss: 4.8083 
+
+2024-01-30 20:56:24,351 utils.trn_utils DEBUG: Num_it 1842 loss: 4.8371 
+
+2024-01-30 20:56:41,180 utils.trn_utils DEBUG: Num_it 1844 loss: 4.8285 
+
+2024-01-30 20:56:41,372 utils.trn_utils DEBUG: Num_it 1846 loss: 4.8588 
+
+2024-01-30 20:56:55,878 utils.trn_utils DEBUG: Num_it 1848 loss: 4.8305 
+
+2024-01-30 20:56:56,068 utils.trn_utils DEBUG: Num_it 1850 loss: 4.8451 
+
+2024-01-30 20:57:08,105 utils.trn_utils DEBUG: Num_it 1852 loss: 4.8356 
+
+2024-01-30 20:57:08,284 utils.trn_utils DEBUG: Num_it 1854 loss: 4.8021 
+
+2024-01-30 20:57:24,971 utils.trn_utils DEBUG: Num_it 1856 loss: 4.8444 
+
+2024-01-30 20:57:25,197 utils.trn_utils DEBUG: Num_it 1858 loss: 4.8270 
+
+2024-01-30 20:57:37,876 utils.trn_utils DEBUG: Num_it 1860 loss: 4.8100 
+
+2024-01-30 20:57:38,058 utils.trn_utils DEBUG: Num_it 1862 loss: 4.8471 
+
+2024-01-30 20:57:49,291 utils.trn_utils DEBUG: Num_it 1864 loss: 4.9155 
+
+2024-01-30 20:57:49,471 utils.trn_utils DEBUG: Num_it 1866 loss: 4.8615 
+
+2024-01-30 20:58:00,691 utils.trn_utils DEBUG: Num_it 1868 loss: 4.8554 
+
+2024-01-30 20:58:00,873 utils.trn_utils DEBUG: Num_it 1870 loss: 4.8296 
+
+2024-01-30 20:58:17,367 utils.trn_utils DEBUG: Num_it 1872 loss: 4.8610 
+
+2024-01-30 20:58:17,547 utils.trn_utils DEBUG: Num_it 1874 loss: 4.8642 
+
+2024-01-30 20:58:30,403 utils.trn_utils DEBUG: Num_it 1876 loss: 4.8152 
+
+2024-01-30 20:58:30,583 utils.trn_utils DEBUG: Num_it 1878 loss: 4.8511 
+
+2024-01-30 20:58:41,388 utils.trn_utils DEBUG: Num_it 1880 loss: 4.9146 
+
+2024-01-30 20:58:54,821 utils.trn_utils DEBUG: Num_it 1882 loss: 4.9427 
+
+2024-01-30 20:58:56,624 utils.trn_utils DEBUG: Num_it 1884 loss: 4.9539 
+
+2024-01-30 20:59:12,060 utils.trn_utils DEBUG: Num_it 1886 loss: 4.9835 
+
+2024-01-30 20:59:12,247 utils.trn_utils DEBUG: Num_it 1888 loss: 4.9703 
+
+2024-01-30 20:59:23,678 utils.trn_utils DEBUG: Num_it 1890 loss: 4.9956 
+
+2024-01-30 20:59:23,856 utils.trn_utils DEBUG: Num_it 1892 loss: 4.9781 
+
+2024-01-30 20:59:34,026 utils.trn_utils DEBUG: Num_it 1894 loss: 4.9557 
+
+2024-01-30 20:59:44,017 utils.trn_utils DEBUG: Num_it 1896 loss: 4.9152 
+
+2024-01-30 20:59:46,269 utils.trn_utils DEBUG: Num_it 1898 loss: 4.9117 
+
+2024-01-30 20:59:58,309 utils.trn_utils DEBUG: Num_it 1900 loss: 4.8420 
+
+2024-01-30 21:00:01,915 utils.trn_utils DEBUG: Num_it 1902 loss: 4.8532 
+
+2024-01-30 21:00:11,191 utils.trn_utils DEBUG: Num_it 1904 loss: 4.8945 
+
+2024-01-30 21:00:14,276 utils.trn_utils DEBUG: Num_it 1906 loss: 4.8953 
+
+2024-01-30 21:00:23,928 utils.trn_utils DEBUG: Num_it 1908 loss: 4.8621 
+
+2024-01-30 21:00:27,960 utils.trn_utils DEBUG: Num_it 1910 loss: 4.8204 
+
+2024-01-30 21:00:42,744 utils.trn_utils DEBUG: Num_it 1912 loss: 4.8548 
+
+2024-01-30 21:00:43,911 utils.trn_utils DEBUG: Num_it 1914 loss: 4.8606 
+
+2024-01-30 21:00:55,692 utils.trn_utils DEBUG: Num_it 1916 loss: 4.8385 
+
+2024-01-30 21:00:57,754 utils.trn_utils DEBUG: Num_it 1918 loss: 4.8270 
+
+2024-01-30 21:01:14,219 utils.trn_utils DEBUG: Num_it 1920 loss: 4.8570 
+
+2024-01-30 21:01:14,409 utils.trn_utils DEBUG: Num_it 1922 loss: 4.8618 
+
+2024-01-30 21:01:31,189 utils.trn_utils DEBUG: Num_it 1924 loss: 4.8976 
+
+2024-01-30 21:01:31,383 utils.trn_utils DEBUG: Num_it 1926 loss: 4.8228 
+
+2024-01-30 21:01:46,435 utils.trn_utils DEBUG: Num_it 1928 loss: 4.8217 
+
+2024-01-30 21:01:46,632 utils.trn_utils DEBUG: Num_it 1930 loss: 4.8165 
+
+2024-01-30 21:02:01,882 utils.trn_utils DEBUG: Num_it 1932 loss: 4.8284 
+
+2024-01-30 21:02:02,073 utils.trn_utils DEBUG: Num_it 1934 loss: 4.8408 
+
+2024-01-30 21:02:13,617 utils.trn_utils DEBUG: Num_it 1936 loss: 4.8344 
+
+2024-01-30 21:02:13,807 utils.trn_utils DEBUG: Num_it 1938 loss: 4.8408 
+
+2024-01-30 21:02:29,897 utils.trn_utils DEBUG: Num_it 1940 loss: 4.8285 
+
+2024-01-30 21:02:30,080 utils.trn_utils DEBUG: Num_it 1942 loss: 4.8755 
+
+2024-01-30 21:02:45,774 utils.trn_utils DEBUG: Num_it 1944 loss: 4.8914 
+
+2024-01-30 21:02:45,971 utils.trn_utils DEBUG: Num_it 1946 loss: 4.8839 
+
+2024-01-30 21:03:00,039 utils.trn_utils DEBUG: Num_it 1948 loss: 4.8900 
+
+2024-01-30 21:03:00,235 utils.trn_utils DEBUG: Num_it 1950 loss: 4.8476 
+
+2024-01-30 21:03:13,616 utils.trn_utils DEBUG: Num_it 1952 loss: 4.8837 
+
+2024-01-30 21:03:13,803 utils.trn_utils DEBUG: Num_it 1954 loss: 4.8536 
+
+2024-01-30 21:03:26,970 utils.trn_utils DEBUG: Num_it 1956 loss: 4.8478 
+
+2024-01-30 21:03:27,163 utils.trn_utils DEBUG: Num_it 1958 loss: 4.8811 
+
+2024-01-30 21:03:44,815 utils.trn_utils DEBUG: Num_it 1960 loss: 4.8494 
+
+2024-01-30 21:03:45,010 utils.trn_utils DEBUG: Num_it 1962 loss: 4.8343 
+
+2024-01-30 21:03:54,206 utils.trn_utils DEBUG: Num_it 1964 loss: 4.8297 
+
+2024-01-30 21:03:54,395 utils.trn_utils DEBUG: Num_it 1966 loss: 4.8334 
+
+2024-01-30 21:04:08,439 utils.trn_utils DEBUG: Num_it 1968 loss: 4.8558 
+
+2024-01-30 21:04:08,623 utils.trn_utils DEBUG: Num_it 1970 loss: 4.8334 
+
+2024-01-30 21:04:22,710 utils.trn_utils DEBUG: Num_it 1972 loss: 4.7833 
+
+2024-01-30 21:04:22,893 utils.trn_utils DEBUG: Num_it 1974 loss: 4.7859 
+
+2024-01-30 21:04:38,035 utils.trn_utils DEBUG: Num_it 1976 loss: 4.7660 
+
+2024-01-30 21:04:38,223 utils.trn_utils DEBUG: Num_it 1978 loss: 4.7760 
+
+2024-01-30 21:04:53,867 utils.trn_utils DEBUG: Num_it 1980 loss: 4.8778 
+
+2024-01-30 21:04:54,064 utils.trn_utils DEBUG: Num_it 1982 loss: 4.8530 
+
+2024-01-30 21:05:09,271 utils.trn_utils DEBUG: Num_it 1984 loss: 4.8848 
+
+2024-01-30 21:05:09,460 utils.trn_utils DEBUG: Num_it 1986 loss: 4.8688 
+
+2024-01-30 21:05:21,383 utils.trn_utils DEBUG: Num_it 1988 loss: 4.8982 
+
+2024-01-30 21:05:21,577 utils.trn_utils DEBUG: Num_it 1990 loss: 4.8988 
+
+2024-01-30 21:05:38,127 utils.trn_utils DEBUG: Num_it 1992 loss: 4.9084 
+
+2024-01-30 21:05:38,311 utils.trn_utils DEBUG: Num_it 1994 loss: 4.9214 
+
+2024-01-30 21:05:50,083 utils.trn_utils DEBUG: Num_it 1996 loss: 4.8952 
+
+2024-01-30 21:05:50,274 utils.trn_utils DEBUG: Num_it 1998 loss: 4.8876 
+
+2024-01-30 21:06:02,879 utils.trn_utils DEBUG: Num_it 2000 loss: 4.8448 
+
+2024-01-30 21:06:03,612 utils.trn_utils DEBUG: Num_it 2002 loss: 4.7902 
+
+2024-01-30 21:06:18,421 utils.trn_utils DEBUG: Num_it 2004 loss: 4.7602 
+
+2024-01-30 21:06:21,200 utils.trn_utils DEBUG: Num_it 2006 loss: 4.7509 
+
+2024-01-30 21:06:29,509 utils.trn_utils DEBUG: Num_it 2008 loss: 4.7857 
+
+2024-01-30 21:06:39,140 utils.trn_utils DEBUG: Num_it 2010 loss: 4.8141 
+
+2024-01-30 21:06:39,341 utils.trn_utils DEBUG: Num_it 2012 loss: 4.8096 
+
+2024-01-30 21:06:53,091 utils.trn_utils DEBUG: Num_it 2014 loss: 4.7967 
+
+2024-01-30 21:06:54,031 utils.trn_utils DEBUG: Num_it 2016 loss: 4.8458 
+
+2024-01-30 21:07:05,037 utils.trn_utils DEBUG: Num_it 2018 loss: 4.8599 
+
+2024-01-30 21:07:05,850 utils.trn_utils DEBUG: Num_it 2020 loss: 4.8723 
+
+2024-01-30 21:07:20,821 utils.trn_utils DEBUG: Num_it 2022 loss: 4.7909 
+
+2024-01-30 21:07:28,236 utils.trn_utils DEBUG: Num_it 2024 loss: 4.8300 
+
+2024-01-30 21:07:32,192 utils.trn_utils DEBUG: Num_it 2026 loss: 4.8011 
+
+2024-01-30 21:07:39,879 utils.trn_utils DEBUG: Num_it 2028 loss: 4.8279 
+
+2024-01-30 21:07:46,912 utils.trn_utils DEBUG: Num_it 2030 loss: 4.8117 
+
+2024-01-30 21:07:53,469 utils.trn_utils DEBUG: Num_it 2032 loss: 4.7845 
+
+2024-01-30 21:07:58,233 utils.trn_utils DEBUG: Num_it 2034 loss: 4.7769 
+
+2024-01-30 21:08:05,150 utils.trn_utils DEBUG: Num_it 2036 loss: 4.8140 
+
+2024-01-30 21:08:11,186 utils.trn_utils DEBUG: Num_it 2038 loss: 4.8099 
+
+2024-01-30 21:08:19,031 utils.trn_utils DEBUG: Num_it 2040 loss: 4.8102 
+
+2024-01-30 21:08:30,198 utils.trn_utils DEBUG: Num_it 2042 loss: 4.8310 
+
+2024-01-30 21:08:30,383 utils.trn_utils DEBUG: Num_it 2044 loss: 4.8752 
+
+2024-01-30 21:08:45,611 utils.trn_utils DEBUG: Num_it 2046 loss: 4.8652 
+
+2024-01-30 21:08:45,798 utils.trn_utils DEBUG: Num_it 2048 loss: 4.8577 
+
+2024-01-30 21:09:01,313 utils.trn_utils DEBUG: Num_it 2050 loss: 4.8828 
+
+2024-01-30 21:09:01,499 utils.trn_utils DEBUG: Num_it 2052 loss: 4.8771 
+
+2024-01-30 21:09:18,687 utils.trn_utils DEBUG: Num_it 2054 loss: 4.8533 
+
+2024-01-30 21:09:18,873 utils.trn_utils DEBUG: Num_it 2056 loss: 4.8518 
+
+2024-01-30 21:09:32,568 utils.trn_utils DEBUG: Num_it 2058 loss: 4.8718 
+
+2024-01-30 21:09:32,753 utils.trn_utils DEBUG: Num_it 2060 loss: 4.8585 
+
+2024-01-30 21:09:45,475 utils.trn_utils DEBUG: Num_it 2062 loss: 4.8487 
+
+2024-01-30 21:09:45,660 utils.trn_utils DEBUG: Num_it 2064 loss: 4.8768 
+
+2024-01-30 21:09:58,076 utils.trn_utils DEBUG: Num_it 2066 loss: 4.9086 
+
+2024-01-30 21:09:58,276 utils.trn_utils DEBUG: Num_it 2068 loss: 4.8826 
+
+2024-01-30 21:10:16,297 utils.trn_utils DEBUG: Num_it 2070 loss: 4.8787 
+
+2024-01-30 21:10:16,482 utils.trn_utils DEBUG: Num_it 2072 loss: 4.8829 
+
+2024-01-30 21:10:28,294 utils.trn_utils DEBUG: Num_it 2074 loss: 4.9064 
+
+2024-01-30 21:10:28,477 utils.trn_utils DEBUG: Num_it 2076 loss: 4.8996 
+
+2024-01-30 21:10:38,806 utils.trn_utils DEBUG: Num_it 2078 loss: 4.9104 
+
+2024-01-30 21:10:38,984 utils.trn_utils DEBUG: Num_it 2080 loss: 4.9359 
+
+2024-01-30 21:10:45,687 utils.trn_utils DEBUG: Num_it 2082 loss: 4.9130 
+
+2024-01-30 21:15:39,178 utils.trn_utils DEBUG: Num_it 2084 loss: 4.6450 
+
+2024-01-30 21:15:44,996 utils.trn_utils DEBUG: Num_it 2086 loss: 4.6168 
+
+2024-01-30 21:15:50,551 utils.trn_utils DEBUG: Num_it 2088 loss: 4.6450 
+
+2024-01-30 21:15:54,534 utils.trn_utils DEBUG: Num_it 2090 loss: 4.6271 
+
+2024-01-30 21:16:10,073 utils.trn_utils DEBUG: Num_it 2092 loss: 4.6735 
+
+2024-01-30 21:16:10,290 utils.trn_utils DEBUG: Num_it 2094 loss: 4.6634 
+
+2024-01-30 21:16:24,190 utils.trn_utils DEBUG: Num_it 2096 loss: 4.6697 
+
+2024-01-30 21:16:24,390 utils.trn_utils DEBUG: Num_it 2098 loss: 4.6631 
+
+2024-01-30 21:16:37,138 utils.trn_utils DEBUG: Num_it 2100 loss: 4.6390 
+
+2024-01-30 21:16:37,332 utils.trn_utils DEBUG: Num_it 2102 loss: 4.6486 
+
+2024-01-30 21:16:49,383 utils.trn_utils DEBUG: Num_it 2104 loss: 4.6415 
+
+2024-01-30 21:16:49,566 utils.trn_utils DEBUG: Num_it 2106 loss: 4.6807 
+
+2024-01-30 21:17:00,966 utils.trn_utils DEBUG: Num_it 2108 loss: 4.6784 
+
+2024-01-30 21:17:01,139 utils.trn_utils DEBUG: Num_it 2110 loss: 4.7214 
+
+2024-01-30 21:17:19,057 utils.trn_utils DEBUG: Num_it 2112 loss: 4.7136 
+
+2024-01-30 21:17:19,232 utils.trn_utils DEBUG: Num_it 2114 loss: 4.7243 
+
+2024-01-30 21:17:28,211 utils.trn_utils DEBUG: Num_it 2116 loss: 4.7283 
+
+2024-01-30 21:17:28,409 utils.trn_utils DEBUG: Num_it 2118 loss: 4.7435 
+
+2024-01-30 21:17:38,257 utils.trn_utils DEBUG: Num_it 2120 loss: 4.7043 
+
+2024-01-30 21:17:41,513 utils.trn_utils DEBUG: Num_it 2122 loss: 4.7084 
+
+2024-01-30 21:17:51,984 utils.trn_utils DEBUG: Num_it 2124 loss: 4.7150 
+
+2024-01-30 21:17:55,982 utils.trn_utils DEBUG: Num_it 2126 loss: 4.6926 
+
+2024-01-30 21:18:05,948 utils.trn_utils DEBUG: Num_it 2128 loss: 4.6545 
+
+2024-01-30 21:18:08,666 utils.trn_utils DEBUG: Num_it 2130 loss: 4.6470 
+
+2024-01-30 21:18:19,781 utils.trn_utils DEBUG: Num_it 2132 loss: 4.6838 
+
+2024-01-30 21:18:19,997 utils.trn_utils DEBUG: Num_it 2134 loss: 4.6708 
+
+2024-01-30 21:18:33,917 utils.trn_utils DEBUG: Num_it 2136 loss: 4.6600 
+
+2024-01-30 21:18:34,104 utils.trn_utils DEBUG: Num_it 2138 loss: 4.6580 
+
+2024-01-30 21:18:46,914 utils.trn_utils DEBUG: Num_it 2140 loss: 4.6429 
+
+2024-01-30 21:18:52,711 utils.trn_utils DEBUG: Num_it 2142 loss: 4.6878 
+
+2024-01-30 21:18:57,893 utils.trn_utils DEBUG: Num_it 2144 loss: 4.7870 
+
+2024-01-30 21:19:07,508 utils.trn_utils DEBUG: Num_it 2146 loss: 4.7804 
+
+2024-01-30 21:19:09,663 utils.trn_utils DEBUG: Num_it 2148 loss: 4.7348 
+
+2024-01-30 21:19:21,961 utils.trn_utils DEBUG: Num_it 2150 loss: 4.7075 
+
+2024-01-30 21:19:25,611 utils.trn_utils DEBUG: Num_it 2152 loss: 4.7093 
+
+2024-01-30 21:19:34,915 utils.trn_utils DEBUG: Num_it 2154 loss: 4.7123 
+
+2024-01-30 21:19:37,774 utils.trn_utils DEBUG: Num_it 2156 loss: 4.7617 
+
+2024-01-30 21:19:46,823 utils.trn_utils DEBUG: Num_it 2158 loss: 4.7663 
+
+2024-01-30 21:19:56,581 utils.trn_utils DEBUG: Num_it 2160 loss: 4.7611 
+
+2024-01-30 21:19:59,481 utils.trn_utils DEBUG: Num_it 2162 loss: 4.7292 
+
+2024-01-30 21:20:13,839 utils.trn_utils DEBUG: Num_it 2164 loss: 4.7435 
+
+2024-01-30 21:20:14,026 utils.trn_utils DEBUG: Num_it 2166 loss: 4.7551 
+
+2024-01-30 21:20:27,077 utils.trn_utils DEBUG: Num_it 2168 loss: 4.7679 
+
+2024-01-30 21:20:27,268 utils.trn_utils DEBUG: Num_it 2170 loss: 4.7704 
+
+2024-01-30 21:20:43,587 utils.trn_utils DEBUG: Num_it 2172 loss: 4.8032 
+
+2024-01-30 21:20:43,784 utils.trn_utils DEBUG: Num_it 2174 loss: 4.7772 
+
+2024-01-30 21:20:55,485 utils.trn_utils DEBUG: Num_it 2176 loss: 4.7846 
+
+2024-01-30 21:20:55,729 utils.trn_utils DEBUG: Num_it 2178 loss: 4.7646 
+
+2024-01-30 21:21:11,481 utils.trn_utils DEBUG: Num_it 2180 loss: 4.7479 
+
+2024-01-30 21:21:11,667 utils.trn_utils DEBUG: Num_it 2182 loss: 4.7243 
+
+2024-01-30 21:21:23,154 utils.trn_utils DEBUG: Num_it 2184 loss: 4.7509 
+
+2024-01-30 21:21:26,309 utils.trn_utils DEBUG: Num_it 2186 loss: 4.7483 
+
+2024-01-30 21:21:33,571 utils.trn_utils DEBUG: Num_it 2188 loss: 4.7893 
+
+2024-01-30 21:21:38,016 utils.trn_utils DEBUG: Num_it 2190 loss: 4.7974 
+
+2024-01-30 21:21:44,692 utils.trn_utils DEBUG: Num_it 2192 loss: 4.7788 
+
+2024-01-30 21:21:52,585 utils.trn_utils DEBUG: Num_it 2194 loss: 4.7830 
+
+2024-01-30 21:22:06,474 utils.trn_utils DEBUG: Num_it 2196 loss: 4.7578 
+
+2024-01-30 21:22:11,113 utils.trn_utils DEBUG: Num_it 2198 loss: 4.7606 
+
+2024-01-30 21:22:21,757 utils.trn_utils DEBUG: Num_it 2200 loss: 4.7883 
+
+2024-01-30 21:22:26,451 utils.trn_utils DEBUG: Num_it 2202 loss: 4.7897 
+
+2024-01-30 21:22:33,873 utils.trn_utils DEBUG: Num_it 2204 loss: 4.7960 
+
+2024-01-30 21:22:40,564 utils.trn_utils DEBUG: Num_it 2206 loss: 4.8138 
+
+2024-01-30 21:22:47,353 utils.trn_utils DEBUG: Num_it 2208 loss: 4.8167 
+
+2024-01-30 21:22:52,220 utils.trn_utils DEBUG: Num_it 2210 loss: 4.8141 
+
+2024-01-30 21:22:59,503 utils.trn_utils DEBUG: Num_it 2212 loss: 4.7800 
+
+2024-01-30 21:23:05,975 utils.trn_utils DEBUG: Num_it 2214 loss: 4.7892 
+
+2024-01-30 21:23:12,879 utils.trn_utils DEBUG: Num_it 2216 loss: 4.8581 
+
+2024-01-30 21:23:22,384 utils.trn_utils DEBUG: Num_it 2218 loss: 4.8854 
+
+2024-01-30 21:23:25,853 utils.trn_utils DEBUG: Num_it 2220 loss: 4.8250 
+
+2024-01-30 21:23:35,999 utils.trn_utils DEBUG: Num_it 2222 loss: 4.8234 
+
+2024-01-30 21:23:38,157 utils.trn_utils DEBUG: Num_it 2224 loss: 4.7865 
+
+2024-01-30 21:23:50,275 utils.trn_utils DEBUG: Num_it 2226 loss: 4.7951 
+
+2024-01-30 21:23:55,340 utils.trn_utils DEBUG: Num_it 2228 loss: 4.7754 
+
+2024-01-30 21:24:06,018 utils.trn_utils DEBUG: Num_it 2230 loss: 4.7736 
+
+2024-01-30 21:24:08,500 utils.trn_utils DEBUG: Num_it 2232 loss: 4.7618 
+
+2024-01-30 21:24:17,957 utils.trn_utils DEBUG: Num_it 2234 loss: 4.7019 
+
+2024-01-30 21:24:23,592 utils.trn_utils DEBUG: Num_it 2236 loss: 4.7005 
+
+2024-01-30 21:24:29,363 utils.trn_utils DEBUG: Num_it 2238 loss: 4.6765 
+
+2024-01-30 21:24:51,146 utils.trn_utils DEBUG: Num_it 2240 loss: 4.6709 
+
+2024-01-30 21:24:51,339 utils.trn_utils DEBUG: Num_it 2242 loss: 4.7000 
+
+2024-01-30 21:25:02,498 utils.trn_utils DEBUG: Num_it 2244 loss: 4.6768 
+
+2024-01-30 21:25:02,677 utils.trn_utils DEBUG: Num_it 2246 loss: 4.6949 
+
+2024-01-30 21:25:19,684 utils.trn_utils DEBUG: Num_it 2248 loss: 4.7075 
+
+2024-01-30 21:25:19,880 utils.trn_utils DEBUG: Num_it 2250 loss: 4.7214 
+
+2024-01-30 21:25:35,216 utils.trn_utils DEBUG: Num_it 2252 loss: 4.7397 
+
+2024-01-30 21:25:35,404 utils.trn_utils DEBUG: Num_it 2254 loss: 4.7553 
+
+2024-01-30 21:25:49,368 utils.trn_utils DEBUG: Num_it 2256 loss: 4.7668 
+
+2024-01-30 21:25:49,560 utils.trn_utils DEBUG: Num_it 2258 loss: 4.7528 
+
+2024-01-30 21:26:06,528 utils.trn_utils DEBUG: Num_it 2260 loss: 4.7399 
+
+2024-01-30 21:26:06,716 utils.trn_utils DEBUG: Num_it 2262 loss: 4.7497 
+
+2024-01-30 21:26:18,425 utils.trn_utils DEBUG: Num_it 2264 loss: 4.7453 
+
+2024-01-30 21:26:18,609 utils.trn_utils DEBUG: Num_it 2266 loss: 4.7543 
+
+2024-01-30 21:26:32,915 utils.trn_utils DEBUG: Num_it 2268 loss: 4.7122 
+
+2024-01-30 21:26:33,098 utils.trn_utils DEBUG: Num_it 2270 loss: 4.6819 
+
+2024-01-30 21:26:43,864 utils.trn_utils DEBUG: Num_it 2272 loss: 4.6867 
+
+2024-01-30 21:26:49,694 utils.trn_utils DEBUG: Num_it 2274 loss: 4.7090 
+
+2024-01-30 21:26:54,693 utils.trn_utils DEBUG: Num_it 2276 loss: 4.7630 
+
+2024-01-30 21:27:07,225 utils.trn_utils DEBUG: Num_it 2278 loss: 4.7553 
+
+2024-01-30 21:27:10,311 utils.trn_utils DEBUG: Num_it 2280 loss: 4.7171 
+
+2024-01-30 21:27:26,186 utils.trn_utils DEBUG: Num_it 2282 loss: 4.7266 
+
+2024-01-30 21:27:26,379 utils.trn_utils DEBUG: Num_it 2284 loss: 4.7612 
+
+2024-01-30 21:27:39,185 utils.trn_utils DEBUG: Num_it 2286 loss: 4.7153 
+
+2024-01-30 21:27:39,374 utils.trn_utils DEBUG: Num_it 2288 loss: 4.6915 
+
+2024-01-30 21:27:50,617 utils.trn_utils DEBUG: Num_it 2290 loss: 4.7302 
+
+2024-01-30 21:27:54,238 utils.trn_utils DEBUG: Num_it 2292 loss: 4.7557 
+
+2024-01-30 21:28:02,627 utils.trn_utils DEBUG: Num_it 2294 loss: 4.7155 
+
+2024-01-30 21:28:06,166 utils.trn_utils DEBUG: Num_it 2296 loss: 4.7003 
+
+2024-01-30 21:28:14,963 utils.trn_utils DEBUG: Num_it 2298 loss: 4.6769 
+
+2024-01-30 21:28:22,078 utils.trn_utils DEBUG: Num_it 2300 loss: 4.7224 
+
+2024-01-30 21:28:36,790 utils.trn_utils DEBUG: Num_it 2302 loss: 4.7384 
+
+2024-01-30 21:28:40,121 utils.trn_utils DEBUG: Num_it 2304 loss: 4.7193 
+
+2024-01-30 21:28:53,729 utils.trn_utils DEBUG: Num_it 2306 loss: 4.6975 
+
+2024-01-30 21:28:53,929 utils.trn_utils DEBUG: Num_it 2308 loss: 4.6675 
+
+2024-01-30 21:29:08,050 utils.trn_utils DEBUG: Num_it 2310 loss: 4.6489 
+
+2024-01-30 21:29:08,246 utils.trn_utils DEBUG: Num_it 2312 loss: 4.6824 
+
+2024-01-30 21:29:21,780 utils.trn_utils DEBUG: Num_it 2314 loss: 4.7505 
+
+2024-01-30 21:29:21,970 utils.trn_utils DEBUG: Num_it 2316 loss: 4.7718 
+
+2024-01-30 21:29:36,942 utils.trn_utils DEBUG: Num_it 2318 loss: 4.7779 
+
+2024-01-30 21:29:37,134 utils.trn_utils DEBUG: Num_it 2320 loss: 4.7779 
+
+2024-01-30 21:29:51,573 utils.trn_utils DEBUG: Num_it 2322 loss: 4.8021 
+
+2024-01-30 21:29:51,764 utils.trn_utils DEBUG: Num_it 2324 loss: 4.7844 
+
+2024-01-30 21:30:08,380 utils.trn_utils DEBUG: Num_it 2326 loss: 4.7853 
+
+2024-01-30 21:30:08,570 utils.trn_utils DEBUG: Num_it 2328 loss: 4.7810 
+
+2024-01-30 21:30:20,651 utils.trn_utils DEBUG: Num_it 2330 loss: 4.7795 
+
+2024-01-30 21:30:20,838 utils.trn_utils DEBUG: Num_it 2332 loss: 4.7971 
+
+2024-01-30 21:30:33,921 utils.trn_utils DEBUG: Num_it 2334 loss: 4.7967 
+
+2024-01-30 21:30:34,108 utils.trn_utils DEBUG: Num_it 2336 loss: 4.7499 
+
+2024-01-30 21:30:45,631 utils.trn_utils DEBUG: Num_it 2338 loss: 4.7284 
+
+2024-01-30 21:30:45,822 utils.trn_utils DEBUG: Num_it 2340 loss: 4.7536 
+
+2024-01-30 21:31:00,481 utils.trn_utils DEBUG: Num_it 2342 loss: 4.7534 
+
+2024-01-30 21:31:00,711 utils.trn_utils DEBUG: Num_it 2344 loss: 4.7740 
+
+2024-01-30 21:31:13,502 utils.trn_utils DEBUG: Num_it 2346 loss: 4.7905 
+
+2024-01-30 21:31:13,692 utils.trn_utils DEBUG: Num_it 2348 loss: 4.7816 
+
+2024-01-30 21:31:25,796 utils.trn_utils DEBUG: Num_it 2350 loss: 4.7770 
+
+2024-01-30 21:31:25,975 utils.trn_utils DEBUG: Num_it 2352 loss: 4.7957 
+
+2024-01-30 21:31:42,608 utils.trn_utils DEBUG: Num_it 2354 loss: 4.7619 
+
+2024-01-30 21:31:42,798 utils.trn_utils DEBUG: Num_it 2356 loss: 4.7564 
+
+2024-01-30 21:31:57,518 utils.trn_utils DEBUG: Num_it 2358 loss: 4.7455 
+
+2024-01-30 21:31:57,717 utils.trn_utils DEBUG: Num_it 2360 loss: 4.7757 
+
+2024-01-30 21:32:11,618 utils.trn_utils DEBUG: Num_it 2362 loss: 4.8075 
+
+2024-01-30 21:32:11,798 utils.trn_utils DEBUG: Num_it 2364 loss: 4.7713 
+
+2024-01-30 21:32:24,559 utils.trn_utils DEBUG: Num_it 2366 loss: 4.7380 
+
+2024-01-30 21:32:24,740 utils.trn_utils DEBUG: Num_it 2368 loss: 4.7378 
+
+2024-01-30 21:32:44,007 utils.trn_utils DEBUG: Num_it 2370 loss: 4.7215 
+
+2024-01-30 21:32:44,186 utils.trn_utils DEBUG: Num_it 2372 loss: 4.7438 
+
+2024-01-30 21:32:57,973 utils.trn_utils DEBUG: Num_it 2374 loss: 4.7570 
+
+2024-01-30 21:32:58,150 utils.trn_utils DEBUG: Num_it 2376 loss: 4.7839 
+
+2024-01-30 21:33:14,535 utils.trn_utils DEBUG: Num_it 2378 loss: 4.7995 
+
+2024-01-30 21:33:14,727 utils.trn_utils DEBUG: Num_it 2380 loss: 4.8057 
+
+2024-01-30 21:33:28,717 utils.trn_utils DEBUG: Num_it 2382 loss: 4.7956 
+
+2024-01-30 21:33:28,912 utils.trn_utils DEBUG: Num_it 2384 loss: 4.8021 
+
+2024-01-30 21:33:41,015 utils.trn_utils DEBUG: Num_it 2386 loss: 4.8025 
+
+2024-01-30 21:33:41,209 utils.trn_utils DEBUG: Num_it 2388 loss: 4.7617 
+
+2024-01-30 21:33:53,662 utils.trn_utils DEBUG: Num_it 2390 loss: 4.6836 
+
+2024-01-30 21:33:53,880 utils.trn_utils DEBUG: Num_it 2392 loss: 4.6575 
+
+2024-01-30 21:34:12,419 utils.trn_utils DEBUG: Num_it 2394 loss: 4.6851 
+
+2024-01-30 21:34:12,603 utils.trn_utils DEBUG: Num_it 2396 loss: 4.6848 
+
+2024-01-30 21:34:25,271 utils.trn_utils DEBUG: Num_it 2398 loss: 4.6751 
+
+2024-01-30 21:34:25,453 utils.trn_utils DEBUG: Num_it 2400 loss: 4.7238 
+
+2024-01-30 21:34:37,451 utils.trn_utils DEBUG: Num_it 2402 loss: 4.7232 
+
+2024-01-30 21:34:37,647 utils.trn_utils DEBUG: Num_it 2404 loss: 4.7212 
+
+2024-01-30 21:34:53,420 utils.trn_utils DEBUG: Num_it 2406 loss: 4.6704 
+
+2024-01-30 21:34:53,627 utils.trn_utils DEBUG: Num_it 2408 loss: 4.6602 
+
+2024-01-30 21:35:04,200 utils.trn_utils DEBUG: Num_it 2410 loss: 4.6569 
+
+2024-01-30 21:35:04,387 utils.trn_utils DEBUG: Num_it 2412 loss: 4.6717 
+
+2024-01-30 21:35:17,865 utils.trn_utils DEBUG: Num_it 2414 loss: 4.6636 
+
+2024-01-30 21:35:18,050 utils.trn_utils DEBUG: Num_it 2416 loss: 4.6804 
+
+2024-01-30 21:35:34,264 utils.trn_utils DEBUG: Num_it 2418 loss: 4.6688 
+
+2024-01-30 21:35:34,462 utils.trn_utils DEBUG: Num_it 2420 loss: 4.7424 
+
+2024-01-30 21:35:48,547 utils.trn_utils DEBUG: Num_it 2422 loss: 4.7660 
+
+2024-01-30 21:35:48,732 utils.trn_utils DEBUG: Num_it 2424 loss: 4.7373 
+
+2024-01-30 21:36:00,247 utils.trn_utils DEBUG: Num_it 2426 loss: 4.7512 
+
+2024-01-30 21:36:00,435 utils.trn_utils DEBUG: Num_it 2428 loss: 4.7886 
+
+2024-01-30 21:36:12,197 utils.trn_utils DEBUG: Num_it 2430 loss: 4.7715 
+
+2024-01-30 21:36:17,634 utils.trn_utils DEBUG: Num_it 2432 loss: 4.7601 
+
+2024-01-30 21:36:24,377 utils.trn_utils DEBUG: Num_it 2434 loss: 4.7274 
+
+2024-01-30 21:36:29,503 utils.trn_utils DEBUG: Num_it 2436 loss: 4.7546 
+
+2024-01-30 21:36:43,593 utils.trn_utils DEBUG: Num_it 2438 loss: 4.7422 
+
+2024-01-30 21:36:43,816 utils.trn_utils DEBUG: Num_it 2440 loss: 4.7445 
+
+2024-01-30 21:36:56,588 utils.trn_utils DEBUG: Num_it 2442 loss: 4.7458 
+
+2024-01-30 21:36:56,785 utils.trn_utils DEBUG: Num_it 2444 loss: 4.7599 
+
+2024-01-30 21:37:09,018 utils.trn_utils DEBUG: Num_it 2446 loss: 4.7752 
+
+2024-01-30 21:37:13,089 utils.trn_utils DEBUG: Num_it 2448 loss: 4.7099 
+
+2024-01-30 21:37:26,183 utils.trn_utils DEBUG: Num_it 2450 loss: 4.7430 
+
+2024-01-30 21:37:26,368 utils.trn_utils DEBUG: Num_it 2452 loss: 4.7618 
+
+2024-01-30 21:37:40,040 utils.trn_utils DEBUG: Num_it 2454 loss: 4.7091 
+
+2024-01-30 21:37:40,229 utils.trn_utils DEBUG: Num_it 2456 loss: 4.7735 
+
+2024-01-30 21:37:54,885 utils.trn_utils DEBUG: Num_it 2458 loss: 4.7345 
+
+2024-01-30 21:37:55,076 utils.trn_utils DEBUG: Num_it 2460 loss: 4.7498 
+
+2024-01-30 21:38:12,100 utils.trn_utils DEBUG: Num_it 2462 loss: 4.7572 
+
+2024-01-30 21:38:12,323 utils.trn_utils DEBUG: Num_it 2464 loss: 4.7588 
+
+2024-01-30 21:38:25,761 utils.trn_utils DEBUG: Num_it 2466 loss: 4.7043 
+
+2024-01-30 21:38:25,936 utils.trn_utils DEBUG: Num_it 2468 loss: 4.6839 
+
+2024-01-30 21:38:38,180 utils.trn_utils DEBUG: Num_it 2470 loss: 4.6974 
+
+2024-01-30 21:38:38,363 utils.trn_utils DEBUG: Num_it 2472 loss: 4.7174 
+
+2024-01-30 21:38:53,067 utils.trn_utils DEBUG: Num_it 2474 loss: 4.6937 
+
+2024-01-30 21:38:53,252 utils.trn_utils DEBUG: Num_it 2476 loss: 4.7109 
+
+2024-01-30 21:39:10,235 utils.trn_utils DEBUG: Num_it 2478 loss: 4.6847 
+
+2024-01-30 21:39:10,416 utils.trn_utils DEBUG: Num_it 2480 loss: 4.6914 
+
+2024-01-30 21:39:22,109 utils.trn_utils DEBUG: Num_it 2482 loss: 4.7243 
+
+2024-01-30 21:39:22,289 utils.trn_utils DEBUG: Num_it 2484 loss: 4.7718 
+
+2024-01-30 21:39:37,983 utils.trn_utils DEBUG: Num_it 2486 loss: 4.7978 
+
+2024-01-30 21:39:38,167 utils.trn_utils DEBUG: Num_it 2488 loss: 4.7215 
+
+2024-01-30 21:39:50,048 utils.trn_utils DEBUG: Num_it 2490 loss: 4.7590 
+
+2024-01-30 21:39:50,240 utils.trn_utils DEBUG: Num_it 2492 loss: 4.7664 
+
+2024-01-30 21:40:09,919 utils.trn_utils DEBUG: Num_it 2494 loss: 4.7697 
+
+2024-01-30 21:40:10,104 utils.trn_utils DEBUG: Num_it 2496 loss: 4.7656 
+
+2024-01-30 21:40:24,031 utils.trn_utils DEBUG: Num_it 2498 loss: 4.7763 
+
+2024-01-30 21:40:24,225 utils.trn_utils DEBUG: Num_it 2500 loss: 4.7677 
+
+2024-01-30 21:40:36,600 utils.trn_utils DEBUG: Num_it 2502 loss: 4.7642 
+
+2024-01-30 21:40:36,792 utils.trn_utils DEBUG: Num_it 2504 loss: 4.7748 
+
+2024-01-30 21:40:50,243 utils.trn_utils DEBUG: Num_it 2506 loss: 4.8250 
+
+2024-01-30 21:40:50,430 utils.trn_utils DEBUG: Num_it 2508 loss: 4.8176 
+
+2024-01-30 21:41:02,315 utils.trn_utils DEBUG: Num_it 2510 loss: 4.8467 
+
+2024-01-30 21:41:02,504 utils.trn_utils DEBUG: Num_it 2512 loss: 4.8140 
+
+2024-01-30 21:41:15,699 utils.trn_utils DEBUG: Num_it 2514 loss: 4.8478 
+
+2024-01-30 21:41:16,622 utils.trn_utils DEBUG: Num_it 2516 loss: 4.8788 
+
+2024-01-30 21:41:27,020 utils.trn_utils DEBUG: Num_it 2518 loss: 4.8718 
+
+2024-01-30 21:41:28,140 utils.trn_utils DEBUG: Num_it 2520 loss: 4.9255 
+
+2024-01-30 21:41:42,724 utils.trn_utils DEBUG: Num_it 2522 loss: 4.9414 
+
+2024-01-30 21:41:45,940 utils.trn_utils DEBUG: Num_it 2524 loss: 4.9325 
+
+2024-01-30 21:41:56,358 utils.trn_utils DEBUG: Num_it 2526 loss: 4.8414 
+
+2024-01-30 21:42:03,802 utils.trn_utils DEBUG: Num_it 2528 loss: 4.8160 
+
+2024-01-30 21:42:09,081 utils.trn_utils DEBUG: Num_it 2530 loss: 4.7838 
+
+2024-01-30 21:42:15,842 utils.trn_utils DEBUG: Num_it 2532 loss: 4.8195 
+
+2024-01-30 21:42:30,640 utils.trn_utils DEBUG: Num_it 2534 loss: 4.8234 
+
+2024-01-30 21:42:30,824 utils.trn_utils DEBUG: Num_it 2536 loss: 4.7585 
+
+2024-01-30 21:42:46,051 utils.trn_utils DEBUG: Num_it 2538 loss: 4.7120 
+
+2024-01-30 21:42:46,237 utils.trn_utils DEBUG: Num_it 2540 loss: 4.6658 
+
+2024-01-30 21:43:02,926 utils.trn_utils DEBUG: Num_it 2542 loss: 4.7595 
+
+2024-01-30 21:43:03,116 utils.trn_utils DEBUG: Num_it 2544 loss: 4.7773 
+
+2024-01-30 21:43:16,016 utils.trn_utils DEBUG: Num_it 2546 loss: 4.7807 
+
+2024-01-30 21:43:16,210 utils.trn_utils DEBUG: Num_it 2548 loss: 4.7717 
+
+2024-01-30 21:43:33,099 utils.trn_utils DEBUG: Num_it 2550 loss: 4.7215 
+
+2024-01-30 21:43:33,305 utils.trn_utils DEBUG: Num_it 2552 loss: 4.6879 
+
+2024-01-30 21:43:48,299 utils.trn_utils DEBUG: Num_it 2554 loss: 4.6527 
+
+2024-01-30 21:43:48,482 utils.trn_utils DEBUG: Num_it 2556 loss: 4.7010 
+
+2024-01-30 21:44:01,393 utils.trn_utils DEBUG: Num_it 2558 loss: 4.7144 
+
+2024-01-30 21:44:01,578 utils.trn_utils DEBUG: Num_it 2560 loss: 4.7663 
+
+2024-01-30 21:44:16,062 utils.trn_utils DEBUG: Num_it 2562 loss: 4.7232 
+
+2024-01-30 21:44:16,238 utils.trn_utils DEBUG: Num_it 2564 loss: 4.7114 
+
+2024-01-30 21:44:27,011 utils.trn_utils DEBUG: Num_it 2566 loss: 4.7644 
+
+2024-01-30 21:44:27,340 utils.trn_utils DEBUG: Num_it 2568 loss: 4.7608 
+
+2024-01-30 21:44:42,084 utils.trn_utils DEBUG: Num_it 2570 loss: 4.7460 
+
+2024-01-30 21:44:42,272 utils.trn_utils DEBUG: Num_it 2572 loss: 4.7981 
+
+2024-01-30 21:44:54,412 utils.trn_utils DEBUG: Num_it 2574 loss: 4.7914 
+
+2024-01-30 21:44:55,307 utils.trn_utils DEBUG: Num_it 2576 loss: 4.7796 
+
+2024-01-30 21:45:10,006 utils.trn_utils DEBUG: Num_it 2578 loss: 4.7401 
+
+2024-01-30 21:45:10,300 utils.trn_utils DEBUG: Num_it 2580 loss: 4.6739 
+
+2024-01-30 21:45:25,529 utils.trn_utils DEBUG: Num_it 2582 loss: 4.6632 
+
+2024-01-30 21:45:26,735 utils.trn_utils DEBUG: Num_it 2584 loss: 4.6914 
+
+2024-01-30 21:45:43,081 utils.trn_utils DEBUG: Num_it 2586 loss: 4.6932 
+
+2024-01-30 21:45:44,406 utils.trn_utils DEBUG: Num_it 2588 loss: 4.7750 
+
+2024-01-30 21:45:56,090 utils.trn_utils DEBUG: Num_it 2590 loss: 4.7166 
+
+2024-01-30 21:45:59,441 utils.trn_utils DEBUG: Num_it 2592 loss: 4.7096 
+
+2024-01-30 21:46:09,836 utils.trn_utils DEBUG: Num_it 2594 loss: 4.7212 
+
+2024-01-30 21:46:13,917 utils.trn_utils DEBUG: Num_it 2596 loss: 4.7117 
+
+2024-01-30 21:46:24,967 utils.trn_utils DEBUG: Num_it 2598 loss: 4.6801 
+
+2024-01-30 21:46:30,580 utils.trn_utils DEBUG: Num_it 2600 loss: 4.7168 
+
+2024-01-30 21:46:37,789 utils.trn_utils DEBUG: Num_it 2602 loss: 4.6813 
+
+2024-01-30 21:46:48,588 utils.trn_utils DEBUG: Num_it 2604 loss: 4.6709 
+
+2024-01-30 21:46:48,837 utils.trn_utils DEBUG: Num_it 2606 loss: 4.6542 
+
+2024-01-30 21:47:00,313 utils.trn_utils DEBUG: Num_it 2608 loss: 4.7046 
+
+2024-01-30 21:47:00,513 utils.trn_utils DEBUG: Num_it 2610 loss: 4.6941 
+
+2024-01-30 21:47:11,880 utils.trn_utils DEBUG: Num_it 2612 loss: 4.7214 
+
+2024-01-30 21:47:21,265 utils.trn_utils DEBUG: Num_it 2614 loss: 4.7265 
+
+2024-01-30 21:47:25,028 utils.trn_utils DEBUG: Num_it 2616 loss: 4.7440 
+
+2024-01-30 21:47:35,370 utils.trn_utils DEBUG: Num_it 2618 loss: 4.7512 
+
+2024-01-30 21:47:40,264 utils.trn_utils DEBUG: Num_it 2620 loss: 4.7428 
+
+2024-01-30 21:47:50,633 utils.trn_utils DEBUG: Num_it 2622 loss: 4.7737 
+
+2024-01-30 21:47:53,418 utils.trn_utils DEBUG: Num_it 2624 loss: 4.7931 
+
+2024-01-30 21:48:05,761 utils.trn_utils DEBUG: Num_it 2626 loss: 4.7798 
+
+2024-01-30 21:48:07,979 utils.trn_utils DEBUG: Num_it 2628 loss: 4.7529 
+
+2024-01-30 21:48:18,138 utils.trn_utils DEBUG: Num_it 2630 loss: 4.7220 
+
+2024-01-30 21:48:20,282 utils.trn_utils DEBUG: Num_it 2632 loss: 4.6858 
+
+2024-01-30 21:48:31,453 utils.trn_utils DEBUG: Num_it 2634 loss: 4.6658 
+
+2024-01-30 21:48:31,967 utils.trn_utils DEBUG: Num_it 2636 loss: 4.6986 
+
+2024-01-30 21:48:49,093 utils.trn_utils DEBUG: Num_it 2638 loss: 4.7210 
+
+2024-01-30 21:48:49,285 utils.trn_utils DEBUG: Num_it 2640 loss: 4.7711 
+
+2024-01-30 21:49:00,852 utils.trn_utils DEBUG: Num_it 2642 loss: 4.8174 
+
+2024-01-30 21:49:08,524 utils.trn_utils DEBUG: Num_it 2644 loss: 4.8285 
+
+2024-01-30 21:49:12,306 utils.trn_utils DEBUG: Num_it 2646 loss: 4.7918 
+
+2024-01-30 21:49:20,659 utils.trn_utils DEBUG: Num_it 2648 loss: 4.7896 
+
+2024-01-30 21:49:28,419 utils.trn_utils DEBUG: Num_it 2650 loss: 4.8064 
+
+2024-01-30 21:49:35,409 utils.trn_utils DEBUG: Num_it 2652 loss: 4.7770 
+
+2024-01-30 21:49:41,625 utils.trn_utils DEBUG: Num_it 2654 loss: 4.7622 
+
+2024-01-30 21:49:46,442 utils.trn_utils DEBUG: Num_it 2656 loss: 4.7695 
+
+2024-01-30 21:49:57,490 utils.trn_utils DEBUG: Num_it 2658 loss: 4.7549 
+
+2024-01-30 21:49:58,267 utils.trn_utils DEBUG: Num_it 2660 loss: 4.7564 
+
+2024-01-30 21:50:09,405 utils.trn_utils DEBUG: Num_it 2662 loss: 4.7520 
+
+2024-01-30 21:50:11,635 utils.trn_utils DEBUG: Num_it 2664 loss: 4.7515 
+
+2024-01-30 21:50:22,457 utils.trn_utils DEBUG: Num_it 2666 loss: 4.7304 
+
+2024-01-30 21:50:24,099 utils.trn_utils DEBUG: Num_it 2668 loss: 4.7243 
+
+2024-01-30 21:50:43,493 utils.trn_utils DEBUG: Num_it 2670 loss: 4.7072 
+
+2024-01-30 21:50:43,682 utils.trn_utils DEBUG: Num_it 2672 loss: 4.7555 
+
+2024-01-30 21:51:03,506 utils.trn_utils DEBUG: Num_it 2674 loss: 4.7638 
+
+2024-01-30 21:51:03,680 utils.trn_utils DEBUG: Num_it 2676 loss: 4.7679 
+
+2024-01-30 21:51:15,144 utils.trn_utils DEBUG: Num_it 2678 loss: 4.7869 
+
+2024-01-30 21:51:15,331 utils.trn_utils DEBUG: Num_it 2680 loss: 4.7823 
+
+2024-01-30 21:51:30,558 utils.trn_utils DEBUG: Num_it 2682 loss: 4.7928 
+
+2024-01-30 21:51:30,736 utils.trn_utils DEBUG: Num_it 2684 loss: 4.7960 
+
+2024-01-30 21:51:43,677 utils.trn_utils DEBUG: Num_it 2686 loss: 4.7685 
+
+2024-01-30 21:51:43,885 utils.trn_utils DEBUG: Num_it 2688 loss: 4.7623 
+
+2024-01-30 21:52:02,370 utils.trn_utils DEBUG: Num_it 2690 loss: 4.7559 
+
+2024-01-30 21:52:02,548 utils.trn_utils DEBUG: Num_it 2692 loss: 4.7894 
+
+2024-01-30 21:52:14,646 utils.trn_utils DEBUG: Num_it 2694 loss: 4.7680 
+
+2024-01-30 21:52:14,818 utils.trn_utils DEBUG: Num_it 2696 loss: 4.8117 
+
+2024-01-30 21:52:32,038 utils.trn_utils DEBUG: Num_it 2698 loss: 4.8331 
+
+2024-01-30 21:52:32,219 utils.trn_utils DEBUG: Num_it 2700 loss: 4.8178 
+
+2024-01-30 21:52:46,877 utils.trn_utils DEBUG: Num_it 2702 loss: 4.7806 
+
+2024-01-30 21:52:47,069 utils.trn_utils DEBUG: Num_it 2704 loss: 4.7702 
+
+2024-01-30 21:53:02,168 utils.trn_utils DEBUG: Num_it 2706 loss: 4.7658 
+
+2024-01-30 21:53:02,365 utils.trn_utils DEBUG: Num_it 2708 loss: 4.7216 
+
+2024-01-30 21:53:13,460 utils.trn_utils DEBUG: Num_it 2710 loss: 4.7426 
+
+2024-01-30 21:53:13,650 utils.trn_utils DEBUG: Num_it 2712 loss: 4.7163 
+
+2024-01-30 21:53:31,206 utils.trn_utils DEBUG: Num_it 2714 loss: 4.7411 
+
+2024-01-30 21:53:31,385 utils.trn_utils DEBUG: Num_it 2716 loss: 4.7427 
+
+2024-01-30 21:53:44,296 utils.trn_utils DEBUG: Num_it 2718 loss: 4.7328 
+
+2024-01-30 21:53:44,492 utils.trn_utils DEBUG: Num_it 2720 loss: 4.7301 
+
+2024-01-30 21:53:59,597 utils.trn_utils DEBUG: Num_it 2722 loss: 4.7376 
+
+2024-01-30 21:53:59,796 utils.trn_utils DEBUG: Num_it 2724 loss: 4.7260 
+
+2024-01-30 21:54:11,167 utils.trn_utils DEBUG: Num_it 2726 loss: 4.7467 
+
+2024-01-30 21:54:11,375 utils.trn_utils DEBUG: Num_it 2728 loss: 4.7227 
+
+2024-01-30 21:54:27,674 utils.trn_utils DEBUG: Num_it 2730 loss: 4.6978 
+
+2024-01-30 21:54:27,864 utils.trn_utils DEBUG: Num_it 2732 loss: 4.7257 
+
+2024-01-30 21:54:40,533 utils.trn_utils DEBUG: Num_it 2734 loss: 4.7276 
+
+2024-01-30 21:54:40,719 utils.trn_utils DEBUG: Num_it 2736 loss: 4.8072 
+
+2024-01-30 21:54:51,712 utils.trn_utils DEBUG: Num_it 2738 loss: 4.8171 
+
+2024-01-30 21:54:51,890 utils.trn_utils DEBUG: Num_it 2740 loss: 4.8053 
+
+2024-01-30 21:55:06,199 utils.trn_utils DEBUG: Num_it 2742 loss: 4.7808 
+
+2024-01-30 21:55:08,590 utils.trn_utils DEBUG: Num_it 2744 loss: 4.7850 
+
+2024-01-30 21:55:21,857 utils.trn_utils DEBUG: Num_it 2746 loss: 4.7862 
+
+2024-01-30 21:55:22,725 utils.trn_utils DEBUG: Num_it 2748 loss: 4.7512 
+
+2024-01-30 21:55:38,145 utils.trn_utils DEBUG: Num_it 2750 loss: 4.7137 
+
+2024-01-30 21:55:40,984 utils.trn_utils DEBUG: Num_it 2752 loss: 4.7489 
+
+2024-01-30 21:55:50,688 utils.trn_utils DEBUG: Num_it 2754 loss: 4.7609 
+
+2024-01-30 21:55:56,527 utils.trn_utils DEBUG: Num_it 2756 loss: 4.7614 
+
+2024-01-30 21:56:01,700 utils.trn_utils DEBUG: Num_it 2758 loss: 4.8025 
+
+2024-01-30 21:56:09,094 utils.trn_utils DEBUG: Num_it 2760 loss: 4.8244 
+
+2024-01-30 21:56:21,619 utils.trn_utils DEBUG: Num_it 2762 loss: 4.8048 
+
+2024-01-30 21:56:21,799 utils.trn_utils DEBUG: Num_it 2764 loss: 4.8101 
+
+2024-01-30 21:56:33,281 utils.trn_utils DEBUG: Num_it 2766 loss: 4.7759 
+
+2024-01-30 21:56:35,097 utils.trn_utils DEBUG: Num_it 2768 loss: 4.7816 
+
+2024-01-30 21:56:45,593 utils.trn_utils DEBUG: Num_it 2770 loss: 4.7456 
+
+2024-01-30 21:56:48,171 utils.trn_utils DEBUG: Num_it 2772 loss: 4.7847 
+
+2024-01-30 21:56:55,937 utils.trn_utils DEBUG: Num_it 2774 loss: 4.7772 
+
+2024-01-30 21:56:56,537 utils.trn_utils DEBUG: Num_it 2776 loss: 4.7877 
+
+2024-01-30 22:01:44,908 utils.trn_utils DEBUG: Num_it 2778 loss: 4.6994 
+
+2024-01-30 22:01:49,417 utils.trn_utils DEBUG: Num_it 2780 loss: 4.6276 
+
+2024-01-30 22:02:04,419 utils.trn_utils DEBUG: Num_it 2782 loss: 4.6196 
+
+2024-01-30 22:02:04,610 utils.trn_utils DEBUG: Num_it 2784 loss: 4.5955 
+
+2024-01-30 22:02:16,971 utils.trn_utils DEBUG: Num_it 2786 loss: 4.5835 
+
+2024-01-30 22:02:17,165 utils.trn_utils DEBUG: Num_it 2788 loss: 4.6039 
+
+2024-01-30 22:02:28,154 utils.trn_utils DEBUG: Num_it 2790 loss: 4.6181 
+
+2024-01-30 22:02:28,334 utils.trn_utils DEBUG: Num_it 2792 loss: 4.6538 
+
+2024-01-30 22:02:43,889 utils.trn_utils DEBUG: Num_it 2794 loss: 4.6335 
+
+2024-01-30 22:02:44,076 utils.trn_utils DEBUG: Num_it 2796 loss: 4.6513 
+
+2024-01-30 22:02:55,320 utils.trn_utils DEBUG: Num_it 2798 loss: 4.6270 
+
+2024-01-30 22:02:55,719 utils.trn_utils DEBUG: Num_it 2800 loss: 4.6190 
+
+2024-01-30 22:03:04,877 utils.trn_utils DEBUG: Num_it 2802 loss: 4.6713 
+
+2024-01-30 22:03:08,919 utils.trn_utils DEBUG: Num_it 2804 loss: 4.7212 
+
+2024-01-30 22:03:18,892 utils.trn_utils DEBUG: Num_it 2806 loss: 4.6822 
+
+2024-01-30 22:03:21,278 utils.trn_utils DEBUG: Num_it 2808 loss: 4.6560 
+
+2024-01-30 22:03:32,929 utils.trn_utils DEBUG: Num_it 2810 loss: 4.6594 
+
+2024-01-30 22:03:34,999 utils.trn_utils DEBUG: Num_it 2812 loss: 4.6348 
+
+2024-01-30 22:03:44,355 utils.trn_utils DEBUG: Num_it 2814 loss: 4.6271 
+
+2024-01-30 22:03:47,445 utils.trn_utils DEBUG: Num_it 2816 loss: 4.6480 
+
+2024-01-30 22:03:59,844 utils.trn_utils DEBUG: Num_it 2818 loss: 4.6244 
+
+2024-01-30 22:04:00,023 utils.trn_utils DEBUG: Num_it 2820 loss: 4.6173 
+
+2024-01-30 22:04:10,694 utils.trn_utils DEBUG: Num_it 2822 loss: 4.6464 
+
+2024-01-30 22:04:13,863 utils.trn_utils DEBUG: Num_it 2824 loss: 4.6542 
+
+2024-01-30 22:04:31,042 utils.trn_utils DEBUG: Num_it 2826 loss: 4.6477 
+
+2024-01-30 22:04:31,241 utils.trn_utils DEBUG: Num_it 2828 loss: 4.6516 
+
+2024-01-30 22:04:46,806 utils.trn_utils DEBUG: Num_it 2830 loss: 4.6578 
+
+2024-01-30 22:04:47,006 utils.trn_utils DEBUG: Num_it 2832 loss: 4.6323 
+
+2024-01-30 22:04:59,641 utils.trn_utils DEBUG: Num_it 2834 loss: 4.6579 
+
+2024-01-30 22:04:59,823 utils.trn_utils DEBUG: Num_it 2836 loss: 4.6211 
+
+2024-01-30 22:05:11,338 utils.trn_utils DEBUG: Num_it 2838 loss: 4.6738 
+
+2024-01-30 22:05:11,532 utils.trn_utils DEBUG: Num_it 2840 loss: 4.6504 
+
+2024-01-30 22:05:27,932 utils.trn_utils DEBUG: Num_it 2842 loss: 4.6419 
+
+2024-01-30 22:05:28,121 utils.trn_utils DEBUG: Num_it 2844 loss: 4.6370 
+
+2024-01-30 22:05:40,060 utils.trn_utils DEBUG: Num_it 2846 loss: 4.6138 
+
+2024-01-30 22:05:40,252 utils.trn_utils DEBUG: Num_it 2848 loss: 4.6163 
+
+2024-01-30 22:05:54,683 utils.trn_utils DEBUG: Num_it 2850 loss: 4.5788 
+
+2024-01-30 22:05:54,869 utils.trn_utils DEBUG: Num_it 2852 loss: 4.5924 
+
+2024-01-30 22:06:07,583 utils.trn_utils DEBUG: Num_it 2854 loss: 4.5553 
+
+2024-01-30 22:06:07,779 utils.trn_utils DEBUG: Num_it 2856 loss: 4.5845 
+
+2024-01-30 22:06:19,349 utils.trn_utils DEBUG: Num_it 2858 loss: 4.6044 
+
+2024-01-30 22:06:19,528 utils.trn_utils DEBUG: Num_it 2860 loss: 4.6180 
+
+2024-01-30 22:06:33,912 utils.trn_utils DEBUG: Num_it 2862 loss: 4.5934 
+
+2024-01-30 22:06:34,094 utils.trn_utils DEBUG: Num_it 2864 loss: 4.6207 
+
+2024-01-30 22:06:51,081 utils.trn_utils DEBUG: Num_it 2866 loss: 4.6239 
+
+2024-01-30 22:06:51,259 utils.trn_utils DEBUG: Num_it 2868 loss: 4.5568 
+
+2024-01-30 22:07:03,664 utils.trn_utils DEBUG: Num_it 2870 loss: 4.5906 
+
+2024-01-30 22:07:03,847 utils.trn_utils DEBUG: Num_it 2872 loss: 4.6300 
+
+2024-01-30 22:07:16,521 utils.trn_utils DEBUG: Num_it 2874 loss: 4.6718 
+
+2024-01-30 22:07:16,708 utils.trn_utils DEBUG: Num_it 2876 loss: 4.6821 
+
+2024-01-30 22:07:29,016 utils.trn_utils DEBUG: Num_it 2878 loss: 4.7226 
+
+2024-01-30 22:07:29,194 utils.trn_utils DEBUG: Num_it 2880 loss: 4.7229 
+
+2024-01-30 22:07:42,220 utils.trn_utils DEBUG: Num_it 2882 loss: 4.7415 
+
+2024-01-30 22:07:48,976 utils.trn_utils DEBUG: Num_it 2884 loss: 4.7014 
+
+2024-01-30 22:07:54,457 utils.trn_utils DEBUG: Num_it 2886 loss: 4.7212 
+
+2024-01-30 22:08:07,590 utils.trn_utils DEBUG: Num_it 2888 loss: 4.7296 
+
+2024-01-30 22:08:08,234 utils.trn_utils DEBUG: Num_it 2890 loss: 4.7347 
+
+2024-01-30 22:08:19,471 utils.trn_utils DEBUG: Num_it 2892 loss: 4.7571 
+
+2024-01-30 22:08:20,431 utils.trn_utils DEBUG: Num_it 2894 loss: 4.7460 
+
+2024-01-30 22:08:35,046 utils.trn_utils DEBUG: Num_it 2896 loss: 4.7232 
+
+2024-01-30 22:08:35,234 utils.trn_utils DEBUG: Num_it 2898 loss: 4.7364 
+
+2024-01-30 22:08:56,556 utils.trn_utils DEBUG: Num_it 2900 loss: 4.7064 
+
+2024-01-30 22:08:56,742 utils.trn_utils DEBUG: Num_it 2902 loss: 4.7040 
+
+2024-01-30 22:09:11,841 utils.trn_utils DEBUG: Num_it 2904 loss: 4.6852 
+
+2024-01-30 22:09:12,033 utils.trn_utils DEBUG: Num_it 2906 loss: 4.6205 
+
+2024-01-30 22:09:27,561 utils.trn_utils DEBUG: Num_it 2908 loss: 4.6464 
+
+2024-01-30 22:09:27,755 utils.trn_utils DEBUG: Num_it 2910 loss: 4.6652 
+
+2024-01-30 22:09:40,458 utils.trn_utils DEBUG: Num_it 2912 loss: 4.6805 
+
+2024-01-30 22:09:40,652 utils.trn_utils DEBUG: Num_it 2914 loss: 4.6726 
+
+2024-01-30 22:09:55,704 utils.trn_utils DEBUG: Num_it 2916 loss: 4.7147 
+
+2024-01-30 22:09:55,883 utils.trn_utils DEBUG: Num_it 2918 loss: 4.6328 
+
+2024-01-30 22:10:07,138 utils.trn_utils DEBUG: Num_it 2920 loss: 4.6484 
+
+2024-01-30 22:10:07,323 utils.trn_utils DEBUG: Num_it 2922 loss: 4.6839 
+
+2024-01-30 22:10:20,038 utils.trn_utils DEBUG: Num_it 2924 loss: 4.6439 
+
+2024-01-30 22:10:20,209 utils.trn_utils DEBUG: Num_it 2926 loss: 4.6956 
+
+2024-01-30 22:10:31,542 utils.trn_utils DEBUG: Num_it 2928 loss: 4.7019 
+
+2024-01-30 22:10:39,200 utils.trn_utils DEBUG: Num_it 2930 loss: 4.6873 
+
+2024-01-30 22:10:45,724 utils.trn_utils DEBUG: Num_it 2932 loss: 4.7072 
+
+2024-01-30 22:10:51,811 utils.trn_utils DEBUG: Num_it 2934 loss: 4.6829 
+
+2024-01-30 22:10:58,815 utils.trn_utils DEBUG: Num_it 2936 loss: 4.6477 
+
+2024-01-30 22:11:04,328 utils.trn_utils DEBUG: Num_it 2938 loss: 4.6332 
+
+2024-01-30 22:11:20,415 utils.trn_utils DEBUG: Num_it 2940 loss: 4.6618 
+
+2024-01-30 22:11:20,603 utils.trn_utils DEBUG: Num_it 2942 loss: 4.6576 
+
+2024-01-30 22:11:33,978 utils.trn_utils DEBUG: Num_it 2944 loss: 4.6571 
+
+2024-01-30 22:11:35,608 utils.trn_utils DEBUG: Num_it 2946 loss: 4.6558 
+
+2024-01-30 22:11:48,780 utils.trn_utils DEBUG: Num_it 2948 loss: 4.6512 
+
+2024-01-30 22:11:48,968 utils.trn_utils DEBUG: Num_it 2950 loss: 4.6387 
+
+2024-01-30 22:12:06,050 utils.trn_utils DEBUG: Num_it 2952 loss: 4.5956 
+
+2024-01-30 22:12:06,244 utils.trn_utils DEBUG: Num_it 2954 loss: 4.6219 
+
+2024-01-30 22:12:17,499 utils.trn_utils DEBUG: Num_it 2956 loss: 4.5968 
+
+2024-01-30 22:12:20,336 utils.trn_utils DEBUG: Num_it 2958 loss: 4.6294 
+
+2024-01-30 22:12:29,017 utils.trn_utils DEBUG: Num_it 2960 loss: 4.6318 
+
+2024-01-30 22:12:32,841 utils.trn_utils DEBUG: Num_it 2962 loss: 4.6374 
+
+2024-01-30 22:12:44,149 utils.trn_utils DEBUG: Num_it 2964 loss: 4.6070 
+
+2024-01-30 22:12:49,080 utils.trn_utils DEBUG: Num_it 2966 loss: 4.6277 
+
+2024-01-30 22:12:56,592 utils.trn_utils DEBUG: Num_it 2968 loss: 4.5907 
+
+2024-01-30 22:13:03,536 utils.trn_utils DEBUG: Num_it 2970 loss: 4.5986 
+
+2024-01-30 22:13:12,446 utils.trn_utils DEBUG: Num_it 2972 loss: 4.5982 
+
+2024-01-30 22:13:19,140 utils.trn_utils DEBUG: Num_it 2974 loss: 4.6026 
+
+2024-01-30 22:13:27,325 utils.trn_utils DEBUG: Num_it 2976 loss: 4.6195 
+
+2024-01-30 22:13:31,743 utils.trn_utils DEBUG: Num_it 2978 loss: 4.6131 
+
+2024-01-30 22:13:44,210 utils.trn_utils DEBUG: Num_it 2980 loss: 4.6757 
+
+2024-01-30 22:13:44,774 utils.trn_utils DEBUG: Num_it 2982 loss: 4.6507 
+
+2024-01-30 22:13:56,407 utils.trn_utils DEBUG: Num_it 2984 loss: 4.6476 
+
+2024-01-30 22:13:57,847 utils.trn_utils DEBUG: Num_it 2986 loss: 4.6602 
+
+2024-01-30 22:14:08,315 utils.trn_utils DEBUG: Num_it 2988 loss: 4.6161 
+
+2024-01-30 22:14:10,663 utils.trn_utils DEBUG: Num_it 2990 loss: 4.6386 
+
+2024-01-30 22:14:22,425 utils.trn_utils DEBUG: Num_it 2992 loss: 4.6338 
+
+2024-01-30 22:14:29,873 utils.trn_utils DEBUG: Num_it 2994 loss: 4.6048 
+
+2024-01-30 22:14:35,182 utils.trn_utils DEBUG: Num_it 2996 loss: 4.6191 
+
+2024-01-30 22:14:42,889 utils.trn_utils DEBUG: Num_it 2998 loss: 4.6281 
+
+2024-01-30 22:14:52,113 utils.trn_utils DEBUG: Num_it 3000 loss: 4.6572 
+
+2024-01-30 22:14:58,052 utils.trn_utils DEBUG: Num_it 3002 loss: 4.6671 
+
+2024-01-30 22:15:07,721 utils.trn_utils DEBUG: Num_it 3004 loss: 4.6852 
+
+2024-01-30 22:15:20,008 utils.trn_utils DEBUG: Num_it 3006 loss: 4.7197 
+
+2024-01-30 22:15:20,207 utils.trn_utils DEBUG: Num_it 3008 loss: 4.6820 
+
+2024-01-30 22:15:31,309 utils.trn_utils DEBUG: Num_it 3010 loss: 4.6426 
+
+2024-01-30 22:15:31,498 utils.trn_utils DEBUG: Num_it 3012 loss: 4.6548 
+
+2024-01-30 22:15:43,757 utils.trn_utils DEBUG: Num_it 3014 loss: 4.6345 
+
+2024-01-30 22:15:47,231 utils.trn_utils DEBUG: Num_it 3016 loss: 4.5799 
+
+2024-01-30 22:15:56,778 utils.trn_utils DEBUG: Num_it 3018 loss: 4.5465 
+
+2024-01-30 22:16:02,115 utils.trn_utils DEBUG: Num_it 3020 loss: 4.5855 
+
+2024-01-30 22:16:12,058 utils.trn_utils DEBUG: Num_it 3022 loss: 4.5768 
+
+2024-01-30 22:16:19,401 utils.trn_utils DEBUG: Num_it 3024 loss: 4.6191 
+
+2024-01-30 22:16:24,243 utils.trn_utils DEBUG: Num_it 3026 loss: 4.5969 
+
+2024-01-30 22:16:36,771 utils.trn_utils DEBUG: Num_it 3028 loss: 4.5848 
+
+2024-01-30 22:16:36,957 utils.trn_utils DEBUG: Num_it 3030 loss: 4.6280 
+
+2024-01-30 22:16:49,870 utils.trn_utils DEBUG: Num_it 3032 loss: 4.6291 
+
+2024-01-30 22:16:50,308 utils.trn_utils DEBUG: Num_it 3034 loss: 4.5951 
+
+2024-01-30 22:17:06,203 utils.trn_utils DEBUG: Num_it 3036 loss: 4.6112 
+
+2024-01-30 22:17:06,387 utils.trn_utils DEBUG: Num_it 3038 loss: 4.6094 
+
+2024-01-30 22:17:20,972 utils.trn_utils DEBUG: Num_it 3040 loss: 4.6216 
+
+2024-01-30 22:17:21,176 utils.trn_utils DEBUG: Num_it 3042 loss: 4.6326 
+
+2024-01-30 22:17:33,642 utils.trn_utils DEBUG: Num_it 3044 loss: 4.6357 
+
+2024-01-30 22:17:33,836 utils.trn_utils DEBUG: Num_it 3046 loss: 4.6710 
+
+2024-01-30 22:17:46,382 utils.trn_utils DEBUG: Num_it 3048 loss: 4.6545 
+
+2024-01-30 22:17:48,097 utils.trn_utils DEBUG: Num_it 3050 loss: 4.6088 
+
+2024-01-30 22:18:00,152 utils.trn_utils DEBUG: Num_it 3052 loss: 4.5967 
+
+2024-01-30 22:18:07,265 utils.trn_utils DEBUG: Num_it 3054 loss: 4.5968 
+
+2024-01-30 22:18:12,032 utils.trn_utils DEBUG: Num_it 3056 loss: 4.5839 
+
+2024-01-30 22:18:18,645 utils.trn_utils DEBUG: Num_it 3058 loss: 4.5476 
+
+2024-01-30 22:18:28,664 utils.trn_utils DEBUG: Num_it 3060 loss: 4.5757 
+
+2024-01-30 22:18:34,441 utils.trn_utils DEBUG: Num_it 3062 loss: 4.6437 
+
+2024-01-30 22:18:43,810 utils.trn_utils DEBUG: Num_it 3064 loss: 4.6289 
+
+2024-01-30 22:18:50,427 utils.trn_utils DEBUG: Num_it 3066 loss: 4.6321 
+
+2024-01-30 22:18:56,630 utils.trn_utils DEBUG: Num_it 3068 loss: 4.6402 
+
+2024-01-30 22:19:02,692 utils.trn_utils DEBUG: Num_it 3070 loss: 4.6527 
+
+2024-01-30 22:19:09,408 utils.trn_utils DEBUG: Num_it 3072 loss: 4.6562 
+
+2024-01-30 22:19:14,585 utils.trn_utils DEBUG: Num_it 3074 loss: 4.6285 
+
+2024-01-30 22:19:31,802 utils.trn_utils DEBUG: Num_it 3076 loss: 4.6041 
+
+2024-01-30 22:19:31,993 utils.trn_utils DEBUG: Num_it 3078 loss: 4.5616 
+
+2024-01-30 22:19:44,027 utils.trn_utils DEBUG: Num_it 3080 loss: 4.5912 
+
+2024-01-30 22:19:44,224 utils.trn_utils DEBUG: Num_it 3082 loss: 4.6026 
+
+2024-01-30 22:20:01,966 utils.trn_utils DEBUG: Num_it 3084 loss: 4.5745 
+
+2024-01-30 22:20:02,136 utils.trn_utils DEBUG: Num_it 3086 loss: 4.5920 
+
+2024-01-30 22:20:12,530 utils.trn_utils DEBUG: Num_it 3088 loss: 4.5512 
+
+2024-01-30 22:20:12,726 utils.trn_utils DEBUG: Num_it 3090 loss: 4.5829 
+
+2024-01-30 22:20:25,300 utils.trn_utils DEBUG: Num_it 3092 loss: 4.5901 
+
+2024-01-30 22:20:25,480 utils.trn_utils DEBUG: Num_it 3094 loss: 4.6003 
+
+2024-01-30 22:20:39,596 utils.trn_utils DEBUG: Num_it 3096 loss: 4.6163 
+
+2024-01-30 22:20:39,767 utils.trn_utils DEBUG: Num_it 3098 loss: 4.6462 
+
+2024-01-30 22:20:51,185 utils.trn_utils DEBUG: Num_it 3100 loss: 4.6813 
+
+2024-01-30 22:20:52,859 utils.trn_utils DEBUG: Num_it 3102 loss: 4.7107 
+
+2024-01-30 22:21:07,872 utils.trn_utils DEBUG: Num_it 3104 loss: 4.7084 
+
+2024-01-30 22:21:08,048 utils.trn_utils DEBUG: Num_it 3106 loss: 4.7034 
+
+2024-01-30 22:21:20,026 utils.trn_utils DEBUG: Num_it 3108 loss: 4.7178 
+
+2024-01-30 22:21:20,217 utils.trn_utils DEBUG: Num_it 3110 loss: 4.6868 
+
+2024-01-30 22:21:33,270 utils.trn_utils DEBUG: Num_it 3112 loss: 4.6777 
+
+2024-01-30 22:21:43,638 utils.trn_utils DEBUG: Num_it 3114 loss: 4.6808 
+
+2024-01-30 22:21:44,537 utils.trn_utils DEBUG: Num_it 3116 loss: 4.6747 
+
+2024-01-30 22:21:55,864 utils.trn_utils DEBUG: Num_it 3118 loss: 4.6587 
+
+2024-01-30 22:21:56,056 utils.trn_utils DEBUG: Num_it 3120 loss: 4.6540 
+
+2024-01-30 22:22:16,805 utils.trn_utils DEBUG: Num_it 3122 loss: 4.6485 
+
+2024-01-30 22:22:17,000 utils.trn_utils DEBUG: Num_it 3124 loss: 4.6223 
+
+2024-01-30 22:22:32,443 utils.trn_utils DEBUG: Num_it 3126 loss: 4.6270 
+
+2024-01-30 22:22:32,622 utils.trn_utils DEBUG: Num_it 3128 loss: 4.6781 
+
+2024-01-30 22:22:46,835 utils.trn_utils DEBUG: Num_it 3130 loss: 4.6522 
+
+2024-01-30 22:22:47,029 utils.trn_utils DEBUG: Num_it 3132 loss: 4.6525 
+
+2024-01-30 22:22:57,098 utils.trn_utils DEBUG: Num_it 3134 loss: 4.6140 
+
+2024-01-30 22:22:57,293 utils.trn_utils DEBUG: Num_it 3136 loss: 4.6505 
+
+2024-01-30 22:23:08,295 utils.trn_utils DEBUG: Num_it 3138 loss: 4.6666 
+
+2024-01-30 22:23:08,485 utils.trn_utils DEBUG: Num_it 3140 loss: 4.6380 
+
+2024-01-30 22:23:21,624 utils.trn_utils DEBUG: Num_it 3142 loss: 4.6479 
+
+2024-01-30 22:23:23,245 utils.trn_utils DEBUG: Num_it 3144 loss: 4.6290 
+
+2024-01-30 22:23:32,415 utils.trn_utils DEBUG: Num_it 3146 loss: 4.5722 
+
+2024-01-30 22:23:39,449 utils.trn_utils DEBUG: Num_it 3148 loss: 4.6267 
+
+2024-01-30 22:23:52,268 utils.trn_utils DEBUG: Num_it 3150 loss: 4.6667 
+
+2024-01-30 22:23:54,539 utils.trn_utils DEBUG: Num_it 3152 loss: 4.6776 
+
+2024-01-30 22:24:06,250 utils.trn_utils DEBUG: Num_it 3154 loss: 4.6286 
+
+2024-01-30 22:24:06,865 utils.trn_utils DEBUG: Num_it 3156 loss: 4.6243 
+
+2024-01-30 22:24:24,305 utils.trn_utils DEBUG: Num_it 3158 loss: 4.6299 
+
+2024-01-30 22:24:24,500 utils.trn_utils DEBUG: Num_it 3160 loss: 4.5947 
+
+2024-01-30 22:24:35,630 utils.trn_utils DEBUG: Num_it 3162 loss: 4.5889 
+
+2024-01-30 22:24:35,811 utils.trn_utils DEBUG: Num_it 3164 loss: 4.5819 
+
+2024-01-30 22:24:52,266 utils.trn_utils DEBUG: Num_it 3166 loss: 4.5985 
+
+2024-01-30 22:24:53,880 utils.trn_utils DEBUG: Num_it 3168 loss: 4.5779 
+
+2024-01-30 22:25:06,969 utils.trn_utils DEBUG: Num_it 3170 loss: 4.5746 
+
+2024-01-30 22:25:11,124 utils.trn_utils DEBUG: Num_it 3172 loss: 4.5520 
+
+2024-01-30 22:25:18,037 utils.trn_utils DEBUG: Num_it 3174 loss: 4.5851 
+
+2024-01-30 22:25:23,246 utils.trn_utils DEBUG: Num_it 3176 loss: 4.5677 
+
+2024-01-30 22:25:30,460 utils.trn_utils DEBUG: Num_it 3178 loss: 4.5470 
+
+2024-01-30 22:25:37,354 utils.trn_utils DEBUG: Num_it 3180 loss: 4.6256 
+
+2024-01-30 22:25:42,826 utils.trn_utils DEBUG: Num_it 3182 loss: 4.5702 
+
+2024-01-30 22:25:54,387 utils.trn_utils DEBUG: Num_it 3184 loss: 4.5732 
+
+2024-01-30 22:25:59,451 utils.trn_utils DEBUG: Num_it 3186 loss: 4.5931 
+
+2024-01-30 22:26:08,197 utils.trn_utils DEBUG: Num_it 3188 loss: 4.6403 
+
+2024-01-30 22:26:12,333 utils.trn_utils DEBUG: Num_it 3190 loss: 4.6271 
+
+2024-01-30 22:26:20,707 utils.trn_utils DEBUG: Num_it 3192 loss: 4.6309 
+
+2024-01-30 22:26:24,075 utils.trn_utils DEBUG: Num_it 3194 loss: 4.6842 
+
+2024-01-30 22:26:40,567 utils.trn_utils DEBUG: Num_it 3196 loss: 4.6698 
+
+2024-01-30 22:26:40,751 utils.trn_utils DEBUG: Num_it 3198 loss: 4.6377 
+
+2024-01-30 22:26:57,438 utils.trn_utils DEBUG: Num_it 3200 loss: 4.6541 
+
+2024-01-30 22:26:57,614 utils.trn_utils DEBUG: Num_it 3202 loss: 4.6449 
+
+2024-01-30 22:27:09,939 utils.trn_utils DEBUG: Num_it 3204 loss: 4.6352 
+
+2024-01-30 22:27:10,107 utils.trn_utils DEBUG: Num_it 3206 loss: 4.6360 
+
+2024-01-30 22:27:25,263 utils.trn_utils DEBUG: Num_it 3208 loss: 4.5973 
+
+2024-01-30 22:27:25,435 utils.trn_utils DEBUG: Num_it 3210 loss: 4.5712 
+
+2024-01-30 22:27:41,854 utils.trn_utils DEBUG: Num_it 3212 loss: 4.6402 
+
+2024-01-30 22:27:42,034 utils.trn_utils DEBUG: Num_it 3214 loss: 4.6346 
+
+2024-01-30 22:27:53,800 utils.trn_utils DEBUG: Num_it 3216 loss: 4.6492 
+
+2024-01-30 22:27:53,993 utils.trn_utils DEBUG: Num_it 3218 loss: 4.6546 
+
+2024-01-30 22:28:06,274 utils.trn_utils DEBUG: Num_it 3220 loss: 4.6660 
+
+2024-01-30 22:28:08,341 utils.trn_utils DEBUG: Num_it 3222 loss: 4.6130 
+
+2024-01-30 22:28:20,164 utils.trn_utils DEBUG: Num_it 3224 loss: 4.6583 
+
+2024-01-30 22:28:22,718 utils.trn_utils DEBUG: Num_it 3226 loss: 4.6169 
+
+2024-01-30 22:28:32,152 utils.trn_utils DEBUG: Num_it 3228 loss: 4.6500 
+
+2024-01-30 22:28:37,291 utils.trn_utils DEBUG: Num_it 3230 loss: 4.6466 
+
+2024-01-30 22:28:46,361 utils.trn_utils DEBUG: Num_it 3232 loss: 4.6045 
+
+2024-01-30 22:28:49,776 utils.trn_utils DEBUG: Num_it 3234 loss: 4.6008 
+
+2024-01-30 22:29:05,760 utils.trn_utils DEBUG: Num_it 3236 loss: 4.6142 
+
+2024-01-30 22:29:05,948 utils.trn_utils DEBUG: Num_it 3238 loss: 4.6360 
+
+2024-01-30 22:29:24,815 utils.trn_utils DEBUG: Num_it 3240 loss: 4.6635 
+
+2024-01-30 22:29:24,998 utils.trn_utils DEBUG: Num_it 3242 loss: 4.6809 
+
+2024-01-30 22:29:35,700 utils.trn_utils DEBUG: Num_it 3244 loss: 4.6983 
+
+2024-01-30 22:29:35,894 utils.trn_utils DEBUG: Num_it 3246 loss: 4.6947 
+
+2024-01-30 22:29:51,886 utils.trn_utils DEBUG: Num_it 3248 loss: 4.6702 
+
+2024-01-30 22:29:52,127 utils.trn_utils DEBUG: Num_it 3250 loss: 4.6931 
+
+2024-01-30 22:30:04,696 utils.trn_utils DEBUG: Num_it 3252 loss: 4.7042 
+
+2024-01-30 22:30:04,921 utils.trn_utils DEBUG: Num_it 3254 loss: 4.7495 
+
+2024-01-30 22:30:16,827 utils.trn_utils DEBUG: Num_it 3256 loss: 4.7203 
+
+2024-01-30 22:30:17,010 utils.trn_utils DEBUG: Num_it 3258 loss: 4.7253 
+
+2024-01-30 22:30:28,616 utils.trn_utils DEBUG: Num_it 3260 loss: 4.6975 
+
+2024-01-30 22:30:29,068 utils.trn_utils DEBUG: Num_it 3262 loss: 4.6854 
+
+2024-01-30 22:30:41,855 utils.trn_utils DEBUG: Num_it 3264 loss: 4.6570 
+
+2024-01-30 22:30:46,736 utils.trn_utils DEBUG: Num_it 3266 loss: 4.6250 
+
+2024-01-30 22:30:53,717 utils.trn_utils DEBUG: Num_it 3268 loss: 4.6684 
+
+2024-01-30 22:30:59,788 utils.trn_utils DEBUG: Num_it 3270 loss: 4.7050 
+
+2024-01-30 22:31:06,317 utils.trn_utils DEBUG: Num_it 3272 loss: 4.6836 
+
+2024-01-30 22:31:11,458 utils.trn_utils DEBUG: Num_it 3274 loss: 4.6592 
+
+2024-01-30 22:31:19,507 utils.trn_utils DEBUG: Num_it 3276 loss: 4.6687 
+
+2024-01-30 22:31:30,760 utils.trn_utils DEBUG: Num_it 3278 loss: 4.6825 
+
+2024-01-30 22:31:33,889 utils.trn_utils DEBUG: Num_it 3280 loss: 4.6560 
+
+2024-01-30 22:31:44,041 utils.trn_utils DEBUG: Num_it 3282 loss: 4.6512 
+
+2024-01-30 22:31:46,287 utils.trn_utils DEBUG: Num_it 3284 loss: 4.6845 
+
+2024-01-30 22:31:56,155 utils.trn_utils DEBUG: Num_it 3286 loss: 4.6767 
+
+2024-01-30 22:32:06,962 utils.trn_utils DEBUG: Num_it 3288 loss: 4.6968 
+
+2024-01-30 22:32:08,006 utils.trn_utils DEBUG: Num_it 3290 loss: 4.6346 
+
+2024-01-30 22:32:19,273 utils.trn_utils DEBUG: Num_it 3292 loss: 4.6448 
+
+2024-01-30 22:32:26,941 utils.trn_utils DEBUG: Num_it 3294 loss: 4.6261 
+
+2024-01-30 22:32:34,469 utils.trn_utils DEBUG: Num_it 3296 loss: 4.6115 
+
+2024-01-30 22:32:46,734 utils.trn_utils DEBUG: Num_it 3298 loss: 4.5974 
+
+2024-01-30 22:32:46,928 utils.trn_utils DEBUG: Num_it 3300 loss: 4.6551 
+
+2024-01-30 22:32:59,605 utils.trn_utils DEBUG: Num_it 3302 loss: 4.6397 
+
+2024-01-30 22:33:08,469 utils.trn_utils DEBUG: Num_it 3304 loss: 4.6255 
+
+2024-01-30 22:33:12,105 utils.trn_utils DEBUG: Num_it 3306 loss: 4.6641 
+
