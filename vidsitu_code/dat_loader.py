@@ -151,7 +151,7 @@ class VsituDS(Dataset):
         vseg_ann_lst = read_file_with_assertion(vsitu_ann_files_cfg[split_type])
 
         # check if clip feat exists
-        clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir
+        clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir + '_11f'
         import os
         clip_feat_files = os.listdir(clip_feat_fpath)
         # clip_feat_files_new = []
@@ -164,33 +164,44 @@ class VsituDS(Dataset):
         #             continue
         # clip_feat_files = clip_feat_files_new
         vseg_lst_new = []
-        for vid in self.vseg_lst:
+        if self.full_cfg.feats_type == 'event':
             # for event-wise feature extraction
-            all_exist = 0
-            for i in range(0,5):
-                if vid+'_'+str(i) in clip_feat_files:
-                    all_exist += 1
-            if all_exist == 5:    
-                vseg_lst_new.append(vid)
-            # for single feature per video
-            # if vid in clip_feat_files:
-            #     vseg_lst_new.append(vid)
-        self.vseg_lst = vseg_lst_new
+            for vid in self.vseg_lst:
+                all_exist = 0
+                for i in range(0,5):
+                    if vid+'_'+str(i) in clip_feat_files:
+                        all_exist += 1
+                if all_exist == 5:    
+                    vseg_lst_new.append(vid)
+            self.vseg_lst = vseg_lst_new
+            
+        # for single feature per video
+        elif self.full_cfg.feats_type == 'image': 
+            for vid in self.vseg_lst:
+                if vid in clip_feat_files:
+                    vseg_lst_new.append(vid)
+            self.vseg_lst = vseg_lst_new
         
         vseg_ann_lst_new = []
-        for vid_ann in vseg_ann_lst:
-            vid = vid_ann['Ev1']['vid_seg_int']
+        if self.full_cfg.feats_type == 'event':
             # for event-wise feature extraction
-            all_exist = 0
-            for i in range(0,5):
-                if vid+'_'+str(i) in clip_feat_files:
-                    all_exist += 1
-            if all_exist == 5:
-                vseg_ann_lst_new.append(vid_ann)
-            # for single feature per video
-            # if vid in clip_feat_files:
-            #     vseg_ann_lst_new.append(vid_ann)
-        vseg_ann_lst = vseg_ann_lst_new
+            for vid_ann in vseg_ann_lst:
+                vid = vid_ann['Ev1']['vid_seg_int']
+
+                all_exist = 0
+                for i in range(0,5):
+                    if vid+'_'+str(i) in clip_feat_files:
+                        all_exist += 1
+                if all_exist == 5:
+                    vseg_ann_lst_new.append(vid_ann)
+            vseg_ann_lst = vseg_ann_lst_new
+        else:
+        # for single feature per video
+            for vid_ann in vseg_ann_lst:
+                vid = vid_ann['Ev1']['vid_seg_int']
+                if vid in clip_feat_files:
+                    vseg_ann_lst_new.append(vid_ann)
+            vseg_ann_lst = vseg_ann_lst_new
         
         vsitu_ann_dct = {}
         for vseg_ann in vseg_ann_lst:
@@ -562,46 +573,54 @@ class VsituDS(Dataset):
         vid_seg_name = self.vseg_lst[idx]
         
         import pickle
-        # vid_seg_feat_file = (
-        # Path(self.cfg.vsit_clip_frm_feats_dir) / f"{vid_seg_name}"
-        # )
-        # # for image-based features
-        # with open(vid_seg_feat_file,'rb') as f:
-        #     all_feats = pickle.load(f)
-        #     vid_feats = all_feats['vid_feat'].float()
-        #     xtf_vid_feats = all_feats['xtf_vid_feat'].float()
-        #     verb_feats = all_feats['verb_feat'].float().squeeze()
-
-        # assert vid_feats.size(0) == 11
-        # sample [0,2,4,6,8] or [1,3,5,7,9]
-        # return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats}
-        
-        # for event-based features
-        vid_feats = []
-        verb_feats = []
-        xtf_vid_feats = []
-        for i in range(5):
+        if self.full_cfg.feats_type=='image':                
             vid_seg_feat_file = (
-            Path(self.cfg.vsit_clip_frm_feats_dir) / f"{vid_seg_name}_{i}"
+            Path(self.cfg.vsit_clip_frm_feats_dir+ '_11f') / f"{vid_seg_name}"
             )
+            # for image-based features
             with open(vid_seg_feat_file,'rb') as f:
                 try:
                     all_feats = pickle.load(f)
-                except:
-                    print('error with unpickling ', vid_seg_feat_file)
-                    continue
-                vid_feats.append(all_feats['vid_feat'].float())
-                xtf_vid_feats.append(all_feats['xtf_vid_feat'].float())
-                verb_feats.append(all_feats['verb_feat'].float().squeeze())
+                except Exception as e:
+                    print(e.errno,'error with unpickling ', vid_seg_feat_file)
+            vid_feats = all_feats['vid_feat'].float()
+            xtf_vid_feats = all_feats['xtf_vid_feat'].float()
+            verb_feats = all_feats['verb_feat'].float().squeeze()
+
+            #assert vid_feats.size(0) == 11, (vid_seg_name, str(vid_feats.size(0)))
+            
+            #sample [0,2,4,6,8] or [1,3,5,7,9]
+            rand = np.random.rand() > 0.5
+            sampled_vid_feats = vid_feats[[1, 3, 5, 7, 9]] if rand else vid_feats[[0, 2, 4, 6, 8]]
+            sampled_xtf_feats = xtf_vid_feats[[1, 3, 5, 7, 9]] if rand else xtf_vid_feats[[0, 2, 4, 6, 8]]
+            assert sampled_vid_feats.size(0) == 5
+            return {"frm_feats": sampled_vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": sampled_xtf_feats}
+        else:
+            # for event-based features
+            vid_feats = []
+            verb_feats = []
+            xtf_vid_feats = []
+            for i in range(5):
+                vid_seg_feat_file = (
+                Path(self.cfg.vsit_clip_frm_feats_dir) / f"{vid_seg_name}_{i}"
+                )
+                with open(vid_seg_feat_file,'rb') as f:
+                    try:
+                        all_feats = pickle.load(f)
+                    except:
+                        print('error with unpickling ', vid_seg_feat_file)
+                        continue
+                    vid_feats.append(all_feats['vid_feat'].float())
+                    xtf_vid_feats.append(all_feats['xtf_vid_feat'].float())
+                    verb_feats.append(all_feats['verb_feat'].float().squeeze())
                 
-                
-        vid_feats = torch.stack(vid_feats)
-        xtf_vid_feats = torch.stack(xtf_vid_feats)
-        verb_feats = torch.stack(verb_feats)
-        
-        assert vid_feats.size(0) == 5
-        
-        return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats}
+            vid_feats = torch.stack(vid_feats)
+            xtf_vid_feats = torch.stack(xtf_vid_feats)
+            verb_feats = torch.stack(verb_feats)
+            
+            assert vid_feats.size(0) == 5
+            
+            return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats}
 
 
     def get_label_out_dct(self, idx: int):

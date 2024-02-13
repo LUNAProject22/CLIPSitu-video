@@ -4,6 +4,7 @@ Use eval metrics from Pycocoevalcap
 """
 import fire
 import pickle
+import os
 from typing import Dict, List
 import numpy as np
 from collections import namedtuple, Counter
@@ -102,32 +103,34 @@ def read_gt_file(full_cfg, task_type, split_type):
     vseg_lst_new = []
     for vid in vseg_lst:
         # for event features
-        all_exist = 0
-        for i in range(0,5):
-            if vid+'_'+str(i) in clip_feat_files:
-                all_exist += 1
-        if all_exist == 5:    
-            vseg_lst_new.append(vid)
-        
-        # for image features
-        # if vid in clip_feat_files:
-        #     vseg_lst_new.append(vid)
+        if full_cfg.feats_type=='event':
+            all_exist = 0
+            for i in range(0,5):
+                if vid+'_'+str(i) in clip_feat_files:
+                    all_exist += 1
+            if all_exist == 5:    
+                vseg_lst_new.append(vid)
+        elif full_cfg.feats_type=='image':
+            # for image features
+            if vid in clip_feat_files:
+                vseg_lst_new.append(vid)
     vseg_lst = vseg_lst_new
     
     vseg_ann_lst_new = []
     for vid_ann in vseg_ann_lst:
         vid = vid_ann['Ev1']['vid_seg_int']
-        # for event features
-        all_exist = 0
-        for i in range(0,5):
-            if vid+'_'+str(i) in clip_feat_files:
-                all_exist += 1
-        if all_exist == 5:
-            vseg_ann_lst_new.append(vid_ann)
-        
-        # for image features
-        # if vid in clip_feat_files:
-        #     vseg_ann_lst_new.append(vid_ann)
+        if full_cfg.feats_type=='event':
+            # for event features
+            all_exist = 0
+            for i in range(0,5):
+                if vid+'_'+str(i) in clip_feat_files:
+                    all_exist += 1
+            if all_exist == 5:
+                vseg_ann_lst_new.append(vid_ann)
+        elif full_cfg.feats_type=='image':
+            # for image features
+            if vid in clip_feat_files:
+                vseg_ann_lst_new.append(vid_ann)
     vseg_ann_lst = vseg_ann_lst_new 
 
     vsitu_ann_dct = {}

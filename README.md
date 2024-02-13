@@ -20,7 +20,7 @@ This repository includes:
 
 # Download
 
-Please see [DATA_PREP.md](./data/DATA_PREP.md) for detailed instructions on downloading and setting up the dataset.
+Please see [DATA_PREP.md](./vidsitu_data/DATA_PREP.md) for detailed instructions on downloading and setting up the dataset.
 
 # Installation
 
