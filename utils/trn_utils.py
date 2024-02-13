@@ -588,7 +588,7 @@ class Learner:
         trn_acc = SmoothenDict(self.met_keys, 0.9)
         # synchronize()
         for batch_id, batch in enumerate(progress_bar(self.data.train_dl, parent=mb)):
-
+            if batch_id ==10: break
             # Increment number of iterations
             self.num_it += 1
             batch = move_to(batch, self.device)
