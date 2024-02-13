@@ -34,7 +34,7 @@ ds:
     vsitu_frm_feats: './vidsitu_data/vsitu_vid_feats/'
     vsit_frm_feats_dir: './vidsitu_data/vsitu_vid_feats/i3d_nln_kpret_ep10_best_recall'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-large-patch14-336'
-    vsit_clip_frm_feats_dir: './vidsitu_data/clip_feat_vit-b32'
+    vsit_clip_frm_feats_dir: './vidsitu_data/clip_feat_vit-b32_11f'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-base-patch16'
     arg_names:
       vb: "Vb"

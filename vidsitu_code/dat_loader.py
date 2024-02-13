@@ -151,7 +151,9 @@ class VsituDS(Dataset):
         vseg_ann_lst = read_file_with_assertion(vsitu_ann_files_cfg[split_type])
 
         # check if clip feat exists
-        clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir + '_11f'
+        import os
+        clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir
+        clip_feat_files = os.listdir(clip_feat_fpath)
         import os
         # clip_feat_files_new = []
         # for file in tqdm(clip_feat_files):
@@ -165,8 +167,6 @@ class VsituDS(Dataset):
         vseg_lst_new = []
         if self.full_cfg.feats_type == 'event':
             # for event-wise feature extraction
-            clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir
-            clip_feat_files = os.listdir(clip_feat_fpath)
             for vid in self.vseg_lst:
                 all_exist = 0
                 for i in range(0,5):
@@ -178,8 +178,7 @@ class VsituDS(Dataset):
             
         # for single feature per video
         elif self.full_cfg.feats_type == 'image': 
-            clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir + '_11f'
-            clip_feat_files = os.listdir(clip_feat_fpath)
+            # for -wise feature extraction
             for vid in self.vseg_lst:
                 if vid in clip_feat_files:
                     vseg_lst_new.append(vid)
@@ -578,7 +577,7 @@ class VsituDS(Dataset):
         import pickle
         if self.full_cfg.feats_type=='image':                
             vid_seg_feat_file = (
-            Path(self.cfg.vsit_clip_frm_feats_dir+ '_11f') / f"{vid_seg_name}"
+            Path(self.cfg.vsit_clip_frm_feats_dir) / f"{vid_seg_name}"
             )
             # for image-based features
             with open(vid_seg_feat_file,'rb') as f:
