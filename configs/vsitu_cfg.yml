@@ -33,8 +33,8 @@ ds:
       # new_gpt2_vb_arg_evrel_vocab: './vidsitu_data/vsitu_meta/vsitu_vocab/bpe_with_seps_evrel_vb_arg_vocab.pkl'
     vsitu_frm_feats: './vidsitu_data/vsitu_vid_feats/'
     vsit_frm_feats_dir: './vidsitu_data/vsitu_vid_feats/i3d_nln_kpret_ep10_best_recall'
-    #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-large-patch14-336'
-    vsit_clip_frm_feats_dir: './vidsitu_data/clip_feat_vit-b32'
+    vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-large-patch14-336'
+    #vsit_clip_frm_feats_dir: './vidsitu_data/clip_feat_vit-b32'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-base-patch16'
     arg_names:
       vb: "Vb"
@@ -56,6 +56,7 @@ ds:
 
 
 task_type: 'vb' # one of ["vb", "vb_arg", "evrel"]
+feats_type: 'image' # one of ["image", "event"]
 expm:
   exp_name: 'vsitu_fin'
   run_id: ''
@@ -94,7 +95,7 @@ gen:
 train:
   lr: 1e-4
   epochs: 10
-  bs: 32
+  bs: 8
   nw: 4
   bsv: 16
   nwv: 4

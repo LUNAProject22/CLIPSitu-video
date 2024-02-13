@@ -6,12 +6,14 @@
     "configurations": [
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
             "env": {"CUDA_VISIBLE_DEVICES":"1"},
+            //"args": ["vb", "--task_type", "vb","--mdl.mdl_name","mlp_gpt2"]// ,"--mdl.mdl_name","mlp_txed_vbarg"]
             //"args": ["vb_tf", "--task_type", "vb","--mdl.mdl_name","vb_tf"]// ,"--mdl.mdl_name","mlp_txed_vbarg"],
+            "args": ["l14gpt2_11f", "--task_type", "vb_arg","--mdl.mdl_name","mlp_gpt22"]// ,"--mdl.mdl_name","mlp_txed_vbarg
             //"justMyCode": true
         }
     ]
