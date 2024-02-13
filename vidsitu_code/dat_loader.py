@@ -153,7 +153,6 @@ class VsituDS(Dataset):
         # check if clip feat exists
         clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir + '_11f'
         import os
-        clip_feat_files = os.listdir(clip_feat_fpath)
         # clip_feat_files_new = []
         # for file in tqdm(clip_feat_files):
         #     with open(os.path.join(clip_feat_fpath,file), 'rb') as f:
@@ -166,6 +165,8 @@ class VsituDS(Dataset):
         vseg_lst_new = []
         if self.full_cfg.feats_type == 'event':
             # for event-wise feature extraction
+            clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir
+            clip_feat_files = os.listdir(clip_feat_fpath)
             for vid in self.vseg_lst:
                 all_exist = 0
                 for i in range(0,5):
@@ -177,6 +178,8 @@ class VsituDS(Dataset):
             
         # for single feature per video
         elif self.full_cfg.feats_type == 'image': 
+            clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir + '_11f'
+            clip_feat_files = os.listdir(clip_feat_fpath)
             for vid in self.vseg_lst:
                 if vid in clip_feat_files:
                     vseg_lst_new.append(vid)

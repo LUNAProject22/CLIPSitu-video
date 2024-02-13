@@ -96,7 +96,10 @@ def read_gt_file(full_cfg, task_type, split_type):
 
     vseg_ann_lst = read_file_with_assertion(vsitu_ann_files_cfg[split_type])
    
-    clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir
+    if full_cfg.feats_type=='image':
+        clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir + '_11f'
+    elif full_cfg.feats_type=='event':
+        clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir
     import os
     clip_feat_files = os.listdir(clip_feat_fpath)
     
@@ -148,12 +151,11 @@ def read_gt_file(full_cfg, task_type, split_type):
         assert "valid" in split_type or "test" in split_type
         vseg_info_lst = read_file_with_assertion(vinfo_files_cfg[split_type])
         vsitu_vinfo_dct = {}
-        clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir
-        import os
-        # for image-based features
-        # clip_feat_files = os.listdir(clip_feat_fpath)
+        if full_cfg.feats_type=='image':
+            clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir + '_11f'
+        elif full_cfg.feats_type=='event':
+            clip_feat_fpath = full_cfg.ds.vsitu.vsit_clip_frm_feats_dir
 
-        # for event-based features
         clip_feat_files = os.listdir(clip_feat_fpath)
         clip_feat_files_new = []
         for clip_feat_file in clip_feat_files:
