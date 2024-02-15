@@ -321,12 +321,15 @@ class VerbModel(nn.Module):
             feats_used = [feat_fast]
         elif self.comm.path_type == "mlp":
             if self.full_cfg.feats_type=='image':
-                #for image based features only
-                #self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2)
-                #frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
-                #frm_feats = self.maxpool(frm_feats)
-                #frm_feats = frm_feats.permute(0,2,1)
-                feat = combine_first_ax(inp["frm_feats"])
+                #for image based features only, either max_pool from 11 to 5 frames or sample
+                if self.full_cfg.max_pool==True:
+                    self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2)
+                    frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
+                    frm_feats = self.maxpool(frm_feats)
+                    frm_feats = frm_feats.permute(0,2,1)
+                    feat = combine_first_ax(frm_feats)
+                else:
+                    feat = combine_first_ax(inp["frm_feats"])
             else:
                 # for event-based features
                 feat = combine_first_ax(inp["frm_feats"])    
@@ -1107,10 +1110,13 @@ class MLP_TxDec(Simple_TxDec, Reorderer):
 
     def forward_encoder(self, inp):
         if self.full_cfg.feats_type=='image':
-            # for image based features only
-            frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
-            frm_feats = self.maxpool(frm_feats)
-            frm_feats = frm_feats.permute(0,2,1)
+            # for image based features only either sample 5 frames or maxpool to 5
+            if self.full_cfg.max_pool== True:
+                frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
+                frm_feats = self.maxpool(frm_feats)
+                frm_feats = frm_feats.permute(0,2,1)
+            else:
+                frm_feats = inp["frm_feats"]
         else:
             # for event-based features
             frm_feats = inp["frm_feats"]
@@ -1152,11 +1158,13 @@ class TxEncDec(Simple_TxDec, Reorderer):
 
     def forward_encoder(self, inp):
         if self.full_cfg.feats_type=='image':
-
-            # for image based features only
-            frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
-            frm_feats = self.maxpool(frm_feats)
-            frm_feats = frm_feats.permute(0,2,1)
+            if self.full_cfg.max_pool== True:
+                # for image based features only
+                frm_feats = inp["frm_feats"].permute(0,2,1) # push number of frames to last dimension B x 512 x 11
+                frm_feats = self.maxpool(frm_feats)
+                frm_feats = frm_feats.permute(0,2,1)
+            else:
+                frm_feats = inp["frm_feats"]
         else:
             # for event-based features
             frm_feats = inp["frm_feats"]
@@ -1209,11 +1217,14 @@ class XTF_TxEncDec(Simple_TxDec, Reorderer):
     def forward_encoder(self, inp):
         B, N, S, D = inp["xtf_frm_feats"].shape
         if self.full_cfg.feats_type=='image':
-            # for image-based features
-            frm_feats = inp["xtf_frm_feats"].permute(0,3,2,1).reshape(B*D, S, N) # push N to last position
-            frm_feats = self.maxpool(frm_feats).reshape(B, D, S, -1) # reduce N from 11 to 5
-            frm_feats = frm_feats.permute(0,3,2,1) # B, 5, S, D
-            frm_feats = torch.cat((frm_feats, inp["verb_feats"].unsqueeze(2)), dim=-2) # cat along S to make 51 from 50
+            if self.full_cfg.max_pool== True:
+                # for image-based features
+                frm_feats = inp["xtf_frm_feats"].permute(0,3,2,1).reshape(B*D, S, N) # push N to last position
+                frm_feats = self.maxpool(frm_feats).reshape(B, D, S, -1) # reduce N from 11 to 5
+                frm_feats = frm_feats.permute(0,3,2,1) # B, 5, S, D
+                frm_feats = torch.cat((frm_feats, inp["verb_feats"].unsqueeze(2)), dim=-2) # cat along S to make 51 from 50
+            else:
+                frm_feats = inp["xtf_frm_feats"]
         else:
             # for event-based features
             frm_feats = inp["xtf_frm_feats"]

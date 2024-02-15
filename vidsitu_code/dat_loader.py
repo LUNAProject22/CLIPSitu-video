@@ -592,6 +592,7 @@ class VsituDS(Dataset):
             #assert vid_feats.size(0) == 11, (vid_seg_name, str(vid_feats.size(0)))
             
             #sample [0,2,4,6,8] or [1,3,5,7,9]
+            
             rand = np.random.rand() > 0.5
             sampled_vid_feats = vid_feats[[1, 3, 5, 7, 9]] if rand else vid_feats[[0, 2, 4, 6, 8]]
             sampled_xtf_feats = xtf_vid_feats[[1, 3, 5, 7, 9]] if rand else xtf_vid_feats[[0, 2, 4, 6, 8]]
