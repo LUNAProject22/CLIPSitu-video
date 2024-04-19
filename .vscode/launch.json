@@ -10,10 +10,10 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "env": {"CUDA_VISIBLE_DEVICES":"0"},
-            "args": ["vb", "--task_type", "vb"]// ,"--mdl.mdl_name","mlp_txed_vbarg"]
+            "env": {"CUDA_VISIBLE_DEVICES":"1"},
+            //"args": ["vb", "--task_type", "vb"]// ,"--mdl.mdl_name","mlp_txed_vbarg"]
             //"args": ["vb_tf", "--task_type", "vb","--mdl.mdl_name","vb_tf"]// ,"--mdl.mdl_name","mlp_txed_vbarg"],
-            //"args": ["l14gpt2_11f", "--task_type", "vb_arg","--mdl.mdl_name","mlp_gpt22"]// ,"--mdl.mdl_name","mlp_txed_vbarg
+            "args": ["obj_xtf_11f", "--task_type", "vb_arg","--mdl.mdl_name","xtf_txe_txd_vbarg_obj"]// ,"--mdl.mdl_name","mlp_txed_vbarg
             //"justMyCode": true
         }
     ]

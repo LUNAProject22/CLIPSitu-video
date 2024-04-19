@@ -1,6 +1,7 @@
 from pathlib import Path
 import torch
 import pickle
+import os
 from torch.utils.data import Dataset
 from yacs.config import CfgNode as CN
 from typing import List, Dict
@@ -19,6 +20,7 @@ from utils.dat_utils import (
     pad_words_new,
     pad_tokens,
     read_file_with_assertion,
+    load_obj_tsv
 )
 from transformers import GPT2TokenizerFast, RobertaTokenizerFast
 
@@ -73,12 +75,17 @@ class VsituDS(Dataset):
         fps = self.sf_cfg.DATA.TARGET_FPS
         cent_frm_per_ev = {f"Ev{ix+1}": int((ix + 1 / 2) * fps * 2) for ix in range(5)}
 
-        self.comm.num_frms = self.sf_cfg.DATA.NUM_FRAMES
+        #self.comm.num_frms = self.sf_cfg.DATA.NUM_FRAMES
+        self.comm.num_frms = self.cfg.num_frms
         self.comm.sampling_rate = self.sf_cfg.DATA.SAMPLING_RATE
         self.comm.frm_seq_len = frm_seq_len
         self.comm.fps = fps
         self.comm.cent_frm_per_ev = cent_frm_per_ev
         self.comm.max_frms = 300
+ 
+        self.comm.path_obj_feats = self.cfg.vsitu_objects_11_frames_dir
+        self.comm.num_objs_per_frm = self.cfg.num_objs_per_frm
+        self.comm.max_num_roles_per_event = self.cfg.max_num_roles_per_event
 
         self.comm.vb_id_vocab = read_file_with_assertion(
             self.cfg.vocab_files.verb_id_vocab, reader="pickle"
@@ -154,7 +161,6 @@ class VsituDS(Dataset):
         import os
         clip_feat_fpath = self.cfg.vsit_clip_frm_feats_dir
         clip_feat_files = os.listdir(clip_feat_fpath)
-        import os
         # clip_feat_files_new = []
         # for file in tqdm(clip_feat_files):
         #     with open(os.path.join(clip_feat_fpath,file), 'rb') as f:
@@ -561,6 +567,33 @@ class VsituDS(Dataset):
 
         return out_dct
 
+    def get_all_bb_11_frames(self, vid_name):
+        num_o = self.comm.num_objs_per_frm
+        num_f = self.comm.num_frms
+
+        path_vid_obj_feats = os.path.join(self.comm.path_obj_feats, vid_name+'.tsv')
+        data = load_obj_tsv(path_vid_obj_feats)
+        data = data[:num_f]
+        
+        feats_11_frames = torch.empty([num_f,num_o,2048], dtype=torch.float32)
+        for i,feats in enumerate(data):
+            feats_11_frames[i] = torch.from_numpy(feats['features'].copy())
+
+        boxes_11_frames = torch.empty([num_f,num_o,4], dtype=torch.float32)
+        for j,feats in enumerate(data):
+            boxes_11_frames[j] = torch.from_numpy(feats['boxes'].copy())
+        
+        img_size_11_frames = torch.empty([11,2], dtype=torch.float32)
+        for j,feats in enumerate(data):
+            img_size_11_frames[j][0] = feats['img_h']
+            img_size_11_frames[j][1] = feats['img_w']
+
+        objects_dict = { "feats_11_frames": feats_11_frames, #11x15x2048
+                        "boxes_11_frames": boxes_11_frames, #11x15x4
+                        "img_size": img_size_11_frames,
+                    }
+        return objects_dict
+    
     def get_frm_feats_all(self, idx: int):
         vid_seg_name = self.vseg_lst[idx]
         vid_seg_feat_file = (
@@ -585,19 +618,28 @@ class VsituDS(Dataset):
                     all_feats = pickle.load(f)
                 except Exception as e:
                     print(e.errno,'error with unpickling ', vid_seg_feat_file)
+            obj_feats = self.get_all_bb_11_frames(vid_seg_name)
             vid_feats = all_feats['vid_feat'].float()
             xtf_vid_feats = all_feats['xtf_vid_feat'].float()
             verb_feats = all_feats['verb_feat'].float().squeeze()
 
-            #assert vid_feats.size(0) == 11, (vid_seg_name, str(vid_feats.size(0)))
+
             
             #sample [0,2,4,6,8] or [1,3,5,7,9]
-            
-            rand = np.random.rand() > 0.5
-            sampled_vid_feats = vid_feats[[1, 3, 5, 7, 9]] if rand else vid_feats[[0, 2, 4, 6, 8]]
-            sampled_xtf_feats = xtf_vid_feats[[1, 3, 5, 7, 9]] if rand else xtf_vid_feats[[0, 2, 4, 6, 8]]
-            assert sampled_vid_feats.size(0) == 5
-            return {"frm_feats": sampled_vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": sampled_xtf_feats}
+            if not self.full_cfg.max_pool:
+                if vid_feats.size(0) == 11:
+                    return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats, "obj_feats": obj_feats['feats_11_frames'], "obj_boxes": obj_feats['boxes_11_frames'], "img_size": obj_feats['img_size']}
+                
+                # rand = np.random.rand() > 0.5
+                # sampled_vid_feats = vid_feats[[1, 3, 5, 7, 9]] if rand else vid_feats[[0, 2, 4, 6, 8]]
+                # sampled_xtf_feats = xtf_vid_feats[[1, 3, 5, 7, 9]] if rand else xtf_vid_feats[[0, 2, 4, 6, 8]]
+                # assert sampled_vid_feats.size(0) == 5
+                # return {"frm_feats": sampled_vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": sampled_xtf_feats, "obj_feats": obj_feats['feats_11_frames'], "obj_boxes": obj_feats['boxes_11_frames'], "img_size": obj_feats['img_size']}
+            else:
+                if vid_feats.size(0) == 11:
+                    return {"frm_feats": vid_feats, "verb_feats": verb_feats, "xtf_frm_feats": xtf_vid_feats, "obj_feats": obj_feats['feats_11_frames'], "obj_boxes": obj_feats['boxes_11_frames'], "img_size": obj_feats['img_size']}
+                else:
+                    return {"frm_feats": None, "verb_feats": None, "xtf_frm_feats": None, "obj_feats": None, "obj_boxes": None, "img_size": None}
         else:
             # for event-based features
             vid_feats = []
@@ -688,6 +730,7 @@ class VsituDS(Dataset):
             return seq_out_dct
 
 
+
 class BatchCollator:
     def __init__(self, cfg, comm):
         self.cfg = cfg
@@ -695,7 +738,18 @@ class BatchCollator:
 
     def __call__(self, batch):
         for x in range(len(batch)):
-            assert len(batch[x]['frm_feats'])==5
+            if not self.cfg.max_pool:
+                assert len(batch[x]['frm_feats'])==11
+            # if self.cfg.max_pool & (self.cfg.feats_type=='image'):
+            #     assert len(batch[x]['frm_feats'])==11, (batch[x]['frm_feats'].size())
+            # else:
+            #     assert len(batch[x]['frm_feats'])==5
+        new_batch = []
+        for item in batch:
+            if item['frm_feats'] is not None:
+                new_batch.append(item)
+        batch = new_batch
+                
         out_dict = simple_collate_dct_list(batch)
         return out_dict
 

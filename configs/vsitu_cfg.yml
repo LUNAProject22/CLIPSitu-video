@@ -32,8 +32,12 @@ ds:
       new_gpt2_vb_arg_vocab: './vidsitu_data/vsitu_vocab/bpe_with_seps_vb_arg_vocab.pkl'
       # new_gpt2_vb_arg_evrel_vocab: './vidsitu_data/vsitu_meta/vsitu_vocab/bpe_with_seps_evrel_vb_arg_vocab.pkl'
     vsitu_frm_feats: './vidsitu_data/vsitu_vid_feats/'
+    vsitu_objects_11_frames_dir: './vidsitu_data/vsitu_all_11_frames_feats/feats_bb'
     vsit_frm_feats_dir: './vidsitu_data/vsitu_vid_feats/i3d_nln_kpret_ep10_best_recall'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-large-patch14-336_11f'
+    num_frms: 11
+    num_objs_per_frm: 15
+    max_num_roles_per_event: 6
     vsit_clip_frm_feats_dir: './vidsitu_data/clip_feat_vit-b32_11f'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-base-patch16'
     arg_names:
@@ -75,8 +79,8 @@ mdl:
   # mdl_name: 'txe_txd_vbarg'
   # mdl_name: 'xtf_txe_txd_vbarg'
   use_old_tok: false
-  tx_enc_type: 'old'
-  # tx_enc_type: 'xtf'
+  #tx_enc_type: 'old'
+  tx_enc_type: 'xtf_obj'
   tx_dec_type: 'txdec'
 
 misc:

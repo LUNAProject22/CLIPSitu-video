@@ -10,8 +10,9 @@ from fairseq.models.transformer import (
     TransformerDecoder,
     # EncoderOut,
 )
+from vidsitu_code.attention_blocks import CrossAttentionBlock
 from utils.transformer_code import Transformer as TxCodeEnc
-
+from einops import rearrange
 from vidsitu_code.seq_gen import SeqGenCustom, EncoderOut
 from transformers import GPT2LMHeadModel
 from vidsitu_code.hf_gpt2_fseq import HuggingFaceGPT2Decoder
@@ -493,7 +494,7 @@ def get_head_dim(full_cfg) -> int:
     # else:
     #     raise NotImplementedError
     # head_dim = 1024 # for combined clip img and verb features in grounded mode
-    if full_cfg.ds.vsitu.vsit_clip_frm_feats_dir == './vidsitu_data/clip-vit-large-patch14-336':
+    if full_cfg.ds.vsitu.vsit_clip_frm_feats_dir == './vidsitu_data/clip-vit-large-patch14-336' or full_cfg.ds.vsitu.vsit_clip_frm_feats_dir == './vidsitu_data/clip-vit-large-patch14-336_11f':
         head_dim = 768
     else:
         head_dim = 512 # for clip img features in prediction mode
@@ -685,6 +686,8 @@ def TxEncoder(cfg, comm):
         return TxEncoderNew_Conc(cfg, comm)
     elif cfg.mdl.tx_enc_type == "xtf":
         return TxEncoderOld_XTF(cfg, comm)
+    elif cfg.mdl.tx_enc_type == "xtf_obj":
+        return TxEncoderXTF_Obj(cfg, comm)
     else:
         raise NotImplementedError
 
@@ -1241,6 +1244,122 @@ class XTF_TxEncDec(Simple_TxDec, Reorderer):
         enc_out_batch1 = tx_out.encoder_out.transpose(0, 1).contiguous()
         enc_out_batch1 = enc_out_batch1.view(B, 5, -1, 1024)
         enc_out2 = enc_out_batch1[:,:,0,:].view(B * 5, 1, -1)
+        enc_out3 = enc_out2.transpose(0, 1).contiguous()
+
+        encoder_out = EncoderOut(
+            encoder_out=enc_out3,  # 1 x 5*B x vdim,
+            encoder_padding_mask=None,
+            encoder_embedding=None,
+            encoder_states=None,
+            src_tokens=None,
+            src_lengths=None,
+        )
+
+        return encoder_out
+
+class TxEncoderXTF_Obj(nn.Module):
+    def __init__(self, cfg, comm):
+        super().__init__()
+        self.full_cfg = cfg
+        self.comm = comm
+        proj_dim = 1024
+        num_heads = 8
+        num_layers = 1
+        #self.q_proj = nn.Linear(args.proj_dim*2, args.proj_dim)
+
+        #self.kv_proj = nn.Linear(args.image_dim, args.proj_dim)
+        
+        self.xatts = nn.ModuleList([CrossAttentionBlock(proj_dim, num_heads) for i in range(num_layers)])                
+        self.output_proj = nn.Linear(proj_dim, proj_dim)
+        self.cls_token = nn.Parameter(torch.zeros(5, proj_dim))
+
+    def forward(self, image_emb, verb_emb, object_emb, mask, centers=None):
+        q = torch.cat([verb_emb, object_emb], 2)  # concat verb_emb, object_emb
+        kv = image_emb
+
+        if len(q.shape) == 4:
+            q = rearrange(q, 'b c h w -> b (c h) w')
+        if len(kv.shape) == 4:
+            kv = rearrange(kv, 'b c h w -> b (c h) w')
+        #kv = self.kv_proj(kv)
+        # convert mask from bs x num_roles to bs x num_roles x dim (default: 512)
+        #mask = mask.unsqueeze(-1).repeat(1,1,self.dim)
+        #q = self.q_proj(q)
+        #q = q + self.pos_emb
+        
+        bs = len(image_emb)
+        q = torch.cat((self.cls_token.unsqueeze(0).repeat(bs, 1, 1),q),dim=1)
+        for layer in self.xatts:
+            q, kv, attn = layer(q, kv, mask)
+        
+        q = self.output_proj(q)
+        #logits = self.classifier(q)
+        
+        return q
+
+class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
+    def build_model(self):
+        super().build_model()
+        head_dim = get_head_dim(self.full_cfg)
+
+        self.vid_feat_encoder = nn.Sequential(
+            *[nn.Linear(head_dim, 1024), nn.ReLU(), nn.Linear(1024, 1024)]
+        )
+        self.use_encoder = True
+        self.vid_feat_txenc = TxEncoder(self.full_cfg, self.comm)
+        self.verb_proj = nn.Linear(512, 1024)
+        self.obj_proj = nn.Linear(2048, 1024)
+        self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2)
+        self.vid_pos_emb = nn.Embedding(5, 1024)
+        self.obj_pos_emb = nn.Embedding(2048, 1024)
+        return
+
+    def forward_encoder(self, inp):
+        B, N, S, D = inp["xtf_frm_feats"].shape
+        if self.full_cfg.feats_type=='image':
+            if self.full_cfg.max_pool== True:
+                # for image-based features
+                frm_feats = inp["xtf_frm_feats"].permute(0,3,2,1).reshape(B*D, S, N) # push N to last position
+                frm_feats = self.maxpool(frm_feats).reshape(B, D, S, -1) # reduce N from 11 to 5
+                frm_feats = frm_feats.permute(0,3,2,1) # B, 5, S, D
+                frm_feats = torch.cat((frm_feats, inp["verb_feats"].unsqueeze(2)), dim=-2) # cat along S to make 51 from 50
+            else:
+                frm_feats = inp["xtf_frm_feats"]
+        else:
+            # for event-based features
+            frm_feats = inp["xtf_frm_feats"]
+        
+        image_10tokens = frm_feats[:, :10,:, :]
+        #assert frm_feats.size(1) == 5
+        out = self.vid_feat_encoder(image_10tokens)
+        #out = out.view(B, -1, 1024)
+        obj_10tokens = inp['obj_feats'][:, :10, :, :]
+        verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2,dim=1)
+        verb_proj_feats = self.verb_proj(verb_10tokens).unsqueeze(2)  # Shape: [8, 10, 1, 1024]
+
+        # Project obj_feats
+        # Apply projection to each feature vector within the third dimension
+        obj_proj_feats = self.obj_proj(obj_10tokens)  # Reshape to apply Linear, Shape: [8*10*15, 2048]
+        #obj_proj_feats = obj_proj_feats.view(8, 10, 15, 1024)  # Reshape back to match the original obj_feats structure
+
+        tx_out = self.vid_feat_txenc(
+            image_emb=out,
+            verb_emb=verb_proj_feats,
+            object_emb=obj_proj_feats,
+            mask=None  # Assuming no mask is passed; adjust if necessary
+        )
+        # tx_out = self.vid_feat_txenc(
+        #     src_tokens=out[..., 0],
+        #     src_lengths=None,
+        #     return_all_hiddens=True,
+        #     token_embeddings=out,
+        # )
+        #enc_out_batch1 = tx_out.transpose(0, 1).contiguous()
+        enc_out_batch1 = tx_out.contiguous()[:,0:5,:]
+        enc_out_batch1 = enc_out_batch1.view(B, 5, -1, 1024)
+        enc_out2 = enc_out_batch1.reshape(B * 5, 1, -1)
+        #enc_out2 = enc_out_batch1[:,:,0,:].view(B * 5, 1, -1)
+
         enc_out3 = enc_out2.transpose(0, 1).contiguous()
 
         encoder_out = EncoderOut(
