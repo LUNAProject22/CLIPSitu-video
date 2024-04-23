@@ -10,7 +10,8 @@ import os
 
 os.environ["PYTHONWARNINGS"] = "ignore"
 
-
+import os
+os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 from utils.trn_utils import Learner
 from utils.trn_dist_utils import launch_job
 from vidsitu_code.extended_config import CfgProcessor

@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 from torch.nn import functional as F
+from einops import repeat
 
 from typing import Dict, Optional
 from utils.misc_utils import combine_first_ax
@@ -1297,6 +1298,13 @@ class TxEncoderXTF_Obj(nn.Module):
         
         return q
 
+
+
+
+
+
+
+
 class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
     def build_model(self):
         super().build_model()
@@ -1306,60 +1314,121 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
             *[nn.Linear(head_dim, 1024), nn.ReLU(), nn.Linear(1024, 1024)]
         )
         self.use_encoder = True
-        self.vid_feat_txenc = TxEncoder(self.full_cfg, self.comm)
+        self.vid_feat_txenc = TxEncoderXTF_Obj(self.full_cfg, self.comm)
         self.verb_proj = nn.Linear(512, 1024)
         self.obj_proj = nn.Linear(2048, 1024)
         self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2)
-        self.vid_pos_emb = nn.Embedding(5, 1024)
-        self.obj_pos_emb = nn.Embedding(2048, 1024)
-        return
-
-    def forward_encoder(self, inp):
-        B, N, S, D = inp["xtf_frm_feats"].shape
-        if self.full_cfg.feats_type=='image':
-            if self.full_cfg.max_pool== True:
-                # for image-based features
-                frm_feats = inp["xtf_frm_feats"].permute(0,3,2,1).reshape(B*D, S, N) # push N to last position
-                frm_feats = self.maxpool(frm_feats).reshape(B, D, S, -1) # reduce N from 11 to 5
-                frm_feats = frm_feats.permute(0,3,2,1) # B, 5, S, D
-                frm_feats = torch.cat((frm_feats, inp["verb_feats"].unsqueeze(2)), dim=-2) # cat along S to make 51 from 50
-            else:
-                frm_feats = inp["xtf_frm_feats"]
-        else:
-            # for event-based features
-            frm_feats = inp["xtf_frm_feats"]
+        self.obj_feat_dim_reduction = nn.Sequential(nn.Linear(2048, 1024),
+                                                    nn.ReLU(),
+                                                    nn.Linear(1024, 1024))
+        self.num_events = self.comm.num_ev
+        self.num_frms = self.comm.num_frms
+        self.num_objs_per_frm = self.comm.num_objs_per_frm
         
-        image_10tokens = frm_feats[:, :10,:, :]
-        #assert frm_feats.size(1) == 5
-        out = self.vid_feat_encoder(image_10tokens)
-        #out = out.view(B, -1, 1024)
-        obj_10tokens = inp['obj_feats'][:, :10, :, :]
-        verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2,dim=1)
-        verb_proj_feats = self.verb_proj(verb_10tokens).unsqueeze(2)  # Shape: [8, 10, 1, 1024]
+        # Spatial 2d position embedding for objects
+        self.obj_spatial_pos_emd = nn.Linear(4, 1024)
+        # Position embedding for video events (1-5)
+        self.event_pos_embed = nn.Embedding(self.num_events, 1024)
+        # Object frame level position embedding (0-10)
+        self.frame_pos_embed = nn.Embedding(self.num_frms, 1024)
+        # verb vs object type embedding
+        self.input_type_embed = nn.Embedding(2, 1024)
+        # Patchwise image/video xtf feats position embedding
+        self.patch_pos_embed = nn.Embedding(50, 1024)
+        
+        return
+    
+    def forward_encoder_11tokens(self, inp):
+        B, N, S, D = inp["xtf_frm_feats"].shape
+        
+        frm_feats = inp["xtf_frm_feats"]
+        
+        image_11tokens = frm_feats[:, :11, :, :]
+        out = self.vid_feat_encoder(image_11tokens)
+        
+        # 11 frames, each frame consists of 15 objects
+        B, F, N, D = inp['obj_feats'].size()
+        obj_feats_embd = inp['obj_feats']  # Bx11x15x2048
+        obj_feats_embd = obj_feats_embd.view(B, F*N, D)  # Bx165x2048
+        obj_feats_embd = self.obj_feat_dim_reduction(obj_feats_embd)  # Bx165x1024
 
-        # Project obj_feats
-        # Apply projection to each feature vector within the third dimension
-        obj_proj_feats = self.obj_proj(obj_10tokens)  # Reshape to apply Linear, Shape: [8*10*15, 2048]
-        #obj_proj_feats = obj_proj_feats.view(8, 10, 15, 1024)  # Reshape back to match the original obj_feats structure
+        # Box coordinates
+        obj_bb_pos = inp['obj_boxes'].clone()  # Bx11x15x4
 
+        # Normalize box coordinates to 0-1
+        img_size_batch = inp['img_size']  # Bx11x2
+        for b_s, vid in enumerate(img_size_batch):
+            img_h = vid[0][0]
+            img_w = vid[0][1]
+            obj_bb_pos[b_s, :, :, 0] = obj_bb_pos[b_s, :, :, 0] / img_w
+            obj_bb_pos[b_s, :, :, 1] = obj_bb_pos[b_s, :, :, 1] / img_h
+            obj_bb_pos[b_s, :, :, 2] = obj_bb_pos[b_s, :, :, 2] / img_w
+            obj_bb_pos[b_s, :, :, 3] = obj_bb_pos[b_s, :, :, 3] / img_h
+
+        # Add video event position embeddings to objects
+        pos_level1 = [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
+        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1).long()
+        frame_event_pos_emb_level1 = repeat(self.event_pos_embed(event_pos_per_frame_l1), 'n d -> b n d', b=B)  # Bx11xD
+
+        pos_level2 = [1, 2, 3, 4]
+        pos_level2_idx = [2, 4, 6, 8]
+        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2).long()
+        frame_event_pos_emb_level2 = repeat(self.event_pos_embed(event_pos_per_frame_l2), 'n d -> b n d', b=B)  # Bx4xD
+
+        frame_event_pos_emb_level1[:, pos_level2_idx] = frame_event_pos_emb_level1[:, pos_level2_idx] + frame_event_pos_emb_level2
+
+        # Repeat the frame-level event embeddings to object-level event embeddings
+        obj_event_pos_emb = repeat(frame_event_pos_emb_level1, 'b n d -> b n o d', o=self.num_objs_per_frm)
+        obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
+
+        # Repeat verb features to match 10 frames
+        verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]
+
+        # Pad verb features to match 11 frames
+        verb_11tokens = torch.zeros(B, 11, 512, dtype=verb_10tokens.dtype, device=verb_10tokens.device)
+        verb_11tokens[:, :10, :] = verb_10tokens
+
+        # Project verb and object features
+        verb_proj_feats = self.verb_proj(verb_11tokens)  # [8, 11, 1024]
+        #obj_proj_feats = self.obj_proj(obj_feats_embd)    # [8, 165, 1024]
+
+        # Add positional embeddings to verb features
+        verb_pos_emb = self.event_pos_embed.weight.unsqueeze(0).repeat(B, 1, 1)  # [8, 5, 1024]
+        verb_pos_emb = verb_pos_emb.repeat_interleave(2, dim=1)[:, :11, :]  # [8, 11, 1024]
+        verb_type_emb = self.input_type_embed.weight[0].unsqueeze(0).unsqueeze(0).repeat(B, 11, 1)  # [8, 11, 1024]
+        verb_emb = verb_proj_feats + verb_pos_emb + verb_type_emb  # [8, 11, 1024]
+        verb_emb = verb_emb.unsqueeze(2)  # [B, 11, 1, 1024]
+
+        # Add positional embeddings to object features
+        obj_spat_pos_embd = self.obj_spatial_pos_emd(obj_bb_pos.view(B, -1, 4))  # [8, 165, 1024]
+        obj_spat_pos_embd = obj_spat_pos_embd.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
+        obj_frame_pos_embed = self.frame_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, 15, 1)  # [8, 11, 15, 1024]
+        obj_type_emb = self.input_type_embed.weight[1].unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(B, 11, 15, 1)  # [8, 11, 15, 1024]
+        obj_emb = obj_feats_embd + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
+        
+        # Calculate the number of patches based on the input tensor shape
+        num_patches = S
+
+        # Add positional embeddings to xtf_frm_feats
+        patch_pos = torch.arange(num_patches, dtype=torch.long, device=out.device)
+        patch_pos_emb = self.patch_pos_embed(patch_pos)
+        patch_pos_emb = patch_pos_emb.unsqueeze(0).unsqueeze(1).repeat(B, 11, 1, 1)  # [8, 11, num_patches, 1024]
+        xtf_frm_feats_emb = out + patch_pos_emb
+        # patch_pos_emb = self.patch_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, S, 1)  # [8, 11, 50, 1024]
+        # xtf_frm_feats_emb = out + patch_pos_emb  # [8, 11, 50, 1024]
+
+        kv = xtf_frm_feats_emb
+        
         tx_out = self.vid_feat_txenc(
-            image_emb=out,
-            verb_emb=verb_proj_feats,
-            object_emb=obj_proj_feats,
+            image_emb=kv,
+            verb_emb=verb_emb,
+            object_emb=obj_emb,
             mask=None  # Assuming no mask is passed; adjust if necessary
         )
-        # tx_out = self.vid_feat_txenc(
-        #     src_tokens=out[..., 0],
-        #     src_lengths=None,
-        #     return_all_hiddens=True,
-        #     token_embeddings=out,
-        # )
-        #enc_out_batch1 = tx_out.transpose(0, 1).contiguous()
-        enc_out_batch1 = tx_out.contiguous()[:,0:5,:]
+        
+        enc_out_batch1 = tx_out.contiguous()[:, 0:5, :]
         enc_out_batch1 = enc_out_batch1.view(B, 5, -1, 1024)
         enc_out2 = enc_out_batch1.reshape(B * 5, 1, -1)
-        #enc_out2 = enc_out_batch1[:,:,0,:].view(B * 5, 1, -1)
-
         enc_out3 = enc_out2.transpose(0, 1).contiguous()
 
         encoder_out = EncoderOut(
@@ -1372,3 +1441,206 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         )
 
         return encoder_out
+    
+    ## taking only 10 frames
+    def forward_encoder(self, inp):
+        B, N, S, D = inp["xtf_frm_feats"].shape
+        
+        frm_feats = inp["xtf_frm_feats"]
+        
+        image_10tokens = frm_feats[:, :10, :, :]
+        out = self.vid_feat_encoder(image_10tokens)
+        
+        # 10 frames, each frame consists of 15 objects
+        B, F, N, D = inp['obj_feats'].size()
+        obj_feats_embd = inp['obj_feats'][:, :10, :, :]  # Bx10x15x2048
+        obj_feats_embd = obj_feats_embd.view(B, 10*N, D)  # Bx150x2048
+        obj_feats_embd = self.obj_feat_dim_reduction(obj_feats_embd)  # Bx150x1024
+
+        # Box coordinates
+        obj_bb_pos = inp['obj_boxes'][:, :10, :, :].clone()  # Bx10x15x4
+
+        # Normalize box coordinates to 0-1
+        img_size_batch = inp['img_size'][:, :10, :]  # Bx10x2
+        for b_s, vid in enumerate(img_size_batch):
+            img_h = vid[0][0]
+            img_w = vid[0][1]
+            obj_bb_pos[b_s, :, :, 0] = obj_bb_pos[b_s, :, :, 0] / img_w
+            obj_bb_pos[b_s, :, :, 1] = obj_bb_pos[b_s, :, :, 1] / img_h
+            obj_bb_pos[b_s, :, :, 2] = obj_bb_pos[b_s, :, :, 2] / img_w
+            obj_bb_pos[b_s, :, :, 3] = obj_bb_pos[b_s, :, :, 3] / img_h
+
+        # Add video event position embeddings to objects
+        pos_level1 = [0, 0, 0, 1, 1, 2, 2, 3, 3, 4]
+        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1).long()
+        frame_event_pos_emb_level1 = repeat(self.event_pos_embed(event_pos_per_frame_l1), 'n d -> b n d', b=B)  # Bx10xD
+
+        pos_level2 = [1, 2, 3, 4]
+        pos_level2_idx = [2, 4, 6, 8]
+        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2).long()
+        frame_event_pos_emb_level2 = repeat(self.event_pos_embed(event_pos_per_frame_l2), 'n d -> b n d', b=B)  # Bx4xD
+
+        frame_event_pos_emb_level1[:, pos_level2_idx] = frame_event_pos_emb_level1[:, pos_level2_idx] + frame_event_pos_emb_level2
+
+        # Repeat the frame-level event embeddings to object-level event embeddings
+        obj_event_pos_emb = repeat(frame_event_pos_emb_level1, 'b n d -> b n o d', o=self.num_objs_per_frm)
+        obj_event_pos_emb = obj_event_pos_emb.reshape(B, 10*N, -1)
+
+        # Repeat verb features to match 10 frames
+        verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]
+
+        # Project verb and object features
+        verb_proj_feats = self.verb_proj(verb_10tokens)  # [8, 10, 1024]
+        #obj_proj_feats = self.obj_proj(obj_feats_embd)    # [8, 150, 1024]
+        obj_feats = obj_feats_embd.clone().reshape(8, 10, 15, -1)  # [8, 10, 15, 1024]
+        # Add positional embeddings to verb features
+        verb_pos_emb = self.event_pos_embed.weight.unsqueeze(0).repeat(B, 1, 1)  # [8, 5, 1024]
+        verb_pos_emb = verb_pos_emb.repeat_interleave(2, dim=1)  # [8, 10, 1024]
+        verb_type_emb = self.input_type_embed.weight[0].unsqueeze(0).unsqueeze(0).repeat(B, 10, 1)  # [8, 10, 1024]
+        verb_emb = verb_proj_feats + verb_pos_emb + verb_type_emb  # [8, 10, 1024]
+        verb_emb = verb_emb.unsqueeze(2)  # [B, 10, 1, 1024]
+
+        # Add positional embeddings to object features
+        obj_spat_pos_embd = self.obj_spatial_pos_emd(obj_bb_pos.view(B, -1, 4))  # [8, 150, 1024]
+        obj_spat_pos_embd = obj_spat_pos_embd.view(B, 10, 15, -1)  # [8, 10, 15, 1024]
+        obj_frame_pos_embed = self.frame_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, 15, 1)[:, :10, :, :]  # [8, 10, 15, 1024]
+        obj_type_emb = self.input_type_embed.weight[1].unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(B, 10, 15, 1)  # [8, 10, 15, 1024]
+        obj_emb = obj_feats + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 10, 15, -1)  # [8, 10, 15, 1024]
+
+        # Calculate the number of patches based on the input tensor shape
+        num_patches = S
+
+        # Add positional embeddings to xtf_frm_feats
+        patch_pos = torch.arange(num_patches, dtype=torch.long, device=out.device)
+        patch_pos_emb = self.patch_pos_embed(patch_pos)
+        patch_pos_emb = patch_pos_emb.unsqueeze(0).unsqueeze(1).repeat(B, 10, 1, 1)  # [8, 10, num_patches, 1024]
+        xtf_frm_feats_emb = out + patch_pos_emb
+
+        kv = xtf_frm_feats_emb
+        
+        tx_out = self.vid_feat_txenc(
+            image_emb=kv,
+            verb_emb=verb_emb,
+            object_emb=obj_emb,
+            mask=None  # Assuming no mask is passed; adjust if necessary
+        )
+        
+        enc_out_batch1 = tx_out.contiguous()[:, 0:5, :]
+        enc_out_batch1 = enc_out_batch1.view(B, 5, -1, 1024)
+        enc_out2 = enc_out_batch1.reshape(B * 5, 1, -1)
+        enc_out3 = enc_out2.transpose(0, 1).contiguous()
+
+        encoder_out = EncoderOut(
+            encoder_out=enc_out3,  # 1 x 5*B x vdim,
+            encoder_padding_mask=None,
+            encoder_embedding=None,
+            encoder_states=None,
+            src_tokens=None,
+            src_lengths=None,
+        )
+
+        return encoder_out
+
+
+# class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
+#     def build_model(self):
+#         super().build_model()
+#         head_dim = get_head_dim(self.full_cfg)
+
+#         self.vid_feat_encoder = nn.Sequential(
+#             *[nn.Linear(head_dim, 1024), nn.ReLU(), nn.Linear(1024, 1024)]
+#         )
+#         self.use_encoder = True
+#         self.vid_feat_txenc = TxEncoder(self.full_cfg, self.comm)
+#         self.verb_proj = nn.Linear(512, 1024)
+#         self.obj_proj = nn.Linear(2048, 1024)
+#         self.maxpool = nn.MaxPool1d(kernel_size=3, stride=2)
+#         #self.vid_pos_emb = nn.Embedding(5, 1024)
+#         #self.obj_pos_emb = nn.Embedding(2048, 1024)
+#         # self.d_vo_enc = 1024
+#         self.num_events = self.comm.num_ev
+#         self.num_frms = self.comm.num_frms
+#         # Spatial 2d position embeding for objects;
+#         self.obj_spatial_pos_emd = nn.Linear(4, 1024)
+#         # patch wise img pos embeding
+#         self.num_patches = self.comm.num_patches
+#         self.img_pos_emb = nn.Linear(self.num_patches, 1024)
+#         # Position embeding for video 1-5;
+#         self.event_pos_embed = nn.Embedding(self.num_events, 1024)  # verb and obj
+#         # Object frame level position embedding (0-10)
+#         self.frame_pos_embed = nn.Embedding(self.num_frms,1024) # video and obj
+#         # verb vs object type embedding
+#         self.input_type_embed = nn.Embedding(2, 1024)
+#         return
+
+#     def forward_encoder(self, inp):
+#         B, N, S, D = inp["xtf_frm_feats"].shape
+#         if self.full_cfg.feats_type=='image':
+#             if self.full_cfg.max_pool== True:
+#                 # for image-based features
+#                 frm_feats = inp["xtf_frm_feats"].permute(0,3,2,1).reshape(B*D, S, N) # push N to last position
+#                 frm_feats = self.maxpool(frm_feats).reshape(B, D, S, -1) # reduce N from 11 to 5
+#                 frm_feats = frm_feats.permute(0,3,2,1) # B, 5, S, D
+#                 frm_feats = torch.cat((frm_feats, inp["verb_feats"].unsqueeze(2)), dim=-2) # cat along S to make 51 from 50
+#             else:
+#                 frm_feats = inp["xtf_frm_feats"]
+#         else:
+#             # for event-based features
+#             frm_feats = inp["xtf_frm_feats"]
+        
+#         image_10tokens = frm_feats[:, :10,:, :]
+#         #assert frm_feats.size(1) == 5
+#         out = self.vid_feat_encoder(image_10tokens)
+#         #out = out.view(B, -1, 1024)
+#         obj_10tokens = inp['obj_feats'][:, :10, :, :]
+#         obj_bb_pos = inp['obj_bb_pos'][:, :10, :, :]
+#         verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2,dim=1)
+#         verb_proj_feats = self.verb_proj(verb_10tokens).unsqueeze(2)  # Shape: [8, 10, 1, 1024]
+#         obj_proj_feats = self.obj_proj(obj_10tokens)  # Reshape to apply Linear, Shape: [8*10*15, 2048]
+
+
+#         vid_pos_emb = repeat(self.event_pos_embed.weight, 'n d -> b n d', b=B)  # Bx5xD
+#         vid_type_emb = repeat(self.input_type_embed.weight[0], 'n d -> b n d', b=B)  # Bx5xD
+#         vid_feats_5 = out + vid_pos_emb + vid_type_emb
+        
+#         obj_spat_pos_embd = self.obj_spatial_pos_emd(obj_bb_pos.view(B, -1, 4))  # Bx150x1024
+#         obj_frame_pos_embed = repeat(self.frame_pos_embed.weight, 'n d -> b n o d', b=B, o=self.num_objs_per_frm)  # Bx10x15xD
+#         obj_frame_pos_embed = obj_frame_pos_embed.view(B, -1, 1024)  # Bx150x1024
+#         obj_type_emb = repeat(self.input_type_embed.weight[1], 'n d -> b n d', b=B, n=10*self.num_objs_per_frm)  # Bx150xD
+#         obj_feats_150 = obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_proj_feats.view(B, -1, 1024)
+
+#         # encoder_src = torch.cat([vid_feats_5, obj_feats_150], dim=1)
+#         # Project obj_feats
+#         # Apply projection to each feature vector within the third dimension
+#         #obj_proj_feats = obj_proj_feats.view(8, 10, 15, 1024)  # Reshape back to match the original obj_feats structure
+
+#         tx_out = self.vid_feat_txenc(
+#             image_emb=vid_feats_5,
+#             verb_emb=verb_proj_feats,
+#             object_emb=obj_proj_feats,
+#             mask=None  # Assuming no mask is passed; adjust if necessary
+#         )
+#         # tx_out = self.vid_feat_txenc(
+#         #     src_tokens=out[..., 0],
+#         #     src_lengths=None,
+#         #     return_all_hiddens=True,
+#         #     token_embeddings=out,
+#         # )
+#         #enc_out_batch1 = tx_out.transpose(0, 1).contiguous()
+#         enc_out_batch1 = tx_out.contiguous()[:,0:5,:]
+#         enc_out_batch1 = enc_out_batch1.view(B, 5, -1, 1024)
+#         enc_out2 = enc_out_batch1.reshape(B * 5, 1, -1)
+#         #enc_out2 = enc_out_batch1[:,:,0,:].view(B * 5, 1, -1)
+
+#         enc_out3 = enc_out2.transpose(0, 1).contiguous()
+
+#         encoder_out = EncoderOut(
+#             encoder_out=enc_out3,  # 1 x 5*B x vdim,
+#             encoder_padding_mask=None,
+#             encoder_embedding=None,
+#             encoder_states=None,
+#             src_tokens=None,
+#             src_lengths=None,
+#         )
+
+#         return encoder_out

@@ -35,6 +35,7 @@ ds:
     vsitu_objects_11_frames_dir: './vidsitu_data/vsitu_all_11_frames_feats/feats_bb'
     vsit_frm_feats_dir: './vidsitu_data/vsitu_vid_feats/i3d_nln_kpret_ep10_best_recall'
     #vsit_clip_frm_feats_dir: './vidsitu_data/clip-vit-large-patch14-336_11f'
+    num_img_patches: 50
     num_frms: 11
     num_objs_per_frm: 15
     max_num_roles_per_event: 6
