@@ -1338,7 +1338,7 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         
         return
     
-    def forward_encoder_11tokens(self, inp):
+    def forward_encoder(self, inp):
         B, N, S, D = inp["xtf_frm_feats"].shape
         
         frm_feats = inp["xtf_frm_feats"]
@@ -1381,20 +1381,23 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         obj_event_pos_emb = repeat(frame_event_pos_emb_level1, 'b n d -> b n o d', o=self.num_objs_per_frm)
         obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
 
-        # Repeat verb features to match 10 frames
-        verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]
+        # Repeat verb features based on pos_level1
+        verb_11tokens = inp["verb_feats"].new_zeros(B, 11, 512)
+        verb_11tokens[:, pos_level1] = inp["verb_feats"].repeat_interleave(torch.tensor([3, 2, 2, 2, 2],device=inp["verb_feats"].device), dim=1)
 
-        # Pad verb features to match 11 frames
-        verb_11tokens = torch.zeros(B, 11, 512, dtype=verb_10tokens.dtype, device=verb_10tokens.device)
-        verb_11tokens[:, :10, :] = verb_10tokens
+        # # Repeat verb features to match 10 frames
+        # verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]
+
+        # # Pad verb features to match 11 frames
+        # verb_11tokens = torch.zeros(B, 11, 512, dtype=verb_10tokens.dtype, device=verb_10tokens.device)
+        # verb_11tokens[:, :10, :] = verb_10tokens
 
         # Project verb and object features
         verb_proj_feats = self.verb_proj(verb_11tokens)  # [8, 11, 1024]
         #obj_proj_feats = self.obj_proj(obj_feats_embd)    # [8, 165, 1024]
 
         # Add positional embeddings to verb features
-        verb_pos_emb = self.event_pos_embed.weight.unsqueeze(0).repeat(B, 1, 1)  # [8, 5, 1024]
-        verb_pos_emb = verb_pos_emb.repeat_interleave(2, dim=1)[:, :11, :]  # [8, 11, 1024]
+        verb_pos_emb = self.event_pos_embed(torch.tensor(pos_level1, device=inp["verb_feats"].device)).unsqueeze(0).repeat(B, 1, 1)  # [8, 11, 1024]
         verb_type_emb = self.input_type_embed.weight[0].unsqueeze(0).unsqueeze(0).repeat(B, 11, 1)  # [8, 11, 1024]
         verb_emb = verb_proj_feats + verb_pos_emb + verb_type_emb  # [8, 11, 1024]
         verb_emb = verb_emb.unsqueeze(2)  # [B, 11, 1, 1024]
@@ -1404,7 +1407,7 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         obj_spat_pos_embd = obj_spat_pos_embd.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
         obj_frame_pos_embed = self.frame_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, 15, 1)  # [8, 11, 15, 1024]
         obj_type_emb = self.input_type_embed.weight[1].unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(B, 11, 15, 1)  # [8, 11, 15, 1024]
-        obj_emb = obj_feats_embd + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
+        obj_emb = obj_feats_embd.view(B, 11, 15, -1) + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
         
         # Calculate the number of patches based on the input tensor shape
         num_patches = S
@@ -1439,11 +1442,10 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
             src_tokens=None,
             src_lengths=None,
         )
-
         return encoder_out
     
     ## taking only 10 frames
-    def forward_encoder(self, inp):
+    def forward_encoder10(self, inp):
         B, N, S, D = inp["xtf_frm_feats"].shape
         
         frm_feats = inp["xtf_frm_feats"]
