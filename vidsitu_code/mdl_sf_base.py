@@ -716,11 +716,22 @@ class GPT2_hf_fseqDec(HuggingFaceGPT2Decoder):
         super().__init__(args, dictionary)
 
 
+class GVSR_decoder(nn.Module):
+    def __init__(self, cfg, comm):
+        super().__init__()
+        self.full_cfg = cfg
+        self.comm = comm
+        dictionary = comm.gpt2_hf_tok
+        args = cfg
+        super().__init__(args, dictionary)
+
 def TxDecoder(full_cfg, comm):
     if full_cfg.mdl.tx_dec_type == "gpt2":
         return GPT2_hf_fseqDec(full_cfg, comm)
     elif full_cfg.mdl.tx_dec_type == "txdec":
         return TxDecoderReal(full_cfg, comm)
+    elif full_cfg.mdl.tx_dec_type == "gvsr":
+        return GVSR_decoder(full_cfg, comm)
     else:
         raise NotImplementedError
 
@@ -901,8 +912,11 @@ class Simple_TxDec(nn.Module):
         self.max_decoder_positions = lambda: 1024
         self.get_normalized_probs = self.decoder.get_normalized_probs
         return
-
+    
     def forward_encoder(self, inp):
+        return None
+    
+    def forward_encoder10(self, inp):
         return None
 
     def prepare_prev_toks_inp(self, inp):
@@ -931,7 +945,7 @@ class Simple_TxDec(nn.Module):
 
     def forward(self, inp):
         inp_prep = self.prepare_prev_toks_inp(inp)
-        encoder_out = self.forward_encoder(inp)
+        encoder_out = self.forward_encoder (inp)
         prev_tokens = inp_prep["dst_toks"]
 
         decoder_out = self.forward_decoder(
@@ -1367,18 +1381,21 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
 
         # Add video event position embeddings to objects
         pos_level1 = [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
-        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1).long()
+        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1, requires_grad=True).long()
         frame_event_pos_emb_level1 = repeat(self.event_pos_embed(event_pos_per_frame_l1), 'n d -> b n d', b=B)  # Bx11xD
 
         pos_level2 = [1, 2, 3, 4]
         pos_level2_idx = [2, 4, 6, 8]
-        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2).long()
+        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2, requires_grad=True).long()
         frame_event_pos_emb_level2 = repeat(self.event_pos_embed(event_pos_per_frame_l2), 'n d -> b n d', b=B)  # Bx4xD
 
-        frame_event_pos_emb_level1[:, pos_level2_idx] = frame_event_pos_emb_level1[:, pos_level2_idx] + frame_event_pos_emb_level2
+        frame_event_pos_emb_level1_updated = frame_event_pos_emb_level1.clone()
+        index_tensor = torch.tensor(pos_level2_idx, device=frame_event_pos_emb_level1.device)
+        index_tensor = index_tensor.unsqueeze(0).unsqueeze(-1).expand(B, -1, frame_event_pos_emb_level1.shape[-1])
+        frame_event_pos_emb_level1_updated.scatter_add_(1, index_tensor, frame_event_pos_emb_level2)
 
         # Repeat the frame-level event embeddings to object-level event embeddings
-        obj_event_pos_emb = repeat(frame_event_pos_emb_level1, 'b n d -> b n o d', o=self.num_objs_per_frm)
+        obj_event_pos_emb = repeat(frame_event_pos_emb_level1_updated, 'b n d -> b n o d', o=self.num_objs_per_frm)
         obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
 
         # Repeat verb features based on pos_level1
@@ -1399,7 +1416,7 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         # Add positional embeddings to verb features
         verb_pos_emb = self.event_pos_embed(torch.tensor(pos_level1, device=inp["verb_feats"].device)).unsqueeze(0).repeat(B, 1, 1)  # [8, 11, 1024]
         verb_type_emb = self.input_type_embed.weight[0].unsqueeze(0).unsqueeze(0).repeat(B, 11, 1)  # [8, 11, 1024]
-        verb_emb = verb_proj_feats + verb_pos_emb + verb_type_emb  # [8, 11, 1024]
+        verb_emb = verb_proj_feats #+ verb_pos_emb + verb_type_emb  # [8, 11, 1024]
         verb_emb = verb_emb.unsqueeze(2)  # [B, 11, 1, 1024]
 
         # Add positional embeddings to object features
@@ -1407,7 +1424,7 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         obj_spat_pos_embd = obj_spat_pos_embd.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
         obj_frame_pos_embed = self.frame_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, 15, 1)  # [8, 11, 15, 1024]
         obj_type_emb = self.input_type_embed.weight[1].unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(B, 11, 15, 1)  # [8, 11, 15, 1024]
-        obj_emb = obj_feats_embd.view(B, 11, 15, -1) + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
+        obj_emb = obj_feats_embd.view(B, 11, 15, -1) #+ obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 11, 15, -1)  # [8, 11, 15, 1024]
         
         # Calculate the number of patches based on the input tensor shape
         num_patches = S
@@ -1416,7 +1433,7 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         patch_pos = torch.arange(num_patches, dtype=torch.long, device=out.device)
         patch_pos_emb = self.patch_pos_embed(patch_pos)
         patch_pos_emb = patch_pos_emb.unsqueeze(0).unsqueeze(1).repeat(B, 11, 1, 1)  # [8, 11, num_patches, 1024]
-        xtf_frm_feats_emb = out + patch_pos_emb
+        xtf_frm_feats_emb = out # v+ patch_pos_emb
         # patch_pos_emb = self.patch_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, S, 1)  # [8, 11, 50, 1024]
         # xtf_frm_feats_emb = out + patch_pos_emb  # [8, 11, 50, 1024]
 
@@ -1473,20 +1490,23 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
             obj_bb_pos[b_s, :, :, 3] = obj_bb_pos[b_s, :, :, 3] / img_h
 
         # Add video event position embeddings to objects
-        pos_level1 = [0, 0, 0, 1, 1, 2, 2, 3, 3, 4]
-        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1).long()
-        frame_event_pos_emb_level1 = repeat(self.event_pos_embed(event_pos_per_frame_l1), 'n d -> b n d', b=B)  # Bx10xD
+        pos_level1 = [0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
+        event_pos_per_frame_l1 = obj_feats_embd.new_tensor(pos_level1, requires_grad=True).long()
+        frame_event_pos_emb_level1 = repeat(self.event_pos_embed(event_pos_per_frame_l1), 'n d -> b n d', b=B)  # Bx11xD
 
         pos_level2 = [1, 2, 3, 4]
         pos_level2_idx = [2, 4, 6, 8]
-        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2).long()
+        event_pos_per_frame_l2 = obj_feats_embd.new_tensor(pos_level2, requires_grad=True).long()
         frame_event_pos_emb_level2 = repeat(self.event_pos_embed(event_pos_per_frame_l2), 'n d -> b n d', b=B)  # Bx4xD
 
-        frame_event_pos_emb_level1[:, pos_level2_idx] = frame_event_pos_emb_level1[:, pos_level2_idx] + frame_event_pos_emb_level2
+        frame_event_pos_emb_level1_updated = frame_event_pos_emb_level1.clone()
+        index_tensor = torch.tensor(pos_level2_idx, device=frame_event_pos_emb_level1.device)
+        index_tensor = index_tensor.unsqueeze(0).unsqueeze(-1).expand(B, -1, frame_event_pos_emb_level1.shape[-1])
+        frame_event_pos_emb_level1_updated.scatter_add_(1, index_tensor, frame_event_pos_emb_level2)
 
         # Repeat the frame-level event embeddings to object-level event embeddings
-        obj_event_pos_emb = repeat(frame_event_pos_emb_level1, 'b n d -> b n o d', o=self.num_objs_per_frm)
-        obj_event_pos_emb = obj_event_pos_emb.reshape(B, 10*N, -1)
+        obj_event_pos_emb = repeat(frame_event_pos_emb_level1_updated, 'b n d -> b n o d', o=self.num_objs_per_frm)
+        obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
 
         # Repeat verb features to match 10 frames
         verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]

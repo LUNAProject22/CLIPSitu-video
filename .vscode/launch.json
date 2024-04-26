@@ -4,11 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
         {
-            "name": "Python: Current File",
+            "name": "Python Debugger: main_dist.py",
             "type": "debugpy",
             "request": "launch",
-            "program": "${file}",
+            "program": "${workspaceFolder}/main_dist.py",
             "console": "integratedTerminal",
             "env": {"CUDA_VISIBLE_DEVICES":"1"},
             //"args": ["vb", "--task_type", "vb"]// ,"--mdl.mdl_name","mlp_txed_vbarg"]
