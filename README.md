@@ -17,7 +17,6 @@ This work is based on our **journal paper**:
 - **Transformer with Temporal Encoding**: Extends CLIPSitu’s **image-based CLIP embeddings** with **video-aware multi-frame reasoning**.
 - **VLM Evaluation for Benchmarking**: Compares **zero-shot prompting from VILA** against our structured approach.
 - **Structured Outputs**: Generates JSON-based outputs, compatible with downstream reasoning systems.
-- **Efficient Data Handling**: Large datasets are hosted on **Google Drive** for lightweight repo management.
 
 ---
 
