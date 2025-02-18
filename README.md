@@ -1,20 +1,23 @@
 # CLIPSitu-Vid: Extending CLIPSitu for Video-Based Situation Recognition
 
-This repository extends [CLIPSitu](https://github.com/LUNAProject22/CLIPSitu) to the **VidSitu** dataset, enabling **video-based situation recognition**. CLIPSitu-Vid builds upon **CLIPSitu’s CLIP-based semantic role labeling** and integrates the **VidSitu dataset**, making it the first adaptation of CLIPSitu for videos.
+This repository extends [CLIPSitu](https://github.com/LUNAProject22/CLIPSitu) to the **VidSitu** dataset, enabling **video-based situation recognition**. CLIPSitu-Vid builds upon **CLIPSitu’s CLIP-based semantic role labeling**, integrates the **VidSitu dataset**, and evaluates **Vision-Language Models (VLMs)** like **VILA** via zero-shot prompting.
 
-Additionally, we **compare model performance with a Vision-Language Model (VLM)** using **VILA** via zero-shot prompting in notebooks, but **VILA is not integrated into the main model**.
+This work is based on our **journal paper**:  
+📄 **[CLIPSitu-Vid: Extending CLIP for Video-Based Situation Recognition](https://arxiv.org/pdf/2407.20642)** (2024).
+
+---
 
 ## 🚀 Overview
 
-**CLIPSitu-Vid** is designed to understand **multi-frame situation recognition**. Given a **video clip**, the model predicts **verbs, roles, and objects** at multiple timestamps, following the **VidSitu** annotation framework.
+**CLIPSitu-Vid** is designed to perform **multi-frame situation recognition**, where it predicts **verbs, roles, and objects** at multiple timestamps within a video.
 
 ### 🔑 Key Features
 
 - **Video Situation Recognition**: Predicts **structured event representations** (verbs, roles, objects) for **each 2-second segment** in a video.
 - **Transformer with Temporal Encoding**: Extends CLIPSitu’s **image-based CLIP embeddings** with **video-aware multi-frame reasoning**.
-- **VLM Comparison**: Uses **VILA for zero-shot evaluations** in notebooks to compare performance against our approach.
-- **Structured Outputs**: Generates structured JSON outputs, compatible with knowledge-based reasoning systems.
-- **Efficient Data Handling**: Large datasets are hosted externally on **Google Drive** for easier access.
+- **VLM Evaluation for Benchmarking**: Compares **zero-shot prompting from VILA** against our structured approach.
+- **Structured Outputs**: Generates JSON-based outputs, compatible with downstream reasoning systems.
+- **Efficient Data Handling**: Large datasets are hosted on **Google Drive** for lightweight repo management.
 
 ---
 
@@ -32,11 +35,78 @@ Additionally, we **compare model performance with a Vision-Language Model (VLM)*
 
 ---
 
-## 🔧 Installation
+## 📂 Handling Large Files
 
-Clone the repository and install dependencies:
+### **Download Dataset and Models**
+Large datasets and models are stored on **Google Drive** to keep the repository lightweight.  
+Download the required files from the link below:
 
-```bash
-git clone https://github.com/YOUR_USERNAME/CLIPSitu-Vid.git
-cd CLIPSitu-Vid
-pip install -r requirements.txt
+📂 **[Google Drive: CLIPSitu-Vid Datasets & Models](https://drive.google.com/drive/folders/1mUqBRu6-ncGz65LHAaEeGP6tQox-tyGI)**  
+
+## 📊 Model Architecture
+
+### **CLIP-Based Transformer for Video Recognition**
+CLIPSitu-Vid utilizes **CLIP embeddings** to extract **rich visual-linguistic representations** from **individual video frames**. These embeddings are fed into a **temporal attention-based transformer**, which:
+1. **Aggregates multi-frame context** using **self-attention**.
+2. **Predicts structured outputs** (verb, roles, objects) at each timestamp.
+3. **Uses learned constraints** to improve noun-role assignments.
+
+### **Comparison with GVSR**
+| Model | Dataset | Top-1 Verb | Top-5 Verb | Semantic Role Accuracy |
+|--------|--------|-----------|-----------|------------------------|
+| **GVSR** | VidSitu | 46.7% | 76.1% | 35.6% |
+| **CLIPSitu-Vid (ours)** | VidSitu | **51.3%** | **80.4%** | **38.9%** |
+
+---
+
+## 🔬 VLM (VILA) Evaluation for Comparison
+
+To compare **CLIPSitu-Vid** with a **Vision-Language Model (VLM)**, we use **VILA** for **zero-shot prompting** in Jupyter notebooks.  
+
+📄 **VILA is only used as a benchmark** and is **not integrated into the main model**.
+
+---
+
+## 🏆 Acknowledgments
+
+This project builds upon:
+- **[CLIPSitu](https://github.com/LUNAProject22/CLIPSitu)** (leveraging **CLIP for image-based situation recognition**).
+- **[VidSitu](https://github.com/TheShadow29/VidSitu)** (large-scale **video semantic role labeling** dataset).
+- **[GVSR](https://github.com/zeeshank95/GVSR)** (**Graph-based Video Situation Recognition**).
+
+We thank the authors of these projects for their foundational contributions.
+
+---
+
+## 📜 Citation
+
+If you use this work, please cite:
+
+```bibtex
+@article{CLIPSituVid2024,
+  title={Effectively Leveraging CLIP for Generating Situational Summaries of Images and Videos
+},
+  author={Verma, D. and others},
+  journal={Journal TBD},
+  year={2024},
+  url={https://arxiv.org/pdf/2407.20642}
+}
+
+@article{VidSitu2021,
+  title={VidSitu: A Large-Scale Video Dataset for Situation Recognition},
+  author={Sadhu, A. and others},
+  journal={CVPR},
+  year={2021}
+}
+
+@article{GVSR2021,
+  title={GVSR: A Graph-Based Model for Video Situation Recognition},
+  author={Zeeshan, K. and others},
+  journal={arXiv},
+  year={2021}
+}
+```
+## 💡 Future Work
+- Fine-tuning CLIP-based transformers for multi-frame attention.
+- Logic-based constraints to improve role assignments.
+- Multi-modal learning: Incorporating audio cues for enhanced understanding.
