@@ -1,0 +1,41 @@
+
+Given the image, provide a structured situational summary following the JSON response format template, that captures the essence of the scene. If an action or activity is taking place, describe the action (verb). Then, for each role associated with this verb (action), provide the top 5 labels (nouns) filling these roles, ranked from most likely to least likely.
+JSON Response Format Template:
+{{
+  "Verb": "{verb}",
+  "Roles_and_Nouns": {{
+    {roles_json}
+  }}
+}}
+
+In-Context Examples for Guidance:
+<image>
+{{
+  "Verb": "Prowling",
+  "Roles_and_Nouns": {{
+    "Place": ["Outdoors"],
+    "Target": ["Prey"],
+    "Agent": ["Wolf"]
+  }}
+}}
+<image>
+{{
+  "Verb": "Spraying",
+  "Roles_and_Nouns": {{
+    "Destination": ["Tree"],
+    "Substance": ["Water"],
+    "Place": ["Forest"],
+    "Agent": ["Person"],
+    "Source": ["Hose"]
+  }}
+}}
+<image>
+{{
+  "Verb": "Slipping",
+  "Roles_and_Nouns": {{
+    "Destination": ["Base"],
+    "Place": ["Playing Field"],
+    "Agent": ["Player"]
+  }}
+}}
+Now, based on the image <image>, verb {verb} and roles {roles_list}, fill in the structured summary below and include the top 5 labels (nouns) filling these roles.

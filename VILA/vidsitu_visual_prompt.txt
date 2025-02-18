@@ -1,0 +1,58 @@
+
+Given the image, provide a structured situational summary following the JSON response format template, that captures the essence of the scene. Specifically, describe the action (verb). Then, fill the nouns playing the roles "Arg0", "Arg1", "Arg2", "Scene of the Event" in the verb (action).
+JSON Response Format Template: {{
+    "Verb": "{verb}",
+    "Args": {{
+        {roles_json}
+    }}
+}}
+
+In-Context Example for Guidance:
+<image> {{
+  "Verb": "dive (to drop)", 
+  "Args": {{
+    "Arg1 (thing falling)": ["man in wetsuit"],
+    "ArgM (direction)": ["downward"],
+    "Scene of the Event": ["lake"]
+  }}
+}}
+<image> {{
+  "Verb": "breathe (suck air)",
+  "Args": {{
+    "Arg0 (breather)": ["man in wetsuit"],
+    "Arg1 (air, we hope)": ["man in wetsuit"],
+    "ArgM (manner)": ["aggressively"],
+    "Scene of the Event": ["lake"]
+  }}
+}}
+<image> {{
+  "Verb": "talk (speak)", 
+  "Args": {{
+    "Arg0 (talker)": ["brunette girl"],
+    "Arg2 (hearer)": ["brunette boy"],
+    "ArgM (location)": ["lake"],
+    "ArgM (manner)": ["casually"]
+  }}
+}}
+<image> {{
+  "Verb": "flip (throw, turn over)",
+  "Args": {{
+    "Arg0 (flipper, agent)": ["man in wetsuit"],
+    "Arg1 (thing flipped)": ["body"],
+    "ArgM (direction)": ["sideways"],
+    "Scene of the Event": ["lake"]
+  }}
+}}
+
+<image> {{
+  "Verb": "choke (to have or cause to have  difficulty in breathing)",  
+  "Args": {{
+    "Arg0 (causer of choking, agent)": ["the man with the blonde hair"],
+    "Arg1 (entity choked)": ["the man with the brown hair"],
+    "Scene of the Event": ["on a bridge"]
+  }}
+}}
+
+
+Do not give an explanation or any more unnecessary information other than the JSON format.
+Now, based on the image <image>, provide a structured summary in the JSON format as instructed above.

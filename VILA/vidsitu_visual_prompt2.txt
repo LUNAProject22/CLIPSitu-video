@@ -1,0 +1,60 @@
+
+Given the image, provide a structured situational summary following the JSON response format template, that captures the essence of the scene. Specifically, describe the action (verb). Then, fill the nouns playing the roles "Arg0", "Arg1", "Arg2", "Scene of the Event" in the verb (action).
+JSON Response Format Template: {{
+    "Verb": "{verb}",
+    "Args": {{
+        {roles_json}
+    }}
+}}
+
+In-Context Example for Guidance:
+<image> {{
+  "Verb": "point (point at, define, make an example of)", 
+  "Args": {{
+    'Arg0 (pointer)': ['girl in the green striped shirt'],
+    'Arg1 (pointed at)': [''],
+    'ArgM (direction)': ['off in the distance'],
+    'Scene of the Event': ['spacious coffee shop']
+  }}
+}}
+<image> {{
+  "Verb": "reach (stretch, grasp)",
+  "Args": {{
+    'Arg0 (reacher)': ['dark-haired woman with coiffed hairstyle and black strapless dress with a plunging neckline]',
+    'Arg1 (body part)': ['both hands'],
+    'Arg2 (goal)': ['to work on'],
+    'ArgM (direction)': ['behind her back'],
+    'ArgM (purpose)': ['undoing the back of her dress'],
+    'Scene of the Event': ['bedroom']
+  }}
+}}
+<image> {{
+  "Verb": "kiss (smooch)", 
+  "Args": {{
+    'Arg0 (kisser)': ['the lady on the bed'],
+    'Arg1 (kissed)': ['the man lying on the bed'],
+    'ArgM (location)': ['in the room'],
+    'ArgM (manner)': ['passionately']
+  }}
+}}
+<image> {{
+  "Verb": "grapple (deal with)",
+  "Args": {{
+    'Arg0 (entity grappling)': ['running man in long black coat'],
+    'Arg1 (grappling with what)': ['police'],
+    'Scene of the Event': ['ruins of castle']
+  }}
+}}
+
+<image> {{
+  "Verb": "choke (to have or cause to have  difficulty in breathing)",  
+  "Args": {{
+    "Arg0 (causer of choking, agent)": ["the man with the blonde hair"],
+    "Arg1 (entity choked)": ["the man with the brown hair"],
+    "Scene of the Event": ["on a bridge"]
+  }}
+}}
+
+
+Do not give an explanation or any more unnecessary information other than the JSON format.
+Now, based on the image <image>, provide a structured summary in the JSON format as instructed above.

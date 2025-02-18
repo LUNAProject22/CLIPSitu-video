@@ -1,0 +1,9535 @@
+{
+  "blocking_45.jpg": null,
+  "constructing_150.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Created Item": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "colliding_159.jpg": null,
+  "confronting_95.jpg": {
+    "Verb": "Confronting",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Stage"
+      ],
+      "Confronted": [
+        "Actor 1",
+        "Actor 2",
+        "Actor 3",
+        "Actor 4"
+      ],
+      "Agent": [
+        "Actor 5"
+      ]
+    }
+  },
+  "unpacking_125.jpg": null,
+  "squinting_122.jpg": {
+    "Verb": "Squinting",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "dripping_265.jpg": null,
+  "making_124.jpg": {
+    "Verb": "Making",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Balloon"
+      ],
+      "Tool": [
+        "Balloon pump"
+      ],
+      "Goalitem": [
+        "Balloon(s)"
+      ],
+      "Place": [
+        "Park"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "buying_127.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Computer mouse"
+      ],
+      "Place": [
+        "Store"
+      ],
+      "Payment": [
+        "Credit card"
+      ],
+      "Agent": [
+        "Customer"
+      ],
+      "Seller": [
+        "Store employee"
+      ]
+    }
+  },
+  "fixing_49.jpg": null,
+  "gardening_99.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Glove",
+        "Shovel",
+        "Trowel"
+      ],
+      "Place": [
+        "Garden",
+        "Yard",
+        "Flower bed"
+      ],
+      "Agent": [
+        "Boy",
+        "Child",
+        "Man"
+      ]
+    }
+  },
+  "videotaping_5.jpg": null,
+  "falling_130.jpg": {
+    "Verb": "Falling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Horse",
+        "Person"
+      ],
+      "Place": [
+        "Sand",
+        "Pavement"
+      ],
+      "Goal": [
+        "Horse",
+        "Person"
+      ],
+      "Agent": [
+        "Horse",
+        "Person"
+      ]
+    }
+  },
+  "arranging_267.jpg": {
+    "Verb": "Arranging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tableware"
+      ],
+      "Tool": [
+        "Knife"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Tablecloth"
+      ]
+    }
+  },
+  "videotaping_162.jpg": null,
+  "storming_33.jpg": null,
+  "twirling_180.jpg": {
+    "Verb": "Twirling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Flags"
+      ],
+      "Place": [
+        "Gymnasium"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "barbecuing_66.jpg": null,
+  "stripping_54.jpg": null,
+  "launching_70.jpg": {
+    "Verb": "launching",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Space Shuttle"
+      ],
+      "Destination": [
+        "Space Station"
+      ],
+      "Place": [
+        "Sky"
+      ],
+      "Agent": [
+        "NASA Astronauts"
+      ],
+      "Source": [
+        "Kennedy Space Center"
+      ]
+    }
+  },
+  "falling_97.jpg": null,
+  "hunting_41.jpg": null,
+  "assembling_13.jpg": null,
+  "dissecting_19.jpg": {
+    "Verb": "Dissecting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wound"
+      ],
+      "Tool": [
+        "Scissors"
+      ],
+      "Place": [
+        "Operating Room"
+      ],
+      "Agent": [
+        "Surgeon"
+      ]
+    }
+  },
+  "dyeing_40.jpg": {
+    "Verb": "Dyeing",
+    "Roles_and_Nouns": {
+      "dye": [
+        "Dyeing cloth"
+      ],
+      "material": [
+        "Cloth"
+      ],
+      "place": [
+        "Tablecloth/Place of dyeing"
+      ],
+      "agent": [
+        "Woman"
+      ]
+    }
+  },
+  "blocking_173.jpg": null,
+  "poking_81.jpg": {
+    "Verb": "Poking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Felt Fabric"
+      ],
+      "Tool": [
+        "Needle"
+      ],
+      "Object": [
+        "Felt Fabric Piece"
+      ],
+      "Objectpart": [
+        "Needle Eye"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "admiring_382.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "Woman in a dress"
+      ],
+      "Place": [
+        "Beach"
+      ],
+      "Agent": [
+        "Woman reading magazine"
+      ]
+    }
+  },
+  "videotaping_230.jpg": null,
+  "nipping_216.jpg": null,
+  "unpacking_97.jpg": null,
+  "dining_298.jpg": null,
+  "building_244.jpg": null,
+  "gluing_151.jpg": {
+    "Verb": "Gluing",
+    "Roles_and_Nouns": {
+      "Connector": [
+        "Flower Petal"
+      ],
+      "Item": [
+        "Flower Petal"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Goal": [
+        "Gluing Flower Petal to Cardstock"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "manicuring_102.jpg": {
+    "Verb": "Manicuring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Nail polish"
+      ],
+      "Tool": [
+        "Nail polish brush"
+      ],
+      "Place": [
+        "Nail salon"
+      ],
+      "Agent": [
+        "Nail technician"
+      ]
+    }
+  },
+  "photographing_13.jpg": {
+    "Verb": "Photographing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Soldiers"
+      ],
+      "Tool": [
+        "Camera"
+      ],
+      "Place": [
+        "Wall of Concrete Blocks"
+      ],
+      "Agent": [
+        "Photographers"
+      ]
+    }
+  },
+  "videotaping_238.jpg": null,
+  "blocking_156.jpg": {
+    "Verb": "Blocking",
+    "Roles_and_Nouns": {
+      "Blocker": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Blocked": [
+        ""
+      ]
+    }
+  },
+  "photographing_139.jpg": null,
+  "smelling_357.jpg": null,
+  "dining_206.jpg": null,
+  "barbecuing_1.jpg": null,
+  "videotaping_41.jpg": null,
+  "piloting_152.jpg": null,
+  "smashing_241.jpg": null,
+  "queuing_273.jpg": null,
+  "tipping_117.jpg": null,
+  "grilling_60.jpg": {
+    "Verb": "Grilling",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Hot dogs"
+      ],
+      "Place": [
+        "Backyard Grill"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Hot dogs"
+      ]
+    }
+  },
+  "dining_120.jpg": null,
+  "fishing_135.jpg": {
+    "Verb": "Fishing",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Lake",
+        "River",
+        "Pond"
+      ],
+      "Tool": [
+        "Fishing rod",
+        "Fishing pole"
+      ],
+      "Place": [
+        "Lake",
+        "River",
+        "Pond"
+      ],
+      "Agent": [
+        "Man",
+        "Woman"
+      ]
+    }
+  },
+  "stripping_72.jpg": {
+    "Verb": "Stripping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Window Frame"
+      ],
+      "Removed Item": [
+        "Old Window Frame"
+      ],
+      "Place": [
+        "Window Frame Removal Site"
+      ],
+      "Tool": [
+        "Scraping Tool"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "manicuring_311.jpg": null,
+  "punching_197.jpg": {
+    "Verb": "Punching",
+    "Roles_and_Nouns": {
+      "Bodypart": [
+        "Glove",
+        "Hand",
+        "Arm",
+        "Fist"
+      ],
+      "Place": [
+        "Ring",
+        "Ring",
+        "Ring",
+        "Ring"
+      ],
+      "Victim": [
+        "Boxer",
+        "Boxer",
+        "Boxer",
+        "Boxer"
+      ],
+      "Agent": [
+        "Boxer",
+        "Boxer",
+        "Boxer",
+        "Boxer"
+      ]
+    }
+  },
+  "blocking_187.jpg": null,
+  "inflating_23.jpg": {
+    "Verb": "Inflating",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Pump"
+      ],
+      "Object": [
+        "Tire"
+      ],
+      "Place": [
+        "Pavement"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Fill": [
+        "Air"
+      ]
+    }
+  },
+  "crafting_58.jpg": {
+    "Verb": "Crafting",
+    "Roles_and_Nouns": {
+      "Instrument": [
+        "Paper Airplane"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Created": [
+        "Paper Airplane"
+      ]
+    }
+  },
+  "colliding_114.jpg": null,
+  "unpacking_145.jpg": null,
+  "colliding_263.jpg": null,
+  "stuffing_126.jpg": {
+    "Verb": "Stuffing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Turkey Breast"
+      ],
+      "Destination": [
+        "Turkey Breast"
+      ],
+      "Place": [
+        "Tray"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Fill": [
+        "Turkey Breast"
+      ]
+    }
+  },
+  "folding_254.jpg": null,
+  "celebrating_180.jpg": null,
+  "destroying_132.jpg": {
+    "Verb": "Destroying",
+    "Roles_and_Nouns": {
+      "Destroyed Item": [
+        "Lion Statue"
+      ],
+      "Tool": [
+        "Hammer"
+      ],
+      "Place": [
+        "Wall of Building"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "dining_264.jpg": null,
+  "attacking_68.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Wall"
+      ],
+      "Victim": [
+        "Stag (Deer)"
+      ],
+      "Agent": [
+        "Bear (Mammal)"
+      ],
+      "Source": [
+        "Antlers"
+      ],
+      "Destination": [
+        "Wall"
+      ],
+      "Weapon": [
+        "Antlers"
+      ],
+      "Location": [
+        "Museum"
+      ],
+      "Environment": [
+        "Display case"
+      ],
+      "Time": [
+        "Nighttime"
+      ]
+    }
+  },
+  "videotaping_159.jpg": null,
+  "overflowing_144.jpg": {
+    "Verb": "overflowing",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Water Bucket"
+      ],
+      "Place": [
+        "Grass Field"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Destination": [
+        "Water Bucket"
+      ]
+    }
+  },
+  "feeding_26.jpg": null,
+  "hunting_194.jpg": null,
+  "constructing_104.jpg": null,
+  "smashing_182.jpg": {
+    "Verb": "Smashing",
+    "Roles_and_Nouns": {
+      "Smashed": [
+        "Bricks"
+      ],
+      "Tool": [
+        "Hammer"
+      ],
+      "Place": [
+        "Head"
+      ],
+      "Against": [
+        "Bricks"
+      ],
+      "Agent": [
+        "Soldier"
+      ]
+    }
+  },
+  "performing_220.jpg": null,
+  "swarming_197.jpg": null,
+  "snuggling_203.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Baby"
+      ],
+      "Place": [
+        "Bedding"
+      ],
+      "Agent": [
+        "Mother"
+      ]
+    }
+  },
+  "filming_134.jpg": null,
+  "perspiring_79.jpg": null,
+  "shopping_108.jpg": {
+    "Verb": "shopping",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Bag",
+        "Shoes",
+        "Purse"
+      ],
+      "Place": [
+        "Store",
+        "Mall",
+        "Department Store"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Store Employee"
+      ]
+    }
+  },
+  "assembling_311.jpg": null,
+  "heaving_3.jpg": {
+    "Verb": "Heaving",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Ball"
+      ],
+      "Place": [
+        "Air"
+      ],
+      "HeavedItem": [
+        ""
+      ],
+      "Agent": [
+        "Player"
+      ]
+    }
+  },
+  "leading_36.jpg": {
+    "Verb": "Leading",
+    "Roles_and_Nouns": {
+      "Follower": [
+        "Ducks"
+      ],
+      "Place": [
+        "Waterway"
+      ],
+      "Agent": [
+        "Duck Leader"
+      ]
+    }
+  },
+  "ailing_22.jpg": {
+    "Verb": "Ailing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Bedroom"
+      ],
+      "Cause": [
+        "Fever"
+      ],
+      "Victimpart": [
+        "Baby"
+      ],
+      "Victim": [
+        "Baby"
+      ]
+    }
+  },
+  "shopping_127.jpg": null,
+  "stitching_99.jpg": null,
+  "shopping_255.jpg": null,
+  "drenching_111.jpg": {
+    "Verb": "Drenching",
+    "Roles_and_Nouns": {
+      "drencheditem": [
+        ""
+      ],
+      "tool": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "liquid": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "assembling_204.jpg": null,
+  "admiring_389.jpg": null,
+  "loading_130.jpg": {
+    "Verb": "loading",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wooden Box"
+      ],
+      "Tool": [
+        "Hose"
+      ],
+      "Destination": [
+        "Wagon Wheel Assembly Line"
+      ],
+      "Place": [
+        "Assembly Line"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Hose"
+      ]
+    }
+  },
+  "slipping_2.jpg": null,
+  "making_27.jpg": {
+    "Verb": "Making",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Pottery wheel"
+      ],
+      "Tool": [
+        "Hands"
+      ],
+      "Goalitem": [
+        "Pottery piece"
+      ],
+      "Place": [
+        "Pottery studio"
+      ],
+      "Agent": [
+        "Potter"
+      ]
+    }
+  },
+  "recording_224.jpg": {
+    "Verb": "recording",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Studio"
+      ],
+      "Phenomenon": [
+        "Sound"
+      ],
+      "Agent": [
+        "Band"
+      ]
+    }
+  },
+  "sewing_170.jpg": null,
+  "bulldozing_119.jpg": null,
+  "dining_150.jpg": null,
+  "overflowing_366.jpg": null,
+  "blocking_29.jpg": null,
+  "attacking_120.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Victim": [
+        "Bear"
+      ],
+      "Agent": [
+        "Wolf"
+      ],
+      "Weapon": [
+        "Claws"
+      ],
+      "Source": [
+        "Wolf"
+      ],
+      "Destination": [
+        "Forest"
+      ],
+      "Target": [
+        "Bear"
+      ]
+    }
+  },
+  "filming_229.jpg": {
+    "Verb": "Filming",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Camera",
+        "Microphone",
+        "Lighting Equipment"
+      ],
+      "Performer": [
+        "Actor",
+        "Actress",
+        "Crew Member"
+      ],
+      "Place": [
+        "Film Set",
+        "Studio",
+        "On Location"
+      ],
+      "Agent": [
+        "Director",
+        "Producer",
+        "Cinematographer"
+      ],
+      "Source": [
+        "Script",
+        "Storyboard",
+        "Improvisation"
+      ]
+    }
+  },
+  "praying_239.jpg": null,
+  "waxing_153.jpg": {
+    "Verb": "waxing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Bodypart": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "jogging_107.jpg": {
+    "Verb": "Jogging",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Pathway"
+      ],
+      "Pathway": "Pathway",
+      "Agent": [
+        "Woman"
+      ],
+      "Woman": "Woman"
+    }
+  },
+  "glowing_365.jpg": null,
+  "cleaning_77.jpg": null,
+  "spinning_120.jpg": {
+    "Verb": "Spinning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Machine"
+      ],
+      "Material": [
+        "Yarn"
+      ],
+      "Place": [
+        "Factory"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Electricity"
+      ]
+    }
+  },
+  "folding_79.jpg": {
+    "Verb": "Folding",
+    "Roles_and_Nouns": {
+      "Cloth": [
+        "Paper Airplane"
+      ],
+      "Shape": [
+        "Triangle"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Scissors"
+      ]
+    }
+  },
+  "grieving_44.jpg": null,
+  "staring_172.jpg": {
+    "Verb": "Staring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Boy with peace sign on face"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "shopping_297.jpg": null,
+  "blocking_39.jpg": null,
+  "manicuring_127.jpg": null,
+  "ejecting_113.jpg": null,
+  "filming_237.jpg": {
+    "Verb": "Filming",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Camera",
+        "Microphone",
+        "Lighting Equipment"
+      ],
+      "Performer": [
+        "Actor",
+        "Actress",
+        "Crew Member"
+      ],
+      "Place": [
+        "Film Set",
+        "Stage",
+        "Studio"
+      ],
+      "Agent": [
+        "Director",
+        "Producer",
+        "Cinematographer"
+      ],
+      "Source": [
+        "Script",
+        "Storyboard",
+        "Rehearsal"
+      ]
+    }
+  },
+  "dipping_345.jpg": {
+    "Verb": "Dipping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Apple slice"
+      ],
+      "Substance": [
+        "Honey"
+      ],
+      "Place": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Hand"
+      ]
+    }
+  },
+  "waxing_110.jpg": {
+    "Verb": "waxing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Bodypart": [
+        "Legs"
+      ],
+      "Place": [
+        "Salon"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "harvesting_54.jpg": null,
+  "performing_81.jpg": {
+    "Verb": "Performing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Guitar"
+      ],
+      "Place": [
+        "Stage"
+      ],
+      "Event": [
+        "Concert"
+      ],
+      "Agent": [
+        "Guitarist"
+      ],
+      "Stage": [
+        "Band"
+      ],
+      "Source": [
+        "Audience"
+      ]
+    }
+  },
+  "spinning_48.jpg": null,
+  "communicating_39.jpg": {
+    "Verb": "Communicating",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Living Room"
+      ],
+      "Adressee": [
+        "Friend 1"
+      ],
+      "Friend 1": [
+        "Friend 2"
+      ],
+      "Agent": [
+        "Friend 1"
+      ]
+    }
+  },
+  "spinning_49.jpg": null,
+  "unveiling_189.jpg": {
+    "Verb": "Unveiling",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Madame Tussauds Wax Museum"
+      ],
+      "Place": [
+        "Red Carpet Event"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "decomposing_124.jpg": null,
+  "spinning_55.jpg": null,
+  "assembling_127.jpg": {
+    "Verb": "Assembling",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Wooden boards"
+      ],
+      "Tool": [
+        "Saw and drill"
+      ],
+      "Goalitem": [
+        "Table or chair"
+      ],
+      "Place": [
+        "Workshop or garage"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "constructing_204.jpg": null,
+  "assembling_303.jpg": {
+    "Verb": "Assembling",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Car Body Parts"
+      ],
+      "Tool": [
+        "Wrenches",
+        "Screwdrivers",
+        "Pliers"
+      ],
+      "GoalItem": [
+        "Car Assembly Line"
+      ],
+      "Place": [
+        "Assembly Line Factory"
+      ],
+      "Agent": [
+        "Workers"
+      ]
+    }
+  },
+  "hunting_166.jpg": {
+    "Verb": "Hunting",
+    "Roles_and_Nouns": {
+      "hunted": [
+        "Cat"
+      ],
+      "place": [
+        "Forest"
+      ],
+      "agent": [
+        "Bobcat"
+      ]
+    }
+  },
+  "spinning_0.jpg": null,
+  "tipping_192.jpg": {
+    "Verb": "Tipping",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Agentpart": [
+        ""
+      ]
+    }
+  },
+  "buying_81.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Toothpaste",
+        "Candy",
+        "Magazine"
+      ],
+      "Place": [
+        "Store",
+        "Display",
+        "Shelf"
+      ],
+      "Payment": [
+        "Money",
+        "Credit Card",
+        "Debit Card"
+      ],
+      "Agent": [
+        "Customer",
+        "Employee",
+        "Store Owner"
+      ],
+      "Seller": [
+        "Store Owner",
+        "Employee",
+        "Customer"
+      ]
+    }
+  },
+  "leading_109.jpg": {
+    "Verb": "Leading",
+    "Roles_and_Nouns": {
+      "Followers": [
+        "Veterans of Retired and Senior League Band Members"
+      ],
+      "Place": [
+        "Parade route"
+      ],
+      "Agent": [
+        "Band Leader"
+      ]
+    }
+  },
+  "nipping_145.jpg": {
+    "Verb": "Nipping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Frisbee"
+      ],
+      "Place": [
+        "Yard"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "grilling_8.jpg": null,
+  "assembling_353.jpg": null,
+  "dining_303.jpg": null,
+  "harvesting_147.jpg": null,
+  "folding_36.jpg": null,
+  "crowning_135.jpg": null,
+  "unloading_333.jpg": null,
+  "videotaping_6.jpg": null,
+  "videotaping_179.jpg": null,
+  "storming_193.jpg": null,
+  "performing_214.jpg": null,
+  "weeping_30.jpg": {
+    "Verb": "weeping",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Church pew"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "videotaping_222.jpg": null,
+  "videotaping_7.jpg": null,
+  "videotaping_123.jpg": null,
+  "drenching_69.jpg": null,
+  "racing_162.jpg": {
+    "Verb": "Racing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Road"
+      ],
+      "Team": [
+        "Bike Team"
+      ],
+      "Rider": [
+        "Cyclist"
+      ],
+      "Bike": [
+        "Bicycle"
+      ]
+    }
+  },
+  "photographing_116.jpg": {
+    "Verb": "Photographing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bride and Groom"
+      ],
+      "Tool": [
+        "Camera"
+      ],
+      "Place": [
+        "Beach"
+      ],
+      "Agent": [
+        "Photographer"
+      ]
+    }
+  },
+  "taping_181.jpg": {
+    "Verb": "Taping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tape"
+      ],
+      "Destination": [
+        "Floor"
+      ],
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Roll of Tape"
+      ]
+    }
+  },
+  "dining_56.jpg": null,
+  "making_121.jpg": null,
+  "laughing_166.jpg": null,
+  "painting_28.jpg": null,
+  "fixing_386.jpg": {
+    "Verb": "Fixing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Toilet Bowl"
+      ],
+      "Tool": [
+        "Plunger"
+      ],
+      "Object": [
+        "Toilet Bowl Cleaner"
+      ],
+      "Objectpart": [
+        "Handle"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "dripping_226.jpg": {
+    "Verb": "Dripping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Blood"
+      ],
+      "Destination": [
+        "Hand"
+      ],
+      "Place": [
+        "Wall"
+      ],
+      "Fluid": [
+        "Blood"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "intermingling_16.jpg": {
+    "Verb": "Intermingling",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Garden"
+      ],
+      "Agents": [
+        "People"
+      ]
+    }
+  },
+  "dining_113.jpg": null,
+  "photographing_57.jpg": null,
+  "falling_211.jpg": {
+    "Verb": "Falling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Ladder",
+        "People",
+        "Painting Tools"
+      ],
+      "Place": [
+        "Roof",
+        "Ground",
+        "House",
+        "Ladder"
+      ],
+      "Goal": [
+        "Painting",
+        "Repairing",
+        "Fixing"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "spraying_64.jpg": null,
+  "coloring_208.jpg": {
+    "Verb": "Coloring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Picture"
+      ],
+      "Tool": [
+        "Marker"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Coloring Book"
+      ]
+    }
+  },
+  "constructing_146.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        "Metal beams",
+        "Concrete blocks",
+        "Wood planks"
+      ],
+      "Tool": [
+        "Crane",
+        "Wrench",
+        "Saw"
+      ],
+      "Place": [
+        "Construction site",
+        "Factory",
+        "Warehouse"
+      ],
+      "Created Item": [
+        "Building",
+        "Bridge",
+        "Skyscraper"
+      ],
+      "Agent": [
+        "Construction workers",
+        "Engineers",
+        "Architects"
+      ]
+    }
+  },
+  "buttoning_65.jpg": {
+    "Verb": "buttoning",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Suit Jacket"
+      ],
+      "Place": [
+        "Wall or Door Buttonhole"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "crowning_38.jpg": {
+    "Verb": "Crowning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Stage"
+      ],
+      "Crown": [
+        "Tiara"
+      ],
+      "Crownedentity": [
+        "Miss Universe 2008 Winner Rania Al-Yassin of Jordan"
+      ],
+      "Agent": [
+        "Miss Universe 2007 Winner Zuleyka Rivera of Puerto Rico"
+      ]
+    }
+  },
+  "tuning_138.jpg": {
+    "Verb": "Tuning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Wrench"
+      ],
+      "Object": [
+        "Car Engine"
+      ],
+      "Place": [
+        "Garage"
+      ],
+      "Agent": [
+        "Mechanic"
+      ],
+      "Source": [
+        "Car Manual"
+      ]
+    }
+  },
+  "barbecuing_31.jpg": null,
+  "packing_232.jpg": null,
+  "applauding_112.jpg": {
+    "Verb": "applauding",
+    "Roles_and_Nouns": {
+      "addressee": [
+        "Audience"
+      ],
+      "place": [
+        "Theater, Concert Hall, Stadium, etc."
+      ],
+      "agent": [
+        "People, Fans, Spectators"
+      ]
+    }
+  },
+  "crafting_90.jpg": null,
+  "submerging_98.jpg": null,
+  "admiring_256.jpg": null,
+  "eating_199.jpg": null,
+  "performing_56.jpg": null,
+  "riding_44.jpg": null,
+  "videotaping_104.jpg": null,
+  "spinning_195.jpg": null,
+  "smashing_10.jpg": {
+    "Verb": "Smashing",
+    "Roles_and_Nouns": {
+      "Smashed": [
+        "Eggshell"
+      ],
+      "Tool": [
+        "Hand"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Against": [
+        "Eggshell"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "assembling_2.jpg": null,
+  "serving_136.jpg": null,
+  "spinning_39.jpg": null,
+  "bulldozing_3.jpg": {
+    "Verb": "Bulldozing",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Truck"
+      ],
+      "Place": [
+        "Pile of Debris"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "performing_34.jpg": {
+    "Verb": "Performing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Guitar"
+      ],
+      "Place": [
+        "Stage"
+      ],
+      "Event": [
+        "Concert"
+      ],
+      "Agent": [
+        "Band Members"
+      ],
+      "Stage": [
+        "Concert Venue"
+      ],
+      "Source": [
+        "Audience"
+      ]
+    }
+  },
+  "rotting_153.jpg": {
+    "Verb": "Rotting",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Food item"
+      ],
+      "Container": [
+        "Bowl"
+      ],
+      "Agent": [
+        "Bacteria"
+      ]
+    }
+  },
+  "crafting_220.jpg": null,
+  "barbecuing_48.jpg": null,
+  "speaking_198.jpg": null,
+  "paying_34.jpg": null,
+  "bulldozing_203.jpg": null,
+  "buying_225.jpg": null,
+  "admiring_209.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "Penguin"
+      ],
+      "Place": [
+        "Aquarium"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "dining_236.jpg": null,
+  "videotaping_102.jpg": null,
+  "erupting_196.jpg": null,
+  "blocking_208.jpg": null,
+  "smashing_261.jpg": {
+    "Verb": "Smashing",
+    "Roles_and_Nouns": {
+      "Smashed": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Against": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "packaging_8.jpg": {
+    "Verb": "Packaging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Gun and Ammunition"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "colliding_220.jpg": null,
+  "admiring_116.jpg": null,
+  "overflowing_345.jpg": null,
+  "spinning_45.jpg": null,
+  "leaping_328.jpg": null,
+  "gluing_54.jpg": {
+    "Verb": "Gluing",
+    "Roles_and_Nouns": {
+      "Connector": [
+        "Glue gun"
+      ],
+      "Item": [
+        "Wooden block"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Goal": [
+        "Gluing pieces together"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "placing_148.jpg": {
+    "Verb": "Placing",
+    "Roles_and_Nouns": {
+      "Placeditem": [
+        "Candlestick holder"
+      ],
+      "Destination": [
+        "Tablecloth"
+      ],
+      "Place": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Tablecloth"
+      ]
+    }
+  },
+  "flaming_195.jpg": {
+    "Verb": "Flaming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Fireplace"
+      ],
+      "Fire": [
+        "Logs"
+      ],
+      "Agent": [
+        "Fireplace Fire Place Tool"
+      ]
+    }
+  },
+  "bathing_137.jpg": {
+    "Verb": "Bathing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Bathtub"
+      ],
+      "Tool": [
+        "Shampoo",
+        "Soap",
+        "Rinse Cup"
+      ],
+      "Agent": [
+        "Baby"
+      ]
+    }
+  },
+  "buying_99.jpg": null,
+  "videotaping_107.jpg": null,
+  "scooping_246.jpg": {
+    "Verb": "Scooping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Sand",
+        "Water",
+        "Dirt"
+      ],
+      "Tool": [
+        "Bucket"
+      ],
+      "Place": [
+        "Beach",
+        "Pond",
+        "Yard"
+      ],
+      "Agent": [
+        "Child"
+      ],
+      "Source": [
+        "Sand",
+        "Water",
+        "Dirt"
+      ]
+    }
+  },
+  "glowing_327.jpg": {
+    "Verb": "Glowing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Fireplace"
+      ],
+      "Fire": [
+        "Fireplace Fire"
+      ],
+      "Agent": [
+        "Fireplace Fire Agent"
+      ]
+    }
+  },
+  "cleaning_258.jpg": null,
+  "spinning_80.jpg": null,
+  "dousing_84.jpg": {
+    "Verb": "Dousing",
+    "Roles_and_Nouns": {
+      "Undergoer": [
+        "Man on motorcycle"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Liquid": [
+        "Water"
+      ],
+      "Agent": [
+        "Man with bucket"
+      ]
+    }
+  },
+  "filming_140.jpg": {
+    "Verb": "Filming",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Camera"
+      ],
+      "Performer": [
+        "Man",
+        "Woman"
+      ],
+      "Place": [
+        "Street",
+        "Sidewalk"
+      ],
+      "Agent": [
+        "Director",
+        "Cameraman"
+      ],
+      "Source": [
+        "Film Studio"
+      ]
+    }
+  },
+  "sniffing_187.jpg": null,
+  "sketching_184.jpg": null,
+  "piloting_84.jpg": {
+    "Verb": "Piloting",
+    "Roles_and_Nouns": {
+      "Start": [
+        "Pilot"
+      ],
+      "End": [
+        "Pilot"
+      ],
+      "Place": [
+        "Airplane"
+      ],
+      "Agent": [
+        "Pilot"
+      ],
+      "Vehicle": [
+        "Airplane"
+      ]
+    }
+  },
+  "scrubbing_64.jpg": null,
+  "smashing_267.jpg": null,
+  "constructing_65.jpg": null,
+  "dropping_194.jpg": {
+    "Verb": "Dropping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bombs"
+      ],
+      "End": [
+        "Ground"
+      ],
+      "Place": [
+        "Sky"
+      ],
+      "Agent": [
+        "Airplane"
+      ],
+      "Start": [
+        "Sky"
+      ],
+      "Source": [
+        "Airplane"
+      ]
+    }
+  },
+  "frying_42.jpg": {
+    "Verb": "Frying",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Chicken pieces"
+      ],
+      "Place": [
+        "Wok or pan"
+      ],
+      "Container": [
+        "Wok or pan"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Gas burner"
+      ]
+    }
+  },
+  "storming_60.jpg": {
+    "Verb": "Storming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Beach"
+      ]
+    }
+  },
+  "shopping_8.jpg": {
+    "Verb": "shopping",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Bananas",
+        "Apples",
+        "Oranges"
+      ],
+      "Place": [
+        "Grocery Store"
+      ],
+      "Agent": [
+        "Mother",
+        "Child"
+      ]
+    }
+  },
+  "nipping_27.jpg": null,
+  "blocking_11.jpg": null,
+  "carting_96.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Milk Cans"
+      ],
+      "Tool": [
+        "Wagon/Trailer/Carriage"
+      ],
+      "Place": [
+        "Field/Grassland"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "snuggling_38.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Baby",
+        "Dog"
+      ],
+      "Place": [
+        "Bed",
+        "Bedding",
+        "Blanket"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "tilting_50.jpg": null,
+  "subduing_191.jpg": {
+    "Verb": "Subduing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Grassland"
+      ],
+      "Target": [
+        "Woman"
+      ],
+      "Agent": [
+        "Police Officers"
+      ]
+    }
+  },
+  "bulldozing_38.jpg": {
+    "Verb": "Bulldozing",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Dirt Mound"
+      ],
+      "Place": [
+        "Construction Site"
+      ],
+      "Agent": [
+        "Tractor"
+      ]
+    }
+  },
+  "performing_110.jpg": {
+    "Verb": "Performing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Guitar"
+      ],
+      "Place": [
+        "Audience"
+      ],
+      "Event": [
+        "Concert"
+      ],
+      "Agent": [
+        "Band Members"
+      ],
+      "Stage": [
+        "Rock Band 2"
+      ]
+    }
+  },
+  "distributing_55.jpg": {
+    "Verb": "Distributing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Pile of Bags"
+      ],
+      "Tool": [
+        "Hose or Pipe"
+      ],
+      "Distributed": [
+        "Bags of Food or Aid"
+      ],
+      "Recipients": [
+        "People in Need"
+      ],
+      "Agent": [
+        "Workers or Volunteers"
+      ]
+    }
+  },
+  "coloring_67.jpg": {
+    "Verb": "coloring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Flowers"
+      ],
+      "Tool": [
+        "Marker"
+      ],
+      "Place": [
+        "Paper"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Marker"
+      ]
+    }
+  },
+  "spinning_152.jpg": null,
+  "cleaning_16.jpg": {
+    "Verb": "cleaning",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Toilet Bowl"
+      ],
+      "Tool": [
+        "Toilet Brush"
+      ],
+      "Place": [
+        "Bathroom"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "molding_172.jpg": null,
+  "performing_37.jpg": null,
+  "hanging_142.jpg": {
+    "Verb": "Hanging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Picture Frames"
+      ],
+      "Scaffold": [
+        ""
+      ],
+      "Place": [
+        "Wall"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        ""
+      ]
+    }
+  },
+  "standing_67.jpg": {
+    "Verb": "Standing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Yoga Mat"
+      ]
+    }
+  },
+  "grilling_4.jpg": null,
+  "stapling_88.jpg": null,
+  "admiring_190.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "spilling_206.jpg": null,
+  "stuffing_139.jpg": {
+    "Verb": "Stuffing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Candy Bar"
+      ],
+      "Destination": [
+        "Mouth"
+      ],
+      "Place": [
+        "Kitchen counter"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Candy Bar"
+      ]
+    }
+  },
+  "painting_255.jpg": null,
+  "videotaping_180.jpg": null,
+  "dissecting_189.jpg": null,
+  "towing_103.jpg": null,
+  "rubbing_44.jpg": {
+    "Verb": "rubbing",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Agentpart": [
+        ""
+      ]
+    }
+  },
+  "carting_264.jpg": null,
+  "mining_176.jpg": {
+    "Verb": "Mining",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Underground Mine"
+      ],
+      "Tool": [
+        "Pickaxe"
+      ],
+      "Resource": [
+        "Coal, Minerals, Metals"
+      ],
+      "Agent": [
+        "Miners"
+      ]
+    }
+  },
+  "covering_65.jpg": null,
+  "stitching_184.jpg": null,
+  "snowing_4.jpg": null,
+  "clearing_204.jpg": null,
+  "building_270.jpg": null,
+  "repairing_303.jpg": null,
+  "blocking_228.jpg": null,
+  "videotaping_17.jpg": null,
+  "making_195.jpg": null,
+  "jumping_184.jpg": null,
+  "applauding_225.jpg": null,
+  "colliding_10.jpg": {
+    "Verb": "Colliding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Train",
+        "Car",
+        "Train",
+        "Car"
+      ],
+      "Place": [
+        "Railroad Track",
+        "Railroad Track"
+      ],
+      "Agent": [
+        "Train",
+        "Car"
+      ]
+    }
+  },
+  "examining_153.jpg": {
+    "Verb": "Examining",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Toothpaste Dispenser"
+      ],
+      "Tool": [
+        "Dental Mirror"
+      ],
+      "Place": [
+        "Dental Office"
+      ],
+      "Agent": [
+        "Dentist"
+      ]
+    }
+  },
+  "decorating_192.jpg": {
+    "Verb": "Decorating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wall"
+      ],
+      "Decorated": [
+        "Wall"
+      ],
+      "Place": [
+        "Room"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "jumping_164.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Person in red suit"
+      ],
+      "Destination": [
+        "Water below him"
+      ],
+      "Obstacle": [
+        "Nothing"
+      ],
+      "Place": [
+        "Dock by the ocean"
+      ],
+      "Agent": [
+        "Man in red suit"
+      ]
+    }
+  },
+  "admiring_8.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "Wolf"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "crowning_11.jpg": {
+    "Verb": "Crowning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Altar"
+      ],
+      "Crown": [
+        "Crown (headwear)"
+      ],
+      "Crownedentity": [
+        "King (person)"
+      ],
+      "Agent": [
+        "Man (person)"
+      ]
+    }
+  },
+  "dining_227.jpg": null,
+  "building_9.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "House"
+      ],
+      "Tool": [
+        "Hammer"
+      ],
+      "GoalItem": [
+        "Roofing Materials"
+      ],
+      "Components": [
+        "Wooden Beams"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "building_96.jpg": null,
+  "erasing_234.jpg": {
+    "Verb": "Erasing",
+    "Roles_and_Nouns": {
+      "Erased": [
+        "Circle on paper"
+      ],
+      "Source": [
+        "Eraser"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "scoring_210.jpg": {
+    "Verb": "Scoring",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Field"
+      ],
+      "Team": [
+        "Red team"
+      ],
+      "Goalie": [
+        "Goalie"
+      ],
+      "Agent": [
+        "Player"
+      ]
+    }
+  },
+  "crafting_118.jpg": null,
+  "colliding_267.jpg": null,
+  "grieving_199.jpg": {
+    "Verb": "Grieving",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Cemetery"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "colliding_239.jpg": null,
+  "barbecuing_249.jpg": null,
+  "taping_71.jpg": null,
+  "unloading_221.jpg": null,
+  "sniffing_65.jpg": null,
+  "dining_341.jpg": null,
+  "harvesting_149.jpg": {
+    "Verb": "Harvesting",
+    "Roles_and_Nouns": {
+      "Harvested Item": [
+        "Corn",
+        "Grain",
+        "Crops"
+      ],
+      "Tool": [
+        "Harvester",
+        "Tractor",
+        "Combine harvester"
+      ],
+      "Place": [
+        "Farm",
+        "Field",
+        "Harvesting field"
+      ],
+      "Agent": [
+        "Farmer",
+        "Harvester",
+        "Cultivator"
+      ],
+      "Ground": [
+        "Farm",
+        "Field",
+        "Harvesting field"
+      ]
+    }
+  },
+  "drawing_337.jpg": {
+    "Verb": "drawing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Paintbrush"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Reference": [
+        "Picture"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Painting Supplies"
+      ]
+    }
+  },
+  "spinning_31.jpg": null,
+  "climbing_132.jpg": {
+    "Verb": "Climbing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Rope"
+      ],
+      "Obstacle": [
+        "Ceiling Fan"
+      ],
+      "Place": [
+        "Gymnasium"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "flaming_106.jpg": null,
+  "checking_62.jpg": {
+    "Verb": "checking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Carriage House"
+      ],
+      "Tool": [
+        "Carriage House Key"
+      ],
+      "Patient": [
+        "Carriage House Lock"
+      ],
+      "Aspect": [
+        "Carriage House Lock's functionality"
+      ],
+      "Agent": [
+        "Carriage House Keyholder"
+      ],
+      "Source": [
+        "Carriage House Keyholder's hand"
+      ]
+    }
+  },
+  "mending_121.jpg": null,
+  "colliding_268.jpg": null,
+  "cheering_118.jpg": {
+    "Verb": "Cheering",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Stadium"
+      ],
+      "Agent": [
+        "Cheerleaders"
+      ]
+    }
+  },
+  "wheeling_75.jpg": null,
+  "dragging_32.jpg": {
+    "Verb": "dragging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Dog",
+        "Leash"
+      ],
+      "Tool": [
+        "Leash",
+        "Harness"
+      ],
+      "Contact": [
+        "Person",
+        "Owner"
+      ],
+      "Place": [
+        "Grass",
+        "Park"
+      ],
+      "Agent": [
+        "Dog",
+        "Owner"
+      ]
+    }
+  },
+  "shopping_45.jpg": null,
+  "tickling_0.jpg": null,
+  "crafting_29.jpg": {
+    "Verb": "Crafting",
+    "Roles_and_Nouns": {
+      "Instrument": [
+        "Scissors"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Boy 1"
+      ],
+      "Created": [
+        "Paper Airplane"
+      ]
+    }
+  },
+  "colliding_244.jpg": null,
+  "spinning_143.jpg": null,
+  "queuing_256.jpg": {
+    "Verb": "Queuing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Store"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "speaking_18.jpg": null,
+  "picking_184.jpg": {
+    "Verb": "Picking",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Tomatoes"
+      ],
+      "Place": [
+        "Garden"
+      ],
+      "Crop": [
+        "Tomato plant"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "dining_11.jpg": null,
+  "spinning_144.jpg": null,
+  "foraging_37.jpg": {
+    "Verb": "Foraging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Polar Bear"
+      ],
+      "Place": [
+        "Shoreline"
+      ],
+      "Agent": [
+        "Polar Bear"
+      ]
+    }
+  },
+  "packaging_149.jpg": null,
+  "launching_181.jpg": {
+    "Verb": "launching",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Rocket"
+      ],
+      "Destination": [
+        "Space Station"
+      ],
+      "Place": [
+        "Launch Pad"
+      ],
+      "Agent": [
+        "NASA Engineers"
+      ],
+      "Source": [
+        "United States Air Force Base, Cape Canaveral, Florida"
+      ]
+    }
+  },
+  "filming_288.jpg": null,
+  "pulling_153.jpg": {
+    "Verb": "pulling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Truck"
+      ],
+      "Tool": [
+        "Trailer"
+      ],
+      "Place": [
+        "Roadway"
+      ],
+      "Agent": [
+        "Truck Driver"
+      ],
+      "Source": [
+        "Truck Driver"
+      ]
+    }
+  },
+  "ejecting_27.jpg": {
+    "Verb": "Ejecting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bomb"
+      ],
+      "Destination": [
+        "Sky"
+      ],
+      "Place": [
+        "Airplane window"
+      ],
+      "Agent": [
+        "Pilot"
+      ],
+      "Source": [
+        "Airplane window"
+      ]
+    }
+  },
+  "jogging_313.jpg": {
+    "Verb": "Jogging",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Mountainous Terrain"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "buying_25.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Bottles of water"
+      ],
+      "Place": [
+        "Store"
+      ],
+      "Payment": [
+        "Money"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Seller": [
+        "Store owner"
+      ]
+    }
+  },
+  "milking_205.jpg": {
+    "Verb": "Milking",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Cow"
+      ],
+      "Tool": [
+        "Udder Milker"
+      ],
+      "Destination": [
+        "Bucket"
+      ],
+      "Place": [
+        "Farmstead"
+      ],
+      "Agent": [
+        "Child"
+      ]
+    }
+  },
+  "attaching_71.jpg": null,
+  "milking_148.jpg": {
+    "Verb": "Milking",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Cow"
+      ],
+      "Tool": [
+        "Bucket"
+      ],
+      "Destination": [
+        "Bucket"
+      ],
+      "Place": [
+        "Farmstead"
+      ],
+      "Agent": [
+        "Farmer"
+      ]
+    }
+  },
+  "folding_75.jpg": null,
+  "shopping_237.jpg": null,
+  "scrubbing_342.jpg": {
+    "Verb": "scrubbing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Toilet Bowl"
+      ],
+      "Tool": [
+        "Toothbrush"
+      ],
+      "Place": [
+        "Bathroom"
+      ],
+      "Agent": [
+        "Child"
+      ],
+      "Fill": [
+        "Water"
+      ]
+    }
+  },
+  "feeding_312.jpg": {
+    "Verb": "Feeding",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Grain"
+      ],
+      "Source": [
+        "Hand"
+      ],
+      "Eater": [
+        "Swan"
+      ],
+      "Place": [
+        "Lake"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "assembling_76.jpg": {
+    "Verb": "Assembling",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Gingerbread house pieces"
+      ],
+      "Tool": [
+        "Icing, frosting, and candy pieces"
+      ],
+      "GoalItem": [
+        "Gingerbread house structure"
+      ],
+      "Place": [
+        "Table, countertop, or other flat surface"
+      ],
+      "Agent": [
+        "Person, child, or adult building the gingerbread house"
+      ]
+    }
+  },
+  "gardening_213.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Gloves",
+        "Shovels",
+        "Hoses"
+      ],
+      "Place": [
+        "Garden",
+        "Yard"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "weeding_39.jpg": {
+    "Verb": "Weeding",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Hoe"
+      ],
+      "Place": [
+        "Field"
+      ],
+      "Agent": [
+        "Farmer"
+      ]
+    }
+  },
+  "imitating_51.jpg": null,
+  "autographing_83.jpg": null,
+  "frowning_96.jpg": null,
+  "slicing_25.jpg": {
+    "Verb": "Slicing",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Orange"
+      ],
+      "Tool": [
+        "Knife"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Orange peel"
+      ]
+    }
+  },
+  "folding_12.jpg": null,
+  "manicuring_284.jpg": null,
+  "scrubbing_178.jpg": {
+    "Verb": "scrubbing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Sidewalk"
+      ],
+      "Tool": [
+        "Broom and dustpan"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Women"
+      ]
+    }
+  },
+  "emptying_143.jpg": null,
+  "decomposing_61.jpg": {
+    "Verb": "Decomposing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Ground"
+      ],
+      "Decomposer": [
+        "Dead Fish"
+      ]
+    }
+  },
+  "puckering_70.jpg": {
+    "Verb": "Puckering",
+    "Roles_and_Nouns": {
+      "agentpart": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "attacking_176.jpg": null,
+  "barbecuing_198.jpg": null,
+  "dining_317.jpg": null,
+  "blocking_190.jpg": null,
+  "blocking_221.jpg": null,
+  "spilling_144.jpg": {
+    "Verb": "Spilling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Bottles"
+      ],
+      "Destination": [
+        "People's faces"
+      ],
+      "Substance": [
+        "Beer"
+      ],
+      "Place": [
+        "Party scene"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "dining_147.jpg": null,
+  "spilling_163.jpg": null,
+  "arranging_23.jpg": null,
+  "hauling_240.jpg": {
+    "Verb": "Hauling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Snow"
+      ],
+      "Tool": [
+        "Skid-steer loader"
+      ],
+      "Carrier": [
+        "Truck"
+      ],
+      "Place": [
+        "Roadway"
+      ],
+      "Fill": [
+        "Dumpster"
+      ]
+    }
+  },
+  "blocking_198.jpg": null,
+  "spinning_202.jpg": null,
+  "dousing_18.jpg": {
+    "Verb": "Dousing",
+    "Roles_and_Nouns": {
+      "Undergoer": [
+        "Man in red shirt"
+      ],
+      "Place": [
+        "Face"
+      ],
+      "Liquid": [
+        "Water from bucket"
+      ],
+      "Agent": [
+        "Man in blue shirt"
+      ]
+    }
+  },
+  "dripping_170.jpg": null,
+  "crashing_148.jpg": null,
+  "dining_191.jpg": null,
+  "grilling_68.jpg": {
+    "Verb": "grilling",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Hot dogs",
+        "Burgers",
+        "Chicken",
+        "Vegetables"
+      ],
+      "Place": [
+        "Backyard",
+        "Patio",
+        "Beach",
+        "Picnic area"
+      ],
+      "Agent": [
+        "Man",
+        "Woman",
+        "Child",
+        "Family"
+      ],
+      "Source": [
+        "Grill",
+        "Barbecue",
+        "Charcoal grill",
+        "Gas grill"
+      ]
+    }
+  },
+  "arranging_76.jpg": null,
+  "unlocking_47.jpg": {
+    "Verb": "unlocking",
+    "Roles_and_Nouns": {
+      "Lock": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Container": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "building_104.jpg": null,
+  "destroying_107.jpg": null,
+  "packing_112.jpg": null,
+  "photographing_179.jpg": null,
+  "colliding_212.jpg": null,
+  "brewing_156.jpg": {
+    "Verb": "brewing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Pot/pan"
+      ],
+      "Target": [
+        "Beer/ale"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "spoiling_198.jpg": null,
+  "dyeing_190.jpg": {
+    "Verb": "Dyeing",
+    "Roles_and_Nouns": {
+      "dye": [
+        ""
+      ],
+      "material": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "grinning_247.jpg": {
+    "Verb": "Grinning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Man's face"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "shopping_244.jpg": null,
+  "spinning_190.jpg": null,
+  "manicuring_65.jpg": {
+    "Verb": "Manicuring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Nail Polish"
+      ],
+      "Tool": [
+        "Nail Polish Brush"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "admiring_226.jpg": null,
+  "smelling_23.jpg": null,
+  "falling_72.jpg": null,
+  "striking_185.jpg": {
+    "Verb": "Striking",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        ""
+      ],
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "tugging_326.jpg": {
+    "Verb": "Tugging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Toy Rope with a Frisbee attached"
+      ],
+      "Place": [
+        "Living Room"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "gardening_1.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Gloves"
+      ],
+      "Place": [
+        "Garden"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "applying_187.jpg": {
+    "Verb": "Applying",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Hand"
+      ],
+      "Tool": [
+        "Lotion"
+      ],
+      "Substance": [
+        "Lotion"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Bottle"
+      ]
+    }
+  },
+  "dining_104.jpg": null,
+  "spinning_163.jpg": null,
+  "falling_199.jpg": {
+    "Verb": "Falling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Man"
+      ],
+      "Place": [
+        "Grass Field"
+      ],
+      "Goal": [
+        "Ground"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "decorating_142.jpg": null,
+  "grieving_14.jpg": {
+    "Verb": "Grieving",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Grass Field"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "dyeing_41.jpg": {
+    "Verb": "Dyeing",
+    "Roles_and_Nouns": {
+      "Material": [
+        "Hair"
+      ],
+      "Place": [
+        "Salon"
+      ],
+      "Dye": [
+        "Hair Dye"
+      ],
+      "Agent": [
+        "Hairdresser"
+      ]
+    }
+  },
+  "mending_55.jpg": {
+    "Verb": "Mending",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Clothing"
+      ],
+      "Tool": [
+        "Scissors"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Thread"
+      ]
+    }
+  },
+  "bathing_6.jpg": {
+    "Verb": "Bathing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Bathtub"
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        "Child"
+      ]
+    }
+  },
+  "practicing_177.jpg": null,
+  "dining_218.jpg": null,
+  "bulldozing_171.jpg": null,
+  "crowning_96.jpg": {
+    "Verb": "Crowning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Ceremony Room"
+      ],
+      "Crown": [
+        "Tiara"
+      ],
+      "Crownedentity": [
+        "Child"
+      ],
+      "Agent": [
+        "Mother"
+      ]
+    }
+  },
+  "piloting_124.jpg": {
+    "Verb": "Piloting",
+    "Roles_and_Nouns": {
+      "Start": [
+        ""
+      ],
+      "End": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Vehicle": [
+        ""
+      ]
+    }
+  },
+  "manicuring_23.jpg": null,
+  "eating_92.jpg": {
+    "Verb": "eating",
+    "Roles_and_Nouns": {
+      "food": [
+        "Ham and Cheese Sandwich"
+      ],
+      "place": [
+        "Dining Table"
+      ],
+      "tool": [
+        "Fork and Knife"
+      ],
+      "container": [
+        "Plate"
+      ],
+      "agent": [
+        "Child"
+      ]
+    }
+  },
+  "packing_99.jpg": null,
+  "glowing_109.jpg": null,
+  "cramming_125.jpg": null,
+  "videotaping_207.jpg": null,
+  "assembling_245.jpg": {
+    "Verb": "Assembling",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Shelves"
+      ],
+      "Tool": [
+        "Screwdriver"
+      ],
+      "Goalitem": [
+        "Furniture Assembly Kit"
+      ],
+      "Place": [
+        "Room"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "laughing_105.jpg": null,
+  "blocking_206.jpg": null,
+  "smashing_33.jpg": null,
+  "sealing_255.jpg": null,
+  "spinning_21.jpg": {
+    "Verb": "Spinning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Spindle"
+      ],
+      "Material": [
+        "Yarn"
+      ],
+      "Place": [
+        "Loom"
+      ],
+      "Agent": [
+        "Crafter"
+      ],
+      "Source": [
+        "Thread"
+      ]
+    }
+  },
+  "stapling_71.jpg": {
+    "Verb": "Stapling",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Surface": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "applauding_99.jpg": null,
+  "flaming_214.jpg": {
+    "Verb": "Flaming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Fireplace"
+      ],
+      "Substance": [
+        "Fireplace Logs"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "decomposing_10.jpg": null,
+  "unpacking_23.jpg": null,
+  "harvesting_211.jpg": null,
+  "foraging_257.jpg": {
+    "Verb": "Foraging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Squirrel Nut Bumbershoots"
+      ],
+      "Place": [
+        "Grass Field"
+      ],
+      "Agent": [
+        "Squirrel"
+      ]
+    }
+  },
+  "praying_147.jpg": null,
+  "packing_30.jpg": null,
+  "blossoming_15.jpg": {
+    "Verb": "Blossoming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Tree"
+      ],
+      "Agent": [
+        "Flowers"
+      ]
+    }
+  },
+  "squeezing_130.jpg": {
+    "Verb": "Squeezing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Orange Juice"
+      ],
+      "Tool": [
+        "Squeezer"
+      ],
+      "Place": [
+        "Kitchen Counter"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Orange Juice Container"
+      ]
+    }
+  },
+  "decomposing_38.jpg": {
+    "Verb": "Decomposing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Ground"
+      ],
+      "Decomposer": [
+        "Zebra"
+      ]
+    }
+  },
+  "making_94.jpg": null,
+  "crafting_109.jpg": null,
+  "lifting_41.jpg": {
+    "Verb": "lifting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Barbell"
+      ],
+      "End": [
+        "Lifting Straps"
+      ],
+      "Place": [
+        "Gym Floor"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Start": [
+        "Lifting Straps"
+      ],
+      "Source": [
+        "Gym Floor"
+      ]
+    }
+  },
+  "making_18.jpg": null,
+  "dyeing_145.jpg": null,
+  "punching_45.jpg": {
+    "Verb": "Punching",
+    "Roles_and_Nouns": {
+      "Bodypart": [
+        "Gloves"
+      ],
+      "Place": [
+        "Ring"
+      ],
+      "Victim": [
+        "Opponent"
+      ],
+      "Agent": [
+        "Boxer"
+      ]
+    }
+  },
+  "building_58.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Garage"
+      ],
+      "Tool": [
+        "Drill and Hammer"
+      ],
+      "GoalItem": [
+        "Table or Bench"
+      ],
+      "Components": [
+        "Wood and Metal Pieces"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "distributing_279.jpg": {
+    "Verb": "Distributing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Tool": [
+        "Tray of food"
+      ],
+      "Distributed": [
+        "Food"
+      ],
+      "Recipients": [
+        "People"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "snuggling_157.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Girl",
+        "Cat"
+      ],
+      "Place": [
+        "Bedroom",
+        "Bed"
+      ],
+      "Agent": [
+        "Girl"
+      ]
+    }
+  },
+  "photographing_152.jpg": null,
+  "giving_126.jpg": null,
+  "spinning_203.jpg": null,
+  "hoisting_150.jpg": null,
+  "manicuring_197.jpg": null,
+  "erupting_230.jpg": {
+    "Verb": "Erupting",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Smoke",
+        "Ash",
+        "Dust",
+        "Gases"
+      ],
+      "Place": [
+        "Mountain",
+        "Forest",
+        "Field",
+        "Desert"
+      ],
+      "Agent": [
+        "Volcano",
+        "Forest Fire",
+        "Eruption",
+        "Tornado"
+      ]
+    }
+  },
+  "microwaving_176.jpg": null,
+  "plummeting_83.jpg": {
+    "Verb": "Plummeting",
+    "Roles_and_Nouns": {
+      "Start": [
+        "Person"
+      ],
+      "Destination": [
+        "Ground"
+      ],
+      "Place": [
+        "Airplane Window Seat"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "installing_108.jpg": null,
+  "erupting_171.jpg": {
+    "Verb": "Erupting",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Smoke",
+        "Ash",
+        "Dust"
+      ],
+      "Place": [
+        "Mountain",
+        "Forest",
+        "City"
+      ],
+      "Agent": [
+        "Volcano",
+        "Forest Fire",
+        "Eruption of Mount St. Helens"
+      ]
+    }
+  },
+  "packing_238.jpg": {
+    "Verb": "Packing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Clothes"
+      ],
+      "Container": [
+        "Suitcase"
+      ],
+      "Place": [
+        "Bedroom"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Box"
+      ]
+    }
+  },
+  "planting_30.jpg": null,
+  "operating_180.jpg": {
+    "Verb": "Operating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Computer"
+      ],
+      "Tool": [
+        "Keyboard"
+      ],
+      "Place": [
+        "Desk"
+      ],
+      "Agent": [
+        "Employee"
+      ],
+      "Source": [
+        "Power Supply"
+      ]
+    }
+  },
+  "serving_72.jpg": {
+    "Verb": "Serving",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Food"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Served": [
+        "Family"
+      ]
+    }
+  },
+  "measuring_39.jpg": {
+    "Verb": "Measuring",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Tape Measure"
+      ],
+      "Object": [
+        "Bra Cup Size"
+      ],
+      "Place": [
+        "Bra Cup Size Measurement Guide"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Quantity": [
+        "Bra Cup Size Measurement Guide"
+      ]
+    }
+  },
+  "barbecuing_37.jpg": null,
+  "carving_130.jpg": {
+    "Verb": "Carving",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Knife"
+      ],
+      "Substance": [
+        "Plasticine"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "spilling_145.jpg": null,
+  "lifting_291.jpg": {
+    "Verb": "Lifting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Container"
+      ],
+      "End": [
+        "Hook of Crane"
+      ],
+      "Place": [
+        "Sky"
+      ],
+      "Agent": [
+        "Crane Operator"
+      ],
+      "Start": [
+        "Hook of Crane"
+      ],
+      "Destination": [
+        "Hook of Crane"
+      ]
+    }
+  },
+  "mending_84.jpg": {
+    "Verb": "Mending",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cloth"
+      ],
+      "Tool": [
+        "Needle and thread"
+      ],
+      "Place": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Thread"
+      ]
+    }
+  },
+  "packing_239.jpg": null,
+  "carting_343.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Carriage",
+        "Cart",
+        "Race Car",
+        "Go-Kart",
+        "Carriage",
+        "Cart",
+        "Race Car",
+        "Go-Kart"
+      ],
+      "Tool": [
+        "Carriage",
+        "Cart",
+        "Race Car",
+        "Go-Kart",
+        "Carriage",
+        "Cart",
+        "Race Car",
+        "Go-Kart"
+      ],
+      "Place": [
+        "Pavement",
+        "Road",
+        "Racetrack",
+        "Parking Lot",
+        "Pavement",
+        "Road",
+        "Racetrack",
+        "Parking Lot"
+      ],
+      "Agent": [
+        "Driver",
+        "Pilot",
+        "Racer",
+        "Driver",
+        "Pilot",
+        "Racer",
+        "Driver",
+        "Pilot"
+      ]
+    }
+  },
+  "scraping_206.jpg": {
+    "Verb": "Scraping",
+    "Roles_and_Nouns": {
+      "Scrapeditem": [
+        "Meat"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Tool": [
+        "Knife"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "submerging_139.jpg": null,
+  "sprinkling_217.jpg": {
+    "Verb": "Sprinkling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Water Sprinkler"
+      ],
+      "Destination": [
+        "Grass"
+      ],
+      "Place": [
+        "Lawn"
+      ],
+      "Agent": [
+        "Water Sprinkler"
+      ],
+      "Source": [
+        "Hose"
+      ]
+    }
+  },
+  "dining_309.jpg": null,
+  "admiring_189.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "Mountain View"
+      ],
+      "Place": [
+        "Mountain View"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "biting_28.jpg": null,
+  "blocking_90.jpg": null,
+  "drumming_236.jpg": {
+    "Verb": "Drumming",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Drums"
+      ],
+      "Tool": [
+        "Bucket (or bucket)"
+      ],
+      "Place": [
+        "Park (or park)"
+      ],
+      "Agent": [
+        "People (or people)"
+      ],
+      "Fill": [
+        "Bucket (or bucket)"
+      ]
+    }
+  },
+  "colliding_100.jpg": null,
+  "pasting_55.jpg": {
+    "Verb": "Pasting",
+    "Roles_and_Nouns": {
+      "Connector": [
+        ""
+      ],
+      "Item": [
+        ""
+      ],
+      "Object": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "gardening_93.jpg": null,
+  "eating_39.jpg": {
+    "Verb": "eating",
+    "Roles_and_Nouns": {
+      "food": [
+        "Steak",
+        "Vegetables"
+      ],
+      "place": [
+        "Table",
+        "Pan"
+      ],
+      "tool": [
+        "Fork",
+        "Knife"
+      ],
+      "container": [
+        "Pan",
+        "Plate"
+      ],
+      "agent": [
+        "Man"
+      ]
+    }
+  },
+  "videotaping_85.jpg": null,
+  "leading_73.jpg": {
+    "Verb": "leading",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Destination": [
+        "Horse"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Source": [
+        "Hose"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Follower": [
+        "Horse"
+      ]
+    }
+  },
+  "constructing_114.jpg": null,
+  "overflowing_307.jpg": null,
+  "blocking_259.jpg": null,
+  "loading_160.jpg": null,
+  "barbecuing_88.jpg": null,
+  "colliding_34.jpg": null,
+  "videotaping_195.jpg": null,
+  "tipping_128.jpg": null,
+  "attacking_20.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Victim": [
+        "Man"
+      ],
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Boy"
+      ],
+      "Weapon": [
+        "Knife"
+      ],
+      "Source": [
+        "Bloodied hands"
+      ]
+    }
+  },
+  "assembling_230.jpg": null,
+  "dripping_234.jpg": null,
+  "building_18.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "House"
+      ],
+      "Tool": [
+        "Ladder"
+      ],
+      "GoalItem": [
+        "Stairs"
+      ],
+      "Components": [
+        "Wooden Stairs",
+        "Wooden Ladder"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "unpacking_202.jpg": null,
+  "dining_108.jpg": {
+    "Verb": "dining",
+    "Roles_and_Nouns": {
+      "food": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "unpacking_16.jpg": null,
+  "shopping_243.jpg": null,
+  "buying_48.jpg": null,
+  "rehabilitating_164.jpg": {
+    "Verb": "Rehabilitating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Patient"
+      ],
+      "Place": [
+        "Rehabilitation Center"
+      ],
+      "Agent": [
+        "Physiotherapist"
+      ]
+    }
+  },
+  "striking_186.jpg": {
+    "Verb": "Striking",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        ""
+      ],
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "attacking_127.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Roadside"
+      ],
+      "Victim": [
+        "Man"
+      ],
+      "Agent": [
+        "Police Officers"
+      ],
+      "Weapon": [
+        "Batons"
+      ],
+      "Source": [
+        "Police Officers"
+      ],
+      "Destination": [
+        "Man"
+      ]
+    }
+  },
+  "bathing_20.jpg": {
+    "Verb": "Bathing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Baby",
+        "Rubber Duck",
+        "Person (Adult)"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Bathtub"
+      ],
+      "Tool": [
+        "Rubber Duck"
+      ],
+      "Agent": [
+        "Person (Adult)"
+      ]
+    }
+  },
+  "harvesting_93.jpg": null,
+  "assembling_26.jpg": null,
+  "videotaping_48.jpg": null,
+  "videotaping_246.jpg": null,
+  "spinning_109.jpg": null,
+  "packing_47.jpg": null,
+  "loading_39.jpg": null,
+  "taping_86.jpg": {
+    "Verb": "Taping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Paper Towel"
+      ],
+      "Destination": [
+        "Tablecloth"
+      ],
+      "Place": [
+        "Tablecloth Table"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Tape Dispenser"
+      ]
+    }
+  },
+  "dissecting_90.jpg": null,
+  "racing_126.jpg": {
+    "Verb": "Racing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Field"
+      ],
+      "Jockey": [
+        "Jockey"
+      ],
+      "Horse": [
+        "Horse"
+      ]
+    }
+  },
+  "ejecting_94.jpg": {
+    "Verb": "Ejecting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Missile"
+      ],
+      "Destination": [
+        "Sky"
+      ],
+      "Place": [
+        "Airplane interior"
+      ],
+      "Agent": [
+        "Pilot"
+      ],
+      "Source": [
+        "Airplane interior"
+      ]
+    }
+  },
+  "bulldozing_160.jpg": {
+    "Verb": "Bulldozing",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Truck",
+        "Bulldozer"
+      ],
+      "Place": [
+        "Field",
+        "Forest"
+      ],
+      "Agent": [
+        "Worker",
+        "Man"
+      ]
+    }
+  },
+  "stuffing_309.jpg": {
+    "Verb": "Stuffing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Hot dog"
+      ],
+      "Destination": [
+        "Bun"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Filler": [
+        "Hot dog sauce"
+      ]
+    }
+  },
+  "slipping_123.jpg": null,
+  "assembling_365.jpg": null,
+  "barbecuing_114.jpg": null,
+  "cresting_87.jpg": {
+    "Verb": "Cresting",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Mountain Range"
+      ],
+      "Agent": [
+        "Clouds"
+      ]
+    }
+  },
+  "arranging_157.jpg": null,
+  "blocking_216.jpg": null,
+  "instructing_247.jpg": {
+    "Verb": "Instructing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Student": [
+        "Children"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "crowning_60.jpg": {
+    "Verb": "Crowning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Stage"
+      ],
+      "Crown": [
+        "Tiara"
+      ],
+      "Crownedentity": [
+        "Miss Hawaii 2007",
+        "Miss Hawaii 2008",
+        "Miss Hawaii 2009"
+      ],
+      "Agent": [
+        "Woman",
+        "Woman",
+        "Woman"
+      ]
+    }
+  },
+  "decomposing_60.jpg": {
+    "Verb": "Decomposing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Meat and Worms on a plate"
+      ],
+      "Decomposer": [
+        "Worms"
+      ]
+    }
+  },
+  "foraging_330.jpg": null,
+  "building_224.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Wall"
+      ],
+      "Tool": [
+        "Saw"
+      ],
+      "GoalItem": [
+        "Bricks"
+      ],
+      "Components": [
+        "Bricks",
+        "Mortar",
+        "Sand",
+        "Water"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "rehabilitating_111.jpg": null,
+  "autographing_191.jpg": null,
+  "admiring_225.jpg": null,
+  "shelving_18.jpg": null,
+  "colliding_251.jpg": null,
+  "grilling_190.jpg": {
+    "Verb": "grilling",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Meat",
+        "Fish",
+        "Vegetables"
+      ],
+      "Place": [
+        "Grill",
+        "Backyard",
+        "Patio"
+      ],
+      "Agent": [
+        "Woman",
+        "Chef",
+        "Barbecue Grill"
+      ],
+      "Source": [
+        "Gas",
+        "Charcoal",
+        "Electricity"
+      ]
+    }
+  },
+  "videotaping_71.jpg": null,
+  "tasting_27.jpg": null,
+  "coloring_129.jpg": null,
+  "ejecting_82.jpg": null,
+  "displaying_171.jpg": {
+    "Verb": "displaying",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Microphone"
+      ],
+      "Place": [
+        "Display case"
+      ],
+      "Target": [
+        "Microphone"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "swarming_189.jpg": null,
+  "assembling_361.jpg": null,
+  "begging_166.jpg": null,
+  "attacking_123.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Desert"
+      ],
+      "Victim": [
+        "Soldiers"
+      ],
+      "Agent": [
+        "Soldiers"
+      ],
+      "Weapon": [
+        "Rifles"
+      ]
+    }
+  },
+  "crafting_106.jpg": null,
+  "smashing_114.jpg": {
+    "Verb": "Smashing",
+    "Roles_and_Nouns": {
+      "Smashed": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Against": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "constructing_64.jpg": null,
+  "colliding_259.jpg": null,
+  "stuffing_117.jpg": null,
+  "serving_104.jpg": null,
+  "fetching_219.jpg": {
+    "Verb": "Fetching",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Water Bucket"
+      ],
+      "Destination": [
+        "Hole in Ground"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Water Bucket"
+      ]
+    }
+  },
+  "packing_113.jpg": null,
+  "swarming_226.jpg": null,
+  "shopping_67.jpg": null,
+  "measuring_100.jpg": null,
+  "vaulting_46.jpg": null,
+  "imitating_201.jpg": {
+    "Verb": "Imitating",
+    "Roles_and_Nouns": {
+      "Model": [
+        "Woman"
+      ],
+      "Place": [
+        "Mirror"
+      ],
+      "Agent": [
+        "Girl"
+      ]
+    }
+  },
+  "lathering_89.jpg": null,
+  "climbing_239.jpg": {
+    "Verb": "Climbing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        ""
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "colliding_184.jpg": null,
+  "stapling_60.jpg": null,
+  "bathing_9.jpg": null,
+  "videotaping_37.jpg": null,
+  "buying_55.jpg": null,
+  "scratching_148.jpg": {
+    "Verb": "Scratching",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Cat Scratch Tool"
+      ],
+      "Object": [
+        "Cat Scratch Tool"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "spilling_207.jpg": {
+    "Verb": "Spilling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Oil Rig"
+      ],
+      "Destination": [
+        "Ocean Floor"
+      ],
+      "Substance": [
+        "Crude Oil"
+      ],
+      "Place": [
+        "Ocean Floor"
+      ],
+      "Agent": [
+        "Oil Spill"
+      ]
+    }
+  },
+  "rotting_167.jpg": null,
+  "dyeing_129.jpg": null,
+  "stapling_148.jpg": null,
+  "building_26.jpg": null,
+  "scrubbing_153.jpg": {
+    "Verb": "scrubbing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Deck Cleaner"
+      ],
+      "Tool": [
+        "Brush"
+      ],
+      "Place": [
+        "Deck"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "clearing_200.jpg": null,
+  "fastening_79.jpg": {
+    "Verb": "Fastening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Tape measure"
+      ],
+      "Destination": [
+        "Wall panel"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Connector": [
+        "Wall panel connector"
+      ],
+      "Item": [
+        "Wall panel connector"
+      ],
+      "Place": [
+        "Workshop"
+      ]
+    }
+  },
+  "coloring_136.jpg": null,
+  "ailing_122.jpg": {
+    "Verb": "Ailing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Cause": [
+        "Disease"
+      ],
+      "VictimPart": [
+        "Tree"
+      ],
+      "Victim": [
+        "People"
+      ]
+    }
+  },
+  "prying_32.jpg": {
+    "Verb": "Prying",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cabinet door"
+      ],
+      "Tool": [
+        "Pry bar"
+      ],
+      "From": [
+        "Wall and floor joint"
+      ],
+      "Place": [
+        "Kitchen counter"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "coloring_79.jpg": {
+    "Verb": "coloring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Paper"
+      ],
+      "Tool": [
+        "Marker, Crayon, Pencil, Paint, etc."
+      ],
+      "Place": [
+        "Table, Desk, Floor, etc."
+      ],
+      "Agent": [
+        "Child, Adult, Artist, etc."
+      ]
+    }
+  },
+  "spinning_7.jpg": null,
+  "dining_114.jpg": null,
+  "imitating_184.jpg": {
+    "Verb": "Imitating",
+    "Roles_and_Nouns": {
+      "Model": [
+        "Wolf"
+      ],
+      "Place": [
+        "Snowy field"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "leaping_144.jpg": {
+    "Verb": "Leaping",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Destination": [
+        ""
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "fixing_62.jpg": null,
+  "unpacking_73.jpg": null,
+  "grilling_122.jpg": null,
+  "cleaning_224.jpg": {
+    "Verb": "cleaning",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Trash bags"
+      ],
+      "Tool": [
+        "Rake",
+        "Shovel",
+        "Trash bags"
+      ],
+      "Place": [
+        "Sidewalk",
+        "Roadside",
+        "Street corner"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "cleaning_404.jpg": null,
+  "unloading_350.jpg": null,
+  "spitting_128.jpg": {
+    "Verb": "Spitting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Water spray",
+        "Water droplets"
+      ],
+      "Place": [
+        "Outside",
+        "Yard",
+        "Backyard"
+      ],
+      "Target": [
+        "Girl",
+        "Boy"
+      ],
+      "Agent": [
+        "Boy",
+        "Girl"
+      ]
+    }
+  },
+  "spinning_157.jpg": null,
+  "spinning_151.jpg": {
+    "Verb": "Spinning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Spindle and Whorl"
+      ],
+      "Material": [
+        "Yarn or Thread"
+      ],
+      "Place": [
+        "Table or Desk"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Spindle and Whorl"
+      ]
+    }
+  },
+  "shopping_148.jpg": null,
+  "moistening_64.jpg": null,
+  "stapling_113.jpg": null,
+  "wrapping_177.jpg": {
+    "Verb": "Wrapping",
+    "Roles_and_Nouns": {
+      "Wrappeditem": [
+        "Envelope"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Wrappingitem": [
+        "Paper"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Fill": [
+        "Glue"
+      ]
+    }
+  },
+  "unloading_227.jpg": null,
+  "colliding_147.jpg": null,
+  "videotaping_161.jpg": null,
+  "building_209.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Table"
+      ],
+      "Tool": [
+        "Clay Pottery Tools"
+      ],
+      "GoalItem": [
+        "Clay Pottery Bowl"
+      ],
+      "Components": [
+        "Clay Pottery Tools",
+        "Clay Pottery Bowl",
+        "Table"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "spitting_165.jpg": {
+    "Verb": "Spitting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Food"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Target": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Police Officer"
+      ]
+    }
+  },
+  "photographing_173.jpg": null,
+  "storming_106.jpg": null,
+  "stapling_121.jpg": null,
+  "leaping_106.jpg": null,
+  "loading_163.jpg": null,
+  "slipping_158.jpg": {
+    "Verb": "Slipping",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Stairs"
+      ],
+      "Place": [
+        "Staircase"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Books"
+      ]
+    }
+  },
+  "displaying_204.jpg": null,
+  "pouring_373.jpg": {
+    "Verb": "Pouring",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Painting Supplies"
+      ],
+      "Tool": [
+        "Painting Can and Brush"
+      ],
+      "Destination": [
+        "Wall and Floor"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Painting Can and Brush"
+      ],
+      "Place": [
+        "Garage Floor"
+      ]
+    }
+  },
+  "climbing_90.jpg": null,
+  "colliding_4.jpg": null,
+  "grilling_187.jpg": null,
+  "brushing_141.jpg": {
+    "Verb": "Brushing",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Brush"
+      ],
+      "Substance": [
+        "Paint or Dirt"
+      ],
+      "Place": [
+        "Sink or Tub"
+      ],
+      "Target": [
+        "Sink or Tub Surface"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "loading_104.jpg": {
+    "Verb": "loading",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bomber Bomb (Munition)"
+      ],
+      "Tool": [
+        "Airplane (Military)"
+      ],
+      "Destination": [
+        "Military Base (Place)"
+      ],
+      "Place": [
+        "Military Base (Place)"
+      ],
+      "Agent": [
+        "Military Personnel (People)"
+      ],
+      "Source": [
+        "Military Base (Place)"
+      ]
+    }
+  },
+  "mourning_68.jpg": null,
+  "twirling_227.jpg": {
+    "Verb": "Twirling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "snuggling_79.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Baby",
+        "Dog"
+      ],
+      "Place": [
+        "Couch",
+        "Bedroom"
+      ],
+      "Agent": [
+        "Baby",
+        "Dog"
+      ]
+    }
+  },
+  "scraping_96.jpg": {
+    "Verb": "Scraping",
+    "Roles_and_Nouns": {
+      "Scrapeditem": [
+        "Wooden board"
+      ],
+      "Place": [
+        "Deck of porch"
+      ],
+      "Tool": [
+        "Scraping tool"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "striking_134.jpg": null,
+  "shoveling_165.jpg": {
+    "Verb": "shoveling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Haystacks"
+      ],
+      "Place": [
+        "Farmyard"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Wheelbarrow"
+      ]
+    }
+  },
+  "nuzzling_132.jpg": null,
+  "nuzzling_351.jpg": {
+    "Verb": "Nuzzling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Lioness",
+        "Lion"
+      ],
+      "Place": [
+        "Rock",
+        "Zoo"
+      ],
+      "Agent": [
+        "Lioness",
+        "Lion"
+      ]
+    }
+  },
+  "spinning_198.jpg": null,
+  "providing_153.jpg": null,
+  "smearing_150.jpg": null,
+  "building_192.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Site"
+      ],
+      "Tool": [
+        "Pipes"
+      ],
+      "GoalItem": [
+        "Pipeline"
+      ],
+      "Components": [
+        "Pipes",
+        "Tools",
+        "Equipment"
+      ],
+      "Agent": [
+        "Workers"
+      ]
+    }
+  },
+  "hiking_229.jpg": null,
+  "barbecuing_136.jpg": null,
+  "leaping_153.jpg": {
+    "Verb": "Leaping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Moose 1",
+        "Moose 2"
+      ],
+      "Destination": [
+        "Grass",
+        "Grass"
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        "Field",
+        "Field"
+      ],
+      "Agent": [
+        "Moose 1",
+        "Moose 2"
+      ]
+    }
+  },
+  "bathing_71.jpg": {
+    "Verb": "Bathing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Children"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Bathtub"
+      ],
+      "Tool": [
+        "Rubber duckies"
+      ],
+      "Agent": [
+        "Mother"
+      ]
+    }
+  },
+  "decorating_36.jpg": {
+    "Verb": "Decorating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cupcake"
+      ],
+      "Decorated": [
+        "Cupcake"
+      ],
+      "Place": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Icing"
+      ]
+    }
+  },
+  "buying_191.jpg": null,
+  "dining_6.jpg": null,
+  "gardening_111.jpg": null,
+  "applying_20.jpg": {
+    "Verb": "applying",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Face"
+      ],
+      "Tool": [
+        "Finger"
+      ],
+      "Substance": [
+        "Cream"
+      ],
+      "Place": [
+        "Bedroom"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Hose"
+      ]
+    }
+  },
+  "falling_78.jpg": {
+    "Verb": "Falling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Man"
+      ],
+      "Place": [
+        "Sky Scraper Building"
+      ],
+      "Goal": [
+        "Ground"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "jumping_165.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Horse"
+      ],
+      "Destination": [
+        "Pole obstacle"
+      ],
+      "Obstacle": [
+        "Pole obstacle"
+      ],
+      "Place": [
+        "Field"
+      ],
+      "Agent": [
+        "Rider"
+      ]
+    }
+  },
+  "crafting_187.jpg": null,
+  "videotaping_100.jpg": null,
+  "leading_49.jpg": {
+    "Verb": "Leading",
+    "Roles_and_Nouns": {
+      "Follower": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "assembling_130.jpg": null,
+  "cooking_74.jpg": {
+    "Verb": "cooking",
+    "Roles_and_Nouns": {
+      "Container": [
+        ""
+      ],
+      "Food": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Heatsource": [
+        ""
+      ]
+    }
+  },
+  "vaulting_87.jpg": null,
+  "bulldozing_166.jpg": null,
+  "stinging_22.jpg": {
+    "Verb": "Stinging",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Finger"
+      ],
+      "Victim": [
+        "Finger"
+      ],
+      "Agent": [
+        "Antenna (Ant)"
+      ],
+      "Victimpart": [
+        "Antenna (Ant) Stinger"
+      ]
+    }
+  },
+  "hunting_239.jpg": null,
+  "piloting_56.jpg": {
+    "Verb": "Piloting",
+    "Roles_and_Nouns": {
+      "Start": [
+        ""
+      ],
+      "End": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Vehicle": [
+        ""
+      ]
+    }
+  },
+  "spinning_100.jpg": null,
+  "striking_154.jpg": {
+    "Verb": "Striking",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        ""
+      ],
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "waxing_38.jpg": {
+    "Verb": "waxing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Bodypart": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "building_205.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Building site"
+      ],
+      "Tool": [
+        "Bricks"
+      ],
+      "GoalItem": [
+        "Wall"
+      ],
+      "Components": [
+        "Mortar",
+        "Water",
+        "Trowel"
+      ],
+      "Agent": [
+        "Construction worker"
+      ]
+    }
+  },
+  "riding_54.jpg": {
+    "Verb": "riding",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Carriage"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Vehicle": [
+        "Carriage"
+      ]
+    }
+  },
+  "constructing_217.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "CreatedItem": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "walking_93.jpg": {
+    "Verb": "Walking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Path"
+      ],
+      "Agent": [
+        "People"
+      ],
+      "Source": [
+        "Dog"
+      ]
+    }
+  },
+  "guarding_47.jpg": null,
+  "carting_147.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Car"
+      ],
+      "Tool": [
+        "Wagon/Carriage"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "dining_275.jpg": null,
+  "submerging_169.jpg": null,
+  "painting_49.jpg": null,
+  "carting_119.jpg": null,
+  "buying_119.jpg": null,
+  "barbecuing_98.jpg": null,
+  "taping_129.jpg": null,
+  "burning_90.jpg": null,
+  "hiking_217.jpg": null,
+  "buying_148.jpg": null,
+  "mining_52.jpg": null,
+  "stapling_45.jpg": null,
+  "dining_297.jpg": null,
+  "smashing_243.jpg": null,
+  "admiring_37.jpg": null,
+  "barbecuing_138.jpg": null,
+  "laughing_203.jpg": null,
+  "fishing_100.jpg": null,
+  "lighting_44.jpg": null,
+  "kissing_228.jpg": {
+    "Verb": "Kissing",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        "Bride",
+        "Groom"
+      ],
+      "Coagent": [
+        "Bride",
+        "Groom"
+      ],
+      "Place": [
+        "Garden",
+        "Park"
+      ],
+      "Coagentpart": [
+        "Bride",
+        "Groom"
+      ],
+      "Agent": [
+        "Bride",
+        "Groom"
+      ]
+    }
+  },
+  "admiring_199.jpg": null,
+  "buying_134.jpg": null,
+  "bulldozing_176.jpg": null,
+  "constructing_58.jpg": null,
+  "dining_266.jpg": null,
+  "colliding_94.jpg": {
+    "Verb": "Colliding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Car",
+        "Fire Hydrant"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Driver"
+      ]
+    }
+  },
+  "spilling_154.jpg": {
+    "Verb": "spilling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Chocolate Chip Cookies"
+      ],
+      "Destination": [
+        "Plate"
+      ],
+      "Substance": [
+        "Chocolate Chip Cookies"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "videotaping_178.jpg": null,
+  "dining_131.jpg": null,
+  "manicuring_160.jpg": {
+    "Verb": "Manicuring",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "braiding_116.jpg": {
+    "Verb": "braiding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Braid"
+      ],
+      "Place": [
+        "Home"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "applying_122.jpg": null,
+  "sealing_223.jpg": null,
+  "speaking_203.jpg": {
+    "Verb": "Speaking",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "buckling_49.jpg": {
+    "Verb": "Buckling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Seatbelt"
+      ],
+      "Fastener": [
+        "Buckle"
+      ],
+      "Container": [
+        "Car Seatbelt Container"
+      ],
+      "Place": [
+        "Car Seatbelt Container in Car Seatbelt Buckle Container"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "dripping_35.jpg": null,
+  "buttoning_75.jpg": {
+    "Verb": "buttoning",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Shirt"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "displaying_220.jpg": null,
+  "leaking_47.jpg": {
+    "Verb": "Leaking",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Hose"
+      ],
+      "Destination": [
+        "Ground"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Grass"
+      ]
+    }
+  },
+  "rotting_121.jpg": null,
+  "blocking_241.jpg": null,
+  "grimacing_326.jpg": {
+    "Verb": "Grimacing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Barbershop"
+      ],
+      "Cause": [
+        "Tattoo artist working on tattoo on man's leg"
+      ],
+      "Agent": [
+        "Man getting tattoo on leg"
+      ]
+    }
+  },
+  "braiding_182.jpg": {
+    "Verb": "Braiding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bracelet"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "buying_83.jpg": null,
+  "barbecuing_190.jpg": null,
+  "assembling_30.jpg": null,
+  "rotting_24.jpg": {
+    "Verb": "Rotting",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Meat"
+      ],
+      "Container": [
+        "Plate"
+      ],
+      "Agent": [
+        "Mold"
+      ]
+    }
+  },
+  "barbecuing_261.jpg": null,
+  "barbecuing_274.jpg": null,
+  "colliding_166.jpg": {
+    "Verb": "Colliding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Firetruck",
+        "Firetruck",
+        "Firetruck"
+      ],
+      "Place": [
+        "Road",
+        "Road",
+        "Road"
+      ],
+      "Agent": [
+        "Firetruck",
+        "Firetruck",
+        "Firetruck"
+      ]
+    }
+  },
+  "constructing_31.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Created Item": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "operating_123.jpg": {
+    "Verb": "Operating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Machine"
+      ],
+      "Tool": [
+        "Screen"
+      ],
+      "Place": [
+        "Factory"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Computer"
+      ]
+    }
+  },
+  "spinning_68.jpg": null,
+  "slithering_64.jpg": null,
+  "burning_101.jpg": null,
+  "assembling_364.jpg": null,
+  "dining_23.jpg": null,
+  "packing_246.jpg": null,
+  "building_62.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Wall"
+      ],
+      "Tool": [
+        "Trowel"
+      ],
+      "GoalItem": [
+        "Brick"
+      ],
+      "Components": [
+        "Mortar",
+        "Bricks",
+        "Sand",
+        "Water"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "constructing_55.jpg": null,
+  "farming_30.jpg": {
+    "Verb": "Farming",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cows"
+      ],
+      "Tool": [
+        "Plow"
+      ],
+      "Ground": [
+        "Field"
+      ],
+      "Place": [
+        "Farmers Field"
+      ],
+      "Farmer": [
+        "Farmer"
+      ]
+    }
+  },
+  "unpacking_170.jpg": null,
+  "gardening_32.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Shovel"
+      ],
+      "Place": [
+        "Garden Bed"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "falling_247.jpg": null,
+  "hiking_219.jpg": null,
+  "videotaping_191.jpg": null,
+  "stuffing_37.jpg": null,
+  "painting_155.jpg": {
+    "Verb": "Painting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Floor"
+      ],
+      "Tool": [
+        "Paintbrush"
+      ],
+      "Place": [
+        "Room"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Paint Can"
+      ]
+    }
+  },
+  "packing_149.jpg": null,
+  "soaking_61.jpg": null,
+  "staring_71.jpg": {
+    "Verb": "Staring",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "packing_0.jpg": null,
+  "buying_137.jpg": null,
+  "carving_38.jpg": {
+    "Verb": "Carving",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Scissors"
+      ],
+      "Substance": [
+        "Ice"
+      ],
+      "Place": [
+        "Sidewalk"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "storming_46.jpg": {
+    "Verb": "Storming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Beach"
+      ]
+    }
+  },
+  "whisking_80.jpg": {
+    "Verb": "Whisking",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tea Leaves"
+      ],
+      "Container": [
+        "Bowl"
+      ],
+      "Place": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Fill": [
+        "Liquid"
+      ]
+    }
+  },
+  "colliding_122.jpg": null,
+  "decomposing_146.jpg": null,
+  "glaring_169.jpg": {
+    "Verb": "Glaring",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Obama's face"
+      ],
+      "Perceiver": [
+        "Obama's face"
+      ],
+      "Agent": [
+        "Obama's face"
+      ]
+    }
+  },
+  "assembling_337.jpg": null,
+  "assembling_91.jpg": null,
+  "applying_136.jpg": {
+    "Verb": "Applying",
+    "Roles_and_Nouns": {
+      "Destination": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Substance": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "barbecuing_254.jpg": {
+    "Verb": "Barbecuing",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Burgers",
+        "Hot dogs",
+        "Sausages"
+      ],
+      "Place": [
+        "Backyard",
+        "Grill"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "racing_149.jpg": {
+    "Verb": "Racing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Track"
+      ],
+      "Jockey": [
+        "Jockey"
+      ],
+      "Horse": [
+        "Horse"
+      ]
+    }
+  },
+  "placing_248.jpg": null,
+  "building_160.jpg": null,
+  "training_192.jpg": {
+    "Verb": "training",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Classroom"
+      ],
+      "Student": [
+        "People"
+      ],
+      "Agent": [
+        "Teacher"
+      ]
+    }
+  },
+  "unpacking_94.jpg": null,
+  "building_70.jpg": null,
+  "foraging_171.jpg": {
+    "Verb": "Foraging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Raccoon food"
+      ],
+      "Place": [
+        "Forest Floor"
+      ],
+      "Agent": [
+        "Raccoon"
+      ]
+    }
+  },
+  "buying_26.jpg": null,
+  "photographing_92.jpg": null,
+  "shopping_208.jpg": null,
+  "dropping_92.jpg": null,
+  "wheeling_245.jpg": null,
+  "frying_262.jpg": null,
+  "packing_28.jpg": null,
+  "making_161.jpg": null,
+  "assembling_135.jpg": null,
+  "spilling_27.jpg": {
+    "Verb": "Spilling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Coffee Cup"
+      ],
+      "Destination": [
+        "Tabletop"
+      ],
+      "Substance": [
+        "Coffee Liquid"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Agent": [
+        "Coffee Cup"
+      ]
+    }
+  },
+  "dousing_231.jpg": null,
+  "buying_165.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Tissues"
+      ],
+      "Place": [
+        "Store"
+      ],
+      "Payment": [
+        "Money"
+      ],
+      "Agent": [
+        "Customer"
+      ],
+      "Seller": [
+        "Store Clerk"
+      ]
+    }
+  },
+  "smashing_140.jpg": {
+    "Verb": "Smashing",
+    "Roles_and_Nouns": {
+      "Smashed": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Against": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "videotaping_217.jpg": null,
+  "grilling_25.jpg": null,
+  "pumping_64.jpg": {
+    "Verb": "Pumping",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Air Pumping Station"
+      ],
+      "Tool": [
+        "Air Pumping Station"
+      ],
+      "Destination": [
+        "Air Pumping Station"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Air Pumping Station"
+      ],
+      "Place": [
+        "Air Pumping Station"
+      ]
+    }
+  },
+  "folding_46.jpg": null,
+  "dining_149.jpg": null,
+  "admiring_254.jpg": null,
+  "inflating_53.jpg": null,
+  "farming_295.jpg": null,
+  "hoisting_30.jpg": {
+    "Verb": "Hoisting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Sailors' Tools"
+      ],
+      "Tool": [
+        "Rope and Sailors' Tools"
+      ],
+      "Place": [
+        "Ship Deck"
+      ],
+      "Agent": [
+        "Sailors"
+      ],
+      "Source": [
+        "Sailors' Tools and Rope"
+      ]
+    }
+  },
+  "shopping_149.jpg": null,
+  "serving_199.jpg": null,
+  "slicing_103.jpg": null,
+  "colliding_72.jpg": null,
+  "frying_7.jpg": null,
+  "clinging_247.jpg": {
+    "Verb": "Clinging",
+    "Roles_and_Nouns": {
+      "Clungto": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "socializing_202.jpg": null,
+  "painting_50.jpg": null,
+  "assembling_190.jpg": null,
+  "jumping_199.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Man"
+      ],
+      "Destination": [
+        "Airplane"
+      ],
+      "Obstacle": [
+        "Airplane"
+      ],
+      "Place": [
+        "Stage"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "colliding_73.jpg": null,
+  "reassuring_155.jpg": null,
+  "erasing_150.jpg": null,
+  "spitting_36.jpg": {
+    "Verb": "Spitting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Saliva"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Target": [
+        "Newspaper"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "jumping_51.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "People"
+      ],
+      "Destination": [
+        "Sky"
+      ],
+      "Obstacle": [
+        "Nothing"
+      ],
+      "Place": [
+        "Cruise Ship Deck"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "resting_23.jpg": {
+    "Verb": "Resting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Warthog"
+      ],
+      "Place": [
+        "Sandpit"
+      ],
+      "Goal": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "attacking_21.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Victim": [
+        "Bear"
+      ],
+      "Agent": [
+        "Dragon"
+      ],
+      "Weapon": [
+        "Claws"
+      ],
+      "Source": [
+        "Painting"
+      ]
+    }
+  },
+  "farming_78.jpg": null,
+  "pasting_164.jpg": {
+    "Verb": "Pasting",
+    "Roles_and_Nouns": {
+      "Connector": [
+        ""
+      ],
+      "Item": [
+        ""
+      ],
+      "Object": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "raining_1.jpg": {
+    "Verb": "Raining",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Pathway"
+      ]
+    }
+  },
+  "reassuring_86.jpg": null,
+  "videotaping_193.jpg": null,
+  "videotaping_219.jpg": null,
+  "tipping_204.jpg": null,
+  "packing_145.jpg": null,
+  "gardening_149.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Shovel"
+      ],
+      "Place": [
+        "Garden"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "building_185.jpg": null,
+  "dyeing_134.jpg": {
+    "Verb": "Dyeing",
+    "Roles_and_Nouns": {
+      "dye": [
+        ""
+      ],
+      "material": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "serving_80.jpg": {
+    "Verb": "Serving",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Beverage"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Served": [
+        "Woman"
+      ]
+    }
+  },
+  "crafting_145.jpg": null,
+  "imitating_69.jpg": null,
+  "flexing_112.jpg": {
+    "Verb": "flexing",
+    "Roles_and_Nouns": {
+      "agentpart": [
+        "Muscle"
+      ],
+      "addressee": [
+        "Bodybuilder"
+      ],
+      "place": [
+        "Gymnasium"
+      ],
+      "agent": [
+        "Woman"
+      ],
+      "source": [
+        "Hose"
+      ]
+    }
+  },
+  "blossoming_242.jpg": null,
+  "jumping_39.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Water Skiing Jet Ski"
+      ],
+      "Destination": [
+        "Water Skiing Jet Ski in the air"
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        "Ocean Wave"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "stapling_183.jpg": null,
+  "flaming_45.jpg": null,
+  "massaging_253.jpg": {
+    "Verb": "massaging",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Coagentpart": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "lighting_49.jpg": {
+    "Verb": "lighting",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "shopping_174.jpg": null,
+  "dissecting_154.jpg": null,
+  "stooping_171.jpg": {
+    "Verb": "Stooping",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Couple"
+      ]
+    }
+  },
+  "clearing_44.jpg": {
+    "Verb": "clearing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bushes"
+      ],
+      "Tool": [
+        "Sword",
+        "Knife"
+      ],
+      "Place": [
+        "Field"
+      ],
+      "Agent": [
+        "Men"
+      ],
+      "Source": [
+        "Sword",
+        "Knife"
+      ]
+    }
+  },
+  "decorating_140.jpg": null,
+  "stampeding_66.jpg": {
+    "Verb": "Stampeding",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Bulls"
+      ],
+      "Destination": [
+        "People"
+      ]
+    }
+  },
+  "dissecting_201.jpg": null,
+  "cleaning_350.jpg": null,
+  "mending_127.jpg": {
+    "Verb": "Mending",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Roof Tiles"
+      ],
+      "Tool": [
+        "Shovel"
+      ],
+      "Place": [
+        "Roof of House"
+      ],
+      "Agent": [
+        "Men"
+      ]
+    }
+  },
+  "nuzzling_309.jpg": null,
+  "glaring_18.jpg": {
+    "Verb": "Glaring",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Attractive woman"
+      ],
+      "Perceiver": [
+        "Man in suit and glasses"
+      ],
+      "Agent": [
+        "Woman looking at camera"
+      ]
+    }
+  },
+  "twirling_56.jpg": {
+    "Verb": "Twirling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Girls",
+        "Women",
+        "Dancers"
+      ],
+      "Place": [
+        "Street",
+        "Road",
+        "Sidewalk"
+      ],
+      "Agent": [
+        "Girls",
+        "Women",
+        "Dancers"
+      ]
+    }
+  },
+  "colliding_182.jpg": null,
+  "blocking_217.jpg": null,
+  "buying_87.jpg": null,
+  "colliding_70.jpg": null,
+  "constructing_238.jpg": null,
+  "emerging_91.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Eggshell"
+      ],
+      "Destination": [
+        "Baby Alligator"
+      ],
+      "Place": [
+        "Incubator"
+      ],
+      "Agent": [
+        "Mother Alligator"
+      ]
+    }
+  },
+  "opening_139.jpg": {
+    "Verb": "opening",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Trunk of a tree"
+      ],
+      "Tool": [
+        "Hands"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Hose"
+      ]
+    }
+  },
+  "building_120.jpg": null,
+  "packing_222.jpg": null,
+  "attacking_153.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Victim": [
+        "Bear"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Weapon": [
+        "Spear"
+      ],
+      "Source": [
+        "Forest"
+      ],
+      "Destination": [
+        "Forest"
+      ],
+      "Target": [
+        "Bear"
+      ]
+    }
+  },
+  "socializing_312.jpg": {
+    "Verb": "socializing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "People"
+      ],
+      "Place": [
+        "Patio"
+      ],
+      "Agent": [
+        "Couple"
+      ]
+    }
+  },
+  "loading_317.jpg": {
+    "Verb": "loading",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Dirt"
+      ],
+      "Tool": [
+        "Dumpster truck"
+      ],
+      "Destination": [
+        "Dumpster truck"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Truck driver"
+      ],
+      "Source": [
+        "Dumpster truck"
+      ]
+    }
+  },
+  "spinning_23.jpg": null,
+  "buttoning_70.jpg": {
+    "Verb": "buttoning",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Button"
+      ],
+      "Place": [
+        "Dress or Shirt"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "scraping_115.jpg": null,
+  "serving_125.jpg": {
+    "Verb": "Serving",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wine Glasses"
+      ],
+      "Place": [
+        "Restaurant Table"
+      ],
+      "Agent": [
+        "Waiter"
+      ],
+      "Served": [
+        "Couple"
+      ]
+    }
+  },
+  "blocking_238.jpg": null,
+  "emerging_104.jpg": null,
+  "destroying_56.jpg": {
+    "Verb": "Destroying",
+    "Roles_and_Nouns": {
+      "Destroyed Item": [
+        "Firetruck"
+      ],
+      "Tool": [
+        "Backhoe Loader"
+      ],
+      "Place": [
+        "Roadside"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "attacking_243.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Field"
+      ],
+      "Victim": [
+        "Hyenas"
+      ],
+      "Agent": [
+        "Lioness"
+      ],
+      "Source": [
+        "Spotted hyenas"
+      ],
+      "Destination": [
+        "Lioness"
+      ],
+      "Weapon": [
+        "Claws"
+      ]
+    }
+  },
+  "hunting_278.jpg": {
+    "Verb": "Hunting",
+    "Roles_and_Nouns": {
+      "hunted": [
+        "Antelope"
+      ],
+      "place": [
+        "Field"
+      ],
+      "agent": [
+        "Lioness"
+      ]
+    }
+  },
+  "packaging_155.jpg": null,
+  "curtsying_96.jpg": {
+    "Verb": "curtsying",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "blocking_239.jpg": null,
+  "frying_93.jpg": {
+    "Verb": "Frying",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Tofu",
+        "Meat",
+        "Vegetables"
+      ],
+      "Place": [
+        "Stove",
+        "Pan",
+        "Oven"
+      ],
+      "Container": [
+        "Pan",
+        "Skillet",
+        "Baking Sheet"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Electricity"
+      ]
+    }
+  },
+  "leaping_304.jpg": null,
+  "attacking_110.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Victim": [
+        "People"
+      ],
+      "Agent": [
+        "Protestors"
+      ],
+      "Weapon": [
+        "Batons"
+      ],
+      "Source": [
+        "Police Vehicle"
+      ],
+      "Destination": [
+        "Protestors"
+      ]
+    }
+  },
+  "talking_2.jpg": {
+    "Verb": "Talking",
+    "Roles_and_Nouns": {
+      "Listener": [
+        "People"
+      ],
+      "Place": [
+        "Living Room"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Television"
+      ]
+    }
+  },
+  "brawling_107.jpg": {
+    "Verb": "Brawling",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus",
+        "Santa Claus"
+      ]
+    }
+  },
+  "fastening_143.jpg": {
+    "Verb": "Fastening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Wristband"
+      ],
+      "Destination": [
+        "Camera Mount"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Connector": [
+        "Strap"
+      ],
+      "Item": [
+        "Camera Mount"
+      ],
+      "Place": [
+        "Wrist"
+      ]
+    }
+  },
+  "drenching_156.jpg": {
+    "Verb": "Drenching",
+    "Roles_and_Nouns": {
+      "drencheditem": [
+        "People"
+      ],
+      "tool": [
+        "Hose"
+      ],
+      "place": [
+        "Pavement"
+      ],
+      "liquid": [
+        "Water"
+      ],
+      "agent": [
+        "Man"
+      ]
+    }
+  },
+  "stripping_164.jpg": {
+    "Verb": "Stripping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Tree trunk"
+      ],
+      "Removeditem": [
+        "Bark"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Tool": [
+        "Ax"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "dissecting_180.jpg": null,
+  "stuffing_324.jpg": null,
+  "shopping_180.jpg": null,
+  "covering_135.jpg": null,
+  "gardening_25.jpg": null,
+  "videotaping_36.jpg": null,
+  "spilling_44.jpg": null,
+  "microwaving_45.jpg": null,
+  "dining_261.jpg": null,
+  "admiring_321.jpg": null,
+  "filming_127.jpg": null,
+  "braiding_30.jpg": null,
+  "filling_121.jpg": {
+    "Verb": "filling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bag of Plastic Bags"
+      ],
+      "Destination": [
+        "Machine"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Bag of Plastic Bags"
+      ]
+    }
+  },
+  "flaming_225.jpg": {
+    "Verb": "Flaming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Fireworks"
+      ],
+      "Agent": [
+        "Fireworks"
+      ]
+    }
+  },
+  "building_227.jpg": null,
+  "scraping_172.jpg": null,
+  "grimacing_13.jpg": {
+    "Verb": "grimacing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Man in suit"
+      ],
+      "Cause": [
+        "Wrinkles on face"
+      ],
+      "Agent": [
+        "Man grimacing"
+      ]
+    }
+  },
+  "tearing_106.jpg": {
+    "Verb": "Tearing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wall"
+      ],
+      "Tool": [
+        "Excavator"
+      ],
+      "Place": [
+        "Building"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "photographing_222.jpg": null,
+  "spilling_200.jpg": {
+    "Verb": "Spilling",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Bucket"
+      ],
+      "Destination": [
+        "Water Bucket"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Amusement Park Ride"
+      ],
+      "Agent": [
+        "Water Bucket"
+      ]
+    }
+  },
+  "carting_39.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Dogcart"
+      ],
+      "Tool": [
+        "Cartwheeling wheelbarrow"
+      ],
+      "Place": [
+        "Grass field"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "carting_177.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Haystacks"
+      ],
+      "Tool": [
+        "Cart and Horses"
+      ],
+      "Place": [
+        "Farmstead"
+      ],
+      "Agent": [
+        "Farmers"
+      ]
+    }
+  },
+  "crafting_202.jpg": null,
+  "tugging_80.jpg": null,
+  "loading_225.jpg": null,
+  "checking_122.jpg": {
+    "Verb": "checking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Machine"
+      ],
+      "Tool": [
+        "Goggles"
+      ],
+      "Patient": [
+        "Eyes"
+      ],
+      "Aspect": [
+        "Safety"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Machine"
+      ]
+    }
+  },
+  "stretching_51.jpg": {
+    "Verb": "stretching",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "inserting_216.jpg": {
+    "Verb": "Inserting",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Nail into wood"
+      ],
+      "Object": [
+        "Nail"
+      ],
+      "Container": [
+        "Nail gun"
+      ],
+      "Agent": [
+        "Handyman"
+      ]
+    }
+  },
+  "embracing_117.jpg": {
+    "Verb": "Embracing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "People"
+      ],
+      "Place": [
+        "Snowy Mountains"
+      ],
+      "Agent": [
+        "Couple"
+      ]
+    }
+  },
+  "admiring_80.jpg": null,
+  "barbecuing_53.jpg": null,
+  "emerging_191.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Water"
+      ],
+      "Destination": [
+        "Whale itself"
+      ],
+      "Place": [
+        "Ocean"
+      ],
+      "Agent": [
+        "Whale itself"
+      ]
+    }
+  },
+  "offering_251.jpg": {
+    "Verb": "offering",
+    "Roles_and_Nouns": {
+      "Beneficiary": [
+        "Woman"
+      ],
+      "Item": [
+        "Rosebud"
+      ],
+      "Place": [
+        "Stage/Backdrop"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "nipping_260.jpg": null,
+  "smelling_350.jpg": null,
+  "making_176.jpg": null,
+  "crafting_71.jpg": null,
+  "bulldozing_98.jpg": {
+    "Verb": "Bulldozing",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Trees"
+      ],
+      "Place": [
+        "Orchard"
+      ],
+      "Agent": [
+        "Excavator"
+      ]
+    }
+  },
+  "videotaping_78.jpg": null,
+  "buying_168.jpg": null,
+  "swarming_28.jpg": null,
+  "crowning_151.jpg": null,
+  "dining_228.jpg": null,
+  "shopping_324.jpg": null,
+  "snuggling_98.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "hunting_254.jpg": null,
+  "crafting_125.jpg": null,
+  "barbecuing_214.jpg": null,
+  "burning_224.jpg": {
+    "Verb": "burning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Trash pile"
+      ],
+      "Target": [
+        "Trash, Paper, Wood, Plastic, Metal, Glass, etc."
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "videotaping_34.jpg": null,
+  "sniffing_267.jpg": null,
+  "providing_257.jpg": null,
+  "buying_105.jpg": null,
+  "foraging_225.jpg": {
+    "Verb": "Foraging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Mushrooms"
+      ],
+      "Place": [
+        "Forest Floor"
+      ],
+      "Agent": [
+        "Boars"
+      ]
+    }
+  },
+  "striking_68.jpg": {
+    "Verb": "Striking",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        "Boxer 1",
+        "Boxer 2"
+      ],
+      "Coagent": [
+        "Boxer 1",
+        "Boxer 2"
+      ],
+      "Place": [
+        "Ring"
+      ],
+      "Tool": [
+        "Gloves"
+      ],
+      "Agent": [
+        "Boxer 1",
+        "Boxer 2"
+      ]
+    }
+  },
+  "videotaping_151.jpg": null,
+  "rehabilitating_19.jpg": {
+    "Verb": "Rehabilitating",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Man",
+        "Woman"
+      ],
+      "Place": [
+        "Rehabilitation Center"
+      ],
+      "Agent": [
+        "Doctor",
+        "Patient"
+      ]
+    }
+  },
+  "pumping_182.jpg": {
+    "Verb": "Pumping",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Air"
+      ],
+      "Tool": [
+        "Pump"
+      ],
+      "Destination": [
+        "Tire"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Air Pump"
+      ],
+      "Place": [
+        "Garage"
+      ]
+    }
+  },
+  "adjusting_318.jpg": {
+    "Verb": "Adjusting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Carpet Cleaner"
+      ],
+      "Tool": [
+        "Carpet Cleaner Handle"
+      ],
+      "Place": [
+        "Carpet Cleaner Handle"
+      ],
+      "Feature": [
+        "Carpet Cleaner Handle Adjustment Mechanism"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Carpet Cleaner Handle Adjustment Mechanism"
+      ]
+    }
+  },
+  "shoveling_296.jpg": {
+    "Verb": "Shoveling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Grass"
+      ],
+      "Place": [
+        "Ground"
+      ],
+      "Agent": [
+        "Worker"
+      ],
+      "Source": [
+        "Tractor"
+      ]
+    }
+  },
+  "dripping_243.jpg": {
+    "Verb": "Dripping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Blood"
+      ],
+      "Destination": [
+        "Boy's face"
+      ],
+      "Place": [
+        "Street scene"
+      ],
+      "Fluid": [
+        "Blood"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "coloring_73.jpg": null,
+  "distributing_60.jpg": null,
+  "buying_159.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Medicine"
+      ],
+      "Place": [
+        "Pharmacy"
+      ],
+      "Payment": [
+        "Money"
+      ],
+      "Agent": [
+        "Customer"
+      ],
+      "Seller": [
+        "Pharmacist"
+      ]
+    }
+  },
+  "gardening_211.jpg": null,
+  "gardening_11.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Shovel",
+        "Rake",
+        "Watering Can"
+      ],
+      "Place": [
+        "Garden",
+        "Yard",
+        "Farm"
+      ],
+      "Agent": [
+        "Man",
+        "Woman"
+      ]
+    }
+  },
+  "building_217.jpg": null,
+  "videotaping_11.jpg": null,
+  "erupting_15.jpg": {
+    "Verb": "Erupting",
+    "Roles_and_Nouns": {
+      "Substance": [
+        "Smoke",
+        "Ash",
+        "Dust",
+        "Gases",
+        "Magma",
+        "Lava"
+      ],
+      "Place": [
+        "Mountain",
+        "Volcano",
+        "Forest",
+        "Desert",
+        "Ocean",
+        "Sky"
+      ],
+      "Agent": [
+        "Volcano",
+        "Eruption",
+        "Geothermal Activity",
+        "Tectonic Plate Boundary"
+      ]
+    }
+  },
+  "jumping_192.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Truck Driver"
+      ],
+      "Destination": [
+        "Truck Driver"
+      ],
+      "Obstacle": [
+        "Sand Dunes"
+      ],
+      "Place": [
+        "Desert"
+      ],
+      "Agent": [
+        "Truck Driver"
+      ]
+    }
+  },
+  "building_157.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Building site"
+      ],
+      "Tool": [
+        "Construction equipment"
+      ],
+      "GoalItem": [
+        "Building structure"
+      ],
+      "Components": [
+        "Bricks, mortar, steel, concrete, labor, etc."
+      ],
+      "Agent": [
+        "Construction workers"
+      ]
+    }
+  },
+  "shopping_94.jpg": null,
+  "shopping_140.jpg": null,
+  "coloring_22.jpg": null,
+  "performing_28.jpg": null,
+  "spilling_75.jpg": null,
+  "spinning_160.jpg": null,
+  "fishing_223.jpg": {
+    "Verb": "Fishing",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Fishing Rod"
+      ],
+      "Tool": [
+        "Fishing Rod"
+      ],
+      "Place": [
+        "Lake"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "calming_35.jpg": null,
+  "making_38.jpg": null,
+  "painting_233.jpg": {
+    "Verb": "Painting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wall"
+      ],
+      "Tool": [
+        "Paintbrush"
+      ],
+      "Place": [
+        "Wall (interior)"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "shopping_317.jpg": null,
+  "stretching_99.jpg": {
+    "Verb": "stretching",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "tripping_12.jpg": null,
+  "shelving_222.jpg": {
+    "Verb": "Shelving",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cereal Boxes"
+      ],
+      "Destination": [
+        "Shelf"
+      ],
+      "Place": [
+        "Grocery Store"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Shelf"
+      ]
+    }
+  },
+  "blocking_33.jpg": null,
+  "dining_63.jpg": null,
+  "fishing_140.jpg": {
+    "Verb": "Fishing",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Fisherman"
+      ],
+      "Tool": [
+        "Fishing rod"
+      ],
+      "Place": [
+        "Ocean"
+      ],
+      "Agent": [
+        "Fisherman"
+      ]
+    }
+  },
+  "decorating_105.jpg": null,
+  "blocking_76.jpg": {
+    "Verb": "Blocking",
+    "Roles_and_Nouns": {
+      "Blocker": [
+        "Tree Branches"
+      ],
+      "Tool": [
+        "Carriage Wheels"
+      ],
+      "Place": [
+        "Roadway"
+      ],
+      "Blocked": [
+        "Ambulance"
+      ]
+    }
+  },
+  "building_83.jpg": null,
+  "hauling_128.jpg": null,
+  "spinning_10.jpg": null,
+  "stuffing_33.jpg": null,
+  "hauling_42.jpg": {
+    "Verb": "Hauling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tree trunk"
+      ],
+      "Tool": [
+        "Truck bed"
+      ],
+      "Carrier": [
+        "Truck driver"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Fill": [
+        "Tree trunk"
+      ]
+    }
+  },
+  "spoiling_80.jpg": {
+    "Verb": "Spoiling",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Meat (Steak)"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "bothering_130.jpg": null,
+  "gardening_43.jpg": {
+    "Verb": "Gardening",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Gloves"
+      ],
+      "Place": [
+        "Garden"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "decomposing_45.jpg": {
+    "Verb": "Decomposing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Decomposer": [
+        "Tree",
+        "Leaves",
+        "Dead Animals"
+      ]
+    }
+  },
+  "barbecuing_144.jpg": null,
+  "dining_79.jpg": null,
+  "spinning_125.jpg": {
+    "Verb": "Spinning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Spindle and Whorl of a spinning wheel"
+      ],
+      "Material": [
+        "Thread or Yarn"
+      ],
+      "Place": [
+        "Indoors or Workroom"
+      ],
+      "Agent": [
+        "Woman or Person"
+      ]
+    }
+  },
+  "sleeping_75.jpg": null,
+  "eating_85.jpg": null,
+  "hauling_97.jpg": {
+    "Verb": "hauling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tractor"
+      ],
+      "Tool": [
+        "Trailer"
+      ],
+      "Carrier": [
+        "Truck"
+      ],
+      "Place": [
+        "Road"
+      ]
+    }
+  },
+  "blocking_47.jpg": null,
+  "flicking_182.jpg": {
+    "Verb": "Flicking",
+    "Roles_and_Nouns": {
+      "Agentpart": [
+        ""
+      ],
+      "Object": [
+        ""
+      ],
+      "Objectpart": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "barbecuing_82.jpg": null,
+  "plunging_29.jpg": null,
+  "buying_146.jpg": null,
+  "nailing_189.jpg": {
+    "Verb": "Nailing",
+    "Roles_and_Nouns": {
+      "Item2": [
+        "Nail gun"
+      ],
+      "Tool": [
+        "Nail gun"
+      ],
+      "Item1": [
+        "Drywall piece"
+      ],
+      "Place": [
+        "Ceiling joist"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Drywall piece"
+      ]
+    }
+  },
+  "assembling_304.jpg": null,
+  "peeling_198.jpg": null,
+  "crafting_9.jpg": null,
+  "arching_102.jpg": {
+    "Verb": "Arching",
+    "Roles_and_Nouns": {
+      "Bodypart": [
+        "Legs"
+      ],
+      "Place": [
+        "Snowy ground"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "tearing_136.jpg": {
+    "Verb": "Tearing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Flooring"
+      ],
+      "Tool": [
+        "Hammer"
+      ],
+      "Place": [
+        "Hallway"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "descending_242.jpg": {
+    "Verb": "Descending",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "ramming_97.jpg": {
+    "Verb": "Ramming",
+    "Roles_and_Nouns": {
+      "Place": [
+        ""
+      ],
+      "Victim": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "RammingItem": [
+        ""
+      ]
+    }
+  },
+  "assembling_263.jpg": null,
+  "blocking_256.jpg": null,
+  "perspiring_4.jpg": null,
+  "staring_212.jpg": {
+    "Verb": "Staring",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Sandwich"
+      ],
+      "Place": [
+        "Living Room"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "mining_196.jpg": {
+    "Verb": "Mining",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Mine"
+      ],
+      "Tool": [
+        "Pickaxe"
+      ],
+      "Resource": [
+        "Coal"
+      ],
+      "Agent": [
+        "Miner"
+      ]
+    }
+  },
+  "cooking_81.jpg": null,
+  "unpacking_98.jpg": {
+    "Verb": "Unpacking",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Box"
+      ],
+      "Container": [
+        "Box (plural)"
+      ],
+      "Place": [
+        "Kitchen Table"
+      ],
+      "Agent": [
+        "Couple"
+      ],
+      "Source": [
+        "Boxes"
+      ]
+    }
+  },
+  "cooking_103.jpg": null,
+  "cramming_10.jpg": {
+    "Verb": "Cramming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Car"
+      ],
+      "Theme": [
+        "School Books"
+      ],
+      "Container": [
+        "Backpacks"
+      ],
+      "Agent": [
+        "Students"
+      ],
+      "Source": [
+        "School Books"
+      ]
+    }
+  },
+  "spinning_3.jpg": null,
+  "spitting_119.jpg": null,
+  "providing_168.jpg": null,
+  "cramming_66.jpg": null,
+  "blocking_66.jpg": null,
+  "providing_171.jpg": null,
+  "unveiling_133.jpg": {
+    "Verb": "Unveiling",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Bride"
+      ],
+      "Place": [
+        "Church Altar"
+      ],
+      "Agent": [
+        "Groom"
+      ]
+    }
+  },
+  "performing_168.jpg": null,
+  "crashing_64.jpg": null,
+  "stapling_171.jpg": null,
+  "putting_183.jpg": {
+    "Verb": "Putting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Food item"
+      ],
+      "Destination": [
+        "Tablecloth"
+      ],
+      "Place": [
+        "Tablecloth on table"
+      ],
+      "Agent": [
+        "Woman"
+      ],
+      "Source": [
+        "Tablecloth on table"
+      ]
+    }
+  },
+  "blocking_257.jpg": null,
+  "pushing_165.jpg": null,
+  "videotaping_131.jpg": null,
+  "unpacking_48.jpg": {
+    "Verb": "Unpacking",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Bag of clothes"
+      ],
+      "Container": [
+        "Backpack"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Backpack"
+      ]
+    }
+  },
+  "prying_160.jpg": {
+    "Verb": "Prying",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Laptop"
+      ],
+      "Tool": [
+        "Tool (not specified)"
+      ],
+      "From": [
+        "Car (not specified)"
+      ],
+      "Place": [
+        "Garage (not specified)"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "barbecuing_270.jpg": null,
+  "spinning_62.jpg": null,
+  "mining_67.jpg": null,
+  "photographing_43.jpg": null,
+  "running_9.jpg": {
+    "Verb": "Running",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Path"
+      ],
+      "Agent": [
+        "People"
+      ],
+      "Source": [
+        "Vineyard"
+      ]
+    }
+  },
+  "shopping_282.jpg": null,
+  "videotaping_196.jpg": null,
+  "moisturizing_138.jpg": {
+    "Verb": "Moisturizing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Skin"
+      ],
+      "Tool": [
+        "Cream/lotion"
+      ],
+      "Moisturized": [
+        "Skin"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "shopping_329.jpg": null,
+  "whipping_123.jpg": {
+    "Verb": "Whipping",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "eating_174.jpg": null,
+  "shopping_266.jpg": null,
+  "putting_252.jpg": {
+    "Verb": "Putting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Ball"
+      ],
+      "Destination": [
+        "Basketball hoop"
+      ],
+      "Place": [
+        "Basketball court"
+      ],
+      "Agent": [
+        "Player"
+      ],
+      "Source": [
+        "Basketball hoop"
+      ]
+    }
+  },
+  "camouflaging_162.jpg": null,
+  "glowing_335.jpg": null,
+  "leaping_292.jpg": null,
+  "constructing_13.jpg": null,
+  "flaming_178.jpg": {
+    "Verb": "Flaming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Fireplace"
+      ],
+      "Fire": [
+        "Fireplace Fire"
+      ],
+      "Agent": [
+        "Fireplace Fire Agent"
+      ]
+    }
+  },
+  "unpacking_157.jpg": null,
+  "packing_54.jpg": null,
+  "chewing_132.jpg": null,
+  "hauling_94.jpg": null,
+  "storming_132.jpg": {
+    "Verb": "Storming",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Ocean",
+        "Ocean Waves",
+        "Ocean Currents"
+      ]
+    }
+  },
+  "brawling_134.jpg": {
+    "Verb": "Brawling",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Stadium"
+      ],
+      "Agent": [
+        "Fan",
+        "Security Guard"
+      ]
+    }
+  },
+  "barbecuing_134.jpg": {
+    "Verb": "barbecuing",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Corn dogs"
+      ],
+      "Place": [
+        "Backyard"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Grill"
+      ]
+    }
+  },
+  "dropping_113.jpg": null,
+  "destroying_174.jpg": {
+    "Verb": "Destroying",
+    "Roles_and_Nouns": {
+      "Destroyed Item": [
+        "Wall and Furniture"
+      ],
+      "Tool": [
+        "Sledgehammer"
+      ],
+      "Place": [
+        "Warehouse or Basement"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "barbecuing_128.jpg": {
+    "Verb": "Barbecuing",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Meatballs"
+      ],
+      "Place": [
+        "Backyard"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Grill"
+      ]
+    }
+  },
+  "pouring_51.jpg": null,
+  "shopping_83.jpg": null,
+  "socializing_314.jpg": null,
+  "destroying_76.jpg": null,
+  "assembling_207.jpg": {
+    "Verb": "Assembling",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Wooden Beams"
+      ],
+      "Tool": [
+        "Hammer",
+        "Saw",
+        "Drill",
+        "Screwdriver"
+      ],
+      "GoalItem": [
+        "Framing Structure"
+      ],
+      "Place": [
+        "Construction Site"
+      ],
+      "Agent": [
+        "Men"
+      ]
+    }
+  },
+  "packing_8.jpg": null,
+  "twirling_108.jpg": null,
+  "dousing_186.jpg": {
+    "Verb": "Dousing",
+    "Roles_and_Nouns": {
+      "Undergoer": [
+        "People"
+      ],
+      "Place": [
+        "Stadium Seats"
+      ],
+      "Liquid": [
+        "Water"
+      ],
+      "Agent": [
+        "Security Guard"
+      ]
+    }
+  },
+  "crushing_232.jpg": {
+    "Verb": "Crushing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Rock Crusher"
+      ],
+      "Tool": [
+        "Crusher Hammer"
+      ],
+      "Crushed Item": [
+        "Rock"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "shopping_223.jpg": null,
+  "unloading_360.jpg": null,
+  "shopping_307.jpg": null,
+  "exterminating_26.jpg": {
+    "Verb": "exterminating",
+    "Roles_and_Nouns": {
+      "Instrument": [
+        "Spray gun"
+      ],
+      "Place": [
+        "House siding"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "blocking_104.jpg": null,
+  "admiring_396.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "Baby"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Family"
+      ]
+    }
+  },
+  "dining_192.jpg": null,
+  "pinning_185.jpg": null,
+  "colliding_208.jpg": null,
+  "packing_11.jpg": null,
+  "photographing_120.jpg": null,
+  "constructing_225.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "CreatedItem": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "assembling_313.jpg": null,
+  "jumping_219.jpg": null,
+  "sniffing_193.jpg": null,
+  "planting_61.jpg": {
+    "Verb": "planting",
+    "Roles_and_Nouns": {
+      "Coparticipant": [
+        "People"
+      ],
+      "Tool": [
+        "Tractor"
+      ],
+      "Planted": [
+        "Plants"
+      ],
+      "Place": [
+        "Farm Field"
+      ],
+      "Agent": [
+        "Farmer"
+      ],
+      "Source": [
+        "Tractor"
+      ]
+    }
+  },
+  "harvesting_304.jpg": null,
+  "covering_56.jpg": {
+    "Verb": "Covering",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tree"
+      ],
+      "Cover": [
+        "Snowflake"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Snowflake"
+      ],
+      "Source": [
+        "Tree"
+      ]
+    }
+  },
+  "blocking_103.jpg": {
+    "Verb": "Blocking",
+    "Roles_and_Nouns": {
+      "Blocker": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Blocked": [
+        ""
+      ]
+    }
+  },
+  "buying_71.jpg": null,
+  "breaking_131.jpg": {
+    "Verb": "breaking",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Glass window"
+      ],
+      "Tool": [
+        "Hand (human)"
+      ],
+      "Against": [
+        "Wall (building)"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "admiring_344.jpg": {
+    "Verb": "Admiring",
+    "Roles_and_Nouns": {
+      "Admired": [
+        "People"
+      ],
+      "Place": [
+        "Desert Scene"
+      ],
+      "Agent": [
+        "Family"
+      ]
+    }
+  },
+  "burning_208.jpg": null,
+  "disembarking_156.jpg": null,
+  "dining_126.jpg": null,
+  "bathing_81.jpg": {
+    "Verb": "Bathing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Baby"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Bathtub"
+      ],
+      "Tool": [
+        "Rubber duckie floaty"
+      ],
+      "Agent": [
+        "Mother"
+      ]
+    }
+  },
+  "breaking_209.jpg": null,
+  "swinging_185.jpg": {
+    "Verb": "Swinging",
+    "Roles_and_Nouns": {
+      "Carrier": [
+        "Boy"
+      ],
+      "Place": [
+        "Tree Branches"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "grilling_81.jpg": null,
+  "constructing_166.jpg": {
+    "Verb": "constructing",
+    "Roles_and_Nouns": {
+      "Components": [
+        "Wooden boards"
+      ],
+      "Tool": [
+        "Drill and screws"
+      ],
+      "Place": [
+        "Backyard"
+      ],
+      "Created Item": [
+        "Fence post"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "attacking_227.jpg": {
+    "Verb": "Attacking",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Victim": [
+        "Man in Hoodie"
+      ],
+      "Agent": [
+        "Police Officers"
+      ],
+      "Source": [
+        "Bicycle"
+      ],
+      "Weapon": [
+        "Batons"
+      ]
+    }
+  },
+  "nipping_50.jpg": null,
+  "sniffing_41.jpg": {
+    "Verb": "Sniffing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Iceberg"
+      ],
+      "Place": [
+        "Arctic Ocean"
+      ],
+      "Agent": [
+        "Polar Bear"
+      ]
+    }
+  },
+  "emerging_291.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Water"
+      ],
+      "Destination": [
+        "Whale itself"
+      ],
+      "Place": [
+        "Ocean"
+      ],
+      "Agent": [
+        "Whale itself"
+      ]
+    }
+  },
+  "packing_153.jpg": null,
+  "stroking_202.jpg": null,
+  "falling_120.jpg": {
+    "Verb": "Falling",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Goal": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "ailing_65.jpg": {
+    "Verb": "Ailing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Cause": [
+        "Disease"
+      ],
+      "VictimPart": [
+        "Tree"
+      ],
+      "Victim": [
+        "Bear"
+      ]
+    }
+  },
+  "shopping_290.jpg": null,
+  "colliding_99.jpg": null,
+  "assembling_275.jpg": null,
+  "gluing_229.jpg": {
+    "Verb": "Gluing",
+    "Roles_and_Nouns": {
+      "Connector": [
+        "Rope"
+      ],
+      "Item": [
+        "Jewelry pieces"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Goal": [
+        "Craft project"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "jumping_253.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Destination": [
+        ""
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "dining_151.jpg": null,
+  "emptying_46.jpg": null,
+  "making_187.jpg": {
+    "Verb": "Making",
+    "Roles_and_Nouns": {
+      "Component": [
+        "Salt Crystal"
+      ],
+      "Tool": [
+        "Spoon"
+      ],
+      "GoalItem": [
+        "Salt Crystal"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Salt Crystal Solution"
+      ]
+    }
+  },
+  "emerging_308.jpg": null,
+  "eating_146.jpg": null,
+  "providing_107.jpg": {
+    "Verb": "Providing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Toys"
+      ],
+      "Recipient": [
+        "Children"
+      ],
+      "Place": [
+        "Classroom"
+      ],
+      "Agent": [
+        "Teacher"
+      ],
+      "Source": [
+        "School"
+      ]
+    }
+  },
+  "applauding_50.jpg": null,
+  "jumping_68.jpg": {
+    "Verb": "Jumping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Pier"
+      ],
+      "Destination": [
+        "Water"
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        "Pier"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "pinning_32.jpg": {
+    "Verb": "Pinning",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Clothespins"
+      ],
+      "Place": [
+        "Clothespin board"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Clothespins"
+      ]
+    }
+  },
+  "dissecting_81.jpg": null,
+  "folding_179.jpg": null,
+  "mashing_198.jpg": null,
+  "providing_100.jpg": {
+    "Verb": "Providing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Water bottle"
+      ],
+      "Recipient": [
+        "Man in suit"
+      ],
+      "Place": [
+        "Auditorium"
+      ],
+      "Agent": [
+        "Man in suit"
+      ],
+      "Source": [
+        "Water bottle"
+      ]
+    }
+  },
+  "dining_21.jpg": null,
+  "barbecuing_226.jpg": null,
+  "dining_273.jpg": null,
+  "videotaping_214.jpg": null,
+  "constructing_50.jpg": null,
+  "gardening_171.jpg": null,
+  "stripping_93.jpg": null,
+  "videotaping_132.jpg": null,
+  "barbecuing_167.jpg": {
+    "Verb": "Barbecuing",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Meat",
+        "Vegetables",
+        "Bread",
+        "Fruit",
+        "Dessert"
+      ],
+      "Place": [
+        "Backyard",
+        "Picnic Area",
+        "Beach",
+        "Campground",
+        "Park"
+      ],
+      "Agent": [
+        "Man",
+        "Woman",
+        "Couple",
+        "Family",
+        "Friend"
+      ],
+      "Source": [
+        "Grill",
+        "Barbecue",
+        "Smoker",
+        "Charcoal",
+        "Gas Grill"
+      ]
+    }
+  },
+  "drawing_314.jpg": null,
+  "stapling_132.jpg": null,
+  "tearing_80.jpg": null,
+  "crafting_45.jpg": null,
+  "colliding_139.jpg": null,
+  "spraying_69.jpg": {
+    "Verb": "Spraying",
+    "Roles_and_Nouns": {
+      "Destination": [
+        "Tree"
+      ],
+      "Substance": [
+        "Water"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Hose"
+      ]
+    }
+  },
+  "imitating_202.jpg": null,
+  "massaging_207.jpg": {
+    "Verb": "massaging",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Man"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Coagentpart": [
+        "Patient"
+      ],
+      "Agent": [
+        "Physiotherapist"
+      ]
+    }
+  },
+  "assembling_199.jpg": null,
+  "placing_270.jpg": null,
+  "punching_70.jpg": {
+    "Verb": "Punching",
+    "Roles_and_Nouns": {
+      "Bodypart": [
+        "Fist"
+      ],
+      "Place": [
+        "Air"
+      ],
+      "Victim": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "destroying_263.jpg": null,
+  "emerging_71.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Destination": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "ramming_30.jpg": null,
+  "crashing_61.jpg": {
+    "Verb": "Crashing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Car"
+      ],
+      "Place": [
+        "Gate"
+      ],
+      "Against": [
+        "Gate Pickets"
+      ],
+      "Agent": [
+        "Car Driver"
+      ]
+    }
+  },
+  "grilling_159.jpg": {
+    "Verb": "Grilling",
+    "Roles_and_Nouns": {
+      "Food": [
+        "Meat"
+      ],
+      "Place": [
+        "Grill"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Source": [
+        "Charcoal"
+      ]
+    }
+  },
+  "sprinkling_172.jpg": {
+    "Verb": "Sprinkling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Pepper, salt, and other seasonings"
+      ],
+      "Destination": [
+        "Chicken pieces on a tray"
+      ],
+      "Place": [
+        "Kitchen counter"
+      ],
+      "Agent": [
+        "Person (cook)"
+      ],
+      "Source": [
+        "Shaker bottles"
+      ]
+    }
+  },
+  "loading_66.jpg": null,
+  "dissecting_105.jpg": null,
+  "tickling_31.jpg": null,
+  "dining_130.jpg": null,
+  "nipping_174.jpg": null,
+  "dining_333.jpg": null,
+  "barbecuing_186.jpg": null,
+  "photographing_160.jpg": null,
+  "assembling_297.jpg": null,
+  "videotaping_121.jpg": null,
+  "sketching_89.jpg": null,
+  "emptying_17.jpg": {
+    "Verb": "emptying",
+    "Roles_and_Nouns": {
+      "Container": [
+        "Trash Can"
+      ],
+      "Tool": [
+        "Vacuum Cleaner"
+      ],
+      "Destination": [
+        "Trash Can"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Item": [
+        "Grass clippings"
+      ],
+      "Place": [
+        "Backyard"
+      ]
+    }
+  },
+  "emerging_176.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Water"
+      ],
+      "Destination": [
+        "Snowman"
+      ],
+      "Place": [
+        "Forest"
+      ],
+      "Agent": [
+        "Wolf"
+      ]
+    }
+  },
+  "dining_299.jpg": null,
+  "painting_181.jpg": {
+    "Verb": "painting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Painting Canvas"
+      ],
+      "Tool": [
+        "Paintbrush"
+      ],
+      "Place": [
+        "Outside Garden"
+      ],
+      "Agent": [
+        "Artist"
+      ]
+    }
+  },
+  "scraping_219.jpg": null,
+  "reassuring_141.jpg": {
+    "Verb": "reassuring",
+    "Roles_and_Nouns": {
+      "Reassured": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "videotaping_256.jpg": null,
+  "leading_136.jpg": {
+    "Verb": "leading",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Follower": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "molding_132.jpg": {
+    "Verb": "molding",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Tablecloth"
+      ],
+      "Substance": [
+        "Paper Towel Paper Molding Material"
+      ],
+      "Goalitem": [
+        "Paper Towel Paper Molding Material Molding Goal"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "moistening_116.jpg": null,
+  "rinsing_112.jpg": null,
+  "snuggling_35.jpg": {
+    "Verb": "Snuggling",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Rabbit",
+        "Cat"
+      ],
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Cat"
+      ]
+    }
+  },
+  "whirling_65.jpg": null,
+  "bulldozing_97.jpg": {
+    "Verb": "Bulldozing",
+    "Roles_and_Nouns": {
+      "Object": [
+        "Truck"
+      ],
+      "Place": [
+        "Roadside"
+      ],
+      "Agent": [
+        "Worker"
+      ]
+    }
+  },
+  "stuffing_199.jpg": {
+    "Verb": "Stuffing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Toothpaste"
+      ],
+      "Destination": [
+        "Mouth"
+      ],
+      "Place": [
+        "Bedroom"
+      ],
+      "Agent": [
+        "Boy"
+      ]
+    }
+  },
+  "barbecuing_242.jpg": null,
+  "tripping_184.jpg": {
+    "Verb": "Tripping",
+    "Roles_and_Nouns": {
+      "Item": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "waxing_220.jpg": {
+    "Verb": "waxing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        ""
+      ],
+      "Bodypart": [
+        "Legs"
+      ],
+      "Place": [
+        "Salon"
+      ],
+      "Agent": [
+        "Waxer"
+      ]
+    }
+  },
+  "moisturizing_233.jpg": {
+    "Verb": "Moisturizing",
+    "Roles_and_Nouns": {
+      "Place": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Moisturized": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "washing_67.jpg": null,
+  "microwaving_129.jpg": null,
+  "chiseling_27.jpg": null,
+  "building_173.jpg": {
+    "Verb": "building",
+    "Roles_and_Nouns": {
+      "Place": [
+        "House"
+      ],
+      "Tool": [
+        "Screwdriver"
+      ],
+      "GoalItem": [
+        "Wires"
+      ],
+      "Components": [
+        "Circuit Board"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "unpacking_31.jpg": {
+    "Verb": "Unpacking",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Backpack"
+      ],
+      "Container": [
+        "Locker"
+      ],
+      "Place": [
+        "Hallway"
+      ],
+      "Agent": [
+        "Boy"
+      ],
+      "Source": [
+        "School Supplies"
+      ]
+    }
+  },
+  "repairing_103.jpg": {
+    "Verb": "Repairing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Laptop"
+      ],
+      "Problem": [
+        "Broken Screen"
+      ],
+      "Place": [
+        "Workbench"
+      ],
+      "Tool": [
+        "Screwdriver",
+        "Multimeter"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "squinting_88.jpg": null,
+  "vaulting_176.jpg": {
+    "Verb": "Vaulting",
+    "Roles_and_Nouns": {
+      "End": [
+        ""
+      ],
+      "Tool": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ],
+      "Start": [
+        ""
+      ],
+      "Obstacle": [
+        ""
+      ],
+      "Place": [
+        ""
+      ]
+    }
+  },
+  "constructing_123.jpg": null,
+  "serving_182.jpg": null,
+  "manicuring_66.jpg": null,
+  "tugging_12.jpg": {
+    "Verb": "tugging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Stuffed animal"
+      ],
+      "Place": [
+        "Floor"
+      ],
+      "Agent": [
+        "Dog"
+      ]
+    }
+  },
+  "unpacking_150.jpg": null,
+  "grinding_35.jpg": {
+    "Verb": "grinding",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Mortar and pestle"
+      ],
+      "Tool": [
+        "Mortar and pestle"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Surface": [
+        "Tabletop"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "packing_248.jpg": null,
+  "hauling_141.jpg": null,
+  "farming_267.jpg": {
+    "Verb": "Farming",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wheat, corn, soybeans, etc."
+      ],
+      "Tool": [
+        "Tractor, combine harvester, plow, etc."
+      ],
+      "Ground": [
+        "Farm land, fields, plantations, etc."
+      ],
+      "Place": [
+        "Farm, countryside, rural areas, etc."
+      ],
+      "Farmer": [
+        "Farmer, farmer, farmer, etc."
+      ]
+    }
+  },
+  "videotaping_143.jpg": null,
+  "attaching_268.jpg": {
+    "Verb": "Attaching",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Glue gun"
+      ],
+      "Destination": [
+        "Paper envelope"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Item": [
+        "Paper envelope"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Glue": [
+        "Glue stick"
+      ]
+    }
+  },
+  "tuning_9.jpg": null,
+  "loading_269.jpg": null,
+  "bulldozing_168.jpg": null,
+  "buying_201.jpg": null,
+  "spoiling_166.jpg": null,
+  "emerging_103.jpg": {
+    "Verb": "Emerging",
+    "Roles_and_Nouns": {
+      "Source": [
+        ""
+      ],
+      "Destination": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "communicating_67.jpg": {
+    "Verb": "Communicating",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Office"
+      ],
+      "Adressee": [
+        "Employee"
+      ],
+      "Agent": [
+        "Manager"
+      ],
+      "Source": [
+        "Computer"
+      ]
+    }
+  },
+  "assembling_14.jpg": null,
+  "stapling_0.jpg": {
+    "Verb": "Stapling",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Paper"
+      ],
+      "Tool": [
+        "Stapler"
+      ],
+      "Place": [
+        "Table"
+      ],
+      "Surface": [
+        "Tablecloth"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "harvesting_301.jpg": null,
+  "molding_40.jpg": {
+    "Verb": "Molding",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Molded substance"
+      ],
+      "Substance": [
+        "Wax or soap mixture"
+      ],
+      "Goalitem": [
+        "Soap bar or candle wick or wick tabbing material"
+      ],
+      "Agent": [
+        "Person (or machine) performing the molding process"
+      ]
+    }
+  },
+  "blocking_222.jpg": null,
+  "decomposing_134.jpg": {
+    "Verb": "Decomposing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Garbage Pile"
+      ],
+      "Decomposer": [
+        "People"
+      ]
+    }
+  },
+  "destroying_82.jpg": null,
+  "nuzzling_222.jpg": null,
+  "shopping_150.jpg": null,
+  "arranging_206.jpg": null,
+  "hiking_161.jpg": null,
+  "videotaping_183.jpg": null,
+  "sealing_159.jpg": {
+    "Verb": "Sealing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Pipe"
+      ],
+      "Place": [
+        "Snowy Field"
+      ],
+      "Agent": [
+        "Man"
+      ],
+      "Sealant": [
+        "Glue"
+      ]
+    }
+  },
+  "videotaping_224.jpg": null,
+  "ejecting_146.jpg": null,
+  "shelving_253.jpg": null,
+  "blocking_125.jpg": {
+    "Verb": "Blocking",
+    "Roles_and_Nouns": {
+      "Blocker": [
+        "Player",
+        "Team",
+        "Opponent"
+      ],
+      "Tool": [
+        "Helmet",
+        "Pads",
+        "Glove"
+      ],
+      "Place": [
+        "Field",
+        "Stadium"
+      ],
+      "Blocked": [
+        "Opponent"
+      ]
+    }
+  },
+  "dining_327.jpg": null,
+  "mending_126.jpg": null,
+  "lecturing_147.jpg": {
+    "Verb": "Lecturing",
+    "Roles_and_Nouns": {
+      "audience": [
+        "Students"
+      ],
+      "place": [
+        "Classroom"
+      ],
+      "agent": [
+        "Judge"
+      ]
+    }
+  },
+  "dousing_69.jpg": {
+    "Verb": "Dousing",
+    "Roles_and_Nouns": {
+      "Undergoer": [
+        "Player"
+      ],
+      "Place": [
+        "Field"
+      ],
+      "Liquid": [
+        "Water"
+      ],
+      "Agent": [
+        "Player"
+      ],
+      "Fill": [
+        "Bucket"
+      ]
+    }
+  },
+  "massaging_230.jpg": {
+    "Verb": "massaging",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "Hands"
+      ],
+      "Place": [
+        "Patient's back"
+      ],
+      "Coagentpart": [
+        "Patient"
+      ],
+      "Agent": [
+        "Therapist"
+      ]
+    }
+  },
+  "distributing_179.jpg": {
+    "Verb": "Distributing",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Market stall"
+      ],
+      "Tool": [
+        "Tray of food"
+      ],
+      "Distributed": [
+        "Food items"
+      ],
+      "Recipients": [
+        "Customers"
+      ],
+      "Agent": [
+        "Vendor"
+      ]
+    }
+  },
+  "grinning_26.jpg": {
+    "Verb": "Grinning",
+    "Roles_and_Nouns": {
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "coloring_46.jpg": null,
+  "videotaping_68.jpg": null,
+  "feeding_305.jpg": null,
+  "juggling_111.jpg": null,
+  "harvesting_146.jpg": {
+    "Verb": "Harvesting",
+    "Roles_and_Nouns": {
+      "Harvested Item": [
+        "Corn",
+        "Grain",
+        "Crops"
+      ],
+      "Tool": [
+        "Tractor",
+        "Harvester",
+        "Machine"
+      ],
+      "Place": [
+        "Farm",
+        "Field",
+        "Harvesting Ground"
+      ],
+      "Agent": [
+        "Farmer",
+        "Harvester",
+        "Machine Operator"
+      ],
+      "Ground": [
+        "Farm",
+        "Field",
+        "Harvesting Ground"
+      ]
+    }
+  },
+  "foraging_249.jpg": null,
+  "dragging_362.jpg": {
+    "Verb": "dragging",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Baggage"
+      ],
+      "Tool": [
+        "Suitcase"
+      ],
+      "Contact": [
+        "Person"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "barbecuing_116.jpg": null,
+  "training_277.jpg": null,
+  "pinning_138.jpg": {
+    "Verb": "Pinning",
+    "Roles_and_Nouns": {
+      "Destination": [
+        ""
+      ],
+      "Place": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "fishing_102.jpg": {
+    "Verb": "fishing",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Ocean"
+      ],
+      "Tool": [
+        "Fishing rod"
+      ],
+      "Place": [
+        "Beach"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "spilling_168.jpg": null,
+  "socializing_330.jpg": null,
+  "blocking_3.jpg": null,
+  "videotaping_127.jpg": null,
+  "smashing_73.jpg": null,
+  "calming_178.jpg": null,
+  "socializing_331.jpg": {
+    "Verb": "socializing",
+    "Roles_and_Nouns": {
+      "Coagent": [
+        "People"
+      ],
+      "Place": [
+        "Party/Event/Meeting"
+      ],
+      "Agent": [
+        "People"
+      ]
+    }
+  },
+  "communicating_158.jpg": {
+    "Verb": "Communicating",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Office"
+      ],
+      "Adressee": [
+        "People"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "dining_64.jpg": null,
+  "buying_218.jpg": {
+    "Verb": "buying",
+    "Roles_and_Nouns": {
+      "Goods": [
+        "Box of tissues"
+      ],
+      "Place": [
+        "Store"
+      ],
+      "Payment": [
+        "Credit card"
+      ],
+      "Agent": [
+        "Customer"
+      ],
+      "Seller": [
+        "Store clerk"
+      ]
+    }
+  },
+  "stapling_149.jpg": null,
+  "burning_24.jpg": {
+    "Verb": "burning",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Street"
+      ],
+      "Target": [
+        "Fire hydrant"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "colliding_236.jpg": null,
+  "clapping_218.jpg": {
+    "Verb": "Clapping",
+    "Roles_and_Nouns": {
+      "agentpart": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        ""
+      ]
+    }
+  },
+  "packing_190.jpg": null,
+  "smashing_83.jpg": null,
+  "harvesting_250.jpg": null,
+  "bouncing_74.jpg": {
+    "Verb": "Bouncing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Ball"
+      ],
+      "Place": [
+        "Air"
+      ],
+      "Surface": [
+        "Ground"
+      ],
+      "Agent": [
+        "People"
+      ],
+      "Source": [
+        "Thrower"
+      ]
+    }
+  },
+  "spinning_40.jpg": {
+    "Verb": "Spinning",
+    "Roles_and_Nouns": {
+      "Tool": [
+        "Spindle",
+        "Wheel",
+        "Frame",
+        "Spindle",
+        "Wheel",
+        "Frame"
+      ],
+      "Material": [
+        "Yarn",
+        "Fiber",
+        "Thread",
+        "Yarn",
+        "Fiber",
+        "Thread"
+      ],
+      "Place": [
+        "Workshop",
+        "Studio",
+        "Garage",
+        "Workshop",
+        "Studio",
+        "Garage"
+      ],
+      "Agent": [
+        "Woman",
+        "Woman",
+        "Woman",
+        "Woman",
+        "Woman",
+        "Woman"
+      ],
+      "Source": [
+        "Spindle",
+        "Wheel",
+        "Frame",
+        "Spindle",
+        "Wheel",
+        "Frame"
+      ]
+    }
+  },
+  "carting_371.jpg": {
+    "Verb": "Carting",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Wagon"
+      ],
+      "Tool": [
+        "Dog Harness and Leash"
+      ],
+      "Place": [
+        "Roadway"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "dining_19.jpg": null,
+  "smearing_110.jpg": {
+    "Verb": "Smearing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Cream",
+        "Butter",
+        "Chocolate",
+        "Frosting"
+      ],
+      "Tool": [
+        "Knife",
+        "Spatula",
+        "Frosting Knife",
+        "Scoop"
+      ],
+      "Place": [
+        "Table",
+        "Counter",
+        "Plate"
+      ],
+      "Surface": [
+        "Table",
+        "Counter",
+        "Plate"
+      ],
+      "Agent": [
+        "Person"
+      ]
+    }
+  },
+  "building_238.jpg": null,
+  "videotaping_55.jpg": null,
+  "bulldozing_152.jpg": null,
+  "whisking_105.jpg": null,
+  "dyeing_68.jpg": null,
+  "harvesting_142.jpg": null,
+  "bothering_158.jpg": {
+    "Verb": "bothering",
+    "Roles_and_Nouns": {
+      "Action": [
+        ""
+      ],
+      "Victim": [
+        ""
+      ],
+      "Agent": [
+        ""
+      ]
+    }
+  },
+  "mashing_99.jpg": null,
+  "leading_102.jpg": {
+    "Verb": "Leading",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Forest"
+      ],
+      "Follower": [
+        "People"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "taping_20.jpg": {
+    "Verb": "Taping",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Tape Dispenser"
+      ],
+      "Destination": [
+        "Tennis Racket Handle"
+      ],
+      "Place": [
+        "Tabletop"
+      ],
+      "Agent": [
+        "Person"
+      ],
+      "Source": [
+        "Tape Dispenser"
+      ]
+    }
+  },
+  "ascending_111.jpg": {
+    "Verb": "ascending",
+    "Roles_and_Nouns": {
+      "Place": [
+        "Mountain"
+      ],
+      "Agent": [
+        "People"
+      ],
+      "Source": [
+        "Snowshoes"
+      ]
+    }
+  },
+  "photographing_137.jpg": null,
+  "packing_203.jpg": null,
+  "imitating_147.jpg": {
+    "Verb": "Imitating",
+    "Roles_and_Nouns": {
+      "Model": [
+        "Man",
+        "Boy"
+      ],
+      "Place": [
+        "Doorway",
+        "Doorway"
+      ],
+      "Agent": [
+        "Boy",
+        "Boy"
+      ]
+    }
+  },
+  "falling_270.jpg": null,
+  "bothering_149.jpg": null,
+  "smearing_248.jpg": {
+    "Verb": "Smearing",
+    "Roles_and_Nouns": {
+      "Item": [
+        "Colorful Powder"
+      ],
+      "Tool": [
+        "Fingers"
+      ],
+      "Place": [
+        "Street"
+      ],
+      "Surface": [
+        "Skin"
+      ],
+      "Agent": [
+        "Woman"
+      ]
+    }
+  },
+  "clapping_166.jpg": {
+    "Verb": "clapping",
+    "Roles_and_Nouns": {
+      "agentpart": [
+        ""
+      ],
+      "place": [
+        ""
+      ],
+      "agent": [
+        "Boy"
+      ]
+    }
+  },
+  "wiping_219.jpg": {
+    "Verb": "Wiping",
+    "Roles_and_Nouns": {
+      "Source": [
+        "Tissue"
+      ],
+      "Tool": [
+        "Hand"
+      ],
+      "Substance": [
+        "Tears"
+      ],
+      "Place": [
+        "Face"
+      ],
+      "Agent": [
+        "Man"
+      ]
+    }
+  },
+  "providing_196.jpg": null
+}

@@ -49,15 +49,15 @@ def get_mdl_loss_eval(cfg):
     #         return {"mdl": SFPreFeats_TxEncDec, "loss": LossLambda, "evl": EvalB_Gen}
     
     elif cfg.task_type == "vb_arg":
-        if cfg.mdl.mdl_name == "mlp_gpt22":
-            return {"mdl": MLP_Simple_GPT2_New, "loss": LossLambda, "evl": EvalB_Gen}
-        elif cfg.mdl.mdl_name == "mlp_txed_vbarg":   # simple MLP
-            return {"mdl": MLP_TxDec, "loss": LossLambda, "evl": EvalB_Gen}
-        elif cfg.mdl.mdl_name == "txe_txd_vbarg":    # Transformer
-            return {"mdl": TxEncDec, "loss": LossLambda, "evl": EvalB_Gen}
-        elif cfg.mdl.mdl_name == "xtf_txe_txd_vbarg": # XTF
-            return {"mdl": XTF_TxEncDec, "loss": LossLambda, "evl": EvalB_Gen}
-        elif cfg.mdl.mdl_name == "xtf_txe_txd_vbarg_obj": # XTF
+        # if cfg.mdl.mdl_name == "mlp_gpt22":
+        #     return {"mdl": MLP_Simple_GPT2_New, "loss": LossLambda, "evl": EvalB_Gen}
+        # elif cfg.mdl.mdl_name == "mlp_txed_vbarg":   # simple MLP
+        #     return {"mdl": MLP_TxDec, "loss": LossLambda, "evl": EvalB_Gen}
+        # elif cfg.mdl.mdl_name == "txe_txd_vbarg":    # Transformer
+        #     return {"mdl": TxEncDec, "loss": LossLambda, "evl": EvalB_Gen}
+        # elif cfg.mdl.mdl_name == "xtf_txe_txd_vbarg": # XTF
+        #     return {"mdl": XTF_TxEncDec, "loss": LossLambda, "evl": EvalB_Gen}
+        if cfg.mdl.mdl_name == "xtf_txe_txd_vbarg_obj": # XTF
             return {"mdl": XTF_TxEncDec_wObj, "loss": LossLambda, "evl": EvalB_Gen}
             
     elif cfg.task_type == "evrel":

@@ -945,7 +945,7 @@ class Simple_TxDec(nn.Module):
 
     def forward(self, inp):
         inp_prep = self.prepare_prev_toks_inp(inp)
-        encoder_out = self.forward_encoder (inp)
+        encoder_out = self.forward_encoder10(inp)
         prev_tokens = inp_prep["dst_toks"]
 
         decoder_out = self.forward_decoder(
@@ -1506,7 +1506,8 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
 
         # Repeat the frame-level event embeddings to object-level event embeddings
         obj_event_pos_emb = repeat(frame_event_pos_emb_level1_updated, 'b n d -> b n o d', o=self.num_objs_per_frm)
-        obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
+        obj_event_pos_emb = obj_event_pos_emb[:, :10, :, :]
+        #obj_event_pos_emb = obj_event_pos_emb.reshape(B, F*N, -1)
 
         # Repeat verb features to match 10 frames
         verb_10tokens = torch.repeat_interleave(inp["verb_feats"], 2, dim=1)  # [8, 10, 512]
@@ -1526,8 +1527,9 @@ class XTF_TxEncDec_wObj(Simple_TxDec, Reorderer):
         obj_spat_pos_embd = self.obj_spatial_pos_emd(obj_bb_pos.view(B, -1, 4))  # [8, 150, 1024]
         obj_spat_pos_embd = obj_spat_pos_embd.view(B, 10, 15, -1)  # [8, 10, 15, 1024]
         obj_frame_pos_embed = self.frame_pos_embed.weight.unsqueeze(0).unsqueeze(2).repeat(B, 1, 15, 1)[:, :10, :, :]  # [8, 10, 15, 1024]
+
         obj_type_emb = self.input_type_embed.weight[1].unsqueeze(0).unsqueeze(0).unsqueeze(0).repeat(B, 10, 15, 1)  # [8, 10, 15, 1024]
-        obj_emb = obj_feats + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb + obj_event_pos_emb.view(B, 10, 15, -1)  # [8, 10, 15, 1024]
+        obj_emb = obj_feats + obj_spat_pos_embd + obj_frame_pos_embed + obj_type_emb  + obj_event_pos_emb  # [8, 10, 15, 1024]
 
         # Calculate the number of patches based on the input tensor shape
         num_patches = S

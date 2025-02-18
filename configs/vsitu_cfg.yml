@@ -100,7 +100,7 @@ gen:
 
 train:
   lr: 1e-4
-  epochs: 10
+  epochs: 5
   bs: 8
   nw: 4
   bsv: 16
