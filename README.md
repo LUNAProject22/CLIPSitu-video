@@ -61,6 +61,10 @@ To compare **CLIPSitu-Vid** with a **Vision-Language Model (VLM)**, we use **VIL
 
 ## 🏆 Acknowledgments
 
+This research/project is supported by the National Research Foundation, Singapore, under its NRF Fellowship (Award# NRF-NRFF14-2022-
+0001). This research is also supported by funding allocation to B.F. by the Agency for Science, 
+Technology and Research (A*STAR) under its SERC Central Research Fund (CRF), as well as its Centre for Frontier AI Research (CFAR).
+
 This project builds upon:
 - **[CLIPSitu](https://github.com/LUNAProject22/CLIPSitu)** (leveraging **CLIP for image-based situation recognition**).
 - **[VidSitu](https://github.com/TheShadow29/VidSitu)** (large-scale **video semantic role labeling** dataset).
@@ -75,13 +79,20 @@ We thank the authors of these projects for their foundational contributions.
 If you use this work, please cite:
 
 ```bibtex
-@article{CLIPSituVid2024,
-  title={Effectively Leveraging CLIP for Generating Situational Summaries of Images and Videos
-},
-  author={Verma, D. and others},
-  journal={Journal TBD},
-  year={2024},
-  url={https://arxiv.org/pdf/2407.20642}
+@article{verma2024effectively,
+  title={Effectively Leveraging CLIP for Generating Situational Summaries of Images and Videos},
+  author={Verma, Dhruv and Roy, Debaditya and Fernando, Basura},
+  journal={International Journal of Computer Vision},
+  url={https://arxiv.org/pdf/2407.20642},
+  year={2025}
+}
+
+@inproceedings{roy2024clipsitu,
+  title={Clipsitu: Effectively leveraging clip for conditional predictions in situation recognition},
+  author={Roy, Debaditya and Verma, Dhruv and Fernando, Basura},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={444--453},
+  year={2024}
 }
 
 @article{VidSitu2021,
