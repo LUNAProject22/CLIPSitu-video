@@ -2,7 +2,7 @@
 
 This repository extends [CLIPSitu](https://github.com/LUNAProject22/CLIPSitu) to the **VidSitu** dataset, enabling **video-based situation recognition**. CLIPSitu-Vid builds upon **CLIPSitu’s CLIP-based semantic role labeling**, integrates the **VidSitu dataset**, and evaluates **Vision-Language Models (VLMs)** like **VILA** via zero-shot prompting.
 
-This work is based on our **journal paper**:  
+This work is based on our **IJCV journal paper**:  
 📄 **[Effectively Leveraging CLIP for Generating Situational Summaries of Images and Videos](https://arxiv.org/pdf/2407.20642)** (2024).
 
 ---
